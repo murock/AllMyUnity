@@ -1,0 +1,35 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4058 MB
+    Driver:   22.21.13.8476
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\Game dev Unity\TowerDefense-Demo\towerDefDemo (PC)_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.031 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.914667 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.632867 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 618.
+Total: 0.352976 ms (FindLiveObjects: 0.043670 ms CreateObjectMapping: 0.020479 ms MarkObjects: 0.282501 ms  DeleteObjects: 0.004517 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 4264 -> priority: 1 
+  Thread -> id: 1894 -> priority: 1 
