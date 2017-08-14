@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : Singleton<LevelManager> {
 
     [SerializeField]
     private GameObject[] tilePrefabs;
@@ -11,7 +11,10 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     private CameraMovement cameraMovement;
 
-    private Dictionary<Point, TileScript> Tiles { get; set; }
+    [SerializeField]
+    private Transform map;
+
+    public Dictionary<Point, TileScript> Tiles { get; set; }
 
     private Point portalSpawn, coinSpawn;
 
@@ -27,7 +30,7 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
         CreateLevel();
         SpawnPortals();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -63,13 +66,19 @@ public class LevelManager : MonoBehaviour {
 
     private void PlaceTile(string tileType,int x, int y, Vector3 worldStart)
     {
-        int tileIndex = int.Parse(tileType);
+        int test, tileIndex = 0;
+
+        if (int.TryParse(tileType, out test))
+        {
+            tileIndex = int.Parse(tileType);
+        }
 
         TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
 
-        newTile.Setup(new global::Point(x, y), new Vector3(worldStart.x + TileSize * x, worldStart.y - TileSize * y, 0));
+        newTile.Setup(new global::Point(x, y), new Vector3(worldStart.x + TileSize * x, worldStart.y - TileSize * y, 0), map);
 
-        Tiles.Add(new Point(x,y),newTile);
+        
+      //  Tiles.Add(new Point(x, y), newTile);
 
     }
 
