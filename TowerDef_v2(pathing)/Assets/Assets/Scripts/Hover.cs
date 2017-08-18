@@ -18,8 +18,11 @@ public class Hover : Singleton<Hover> {
 
     private void FollowMouse()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);   //follow mouse
-        transform.position = new Vector3(transform.position.x, transform.position.y, 1);    //sorts out Z position so 2d sprite isn't lost behind other objects
+        if (spriteRenderer.enabled)
+        {
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);   //follow mouse
+            transform.position = new Vector3(transform.position.x, transform.position.y, 1);    //sorts out Z position so 2d sprite isn't lost behind other objects
+        }
     }
 
     public void Activate(Sprite sprite)     //allows you to attach the sprite of a tower to the pointer (drag and drop...kinda)
@@ -31,5 +34,6 @@ public class Hover : Singleton<Hover> {
     public void Deavtivate()
     {
         spriteRenderer.enabled = false;
+        GameManager.Instance.ClickedBtn = null;         //turn off so tower isn't placed
     }
 }

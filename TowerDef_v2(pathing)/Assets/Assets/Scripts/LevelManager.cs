@@ -14,12 +14,14 @@ public class LevelManager : Singleton<LevelManager> {
     [SerializeField]
     private Transform map;
 
-    public Dictionary<Point, TileScript> Tiles { get; set; }
+    public Dictionary<Point, TileScript> Tiles { get; set; }    //dictionary containing all tiles in the game
 
     private Point portalSpawn, coinSpawn;
 
     [SerializeField]
     private GameObject portalPrefab, coinPrefab;
+
+    private Point mapSize;
 
     public float TileSize
     {
@@ -42,6 +44,8 @@ public class LevelManager : Singleton<LevelManager> {
         Tiles = new Dictionary<Point, TileScript>();
 
         string[] mapData = ReadLevelText();
+
+        mapSize = new global::Point(mapData[0].ToCharArray().Length, mapData.Length);
 
         int mapX = mapData[0].ToCharArray().Length;
         int mapY = mapData.Length;
@@ -100,5 +104,10 @@ public class LevelManager : Singleton<LevelManager> {
         coinSpawn = new Point(11, 6);
 
         Instantiate(coinPrefab, Tiles[coinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+    }
+
+    public bool InBounds(Point position)
+    {
+        return position.X >= 0 && position.Y >= 0 && position.X < mapSize.X && position.Y < mapSize.Y;
     }
 }

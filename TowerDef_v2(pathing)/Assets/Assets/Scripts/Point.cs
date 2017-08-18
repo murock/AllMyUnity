@@ -12,5 +12,16 @@ public struct Point {
         this.X = x;
         this.Y = y;
     }
-    
+
+    public static bool operator ==(Point first, Point second)    //adding functionality to the class to compare if 2 points match
+    {
+        return first.X == second.X && first.Y == second.Y;  //if both X and Y values match return true
+    }
+
+
+    public static bool operator !=(Point first, Point second)    //adding functionality to the class to compare if 2 points match
+    {
+        return first.X != second.X || first.Y != second.Y;  //if either value is different return true
+    }
+
 }
