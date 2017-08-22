@@ -701,7 +701,8 @@ MonoBehaviour:
   stoneTile: {fileID: 21300000, guid: e1a0b2678f642f147a136dc0abda91dd, type: 3}
   arrowPrefab: {fileID: 1130163586689310, guid: e478be74d35d9ee4889626e6e8e75c56,
     type: 2}
-  debugTilePrefab: {fileID: 0}
+  debugTilePrefab: {fileID: 1232168553458736, guid: 97c9ecab0abbaed47b22d7422208ca31,
+    type: 2}
 --- !u!4 &729901684
 Transform:
   m_ObjectHideFlags: 0

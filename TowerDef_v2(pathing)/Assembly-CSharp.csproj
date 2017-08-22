@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Assets\Scripts\Astar\AStar.cs" />
      <Compile Include="Assets\Assets\Scripts\Astar\AStarDebugger.cs" />
+     <Compile Include="Assets\Assets\Scripts\Astar\DebugTile.cs" />
      <Compile Include="Assets\Assets\Scripts\Astar\Node.cs" />
      <Compile Include="Assets\Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Assets\Scripts\GameManager.cs" />

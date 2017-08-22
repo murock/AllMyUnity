@@ -29,7 +29,7 @@ public class AStarDebugger : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AStar.GetPath(start.GridPosition);
+            AStar.GetPath(start.GridPosition, goal.GridPosition);
         }
 	}
 
@@ -47,40 +47,46 @@ public class AStarDebugger : MonoBehaviour {
                     if (start == null)
                     {
                         start = tmp;    //make selected tile start point
-                    //    start.SpriteRenderer.sprite = stoneTile;
-                        start.Debugging = true;
-                      //  start.SpriteRenderer.color = new Color32(255, 132, 0, 255);
+                        CreateDebugTIle(start.WorldPosition, new Color32(255, 135, 0, 255));
                     }
                     else if (goal == null)
                     {
                         goal = tmp;     //second click = goal
-                      //  goal.SpriteRenderer.sprite = stoneTile;
-                        goal.Debugging = true;
-                      //  goal.SpriteRenderer.color = new Color32(255, 0, 0, 255);
+                        CreateDebugTIle(goal.WorldPosition, new Color32(255, 0, 0, 255));
                     }
                 }
             }
         }
     }
 
-    public void DebugPath(HashSet<Node> openList)
+    public void DebugPath(HashSet<Node> openList, HashSet<Node> closedList)
     {
         foreach (Node node in openList)
         {
             if(node.TileRef != start)
             {
-            //   node.TileRef.SpriteRenderer.color = Color.cyan;
-            //    node.TileRef.SpriteRenderer.sprite = blankTile;
+                CreateDebugTIle(node.TileRef.WorldPosition, Color.cyan, node);
             }
             PointToParent(node, node.TileRef.WorldPosition);
         }
+
+        foreach (Node node in closedList)
+        {
+            if (node.TileRef != start && node.TileRef != goal)
+            {
+                CreateDebugTIle(node.TileRef.WorldPosition, Color.blue, node);
+            }
+        }
     }
+
+
 
     private void PointToParent(Node node, Vector2 position)     //point the arrow to the parent
     {
         if (node.Parent != null)
         {
             GameObject arrow = Instantiate(arrowPrefab, position, Quaternion.identity);
+            arrow.GetComponent<SpriteRenderer>().sortingOrder = 3;  //puts arrow on top
 
             if (node.GridPosition.X < node.Parent.GridPosition.X && node.GridPosition.Y == node.Parent.GridPosition.Y)  //point right
             {
@@ -118,9 +124,18 @@ public class AStarDebugger : MonoBehaviour {
 
     }
 
-    private void CreateDebugTIle(Vector3 worldPos, Color32 color)
+    private void CreateDebugTIle(Vector3 worldPos, Color32 color, Node node = null) //set to null to make it optional 
     {
         GameObject debugTile = Instantiate(debugTilePrefab, worldPos,Quaternion.identity);
+
+        if (node != null)
+        {
+            DebugTile tmp = debugTile.GetComponent<DebugTile>();    //only have to get debug tile component once to save resources
+
+            tmp.G.text += node.G;
+            tmp.H.text += node.H;
+            tmp.F.text += node.F;
+        }
 
         debugTile.GetComponent<SpriteRenderer>().color = color;
     }

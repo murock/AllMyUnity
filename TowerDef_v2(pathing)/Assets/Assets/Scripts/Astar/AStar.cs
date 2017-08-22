@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class AStar  {
@@ -17,7 +19,7 @@ public static class AStar  {
         }
     }
 
-    public static void GetPath(Point start)
+    public static void GetPath(Point start, Point goal)
     {
         if (nodes == null)  //if nodes have not been made create them
         {
@@ -26,32 +28,75 @@ public static class AStar  {
 
         HashSet<Node> openList = new HashSet<Node>();       //open list
 
+        HashSet<Node> closedList = new HashSet<Node>();       //closed list
+
+        Stack<Node> finalPath = new Stack<Node>();       //backtrack for creeps so you can pop from start to end
+
         Node currentNode = nodes[start];    //insitalise starting path
 
         openList.Add(currentNode);
-
-        for (int x = -1; x <= 1; x++)
+        while (openList.Count > 0)
         {
-            for (int y = -1; y <= 1; y++)
+            for (int x = -1; x <= 1; x++)
             {
-                Point neighbourPos = new Point(currentNode.GridPosition.X - x, currentNode.GridPosition.Y - y); //get neighbour tiles positions
-
-                if (LevelManager.Instance.InBounds(neighbourPos) && LevelManager.Instance.Tiles[neighbourPos].WalkAble && neighbourPos != currentNode.GridPosition)   //neighbour different to current pos?
+                for (int y = -1; y <= 1; y++)
                 {
-                    Node neighbour = nodes[neighbourPos];   //get the node of that tile
+                    Point neighbourPos = new Point(currentNode.GridPosition.X - x, currentNode.GridPosition.Y - y); //get neighbour tiles positions
 
-                    if (!openList.Contains(neighbour))
+                    if (LevelManager.Instance.InBounds(neighbourPos) && LevelManager.Instance.Tiles[neighbourPos].WalkAble && neighbourPos != currentNode.GridPosition)   //neighbour different to current pos?
                     {
-                        openList.Add(neighbour);
-                    }
+                        int gCost = 0;
 
-                    neighbour.CalcValues(currentNode);
-                 //   neighbour.TileRef.SpriteRenderer.color = Color.blue;
+                        if (Math.Abs(x - y) == 1)   //if horizontal or vertical Absoulute value means -1 = 1
+                        {
+                            gCost = 10;
+                        }
+                        else //else diagonal
+                        {
+                            gCost = 14;
+                        }
+
+                        Node neighbour = nodes[neighbourPos];   //get the node of that tile
+
+
+
+                        if (openList.Contains(neighbour))
+                        {
+                            if (currentNode.G + gCost < neighbour.G)    //check if new parent is actually a better parent based all new gScore value
+                            {
+                                neighbour.CalcValues(currentNode, nodes[goal], gCost);
+                            }
+                        }
+                        else if (!closedList.Contains(neighbour))
+                        {
+                            openList.Add(neighbour);    //add new neighbour tile to openlist
+                            neighbour.CalcValues(currentNode, nodes[goal], gCost);  //calc values for parent... might not be optimal to do this here
+                        }
+                    }
                 }
             }
-        }
 
-        //ONLY FOR DEBUGGING REMOVE LATER
-        GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList); 
+            // moves current node from open to closed list
+            openList.Remove(currentNode);
+            closedList.Add(currentNode);
+
+            if (openList.Count > 0)
+            {
+                currentNode = openList.OrderBy(n => n.F).First();   //sorts list by F value and selects the first on the list
+            }
+
+            if(currentNode == nodes[goal])  //once goal is in list then go back and add to final path stack
+            {
+                while (currentNode.GridPosition != start)   //stop when you reach the start
+                {
+                    finalPath.Push(currentNode);
+                    currentNode = currentNode.Parent;
+                }
+                break;  //we found the goal
+            }
+            //ONLY FOR DEBUGGING REMOVE LATER
+            GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList);
+        }
+      
     }
 }
