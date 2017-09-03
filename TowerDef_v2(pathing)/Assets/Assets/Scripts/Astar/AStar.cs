@@ -34,16 +34,19 @@ public static class AStar  {
 
         Node currentNode = nodes[start];    //insitalise starting path
 
-        openList.Add(currentNode);
+        //http://www.policyalmanac.org/games/aStarTutorial.htm
+        openList.Add(currentNode);  //step 1: add start point to open list
         while (openList.Count > 0)
         {
+            //check neighbours
             for (int x = -1; x <= 1; x++)
             {
                 for (int y = -1; y <= 1; y++)
                 {
-                    Point neighbourPos = new Point(currentNode.GridPosition.X - x, currentNode.GridPosition.Y - y); //get neighbour tiles positions
+                    Point neighbourPos = new Point(currentNode.GridPosition.X - x, currentNode.GridPosition.Y - y); //get neighbour tiles positions from (-1, -1) to (1, 1) 
 
-                    if (LevelManager.Instance.InBounds(neighbourPos) && LevelManager.Instance.Tiles[neighbourPos].WalkAble && neighbourPos != currentNode.GridPosition)   //neighbour different to current pos?
+                    if (LevelManager.Instance.InBounds(neighbourPos)
+                        && LevelManager.Instance.Tiles[neighbourPos].WalkAble && neighbourPos != currentNode.GridPosition)   //neighbour different to current pos, and walkable
                     {
                         int gCost = 0;
 
@@ -53,23 +56,26 @@ public static class AStar  {
                         }
                         else //else diagonal
                         {
+                            if(!ConnectedDiagonally(currentNode,nodes[neighbourPos]))
+                            {
+                                Debug.Log("current node is connected diagonally + blocked" + currentNode.GridPosition.X + " " + currentNode.GridPosition.Y);
+                                continue; //go to next execution in loop
+                            }
                             gCost = 14;
                         }
 
                         Node neighbour = nodes[neighbourPos];   //get the node of that tile
 
-
-
-                        if (openList.Contains(neighbour))
+                        if (openList.Contains(neighbour))   //step 6: if an adjacent square is already on openlist check to see if path is better to go directly to this square
                         {
-                            if (currentNode.G + gCost < neighbour.G)    //check if new parent is actually a better parent based all new gScore value
+                            if (currentNode.G + gCost < neighbour.G)    //check if current node is actually a better parent based all new gScore value
                             {
                                 neighbour.CalcValues(currentNode, nodes[goal], gCost);
                             }
                         }
-                        else if (!closedList.Contains(neighbour))
+                        else if (!closedList.Contains(neighbour))   //if not already checked then add to openlist
                         {
-                            openList.Add(neighbour);    //add new neighbour tile to openlist
+                            openList.Add(neighbour);    //add new neighbour tile to openlist         step 2: add all other tiles to open list
                             neighbour.CalcValues(currentNode, nodes[goal], gCost);  //calc values for parent... might not be optimal to do this here
                         }
                     }
@@ -77,10 +83,10 @@ public static class AStar  {
             }
 
             // moves current node from open to closed list
-            openList.Remove(currentNode);
-            closedList.Add(currentNode);
+            openList.Remove(currentNode);   //step 3: remove starting tile from open list
+            closedList.Add(currentNode);    //step 4: add it to the closed list
 
-            if (openList.Count > 0)
+            if (openList.Count > 0)     //step 5: check all adjacent squares
             {
                 currentNode = openList.OrderBy(n => n.F).First();   //sorts list by F value and selects the first on the list
             }
@@ -89,14 +95,37 @@ public static class AStar  {
             {
                 while (currentNode.GridPosition != start)   //stop when you reach the start
                 {
+                  //  Debug.Log("node being added to path is: " + currentNode.GridPosition.X + " " + currentNode.GridPosition.Y);
                     finalPath.Push(currentNode);
                     currentNode = currentNode.Parent;
                 }
+               // GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);  //getting called too many times? //ONLY FOR DEBUGGING REMOVE LATER need to sort this mess XD
                 break;  //we found the goal
             }
-            //ONLY FOR DEBUGGING REMOVE LATER
-            GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList);
+            
+
         }
-      
+        GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
+        //debugpath should be called here i think
+    }
+
+    private static bool ConnectedDiagonally(Node currentNode, Node neighbour)
+    {
+        Point direction = neighbour.GridPosition - currentNode.GridPosition;        //get direction of movement
+
+        Point first = new Point(currentNode.GridPosition.X + direction.X, currentNode.GridPosition.Y);    // first tile to check
+
+        Point second = new Point(currentNode.GridPosition.X, currentNode.GridPosition.Y + direction.Y); //second tile to check
+
+        if(LevelManager.Instance.InBounds(first) && !LevelManager.Instance.Tiles[first].WalkAble)
+        {
+            return false;
+        }
+        if (LevelManager.Instance.InBounds(second) && !LevelManager.Instance.Tiles[second].WalkAble)
+        {
+            return false;
+        }
+
+        return true;
     }
 }

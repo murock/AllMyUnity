@@ -59,11 +59,11 @@ public class AStarDebugger : MonoBehaviour {
         }
     }
 
-    public void DebugPath(HashSet<Node> openList, HashSet<Node> closedList)
+    public void DebugPath(HashSet<Node> openList, HashSet<Node> closedList, Stack<Node> path)
     {
         foreach (Node node in openList)
         {
-            if(node.TileRef != start)
+            if(node.TileRef != start && node.TileRef != goal)
             {
                 CreateDebugTIle(node.TileRef.WorldPosition, Color.cyan, node);
             }
@@ -72,9 +72,23 @@ public class AStarDebugger : MonoBehaviour {
 
         foreach (Node node in closedList)
         {
+            
+            if (node.TileRef != start && node.TileRef != goal && path.Contains(node))   //only make a blue tile if final path doesn't contain it
+            {
+              //  Debug.Log("node in closed list is " + node.TileRef.WorldPosition);
+                CreateDebugTIle(node.TileRef.WorldPosition, Color.blue, node);
+            }
+            PointToParent(node, node.TileRef.WorldPosition);
+        }
+
+       // Debug.Log("got to here");
+        foreach (Node node in path)
+        {
+          //  Debug.Log("in here");
             if (node.TileRef != start && node.TileRef != goal)
             {
-                CreateDebugTIle(node.TileRef.WorldPosition, Color.blue, node);
+              //  Debug.Log("colouring node: " + node.TileRef.WorldPosition);
+                CreateDebugTIle(node.TileRef.WorldPosition, Color.green, node);
             }
         }
     }
