@@ -19,7 +19,7 @@ public static class AStar  {
         }
     }
 
-    public static void GetPath(Point start, Point goal)
+    public static Stack<Node> GetPath(Point start, Point goal)
     {
         if (nodes == null)  //if nodes have not been made create them
         {
@@ -105,8 +105,9 @@ public static class AStar  {
             
 
         }
-        GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
-        //debugpath should be called here i think
+
+        return finalPath;
+      //  GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
     }
 
     private static bool ConnectedDiagonally(Node currentNode, Node neighbour)

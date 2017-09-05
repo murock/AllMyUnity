@@ -586,7 +586,7 @@ MonoBehaviour:
   towerPrefab: {fileID: 1849189546559358, guid: 5819d0e1e63cb014b9bbc9f1080b5560,
     type: 2}
   sprite: {fileID: 21300000, guid: b3dec355d1ed599458628d750d513db9, type: 3}
-  price: 4
+  price: 0
   priceTxt: {fileID: 1360917230}
 --- !u!1 &422220866
 GameObject:
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 422220869}
   - component: {fileID: 422220868}
   m_Layer: 5
-  m_Name: Button
+  m_Name: NextWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,7 +663,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 422220869}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988140945}
+        m_MethodName: StartWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &422220869
@@ -1495,7 +1506,7 @@ MonoBehaviour:
   towerPrefab: {fileID: 1406046524013318, guid: 411a99d794c16ff4daac8aea2626c15b,
     type: 2}
   sprite: {fileID: 21300000, guid: 3bf4fc5b4a64cb049a1d21343cc78c65, type: 3}
-  price: 5
+  price: 0
   priceTxt: {fileID: 592901071}
 --- !u!1 &1360917226
 GameObject:
@@ -1873,6 +1884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988140946}
   - component: {fileID: 1988140945}
+  - component: {fileID: 1988140947}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1905,6 +1917,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988140947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988140944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b9198ed2aeed942a15612555678efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 1074218381999348, guid: f0ec180e4dcab9b4b8cbfa07c3474803, type: 2}
+  - {fileID: 1769539521317422, guid: 3a7e48fd4f598a94bbaf3332c3557261, type: 2}
+  - {fileID: 1205306666260904, guid: d9359f32f82a42046808495c85d6ad95, type: 2}
+  - {fileID: 1949199688492748, guid: 9b1b1e2c96919ab48adfedc526e69230, type: 2}
 --- !u!1 &2069566668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,6 +1945,7 @@ GameObject:
   - component: {fileID: 2069566671}
   - component: {fileID: 2069566670}
   - component: {fileID: 2069566673}
+  - component: {fileID: 2069566674}
   m_Layer: 5
   m_Name: CurrencyTxt
   m_TagString: Untagged
@@ -2012,3 +2041,14 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!225 &2069566674
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069566668}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

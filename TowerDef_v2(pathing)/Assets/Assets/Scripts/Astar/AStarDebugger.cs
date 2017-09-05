@@ -22,16 +22,17 @@ public class AStarDebugger : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        ClickTile();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AStar.GetPath(start.GridPosition, goal.GridPosition);
-        }
-	}
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    ClickTile();
+
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        AStar.GetPath(start.GridPosition, goal.GridPosition);
+    //    }
+    //}
 
     private void ClickTile()
     {

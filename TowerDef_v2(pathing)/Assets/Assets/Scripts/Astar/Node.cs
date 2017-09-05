@@ -12,6 +12,8 @@ public class Node  {
 
     public TileScript TileRef { get;private set; }
 
+    public Vector2 WorldPosition { get; set; }
+
     public Node Parent { get; private  set; }   //stores the parent tile
 
     public int G { get; set; }
@@ -24,6 +26,7 @@ public class Node  {
     {
         this.TileRef = tileRef;
         this.GridPosition = TileRef.GridPosition;
+        this.WorldPosition = tileRef.WorldPosition;
     }
 
     public void CalcValues(Node parent,Node goal, int gCost)

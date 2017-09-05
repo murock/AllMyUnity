@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4557894832622264}
   - component: {fileID: 212786162858770044}
   - component: {fileID: 95638162719463172}
+  - component: {fileID: 114043904801368118}
   m_Layer: 0
   m_Name: SpawnPortal
   m_TagString: Untagged
@@ -58,6 +59,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114043904801368118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956424917042268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94db7e0b7a30b5f4d91a153b77a39727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212786162858770044
 SpriteRenderer:
   m_ObjectHideFlags: 1

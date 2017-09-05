@@ -21,7 +21,24 @@ public class LevelManager : Singleton<LevelManager> {
     [SerializeField]
     private GameObject portalPrefab, coinPrefab;
 
+    public Portal SpawnPortal { get; set; }
+
     private Point mapSize;
+
+    private Stack<Node> path;  //given to monsters 
+
+    public Stack<Node> Path //read only
+    {
+        get
+        {
+            if (path == null)
+            {
+                GeneratePath();
+            }
+
+            return new Stack<Node>(new Stack<Node>(path));
+        }
+    }
 
     public float TileSize
     {
@@ -98,8 +115,9 @@ public class LevelManager : Singleton<LevelManager> {
     private void SpawnPortals()
     {
         portalSpawn = new Point(0, 0);
-
-        Instantiate(portalPrefab, Tiles[portalSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+        GameObject tmp = (GameObject)Instantiate(portalPrefab, Tiles[portalSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);   //spawn portal
+        SpawnPortal = tmp.GetComponent<Portal>();   //get the script off it
+        SpawnPortal.name = "SpawnPortal";
 
         coinSpawn = new Point(11, 6);
 
@@ -109,5 +127,10 @@ public class LevelManager : Singleton<LevelManager> {
     public bool InBounds(Point position)
     {
         return position.X >= 0 && position.Y >= 0 && position.X < mapSize.X && position.Y < mapSize.Y;
+    }
+
+    public void GeneratePath()  //from start to finish
+    {
+        path = AStar.GetPath(portalSpawn, coinSpawn);
     }
 }
