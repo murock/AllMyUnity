@@ -105,9 +105,9 @@ public static class AStar  {
             
 
         }
-
-        return finalPath;
       //  GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
+        return finalPath;
+
     }
 
     private static bool ConnectedDiagonally(Node currentNode, Node neighbour)
