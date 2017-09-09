@@ -82,7 +82,7 @@ public class GameManager : Singleton<GameManager> {
     {
         LevelManager.Instance.GeneratePath();
 
-        int monsterIndex = Random.Range(0, 4);
+        int monsterIndex = 4;//Random.Range(0, 4);
 
         string type = string.Empty;
 
@@ -99,6 +99,9 @@ public class GameManager : Singleton<GameManager> {
                 break;
             case 3:
                 type = "Tree";
+                break;
+            case 4:
+                type = "Girl";
                 break;
             default:
                 break;
