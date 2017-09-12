@@ -45,8 +45,16 @@ public class LevelManager : Singleton<LevelManager> {
         get {return tilePrefabs[0].GetComponent<SpriteRenderer>().sprite.bounds.size.x; }
     }
 
-	// Use this for initialization
-	void Start () {
+    public Point PortalSpawn
+    {
+        get
+        {
+            return portalSpawn;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         CreateLevel();
         SpawnPortals();
     }
@@ -115,7 +123,7 @@ public class LevelManager : Singleton<LevelManager> {
     private void SpawnPortals()
     {
         portalSpawn = new Point(0, 0);
-        GameObject tmp = (GameObject)Instantiate(portalPrefab, Tiles[portalSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);   //spawn portal
+        GameObject tmp = (GameObject)Instantiate(portalPrefab, Tiles[PortalSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);   //spawn portal
         SpawnPortal = tmp.GetComponent<Portal>();   //get the script off it
         SpawnPortal.name = "SpawnPortal";
 
@@ -131,6 +139,6 @@ public class LevelManager : Singleton<LevelManager> {
 
     public void GeneratePath()  //from start to finish
     {
-        path = AStar.GetPath(portalSpawn, coinSpawn);
+        path = AStar.GetPath(PortalSpawn, coinSpawn);
     }
 }

@@ -10,10 +10,28 @@ public class GameManager : Singleton<GameManager> {
 
     private int currency;
 
+    private int wave = 0;
+
+    [SerializeField]
+    private Text waveTxt;
+
     [SerializeField]
     private Text currencyTxt;
 
+    [SerializeField]
+    private GameObject waveBtn;
+
+    //keeps a list of active monsters so we know when the wave is finished when there are none
+    private List<Monster> activeMonsters = new List<Monster>();
+
     public ObjectPool Pool { get; set; }
+
+    public bool WaveActive  //are there monsters left?
+    {
+        get {
+            return activeMonsters.Count > 0;
+        }
+    }
 
     public int Currency
     {
@@ -48,7 +66,7 @@ public class GameManager : Singleton<GameManager> {
     // called from Onclick event in unity in the Canvas -> towerPanel ->Btn
     public void PickTower(TowerButton towerBtn)
     {
-        if (Currency >= towerBtn.Price) //checks you have enough money to buy tower
+        if (Currency >= towerBtn.Price && !WaveActive) //checks you have enough money to buy tower  && in "buy" phase ie no active monsters
         {
             this.ClickedBtn = towerBtn;
             Hover.Instance.Activate(towerBtn.Sprite);
@@ -75,40 +93,62 @@ public class GameManager : Singleton<GameManager> {
 
     public void StartWave()
     {
+        wave++;
+
+        waveTxt.text = string.Format("Wave: <color=orange>{0}</color>", wave);
+
         StartCoroutine(SpawnWave());    // coroutine so they spawn gradually
+
+        waveBtn.SetActive(false);
     }
 
     private IEnumerator SpawnWave()
     {
-        LevelManager.Instance.GeneratePath();
+        LevelManager.Instance.GeneratePath();   
 
-        int monsterIndex = 4;//Random.Range(0, 4);
-
-        string type = string.Empty;
-
-        switch (monsterIndex)   //spawn a monster based on the random number
+        for (int i = 0; i < wave; i++)  //spawn as many monsters as wave number 
         {
-            case 0:
-                type = "Seedo";
-                break;
-            case 1:
-                type = "Shroom";
-                break;
-            case 2:
-                type = "Snail";
-                break;
-            case 3:
-                type = "Tree";
-                break;
-            case 4:
-                type = "Girl";
-                break;
-            default:
-                break;
+            int monsterIndex = 4;//Random.Range(0, 5); ADD MORE MONSTERS WHEN HAVE ANIMATIONS
+
+            string type = string.Empty;
+
+            switch (monsterIndex)   //spawn a monster based on the random number
+            {
+                case 0:
+                    type = "Seedo";
+                    break;
+                case 1:
+                    type = "Shroom";
+                    break;
+                case 2:
+                    type = "Snail";
+                    break;
+                case 3:
+                    type = "Tree";
+                    break;
+                case 4:
+                    type = "Girl";
+                    break;
+                default:
+                    break;
+            }
+            Monster monster = Pool.GetObject(type).GetComponent<Monster>();
+            monster.Spawn();
+            activeMonsters.Add(monster);
+            yield return new WaitForSeconds(2.5f);
+
         }
 
-        Monster monster = Pool.GetObject(type).GetComponent<Monster>();
-        monster.Spawn();
-        yield return new WaitForSeconds(2.5f);
+
+    }
+
+    public void RemoveMonster(Monster monster)
+    {
+        activeMonsters.Remove(monster);
+
+        if (!WaveActive)
+        {
+            waveBtn.SetActive(true);
+        }
     }
 }

@@ -9,11 +9,15 @@ public class Monster : MonoBehaviour {
 
     private Stack<Node> path;
 
+    private Animator myAnimator;
+
     public Point GridPosition { get; set; }
 
     private Vector3 destination;
 
     public bool IsActive { get; set; }
+
+
 
     private void Update()
     {
@@ -24,14 +28,16 @@ public class Monster : MonoBehaviour {
     {
         transform.position = LevelManager.Instance.SpawnPortal.transform.position;  //get spawn portals positions
 
-        StartCoroutine(Scale(new Vector3(1f, 1f), new Vector3(2.2f, 2.2f)));
+        myAnimator = GetComponent<Animator>();  //gets attached animator
+
+        StartCoroutine(Scale(new Vector3(1f, 1f), new Vector3(2.2f, 2.2f),false));
 
         SetPath(LevelManager.Instance.Path);
     }
 
-    public IEnumerator Scale(Vector3 from, Vector3 to)  //Monster changing size on spawn/despawn
+    public IEnumerator Scale(Vector3 from, Vector3 to, bool remove)  //Monster changing size on spawn/despawn
     {
-        IsActive = false;
+        //IsActive = false;
 
         float progress = 0;
 
@@ -47,6 +53,10 @@ public class Monster : MonoBehaviour {
         transform.localScale = to;
 
         IsActive = true;
+        if (remove)
+        {
+            Release();
+        }
     }
 
     private void Move()
@@ -59,6 +69,7 @@ public class Monster : MonoBehaviour {
             {
                 if (path != null && path.Count > 0) //still tiles to travel
                 {
+                    Animate(GridPosition, path.Peek().GridPosition);
                     GridPosition = path.Peek().GridPosition;
                     destination = path.Pop().WorldPosition;
                 }
@@ -73,9 +84,58 @@ public class Monster : MonoBehaviour {
         if (newPath != null)
         {
             this.path = newPath;
+
+            Animate(GridPosition, path.Peek().GridPosition);
+
             GridPosition = path.Peek().GridPosition;
+
             destination = path.Pop().WorldPosition;
                 
         }
+    }
+
+    private void Animate(Point currentPos, Point newPos)
+    {
+        if (currentPos.Y > newPos.Y)    //if moving down
+        {
+            myAnimator.SetInteger("Horinzontal", 0);
+            myAnimator.SetInteger("Vertical", 1);
+        }
+        else if (currentPos.Y < newPos.Y) //moving up
+        {
+            myAnimator.SetInteger("Horinzontal", 0);
+            myAnimator.SetInteger("Vertical", -1);
+        }
+        else if (currentPos.Y == newPos.Y)   //moving across
+        {
+            if (currentPos.X > newPos.X)    //left
+            {
+                myAnimator.SetInteger("Horinzontal", -1);
+                myAnimator.SetInteger("Vertical", 0);
+            }
+            else if (currentPos.X < newPos.X)   //right
+            {
+                myAnimator.SetInteger("Horinzontal", 1);
+                myAnimator.SetInteger("Vertical", 0);
+            }
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Coin")
+        {
+            StartCoroutine(Scale(new Vector3(2.2f, 2.2f), new Vector3(1f, 1f), true));
+        }
+    }
+
+    //sent to be reused, much efficeincy many wow
+    private void Release()
+    {
+        IsActive = false;   //stop moving until its done scale
+        GridPosition = LevelManager.Instance.PortalSpawn;
+        GameManager.Instance.Pool.ReleaseObject(gameObject);
+        GameManager.Instance.RemoveMonster(this);   //remove monster from active monster list 
     }
 }
