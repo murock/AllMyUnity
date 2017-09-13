@@ -127,6 +127,8 @@ public class Monster : MonoBehaviour {
         if (other.tag == "Coin")
         {
             StartCoroutine(Scale(new Vector3(2.2f, 2.2f), new Vector3(1f, 1f), true));
+
+            GameManager.Instance.Lives--;   //monster got to end so -lives
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager> {
@@ -8,9 +9,18 @@ public class GameManager : Singleton<GameManager> {
 
     public TowerButton ClickedBtn  { get;  set; }
 
+    [SerializeField]
     private int currency;
 
     private int wave = 0;
+
+    [SerializeField]
+    private int lives;
+
+    public bool gameOver = false;
+
+    [SerializeField]
+    private Text livesTxt;
 
     [SerializeField]
     private Text waveTxt;
@@ -20,6 +30,11 @@ public class GameManager : Singleton<GameManager> {
 
     [SerializeField]
     private GameObject waveBtn;
+
+    [SerializeField]
+    private GameObject gameOverMenu;
+
+
 
     //keeps a list of active monsters so we know when the wave is finished when there are none
     private List<Monster> activeMonsters = new List<Monster>();
@@ -48,6 +63,24 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
+    public int Lives
+    {
+        get
+        {
+            return lives;
+        }
+        set
+        {
+            this.lives = value;
+            if (lives <= 0)
+            {
+                this.lives = 0;
+                GameOver();
+            }
+            livesTxt.text = lives.ToString();
+
+        }
+    }
     private void Awake()
     {
         Pool = GetComponent<ObjectPool>();
@@ -55,7 +88,8 @@ public class GameManager : Singleton<GameManager> {
 
     // Use this for initialization
     void Start () {
-        Currency = 200;
+        Currency = currency;
+        Lives = lives;
 	}
 	
 	// Update is called once per frame
@@ -146,9 +180,30 @@ public class GameManager : Singleton<GameManager> {
     {
         activeMonsters.Remove(monster);
 
-        if (!WaveActive)
+        if (!WaveActive && !gameOver)
         {
             waveBtn.SetActive(true);
         }
+    }
+
+    public void GameOver()
+    {
+        if (!gameOver)
+        {
+            gameOver = true;
+            gameOverMenu.SetActive(true);
+        }
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1; //if timescale is 0 then everything stops moving this returns the timescale to normal speed
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);     //can later be used to reset other levels
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit(); //closes the game
     }
 }
