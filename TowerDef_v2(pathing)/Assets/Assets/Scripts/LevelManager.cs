@@ -27,6 +27,8 @@ public class LevelManager : Singleton<LevelManager> {
 
     private Stack<Node> path;  //given to monsters 
 
+
+
     public Stack<Node> Path //read only
     {
         get
@@ -127,7 +129,7 @@ public class LevelManager : Singleton<LevelManager> {
         SpawnPortal = tmp.GetComponent<Portal>();   //get the script off it
         SpawnPortal.name = "SpawnPortal";
 
-        coinSpawn = new Point(11, 6);
+        coinSpawn = new Point(5,4);
 
         Instantiate(coinPrefab, Tiles[coinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
     }

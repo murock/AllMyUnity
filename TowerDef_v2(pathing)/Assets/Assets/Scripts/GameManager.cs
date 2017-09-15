@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager> {
     [SerializeField]
     private GameObject gameOverMenu;
 
+    private Tower selectedTower;    //current selected tower
 
 
     //keeps a list of active monsters so we know when the wave is finished when there are none
@@ -117,6 +118,27 @@ public class GameManager : Singleton<GameManager> {
         Hover.Instance.Deavtivate();    //get tower out of hand
     }
 
+    public void SelectTower(Tower tower)
+    {
+        if (selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+        selectedTower = tower;
+        selectedTower.Select(); //show/hide sprite rendener ie range
+
+    }
+
+    public void DeselectTower()
+    {
+        if (selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+
+        selectedTower = null;
+    }
+
     private void HandleEscape()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -142,7 +164,7 @@ public class GameManager : Singleton<GameManager> {
 
         for (int i = 0; i < wave; i++)  //spawn as many monsters as wave number 
         {
-            int monsterIndex = 4;//Random.Range(0, 5); ADD MORE MONSTERS WHEN HAVE ANIMATIONS
+            int monsterIndex = Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS
 
             string type = string.Empty;
 
