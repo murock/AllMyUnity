@@ -19,6 +19,8 @@ public class GameManager : Singleton<GameManager> {
 
     public bool gameOver = false;
 
+    private int health = 15;
+
     [SerializeField]
     private Text livesTxt;
 
@@ -189,7 +191,12 @@ public class GameManager : Singleton<GameManager> {
                     break;
             }
             Monster monster = Pool.GetObject(type).GetComponent<Monster>();
-            monster.Spawn();
+            monster.Spawn(health);
+
+            if (wave % 3 == 0)  //every third wave
+            {
+                health += 5;    
+            }
             activeMonsters.Add(monster);
             yield return new WaitForSeconds(2.5f);
 

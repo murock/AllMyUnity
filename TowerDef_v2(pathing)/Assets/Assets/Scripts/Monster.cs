@@ -11,6 +11,9 @@ public class Monster : MonoBehaviour {
 
     private Animator myAnimator;
 
+    [SerializeField]
+    private Stat health;
+
     public Point GridPosition { get; set; }
 
     private Vector3 destination;
@@ -24,11 +27,15 @@ public class Monster : MonoBehaviour {
         Move();
     }
 
-    public void Spawn()
+    public void Spawn(int health)
     {
         transform.position = LevelManager.Instance.SpawnPortal.transform.position;  //get spawn portals positions
 
-        myAnimator = GetComponent<Animator>();  //gets attached animator
+        myAnimator = GetComponent<Animator>();  //gets attached animator.. Could this section be put into another "awake" function
+        this.health.Initialize();
+
+        this.health.MaxVal = health;
+        this.health.CurrentVal = this.health.MaxVal;
 
         StartCoroutine(Scale(new Vector3(1f, 1f), new Vector3(2.2f, 2.2f),false));
 
@@ -139,5 +146,14 @@ public class Monster : MonoBehaviour {
         GridPosition = LevelManager.Instance.PortalSpawn;
         GameManager.Instance.Pool.ReleaseObject(gameObject);
         GameManager.Instance.RemoveMonster(this);   //remove monster from active monster list 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (IsActive)
+        {
+            health.CurrentVal -= damage;
+        }
+
     }
 }

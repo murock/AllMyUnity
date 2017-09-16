@@ -7,9 +7,34 @@ public class Tower : MonoBehaviour {
     [SerializeField]
     private string projectileType;
 
+    [SerializeField]
+    private float projectileSpeed;
+
+    [SerializeField]
+    private int damage;
+
+    public float ProjectileSpeed
+    {
+        get { return projectileSpeed; }
+    }
+
+
     private SpriteRenderer mySpriteRenderer;
 
     private Monster target;
+
+    public Monster Target
+    {
+        get { return target; }
+    }
+
+    public int Damage
+    {
+        get
+        {
+            return damage;
+        }
+    }
 
     private Queue<Monster> monsters = new Queue<Monster>();
 
@@ -71,6 +96,8 @@ public class Tower : MonoBehaviour {
         Projectile projectile = GameManager.Instance.Pool.GetObject(projectileType).GetComponent<Projectile>();
 
         projectile.transform.position = transform.position;
+
+        projectile.Initialize(this);
     }
 
     public void OnTriggerEnter2D(Collider2D other)

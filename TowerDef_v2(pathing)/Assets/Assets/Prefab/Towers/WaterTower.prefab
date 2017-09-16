@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdf34b56512f6a498e48ddc77d41825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileType: WaterProjectile
+  projectileSpeed: 3
+  damage: 5
+  attackCooldown: 3
 --- !u!212 &212696761781627180
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -58,6 +58,8 @@
      <Compile Include="Assets\Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Assets\Scripts\ColoringTest.cs" />
      <Compile Include="Assets\Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Assets\Scripts\HealthBar\BarScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\HealthBar\Stat.cs" />
      <Compile Include="Assets\Assets\Scripts\Hover.cs" />
      <Compile Include="Assets\Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Assets\Scripts\Monster.cs" />
