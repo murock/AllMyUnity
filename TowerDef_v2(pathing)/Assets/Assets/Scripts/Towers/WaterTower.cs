@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WaterTower : Tower {
 
+    [SerializeField]
+    private float slowingFactor;
+
     private void Start()
     {
         ElementType = Element.WATER;
@@ -11,6 +14,6 @@ public class WaterTower : Tower {
 
     public override Debuff GetDebuff()
     {
-        return new WaterDebuff(Target);
+        return new WaterDebuff(slowingFactor, DebuffDuration,Target);
     }
 }

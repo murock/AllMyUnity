@@ -104,6 +104,7 @@ MonoBehaviour:
   debuffDuration: 5
   proc: 100
   attackCooldown: 3
+  slowingFactor: 50
 --- !u!212 &212696761781627180
 SpriteRenderer:
   m_ObjectHideFlags: 1

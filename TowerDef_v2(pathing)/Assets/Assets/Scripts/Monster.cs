@@ -38,6 +38,8 @@ public class Monster : MonoBehaviour {
 
     public bool IsActive { get; set; }
 
+    public float MaxSpeed { get; set; }
+
     public Element ElementType
     {
         get
@@ -45,6 +47,19 @@ public class Monster : MonoBehaviour {
             return elementType;
         }
 
+    }
+
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+
+        set
+        {
+            speed = value;
+        }
     }
 
     private void Update()
@@ -59,6 +74,7 @@ public class Monster : MonoBehaviour {
 
         myAnimator = GetComponent<Animator>();  //gets attached animator.. Could this section be put into another "awake" function
         spriteRenderer = GetComponent<SpriteRenderer>();
+        MaxSpeed = speed;
         this.health.Initialize();
 
         this.health.Bar.Reset();
@@ -98,7 +114,7 @@ public class Monster : MonoBehaviour {
     {
         if (IsActive)   //allows time to grow animation
         {
-            transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);    //move from current pos -> destination at speed*deltaTime
+            transform.position = Vector2.MoveTowards(transform.position, destination, Speed * Time.deltaTime);    //move from current pos -> destination at speed*deltaTime
 
             if (transform.position == destination)
             {
@@ -175,6 +191,7 @@ public class Monster : MonoBehaviour {
     //sent to be reused, much efficeincy many wow
     public void Release()
     {
+        debuffs.Clear();    //removes debuffs from previous life
         IsActive = false;   //stop moving until its done scale
         GridPosition = LevelManager.Instance.PortalSpawn;
         GameManager.Instance.Pool.ReleaseObject(gameObject);

@@ -92,7 +92,6 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
 	// Update is called once per frame
 	void Update () {
         Attack();
-        Debug.Log(target);
 	}
 
     public void Select()
@@ -119,22 +118,26 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
             target = monsters.Dequeue();    //make target next in Q
         }
 
-        if (target != null && target.IsActive)  //dont attack dead or despawned monster
+        if (target != null)
         {
-            if (canAttack)
+            if (target != null && target.IsActive)  //dont attack dead or despawned monster
             {
-                Shoot();
-                canAttack = false;
+                if (canAttack)
+                {
+                    Shoot();
+                    canAttack = false;
+                }
+            }
+            else if (monsters.Count > 0)
+            {
+                target = monsters.Dequeue();
+            }
+            else if (target != null && !target.Alive || !target.IsActive)
+            {
+                target = null;  //if target is dead then de target
             }
         }
-        else if (monsters.Count >  0)   
-        {
-            target = monsters.Dequeue();
-        }
-        if (target != null && !target.Alive)
-        {
-            target = null;  //if target is dead then de target
-        }
+
     }
 
     private void Shoot()

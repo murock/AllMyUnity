@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//delegate for the currency changed event
+public delegate void CurrencyChanged();
+
 public class GameManager : Singleton<GameManager> {
 
+    public event CurrencyChanged Changed;   //event triggered when currency changes
 
     public TowerButton ClickedBtn  { get;  set; }
 
@@ -66,9 +70,10 @@ public class GameManager : Singleton<GameManager> {
 
         set
         {
-
             currency = value;
             this.currencyTxt.text = value.ToString() + " <color=yellow>G</color>";  //sets the currency with a yellow "G" after it
+
+            OnCurrencyChanged();
         }
     }
 
@@ -124,6 +129,15 @@ public class GameManager : Singleton<GameManager> {
             Currency -= ClickedBtn.Price;   //take tower price from currency
         }
         Hover.Instance.Deavtivate();    //get tower out of hand
+    }
+
+    public void OnCurrencyChanged()
+    {
+        if (Changed != null)
+        {
+            Changed();
+            Debug.Log("currency changed");
+        }
     }
 
     public void SelectTower(Tower tower)

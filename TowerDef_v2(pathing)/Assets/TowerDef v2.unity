@@ -3294,7 +3294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9798aa8ceb6087c4793a4a1c10b9d510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 210
+  currency: 5
   lives: 10
   gameOver: 0
   livesTxt: {fileID: 1052601974}

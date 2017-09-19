@@ -11,6 +11,6 @@ public class EarthTower : Tower {
 
     public override Debuff GetDebuff()
     {
-        return new EarthDebuff(Target);
+        return new EarthDebuff(Target, DebuffDuration);
     }
 }
