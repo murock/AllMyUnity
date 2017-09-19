@@ -95,13 +95,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1632672017061942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebdf34b56512f6a498e48ddc77d41825, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d2a90f852dff0e47a7dd3a6376ca1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectileType: PoisonProjectile
   projectileSpeed: 3
-  damage: 5
-  attackCooldown: 3
+  damage: 10
+  debuffDuration: 5
+  proc: 100
+  attackCooldown: 5
+  tickTime: 5
+  splashPrefab: {fileID: 114612616097859574, guid: fdca78f2335648a4a9c7ef0541b6ed0e,
+    type: 2}
+  splashDamage: 5
 --- !u!212 &212777909021517302
 SpriteRenderer:
   m_ObjectHideFlags: 1

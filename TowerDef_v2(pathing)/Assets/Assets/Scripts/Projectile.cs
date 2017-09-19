@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour {
 
     private Tower parent;
 
+    private Element elementType;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -22,6 +24,7 @@ public class Projectile : MonoBehaviour {
     {
         this.target = parent.Target;
         this.parent = parent;
+        this.elementType = parent.ElementType;
     }
 
     private void MoveToTarget()
@@ -43,16 +46,35 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    private void ApplyDebuff()
+    {
+        if (target.ElementType != elementType)
+        {
+            float roll = Random.Range(0, 100);  //chance for debuff to be applied
+
+            if (roll <= parent.Proc)
+            {
+                target.AddDebuff(parent.GetDebuff());
+            }
+        }
+
+
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Monster")
         {
             if (target.gameObject == other.gameObject)
             {
-                target.TakeDamage(parent.Damage);
+                target.TakeDamage(parent.Damage, elementType);
                 Monster hitInfo = other.GetComponent<Monster>();
                 GameManager.Instance.Pool.ReleaseObject(gameObject);
+
+                ApplyDebuff();
             }
         }
     }
+
+
 }

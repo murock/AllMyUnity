@@ -95,12 +95,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1178328264150322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebdf34b56512f6a498e48ddc77d41825, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e0d4d3c96be0d04d8a8c81b6d19099b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectileType: WaterProjectile
   projectileSpeed: 3
   damage: 5
+  debuffDuration: 5
+  proc: 100
   attackCooldown: 3
 --- !u!212 &212696761781627180
 SpriteRenderer:

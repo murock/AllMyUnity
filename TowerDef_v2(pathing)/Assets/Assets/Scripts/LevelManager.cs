@@ -129,7 +129,7 @@ public class LevelManager : Singleton<LevelManager> {
         SpawnPortal = tmp.GetComponent<Portal>();   //get the script off it
         SpawnPortal.name = "SpawnPortal";
 
-        coinSpawn = new Point(5,4);
+        coinSpawn = new Point(10,6);
 
         Instantiate(coinPrefab, Tiles[coinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
     }
