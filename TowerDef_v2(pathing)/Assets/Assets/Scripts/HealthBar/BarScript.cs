@@ -38,6 +38,12 @@ public class BarScript : MonoBehaviour {
         }
     }
 
+    public void Reset()
+    {
+        Value = MaxValue;
+        content.fillAmount = 1;
+    }
+
     private float Map(float value, float inMin, float inMax, float outMin, float outMax)    // actual value, min value, max value, min/max output value
     {
         return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;

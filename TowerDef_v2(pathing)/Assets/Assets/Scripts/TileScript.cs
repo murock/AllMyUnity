@@ -8,7 +8,7 @@ public class TileScript : MonoBehaviour
 
     public Point GridPosition { get; private set; }
 
-    public bool IsEmpty { get; private set; }   //checks if the tile is empty or not
+    public bool IsEmpty { get;  set; }   //checks if the tile is empty or not
 
     private Tower myTower;
 
@@ -104,6 +104,8 @@ public class TileScript : MonoBehaviour
         IsEmpty = false;
 
         ColorTile(Color.white);
+
+        myTower.Price = GameManager.Instance.ClickedBtn.Price;     
 
         GameManager.Instance.BuyTower();
 

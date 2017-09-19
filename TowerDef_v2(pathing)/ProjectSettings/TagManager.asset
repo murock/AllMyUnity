@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Monster
+  - Tile
   layers:
   - Default
   - TransparentFX

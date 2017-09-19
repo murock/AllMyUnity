@@ -9,10 +9,17 @@ public class Monster : MonoBehaviour {
 
     private Stack<Node> path;
 
+    private SpriteRenderer spriteRenderer;
+
     private Animator myAnimator;
 
     [SerializeField]
     private Stat health;
+
+    public bool Alive
+    {
+        get { return health.CurrentVal > 0; }
+    }
 
     public Point GridPosition { get; set; }
 
@@ -32,8 +39,10 @@ public class Monster : MonoBehaviour {
         transform.position = LevelManager.Instance.SpawnPortal.transform.position;  //get spawn portals positions
 
         myAnimator = GetComponent<Animator>();  //gets attached animator.. Could this section be put into another "awake" function
+        spriteRenderer = GetComponent<SpriteRenderer>();
         this.health.Initialize();
 
+        this.health.Bar.Reset();
         this.health.MaxVal = health;
         this.health.CurrentVal = this.health.MaxVal;
 
@@ -137,10 +146,15 @@ public class Monster : MonoBehaviour {
 
             GameManager.Instance.Lives--;   //monster got to end so -lives
         }
+
+        if (other.tag == "Tile")
+        {
+            spriteRenderer.sortingOrder = other.GetComponent<TileScript>().GridPosition.Y;  //so monster appears in front of objects behind it
+        }
     }
 
     //sent to be reused, much efficeincy many wow
-    private void Release()
+    public void Release()
     {
         IsActive = false;   //stop moving until its done scale
         GridPosition = LevelManager.Instance.PortalSpawn;
@@ -153,6 +167,17 @@ public class Monster : MonoBehaviour {
         if (IsActive)
         {
             health.CurrentVal -= damage;
+
+            if (health.CurrentVal <= 0)
+            {
+                GameManager.Instance.Currency += 2;
+
+                myAnimator.SetTrigger("Die");   //trigger death animator
+
+                IsActive = false;
+
+                GetComponent<SpriteRenderer>().sortingOrder--;  //put the dead moster back 1 in the sorting order so other monsters can step on it
+            }
         }
 
     }

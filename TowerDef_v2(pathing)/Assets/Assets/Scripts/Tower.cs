@@ -13,6 +13,8 @@ public class Tower : MonoBehaviour {
     [SerializeField]
     private int damage;
 
+    public int Price { get; set; }
+
     public float ProjectileSpeed
     {
         get { return projectileSpeed; }
@@ -88,6 +90,14 @@ public class Tower : MonoBehaviour {
                 Shoot();
                 canAttack = false;
             }
+        }
+        else if (monsters.Count >  0)   
+        {
+            target = monsters.Dequeue();
+        }
+        if (target != null && !target.Alive)
+        {
+            target = null;  //if target is dead then de target
         }
     }
 

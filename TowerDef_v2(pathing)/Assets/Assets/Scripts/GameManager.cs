@@ -36,6 +36,12 @@ public class GameManager : Singleton<GameManager> {
     [SerializeField]
     private GameObject gameOverMenu;
 
+    [SerializeField]
+    private GameObject upgradePanel;
+
+    [SerializeField]
+    private Text sellText;
+
     private Tower selectedTower;    //current selected tower
 
 
@@ -129,6 +135,8 @@ public class GameManager : Singleton<GameManager> {
         selectedTower = tower;
         selectedTower.Select(); //show/hide sprite rendener ie range
 
+        sellText.text = "+" + (selectedTower.Price / 2).ToString() + "<color=yellow>G</color>";
+        upgradePanel.SetActive(true);
     }
 
     public void DeselectTower()
@@ -137,7 +145,7 @@ public class GameManager : Singleton<GameManager> {
         {
             selectedTower.Select();
         }
-
+        upgradePanel.SetActive(false);
         selectedTower = null;
     }
 
@@ -166,7 +174,7 @@ public class GameManager : Singleton<GameManager> {
 
         for (int i = 0; i < wave; i++)  //spawn as many monsters as wave number 
         {
-            int monsterIndex = Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS
+            int monsterIndex = 4;//Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS
 
             string type = string.Empty;
 
@@ -235,4 +243,18 @@ public class GameManager : Singleton<GameManager> {
     {
         Application.Quit(); //closes the game
     }
+
+    public void SellTower()
+    {
+        if (selectedTower != null)
+        {
+            Currency += selectedTower.Price / 2;
+            selectedTower.GetComponentInParent<TileScript>().IsEmpty = true;
+
+            Destroy(selectedTower.transform.parent.gameObject);
+
+            DeselectTower();
+        }
+    }
+
 }

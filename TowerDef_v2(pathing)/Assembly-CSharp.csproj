@@ -83,6 +83,7 @@
      <Compile Include="Assets\Assets\Sprites\Previous 2d game\Scripts\Tutorial.cs" />
      <Compile Include="Assets\Assets\Sprites\Previous 2d game\ShootEnemies.cs" />
      <Compile Include="Assets\Assets\Sprites\Previous 2d game\SpawnEnemy.cs" />
+     <Compile Include="Assets\DeathBehaviour.cs" />
      <None Include="Assets\Assets\Sprites\Previous 2d game\Font\readme.txt" />
      <None Include="Assets\Assets\Resources\Level.txt" />
  <Reference Include="UnityEngine.UI">
