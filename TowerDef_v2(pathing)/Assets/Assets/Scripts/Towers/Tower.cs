@@ -113,7 +113,7 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
             }
         }
         //priority system attacks first one to enter range
-        if (target == null && monsters.Count > 0)  //if we have no target, but there are more monsters in the Q
+        if (target == null && monsters.Count > 0 && monsters.Peek().IsActive)  //if we have no target, but there are more monsters in the Q
         {
             target = monsters.Dequeue();    //make target next in Q
         }
@@ -128,11 +128,7 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
                     canAttack = false;
                 }
             }
-            else if (monsters.Count > 0)
-            {
-                target = monsters.Dequeue();
-            }
-            else if (target != null && !target.Alive || !target.IsActive)
+            if (target != null && !target.Alive || !target.IsActive)
             {
                 target = null;  //if target is dead then de target
             }

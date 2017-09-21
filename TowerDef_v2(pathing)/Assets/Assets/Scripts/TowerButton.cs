@@ -67,4 +67,11 @@ public class TowerButton : MonoBehaviour {
             priceTxt.color = Color.grey;
         }
     }
+
+    //gets the tower type
+    public void ShowInfo(string type)
+    {
+        GameManager.Instance.SetToolTipText(type);
+        GameManager.Instance.ShowStats();
+    }
 }
