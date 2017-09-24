@@ -35,6 +35,10 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
 
     private Monster target;
 
+    //towers cuurent upgrade level
+
+    public int Level { get;protected set; }
+
     public Monster Target
     {
         get { return target; }
@@ -83,8 +87,10 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
     [SerializeField]
     private float attackCooldown;
 
-	// Use this for initialization
-	void Start () {
+    public TowerUpgrade[] Upgrades { get;protected set; }
+
+    // Use this for initialization
+    void Start () {
      
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 	}
@@ -96,7 +102,9 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
 
     public void Select()
     {
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         mySpriteRenderer.enabled = !mySpriteRenderer.enabled;
+        GameManager.Instance.UpdateUpgradeTip();   //makes sure correct tooltip is displayed
     }
 
     private void Attack()
@@ -134,6 +142,11 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
             }
         }
 
+    }
+
+    public virtual string GetStats()
+    {
+        return string.Format("\nLevel: {0} \nDamage{1} \nProc: {2}% \nDebuff: {3}secs", Level, damage, proc, DebuffDuration);
     }
 
     private void Shoot()

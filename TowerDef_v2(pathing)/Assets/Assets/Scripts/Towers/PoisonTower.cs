@@ -31,6 +31,12 @@ public class PoisonTower : Tower {
     private void Start()
     {
         ElementType = Element.POISON;
+
+        Upgrades = new TowerUpgrade[]
+        {
+            new TowerUpgrade(2,1,.5f,-0.1f,1),   // first upgrade
+            new TowerUpgrade(5,1,.5f,-0.1f,1),   //second upgrade
+        };
     }
 
     public override Debuff GetDebuff()

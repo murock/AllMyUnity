@@ -50,9 +50,6 @@ public class GameManager : Singleton<GameManager> {
     private Text sellText;
 
     [SerializeField]
-    private Text sizeText;
-
-    [SerializeField]
     private Text statTxt;
 
     private Tower selectedTower;    //current selected tower
@@ -285,10 +282,21 @@ public class GameManager : Singleton<GameManager> {
         statsPanel.SetActive(!statsPanel.activeSelf);   //toggle panel visibility
     }
 
+    public void ShowSelectedTowerStats()
+    {
+        statsPanel.SetActive(!statsPanel.activeSelf);   //toggle panel visibility
+        UpdateUpgradeTip();
+    }
     public void SetToolTipText(string txt)
     {
         statTxt.text = txt;
-        sizeText.text = txt;
     }
 
+    public void UpdateUpgradeTip()  //only used for the upgrade part of the tool tip
+    {
+        if (selectedTower != null)  //if we have tower
+        {
+            SetToolTipText(selectedTower.GetStats());
+        }
+    }
 }

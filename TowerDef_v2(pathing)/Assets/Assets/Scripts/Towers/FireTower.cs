@@ -31,6 +31,12 @@ public class FireTower : Tower {
     private void Start()
     {
         ElementType = Element.FIRE;
+
+        Upgrades = new TowerUpgrade[]
+        {
+            new TowerUpgrade(2,2,.5f,5,-0.1f,1),    //first upgrade
+            new TowerUpgrade(5,3,.5f,5,-0.1f,1),    //second upgrade
+        };
     }
 
     public override Debuff GetDebuff()
