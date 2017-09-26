@@ -19,4 +19,9 @@ public class EarthTower : Tower {
     {
         return new EarthDebuff(Target, DebuffDuration);
     }
+
+    public override string GetStats()
+    {
+        return string.Format("<color=#8b4513ff>{0}</color>{1}", "<size=20><b>Earth</b></size>", base.GetStats());
+    }
 }

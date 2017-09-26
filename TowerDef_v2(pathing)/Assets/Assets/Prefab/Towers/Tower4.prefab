@@ -102,7 +102,7 @@ MonoBehaviour:
   projectileSpeed: 3
   damage: 5
   debuffDuration: 1
-  proc: 100
+  proc: 10
   attackCooldown: 3
 --- !u!212 &212918811775243124
 SpriteRenderer:

@@ -89,10 +89,21 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
 
     public TowerUpgrade[] Upgrades { get;protected set; }
 
+    public TowerUpgrade NextUpgrade
+    {
+        get
+        {
+            if (Upgrades.Length > Level -1)
+            {
+                return Upgrades[Level - 1];
+            }
+            return null;
+        }
+    }
     // Use this for initialization
-    void Start () {
-     
+    void Awake () {    
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        Level = 1;
 	}
 	
 	// Update is called once per frame
@@ -102,7 +113,6 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
 
     public void Select()
     {
-        mySpriteRenderer = GetComponent<SpriteRenderer>();
         mySpriteRenderer.enabled = !mySpriteRenderer.enabled;
         GameManager.Instance.UpdateUpgradeTip();   //makes sure correct tooltip is displayed
     }
@@ -146,6 +156,11 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
 
     public virtual string GetStats()
     {
+        if (NextUpgrade != null)    //if upgrade avaliable
+        {
+            return string.Format("\nLevel: {0} \nDamage: {1}  <color=#00ff00ff> +{4}</color>\nProc: {2}% <color=#00ff00ff>+{5}%</color>\nDebuff: {3}sec <color=#00ff00ff>+{6}</color>",
+                Level, damage, proc, DebuffDuration, NextUpgrade.Damage, NextUpgrade.ProcChance, NextUpgrade.DebuffDuration);
+        }
         return string.Format("\nLevel: {0} \nDamage{1} \nProc: {2}% \nDebuff: {3}secs", Level, damage, proc, DebuffDuration);
     }
 
@@ -156,6 +171,18 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
         projectile.transform.position = transform.position;
 
         projectile.Initialize(this);
+    }
+
+    public virtual void Upgrade()
+    {
+        GameManager.Instance.Currency -= NextUpgrade.Price;     //take gold from player
+        Price += NextUpgrade.Price;                             //increase price of tower by upgrade cost
+        this.damage += NextUpgrade.Damage;                      //increase damage   
+        this.proc += NextUpgrade.ProcChance;                    //increase proc chance
+        this.DebuffDuration += NextUpgrade.DebuffDuration;      //increase debuff duration
+        Level++;                                                //increase upgrade level
+        GameManager.Instance.UpdateUpgradeTip();                //update tooltip to match
+        
     }
 
     public void OnTriggerEnter2D(Collider2D other)

@@ -34,13 +34,30 @@ public class PoisonTower : Tower {
 
         Upgrades = new TowerUpgrade[]
         {
-            new TowerUpgrade(2,1,.5f,-0.1f,1),   // first upgrade
-            new TowerUpgrade(5,1,.5f,-0.1f,1),   //second upgrade
+            new TowerUpgrade(2,1,0.5f,5,-0.1f,1),   // first upgrade
+            new TowerUpgrade(5,1,0.5f,5,-0.1f,1),   //second upgrade
         };
     }
 
     public override Debuff GetDebuff()
     {
         return new PoisonDebuff(splashDamage, tickTime, splashPrefab, DebuffDuration, Target);
+    }
+    public override string GetStats()
+    {
+        if (NextUpgrade != null)
+        {
+            return string.Format("<color=#00ff00ff>{0}</color>{1} \nTick time: {2} <color=#00ff00ff>{4}</color>\nSplash damage: {3} <color=#00ff00ff>+{5}</color>", "<size=20><b>Poison</b></size>", base.GetStats(), TickTime, SplashDamage, NextUpgrade.TickTime, NextUpgrade.SpecialDamage);
+        }
+
+        return string.Format("<color=#00ff00ff>{0}</color>{1} \nTick time: {2}\nSplash damage: {3}", "<size=20><b>Poison</b></size>", base.GetStats(), TickTime, SplashDamage);
+
+    }
+    
+    public override void Upgrade()
+    {
+        this.splashDamage += NextUpgrade.SpecialDamage;
+        this.tickTime -= NextUpgrade.TickTime;
+        base.Upgrade();
     }
 }

@@ -52,6 +52,12 @@ public class GameManager : Singleton<GameManager> {
     [SerializeField]
     private Text statTxt;
 
+    [SerializeField]
+    private Text upgradePrice;
+
+    [SerializeField]
+    private GameObject inGameMenu;
+
     private Tower selectedTower;    //current selected tower
 
 
@@ -173,7 +179,19 @@ public class GameManager : Singleton<GameManager> {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Hover.Instance.Deavtivate();
+            if (selectedTower == null && !Hover.Instance.IsVisible)
+            {
+                ShowInGameMenu();
+            }
+            //if holding something then drop it
+            else if (Hover.Instance.IsVisible)
+            {
+                DropTower();
+            }
+            else if (selectedTower != null)
+            {
+                DeselectTower();
+            }
         }
     }
 
@@ -296,7 +314,49 @@ public class GameManager : Singleton<GameManager> {
     {
         if (selectedTower != null)  //if we have tower
         {
+            sellText.text = "+" + (selectedTower.Price / 2).ToString() + "<color=yellow>G</color>";
             SetToolTipText(selectedTower.GetStats());
+
+            if (selectedTower.NextUpgrade != null)
+            {
+                upgradePrice.text = selectedTower.NextUpgrade.Price.ToString() + "<color=yellow>G</color>";
+            }
+            else
+            {
+                upgradePrice.text = string.Empty;
+            }
         }
+    }
+
+    public void UpgradeTower()
+    {
+        if (selectedTower != null)
+        {
+            if (selectedTower.Level <= selectedTower.Upgrades.Length && Currency >= selectedTower.NextUpgrade.Price)
+            {
+                selectedTower.Upgrade();
+            }
+        }
+    }
+
+    public void ShowInGameMenu()
+    {
+        inGameMenu.SetActive(!inGameMenu.activeSelf);
+
+        if (!inGameMenu.activeSelf)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0; //pause
+        }
+    }
+
+
+    private void DropTower()
+    {
+        ClickedBtn = null; //drop the tower
+        Hover.Instance.Deavtivate();
     }
 }
