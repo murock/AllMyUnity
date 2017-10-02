@@ -55,6 +55,14 @@ public class LevelManager : Singleton<LevelManager> {
         }
     }
 
+    public Point CoinSpawn
+    {
+        get
+        {
+            return coinSpawn;
+        }
+    }
+
     // Use this for initialization
     void Start () {
         CreateLevel();

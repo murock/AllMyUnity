@@ -211,6 +211,8 @@ public class Monster : MonoBehaviour {
 
             if (health.CurrentVal <= 0)
             {
+                SoundManager.Instance.PlaySFX("explosion");
+
                 GameManager.Instance.Currency += 2;
 
                 myAnimator.SetTrigger("Die");   //trigger death animator

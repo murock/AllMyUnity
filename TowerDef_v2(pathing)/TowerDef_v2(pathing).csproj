@@ -101,6 +101,7 @@
     <Compile Include="Assets\Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Assets\Scripts\TileScript.cs" />
     <Compile Include="Assets\Assets\Scripts\TowerButton.cs" />
     <Compile Include="Assets\Assets\Scripts\Towers\EarthTower.cs" />

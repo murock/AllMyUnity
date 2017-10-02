@@ -57,8 +57,7 @@ public static class AStar  {
                         else //else diagonal
                         {
                             if(!ConnectedDiagonally(currentNode,nodes[neighbourPos]))
-                            {
-                                Debug.Log("current node is connected diagonally + blocked" + currentNode.GridPosition.X + " " + currentNode.GridPosition.Y);
+                            {                          
                                 continue; //go to next execution in loop
                             }
                             gCost = 14;
@@ -95,18 +94,19 @@ public static class AStar  {
             {
                 while (currentNode.GridPosition != start)   //stop when you reach the start
                 {
-                  //  Debug.Log("node being added to path is: " + currentNode.GridPosition.X + " " + currentNode.GridPosition.Y);
                     finalPath.Push(currentNode);
                     currentNode = currentNode.Parent;
                 }
-               // GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);  //getting called too many times? //ONLY FOR DEBUGGING REMOVE LATER need to sort this mess XD
-                break;  //we found the goal
+                // GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);  //getting called too many times? //ONLY FOR DEBUGGING REMOVE LATER need to sort this mess XD
+                // break;  //we found the goal
+                return finalPath;
             }
             
 
         }
-       // GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
-        return finalPath;
+        // GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
+        //  return finalPath;
+        return null;    //no path found
 
     }
 

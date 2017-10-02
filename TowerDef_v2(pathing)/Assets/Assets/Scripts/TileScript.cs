@@ -95,6 +95,12 @@ public class TileScript : MonoBehaviour
 
     private void PlaceTower()
     {
+        WalkAble = false;
+        if(AStar.GetPath(LevelManager.Instance.PortalSpawn,LevelManager.Instance.CoinSpawn) == null)
+        {
+            WalkAble = true;
+            return; //no path ie tower block
+        }
         GameObject tower = Instantiate(GameManager.Instance.ClickedBtn.TowerPrefab, transform.position, Quaternion.identity);     //quanternion so it does not rotate
 
         tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y; //stops the towers overlapping 

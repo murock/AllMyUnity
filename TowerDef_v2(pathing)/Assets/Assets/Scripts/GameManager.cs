@@ -58,6 +58,9 @@ public class GameManager : Singleton<GameManager> {
     [SerializeField]
     private GameObject inGameMenu;
 
+    [SerializeField]
+    private GameObject optionsMenu;
+
     private Tower selectedTower;    //current selected tower
 
 
@@ -148,7 +151,6 @@ public class GameManager : Singleton<GameManager> {
         if (Changed != null)
         {
             Changed();
-            Debug.Log("currency changed");
         }
     }
 
@@ -341,16 +343,25 @@ public class GameManager : Singleton<GameManager> {
 
     public void ShowInGameMenu()
     {
-        inGameMenu.SetActive(!inGameMenu.activeSelf);
-
-        if (!inGameMenu.activeSelf)
+        if (optionsMenu.activeSelf)
         {
-            Time.timeScale = 1;
+            ShowMain();
         }
         else
         {
-            Time.timeScale = 0; //pause
+            inGameMenu.SetActive(!inGameMenu.activeSelf);
+
+            if (!inGameMenu.activeSelf)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0; //pause
+            }
         }
+
+
     }
 
 
@@ -358,5 +369,17 @@ public class GameManager : Singleton<GameManager> {
     {
         ClickedBtn = null; //drop the tower
         Hover.Instance.Deavtivate();
+    }
+
+    public void ShowOptions()
+    {
+        inGameMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void ShowMain()
+    {
+        inGameMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
 }
