@@ -197,7 +197,7 @@ public class GameManager : Singleton<GameManager> {
 
         for (int i = 0; i < wave; i++)  //spawn as many monsters as wave number 
         {
-            int monsterIndex = 1;// Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS //4
+            int monsterIndex = 4;// Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS //4
 
             string type = string.Empty;
 
