@@ -9,11 +9,6 @@ public class CameraMovement : MonoBehaviour {
 
     private float xMax;
     private float yMin;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	private void Update () {
