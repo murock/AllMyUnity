@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907d507c15489f34ca355a8260a24677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 1389019449155626, guid: e2fc53fcf19e9d0468279cd2fe70ac9f,
+  towerPrefab: {fileID: 1943452684916138, guid: ed465e129eed9104c9736e60d0a1f258,
     type: 2}
   sprite: {fileID: 21300000, guid: 8917c6ec45cfc8142862ab7698eb6667, type: 3}
   price: 2
@@ -4062,6 +4062,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e912d9a74d49c614a9b261669b1baa59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endPointX: 10
+  endPointY: 6
+  startPointX: 0
+  startPointY: 0
   tilePrefabs:
   - {fileID: 1488321542684200, guid: 95ac5919e64004941b26fd8ab78ee9f4, type: 2}
   - {fileID: 1760923061945150, guid: df9111daeeed381489521a8dff51c1ce, type: 2}
@@ -6561,9 +6565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9798aa8ceb6087c4793a4a1c10b9d510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: 0
   currency: 99
   lives: 10
-  gameOver: 0
   livesTxt: {fileID: 1052601974}
   waveTxt: {fileID: 1674046057}
   currencyTxt: {fileID: 2069566670}

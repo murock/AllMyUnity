@@ -83,7 +83,6 @@
     <Compile Include="Assets\Assets\Scripts\Astar\DebugTile.cs" />
     <Compile Include="Assets\Assets\Scripts\Astar\Node.cs" />
     <Compile Include="Assets\Assets\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\Assets\Scripts\ColoringTest.cs" />
     <Compile Include="Assets\Assets\Scripts\Debuffs\Debuff.cs" />
     <Compile Include="Assets\Assets\Scripts\Debuffs\EarthDebuff.cs" />
     <Compile Include="Assets\Assets\Scripts\Debuffs\FireDebuff.cs" />
@@ -125,6 +124,8 @@
     <Compile Include="Assets\DeathBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Assets\Resources\BugList.txt" />
+    <None Include="Assets\Assets\Resources\CheatSheet.txt" />
     <None Include="Assets\Assets\Resources\Level.txt" />
     <None Include="Assets\Assets\Sprites\Previous 2d game\Font\readme.txt" />
   </ItemGroup>

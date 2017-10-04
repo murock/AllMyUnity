@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e4988f7d394fc458ecc36afe8ce729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldOnDeath: 3
   speed: 1
   elementType: 4
   health:

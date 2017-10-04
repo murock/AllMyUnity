@@ -7,6 +7,14 @@ public class WaterTower : Tower {
 
     [SerializeField]
     private float slowingFactor;
+    [SerializeField]
+    private int price1, damage1;
+    [SerializeField]
+    private float debuffDuration1, procChance1, slowingFactor1;
+    [SerializeField]
+    private int price2, damage2;
+    [SerializeField]
+    private float debuffDuration2, procChance2, slowingFactor2;
 
     public float SlowingFactor
     {
@@ -20,10 +28,13 @@ public class WaterTower : Tower {
     {
         ElementType = Element.WATER;
 
+
         Upgrades = new TowerUpgrade[]
         {
-            new TowerUpgrade(2,1,1,2,10),   // first upgrade
-            new TowerUpgrade(2,1,1,2,20),   //second upgrade
+           // new TowerUpgrade(2,1,1,2,10),   // first upgrade
+            //new TowerUpgrade(2,1,1,2,20),   //second upgrade
+            new TowerUpgrade(price1,damage1,debuffDuration1,procChance1,slowingFactor1),
+            new TowerUpgrade(price2,damage2,debuffDuration2,procChance2,slowingFactor2),
         };
     }
 

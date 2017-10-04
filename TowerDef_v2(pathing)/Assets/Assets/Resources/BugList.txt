@@ -1,0 +1,2 @@
+
+1) Wave ends when no monster are left, this can be an issue if the first monster is killed before the second spawns.

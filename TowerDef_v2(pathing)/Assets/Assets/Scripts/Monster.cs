@@ -5,6 +5,9 @@ using UnityEngine;
 public class Monster : MonoBehaviour {
 
     [SerializeField]
+    private int goldOnDeath = 2;
+
+    [SerializeField]
     private float speed;
 
     private Stack<Node> path;
@@ -36,7 +39,10 @@ public class Monster : MonoBehaviour {
 
     private Vector3 destination;
 
-    public bool IsActive { get; set; }
+    public bool IsActive {
+        get;
+
+        set; }
 
     public float MaxSpeed { get; set; }
 
@@ -213,7 +219,7 @@ public class Monster : MonoBehaviour {
             {
                 SoundManager.Instance.PlaySFX("explosion");
 
-                GameManager.Instance.Currency += 2;
+                GameManager.Instance.Currency += goldOnDeath;
 
                 myAnimator.SetTrigger("Die");   //trigger death animator
 

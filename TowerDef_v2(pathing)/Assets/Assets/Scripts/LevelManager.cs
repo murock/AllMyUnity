@@ -6,6 +6,9 @@ using System;
 public class LevelManager : Singleton<LevelManager> {
 
     [SerializeField]
+    private int endPointX, endPointY, startPointX, startPointY;
+
+    [SerializeField]
     private GameObject[] tilePrefabs;
 
     [SerializeField]
@@ -82,8 +85,8 @@ public class LevelManager : Singleton<LevelManager> {
 
         mapSize = new global::Point(mapData[0].ToCharArray().Length, mapData.Length);
 
-        int mapX = mapData[0].ToCharArray().Length;
-        int mapY = mapData.Length;
+        int mapX = mapData[0].ToCharArray().Length; //largest possible x position + 1
+        int mapY = mapData.Length;                  //largest possible y position + 1
 
         Vector3 worldStart = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
 
@@ -98,9 +101,9 @@ public class LevelManager : Singleton<LevelManager> {
             }
         }
 
-        maxTile = Tiles[new Point(mapX - 1, mapY - 1)].transform.position;
+        maxTile = Tiles[new Point(mapX - 1, mapY - 1)].transform.position;  //furthest right and down tile
 
-        cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
+        cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));  //camera cannot pan  outside of tile area
     }
 
     private void PlaceTile(string tileType,int x, int y, Vector3 worldStart)
@@ -132,12 +135,12 @@ public class LevelManager : Singleton<LevelManager> {
 
     private void SpawnPortals()
     {
-        portalSpawn = new Point(0, 0);
+        portalSpawn = new Point(startPointX, startPointY);
         GameObject tmp = (GameObject)Instantiate(portalPrefab, Tiles[PortalSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);   //spawn portal
         SpawnPortal = tmp.GetComponent<Portal>();   //get the script off it
         SpawnPortal.name = "SpawnPortal";
 
-        coinSpawn = new Point(10,6);
+        coinSpawn = new Point(endPointX,endPointY);
 
         Instantiate(coinPrefab, Tiles[coinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
     }

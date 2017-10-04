@@ -12,6 +12,15 @@ public class PoisonTower : Tower {
     [SerializeField]
     private int splashDamage;
 
+    [SerializeField]
+    private float debuffDuration1, procChance1, tickTime1;
+    [SerializeField]
+    private int price1, damage1, specialDamage1;
+    [SerializeField]
+    private float debuffDuration2, procChance2, tickTime2;
+    [SerializeField]
+    private int price2, damage2, specialDamage2;
+
     public int SplashDamage
     {
         get
@@ -34,8 +43,10 @@ public class PoisonTower : Tower {
 
         Upgrades = new TowerUpgrade[]
         {
-            new TowerUpgrade(2,1,0.5f,5,-0.1f,1),   // first upgrade
-            new TowerUpgrade(5,1,0.5f,5,-0.1f,1),   //second upgrade
+            //new TowerUpgrade(2,1,0.5f,5,-0.1f,1),   // first upgrade
+            //new TowerUpgrade(5,1,0.5f,5,-0.1f,1),   //second upgrade
+            new TowerUpgrade(price1,damage1,debuffDuration1,procChance1,tickTime1, specialDamage1),
+            new TowerUpgrade(price2,damage2,debuffDuration2,procChance2,tickTime2, specialDamage2),
         };
     }
 

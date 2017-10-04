@@ -108,6 +108,18 @@ MonoBehaviour:
   splashPrefab: {fileID: 114612616097859574, guid: fdca78f2335648a4a9c7ef0541b6ed0e,
     type: 2}
   splashDamage: 5
+  debuffDuration1: 0.5
+  procChance1: 5
+  tickTime1: -0.1
+  price1: 2
+  damage1: 1
+  specialDamage1: 1
+  debuffDuration2: 0.5
+  procChance2: 5
+  tickTime2: -0.1
+  price2: 5
+  damage2: 1
+  specialDamage2: 1
 --- !u!212 &212777909021517302
 SpriteRenderer:
   m_ObjectHideFlags: 1

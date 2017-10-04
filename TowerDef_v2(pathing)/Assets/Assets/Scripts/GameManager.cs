@@ -11,65 +11,46 @@ public class GameManager : Singleton<GameManager> {
 
     public event CurrencyChanged Changed;   //event triggered when currency changes
 
-    public TowerButton ClickedBtn  { get;  set; }
-
-    [SerializeField]
-    private int currency;
-
     private int wave = 0;
-
-    [SerializeField]
-    private int lives;
-
     public bool gameOver = false;
-
     private int health = 15;
-
-    [SerializeField]
-    private Text livesTxt;
-
-    [SerializeField]
-    private Text waveTxt;
-
-    [SerializeField]
-    private Text currencyTxt;
-
-    [SerializeField]
-    private GameObject waveBtn;
-
-    [SerializeField]
-    private GameObject gameOverMenu;
-
-    [SerializeField]
-    private GameObject upgradePanel;
-
-    [SerializeField]
-    private GameObject statsPanel;
-
-    [SerializeField]
-    private Text sellText;
-
-    [SerializeField]
-    private Text statTxt;
-
-    [SerializeField]
-    private Text upgradePrice;
-
-    [SerializeField]
-    private GameObject inGameMenu;
-
-    [SerializeField]
-    private GameObject optionsMenu;
-
     private Tower selectedTower;    //current selected tower
-
-
     //keeps a list of active monsters so we know when the wave is finished when there are none
     private List<Monster> activeMonsters = new List<Monster>();
 
-    public ObjectPool Pool { get; set; }
+    [SerializeField]
+    private int currency;
+    [SerializeField]
+    private int lives;
+    [SerializeField]
+    private Text livesTxt;
+    [SerializeField]
+    private Text waveTxt;
+    [SerializeField]
+    private Text currencyTxt;
+    [SerializeField]
+    private GameObject waveBtn;
+    [SerializeField]
+    private GameObject gameOverMenu;
+    [SerializeField]
+    private GameObject upgradePanel;
+    [SerializeField]
+    private GameObject statsPanel;
+    [SerializeField]
+    private Text sellText;
+    [SerializeField]
+    private Text statTxt;
+    [SerializeField]
+    private Text upgradePrice;
+    [SerializeField]
+    private GameObject inGameMenu;
+    [SerializeField]
+    private GameObject optionsMenu;
 
-    public bool WaveActive  //are there monsters left?
+    public ObjectPool Pool { get; set; }
+    public TowerButton ClickedBtn { get; set; }
+
+    public bool WaveActive  //are there monsters left?  
     {
         get {
             return activeMonsters.Count > 0;
@@ -110,7 +91,9 @@ public class GameManager : Singleton<GameManager> {
 
         }
     }
-    private void Awake()
+
+
+    private void Awake()    //called after all components have intialized called before start
     {
         Pool = GetComponent<ObjectPool>();
     }
@@ -123,7 +106,7 @@ public class GameManager : Singleton<GameManager> {
 	
 	// Update is called once per frame
 	void Update () {
-        HandleEscape();
+        HandleEscape(); 
 	}
 
     // called from Onclick event in unity in the Canvas -> towerPanel ->Btn
@@ -214,7 +197,7 @@ public class GameManager : Singleton<GameManager> {
 
         for (int i = 0; i < wave; i++)  //spawn as many monsters as wave number 
         {
-            int monsterIndex = 4;//Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS
+            int monsterIndex = 1;// Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS //4
 
             string type = string.Empty;
 

@@ -34,14 +34,17 @@ public class CameraMovement : MonoBehaviour {
             transform.Translate(Vector3.right * cameraSpeed * Time.deltaTime);
         }
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x,0,xMax), Mathf.Clamp(transform.position.y,yMin,0),-10);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,0,xMax), Mathf.Clamp(transform.position.y,yMin,0),-10);   // keeps the camera in bounds
     }
 
+    //stops camera from panning outside of tile area
     public void SetLimits(Vector3 maxTile)
     {
-        Vector3 wp = Camera.main.ViewportToWorldPoint(new Vector3(1, 0));
+        Vector3 wp = Camera.main.ViewportToWorldPoint(new Vector3(1, 0));   //gets the lower right pos of camera
 
-        xMax = maxTile.x - wp.x;
-        yMin = maxTile.y - wp.y;
+        Debug.Log("wp is " + wp);
+
+        xMax = maxTile.x - wp.x;    //takes the camera x size away from the width of the tiles
+        yMin = maxTile.y - wp.y;    //does the same for y
     }
 }

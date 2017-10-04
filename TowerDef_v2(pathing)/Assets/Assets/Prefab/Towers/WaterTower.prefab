@@ -105,6 +105,16 @@ MonoBehaviour:
   proc: 10
   attackCooldown: 3
   slowingFactor: 50
+  price1: 2
+  damage1: 1
+  debuffDuration1: 1
+  procChance1: 2
+  slowingFactor1: 10
+  price2: 2
+  damage2: 1
+  debuffDuration2: 1
+  procChance2: 2
+  slowingFactor2: 20
 --- !u!212 &212696761781627180
 SpriteRenderer:
   m_ObjectHideFlags: 1
