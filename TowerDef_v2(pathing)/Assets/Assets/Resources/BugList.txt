@@ -1,2 +1,8 @@
 
 1) Wave ends when no monster are left, this can be an issue if the first monster is killed before the second spawns.
+
+2) Have resell cost editable from inspector
+
+3) targeting needs help
+
+4) EDIT HEALTHF ROM INSPECTOR

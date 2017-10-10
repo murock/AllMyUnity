@@ -4,8 +4,8 @@
 
 - Initial tower cost in Hierarchy window->Canvas->TowerPanel->Tw"X"Btn then in inspector under tower button script the price can be changed
 
-- Edit place where mobs run to and from. Click on the LevelManager then under the script Start/End Point X & Y
+- Edit place where mobs run to and from. Click on the in Heirarchy LevelManager then under the script Start/End Point X & Y
 
-- Starting Currency + Lives edited from Gamemanager
+- Starting Currency + Lives edited from Heirarchy Gamemanager
 
 - Gold on mob kill can be found in Prefabs->Monsters then under Monster Script "Gold On Death"

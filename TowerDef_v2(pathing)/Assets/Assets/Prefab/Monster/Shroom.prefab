@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldOnDeath: 2
   speed: 1
-  elementType: 0
+  elementType: 1
   health:
     bar: {fileID: 114589416767195356}
     maxVal: 0
