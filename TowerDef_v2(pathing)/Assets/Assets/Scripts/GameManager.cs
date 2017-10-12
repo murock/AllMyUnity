@@ -9,15 +9,21 @@ public delegate void CurrencyChanged();
 
 public class GameManager : Singleton<GameManager> {
 
+    private int numLeftToSpawn;
+
     public event CurrencyChanged Changed;   //event triggered when currency changes
 
     private int wave = 0;
     public bool gameOver = false;
-    private int health = 15;
+    private bool healthIncrease = false;
+    [SerializeField]
+    private int numWavesHpIncrease = 3;
     private Tower selectedTower;    //current selected tower
     //keeps a list of active monsters so we know when the wave is finished when there are none
     private List<Monster> activeMonsters = new List<Monster>();
 
+    [SerializeField]
+    private int sellDivisor = 2;
     [SerializeField]
     private int currency;
     [SerializeField]
@@ -184,9 +190,13 @@ public class GameManager : Singleton<GameManager> {
     {
         wave++;
 
+        numLeftToSpawn = wave;
+
         waveTxt.text = string.Format("Wave: <color=orange>{0}</color>", wave);
 
         StartCoroutine(SpawnWave());    // coroutine so they spawn gradually
+
+        Hover.Instance.Deavtivate();    //drops a tower if the next wave button is pressed
 
         waveBtn.SetActive(false);
     }
@@ -222,11 +232,12 @@ public class GameManager : Singleton<GameManager> {
                     break;
             }
             Monster monster = Pool.GetObject(type).GetComponent<Monster>();
-            monster.Spawn(health);
-
-            if (wave % 3 == 0)  //every third wave
+            monster.Spawn(healthIncrease);
+            numLeftToSpawn--;
+            healthIncrease = false; //reset health increase if it was set
+            if (wave % numWavesHpIncrease == 0)  //increase mob hp every x waves
             {
-                health += 5;    
+                healthIncrease = true; 
             }
             activeMonsters.Add(monster);
             yield return new WaitForSeconds(2.5f);
@@ -240,7 +251,7 @@ public class GameManager : Singleton<GameManager> {
     {
         activeMonsters.Remove(monster);
 
-        if (!WaveActive && !gameOver)
+        if (!WaveActive && !gameOver && numLeftToSpawn == 0)    //no active monsters, game not over, no monsters left to spawn this wave then the wave ends
         {
             waveBtn.SetActive(true);
         }
@@ -271,7 +282,7 @@ public class GameManager : Singleton<GameManager> {
     {
         if (selectedTower != null)
         {
-            Currency += selectedTower.Price / 2;
+            Currency += selectedTower.Price / sellDivisor;
             selectedTower.GetComponentInParent<TileScript>().IsEmpty = true;
 
             Destroy(selectedTower.transform.parent.gameObject);

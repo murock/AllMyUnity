@@ -104,8 +104,8 @@ public static class AStar  {
             
 
         }
-        // GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
-        //  return finalPath;
+       //  GameObject.Find("AStarDebugger").GetComponent<AStarDebugger>().DebugPath(openList, closedList, finalPath);
+       //   return finalPath;
         return null;    //no path found
 
     }

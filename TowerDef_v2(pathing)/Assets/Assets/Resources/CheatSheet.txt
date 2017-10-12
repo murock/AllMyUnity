@@ -8,4 +8,6 @@
 
 - Starting Currency + Lives edited from Heirarchy Gamemanager
 
-- Gold on mob kill can be found in Prefabs->Monsters then under Monster Script "Gold On Death"
+- Gold on mob kill can be found in Prefabs->Monsters then under Monster Script "Gold On Death"  Hp and speed are also found here
+		+Extra health refers to the amount of extra health they gain every x levels. x being the int set under the GameManager "Num Waves Hp Increase"
+

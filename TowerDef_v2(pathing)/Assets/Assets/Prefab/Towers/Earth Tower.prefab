@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: EarthProjectile
   projectileSpeed: 3
-  damage: 5
+  damage: 1
   debuffDuration: 1
   proc: 10
   attackCooldown: 3

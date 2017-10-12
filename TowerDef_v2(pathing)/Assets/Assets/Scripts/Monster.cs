@@ -5,6 +5,12 @@ using UnityEngine;
 public class Monster : MonoBehaviour {
 
     [SerializeField]
+    private int hp = 15;
+
+    [SerializeField]
+    private int extraHealth = 5;
+
+    [SerializeField]
     private int goldOnDeath = 2;
 
     [SerializeField]
@@ -74,8 +80,12 @@ public class Monster : MonoBehaviour {
         Move();
     }
 
-    public void Spawn(int health)
+    public void Spawn(bool healthIncrease)
     {
+        if(healthIncrease)
+        {
+            this.hp += extraHealth;
+        }
         transform.position = LevelManager.Instance.SpawnPortal.transform.position;  //get spawn portals positions
 
         myAnimator = GetComponent<Animator>();  //gets attached animator.. Could this section be put into another "awake" function
@@ -84,7 +94,7 @@ public class Monster : MonoBehaviour {
         this.health.Initialize();
 
         this.health.Bar.Reset();
-        this.health.MaxVal = health;
+        this.health.MaxVal = hp;
         this.health.CurrentVal = this.health.MaxVal;
 
         StartCoroutine(Scale(new Vector3(1f, 1f), new Vector3(2.2f, 2.2f),false));
