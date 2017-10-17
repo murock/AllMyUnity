@@ -103,6 +103,8 @@ MonoBehaviour:
   damage: 1
   debuffDuration: 1
   proc: 10
+  range: {fileID: 1666753405379280}
+  rangeIncrease: 1
   attackCooldown: 3
   price1: 2
   damage1: 2

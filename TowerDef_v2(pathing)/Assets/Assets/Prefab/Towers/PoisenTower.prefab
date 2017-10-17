@@ -103,6 +103,8 @@ MonoBehaviour:
   damage: 10
   debuffDuration: 5
   proc: 10
+  range: {fileID: 1632672017061942}
+  rangeIncrease: 1
   attackCooldown: 5
   tickTime: 5
   splashPrefab: {fileID: 114612616097859574, guid: fdca78f2335648a4a9c7ef0541b6ed0e,

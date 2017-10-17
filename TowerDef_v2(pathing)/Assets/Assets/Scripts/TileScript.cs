@@ -56,7 +56,7 @@ public class TileScript : MonoBehaviour
     private void OnMouseOver()
     {
         //will only execute when pointer is not over a gameobject 
-        if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)
+        if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)  //clicked button not null when carrying tower
         {
             if (IsEmpty && !Debugging)
             {

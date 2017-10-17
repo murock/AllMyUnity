@@ -21,6 +21,12 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
     [SerializeField]
     private float proc;     //chance to proc debuff
 
+    [SerializeField]
+    private GameObject range;
+
+    [SerializeField]
+    private float rangeIncrease = 1;
+
     public Element ElementType { get; protected set; }
 
     public int Price { get; set; }
@@ -180,6 +186,7 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
         this.damage += NextUpgrade.Damage;                      //increase damage   
         this.proc += NextUpgrade.ProcChance;                    //increase proc chance
         this.DebuffDuration += NextUpgrade.DebuffDuration;      //increase debuff duration
+        this.range.transform.localScale += new Vector3(rangeIncrease, rangeIncrease, 0);
         Level++;                                                //increase upgrade level
         GameManager.Instance.UpdateUpgradeTip();                //update tooltip to match
         
