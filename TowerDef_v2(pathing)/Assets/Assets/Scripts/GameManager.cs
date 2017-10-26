@@ -9,6 +9,8 @@ public delegate void CurrencyChanged();
 
 public class GameManager : Singleton<GameManager> {
 
+    public TileScript selectedTile;
+
     private int numLeftToSpawn;
 
     public event CurrencyChanged Changed;   //event triggered when currency changes
@@ -122,6 +124,16 @@ public class GameManager : Singleton<GameManager> {
         {
             this.ClickedBtn = towerBtn;
             Hover.Instance.Activate(towerBtn.Sprite);
+        }
+
+    }
+
+    public void clickMenuPlaceTower(TowerButton towerBtn)
+    {
+        if (Currency >= towerBtn.Price && !WaveActive) //checks you have enough money to buy tower  && in "buy" phase ie no active monsters
+        {
+            this.ClickedBtn = towerBtn;
+            this.selectedTile.PlaceTower(); //untested need to get back to and finish
         }
 
     }

@@ -84,7 +84,7 @@
     <Compile Include="Assets\Scripts\Astar\DebugTile.cs" />
     <Compile Include="Assets\Scripts\Astar\Node.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\clickMenu.cs" />
+    <Compile Include="Assets\Scripts\ClickMenu.cs" />
     <Compile Include="Assets\Scripts\ColoringTest.cs" />
     <Compile Include="Assets\Scripts\Debuffs\Debuff.cs" />
     <Compile Include="Assets\Scripts\Debuffs\EarthDebuff.cs" />

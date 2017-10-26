@@ -248,9 +248,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56.4, y: -149.95001}
+  m_AnchoredPosition: {x: 0.000038146973, y: 0}
   m_SizeDelta: {x: 70, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &37017558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1988140945}
-        m_MethodName: PickTower
+        m_MethodName: clickMenuPlaceTower
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 37017561}
@@ -555,11 +555,11 @@ RectTransform:
   m_Father: {fileID: 492602000}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56.4, y: -319.95}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000038146973, y: 0}
   m_SizeDelta: {x: 70, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &66554748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,7 +663,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1988140945}
-        m_MethodName: PickTower
+        m_MethodName: clickMenuPlaceTower
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 66554749}
@@ -1744,11 +1744,11 @@ RectTransform:
   m_Father: {fileID: 492602000}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56.4, y: -404.95}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 70, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &325310458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,7 +1852,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1988140945}
-        m_MethodName: PickTower
+        m_MethodName: clickMenuPlaceTower
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 325310459}
@@ -2732,7 +2732,6 @@ GameObject:
   - component: {fileID: 492602004}
   - component: {fileID: 492602003}
   - component: {fileID: 492602002}
-  - component: {fileID: 492602001}
   m_Layer: 5
   m_Name: TowerPanelOnClick
   m_TagString: Untagged
@@ -2759,27 +2758,16 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -48.200012, y: -224.97998}
-  m_SizeDelta: {x: 96.4, y: 449.95}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &492602001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 492601999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b5dc5ab2a6ff284f9fcb9dd6c0538af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_AnchoredPosition: {x: -616.25073, y: -217.8212}
+  m_SizeDelta: {x: 188.1, y: 179.4}
+  m_Pivot: {x: 0.3551162, y: 0.61805344}
 --- !u!114 &492602002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492601999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3089,11 +3077,11 @@ RectTransform:
   m_Father: {fileID: 492602000}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56.4, y: -234.95001}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 70, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &553092198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3197,7 +3185,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1988140945}
-        m_MethodName: PickTower
+        m_MethodName: clickMenuPlaceTower
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 553092199}
@@ -3634,7 +3622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013068, y: -86.313}
+  m_AnchoredPosition: {x: -0.000011444092, y: -86.313}
   m_SizeDelta: {x: 58.71, y: 24.79}
   m_Pivot: {x: 0.5, y: -1.8682172}
 --- !u!114 &757484081
@@ -4679,7 +4667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013113, y: -23.8}
+  m_AnchoredPosition: {x: -0.000011444092, y: -23.8}
   m_SizeDelta: {x: 58.71, y: 24.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034368835
@@ -7631,7 +7619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000024268, y: -22.9}
+  m_AnchoredPosition: {x: 0.000022888184, y: -22.899998}
   m_SizeDelta: {x: 58.71, y: 24.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917552263
@@ -7841,6 +7829,7 @@ GameObject:
   - component: {fileID: 1988140946}
   - component: {fileID: 1988140945}
   - component: {fileID: 1988140947}
+  - component: {fileID: 1988140948}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7859,6 +7848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9798aa8ceb6087c4793a4a1c10b9d510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedTile: {fileID: 0}
   gameOver: 0
   numWavesHpIncrease: 3
   sellDivisor: 2
@@ -7910,6 +7900,19 @@ MonoBehaviour:
   - {fileID: 1484608700955664, guid: 72704d003c97bbb46b9f16aa59768e5f, type: 2}
   - {fileID: 1028943719647056, guid: 59c72835392f7d8498a2426f781c6968, type: 2}
   - {fileID: 1011722215073894, guid: b26c18c4dd8eb4b45950ea14fd6825e5, type: 2}
+--- !u!114 &1988140948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988140944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5dc5ab2a6ff284f9fcb9dd6c0538af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCanvas: {fileID: 26477998}
+  menu: {fileID: 492601999}
 --- !u!1 &2052875546
 GameObject:
   m_ObjectHideFlags: 0
