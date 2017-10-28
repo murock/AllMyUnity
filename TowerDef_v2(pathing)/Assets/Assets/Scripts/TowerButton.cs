@@ -89,7 +89,8 @@ public class TowerButton : MonoBehaviour {
             case "Water":
                 WaterTower water = towerPrefab.GetComponentInChildren<WaterTower>();
                 tooltip = string.Format("<color=#00ffffff><size=20><b>Water</b></size></color>\n" +
-                                        "Damage: {0}\n" + 
+                                        "Damage: {0}\n" +
+                                        "Range: {5} \n" +
                                         "Proc: {1}% \n" +
                                         "Debuff duration: {2}sec \n" +
                                         "Slowing factor: {3} \n" + 
@@ -101,6 +102,7 @@ public class TowerButton : MonoBehaviour {
                 PoisonTower poison = towerPrefab.GetComponentInChildren<PoisonTower>();
                 tooltip = string.Format("<color=#00ff00ff><size=20><b>Poison</b></size></color>\n" +
                                         "Damage: {0} \n" +
+                                        "Range: {5} \n" +
                                         "Proc: {1}%\n" +
                                         "Debuff duration: {2}sec \n" +
                                         "Tick time: {3} sec \n" +
@@ -112,6 +114,7 @@ public class TowerButton : MonoBehaviour {
                 EarthTower earth = towerPrefab.GetComponentInChildren<EarthTower>();
                 tooltip = string.Format("<color=#8b4513ff><size=20><b>Earth</b></size></color>\n" +
                                         "Damage: {0} \n" +
+                                        "Range: {5} \n" +
                                         "Proc: {1}%\n" +
                                         "Debuff duration: {2}sec\n" +
                                         "Has a chance to stun the target",
