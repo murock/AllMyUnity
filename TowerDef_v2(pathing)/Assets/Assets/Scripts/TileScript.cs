@@ -85,7 +85,7 @@ public class TileScript : MonoBehaviour
 
         if (!EventSystem.current.IsPointerOverGameObject() && IsEmpty)
         {
-            if (IsEmpty && !Debugging)
+            if (!Debugging)
             {
                 ColorTile(emptyColor);
             }
@@ -100,21 +100,28 @@ public class TileScript : MonoBehaviour
                 GameManager.Instance.selectedTile = this;
                // PlaceTower();
             }
-        }
-        else if (!EventSystem.current.IsPointerOverGameObject() && !IsEmpty && Input.GetMouseButtonDown(0)) //if there is a tower on the tile then
+        } 
+        else if (!EventSystem.current.IsPointerOverGameObject() && !IsEmpty) //if there is a tower on the tile then
         {
-            ClickMenu.Instance.HideMenu();
-            if (!IsEmpty && !Debugging)
+            if (!Debugging)
             {
                 ColorTile(fullColor);
             }
-            if (myTower != null)
+            if (Input.GetMouseButtonDown(0))
             {
-                GameManager.Instance.SelectTower(myTower);
-            }
-            else
-            {
-                GameManager.Instance.DeselectTower();
+                ClickMenu.Instance.HideMenu();
+                if (!IsEmpty && !Debugging)
+                {
+                    ColorTile(fullColor);
+                }
+                if (myTower != null)
+                {
+                    GameManager.Instance.SelectTower(myTower);
+                }
+                else
+                {
+                    GameManager.Instance.DeselectTower();
+                }
             }
         }
 

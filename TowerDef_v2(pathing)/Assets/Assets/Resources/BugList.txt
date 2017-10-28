@@ -9,4 +9,4 @@
 
 7)Tooltip needs to move dynamically if we use on click menu
 
-8)Cannot select tower for resell/upgrade with click menu
+10) Remove debugging flag

@@ -78,12 +78,13 @@ public class TowerButton : MonoBehaviour {
                 FireTower fire = towerPrefab.GetComponentInChildren<FireTower>();
                 tooltip = string.Format("<color=#ffa500ff><size=20><b>Fire</b></size></color>\n" +
                                         "Damage: {0} \n" +
+                                        "Range: {5} \n" +
                                         "Proc: {1}%\n" +
                                         "Debuff duration: {2}sec \n" +
                                         "Tick time: {3} sec \n" +
                                         "Tick damage: {4}\n" +
                                         "Can apply a DOT to the target",
-                                        fire.Damage, fire.Proc, fire.DebuffDuration, fire.TickTime, fire.TickDamage);
+                                        fire.Damage, fire.Proc, fire.DebuffDuration, fire.TickTime, fire.TickDamage, fire.Range);
                 break;
             case "Water":
                 WaterTower water = towerPrefab.GetComponentInChildren<WaterTower>();

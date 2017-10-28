@@ -58,6 +58,14 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
         }
     }
 
+    public float Range
+    {
+        get
+        {
+            return rangeIncrease;
+        }
+    }
+
     public float DebuffDuration
     {
         get

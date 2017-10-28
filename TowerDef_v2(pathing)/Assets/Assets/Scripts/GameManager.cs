@@ -135,7 +135,7 @@ public class GameManager : Singleton<GameManager> {
             this.ClickedBtn = towerBtn;
             this.selectedTile.PlaceTower(); //untested need to get back to and finish
         }
-
+        ClickMenu.Instance.HideMenu();
     }
 
     public void BuyTower()
