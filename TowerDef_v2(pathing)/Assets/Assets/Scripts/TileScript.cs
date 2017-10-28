@@ -8,7 +8,9 @@ public class TileScript : MonoBehaviour
 
     public Point GridPosition { get; private set; }
 
-    public bool IsEmpty { get; private set; }   //checks if the tile is empty or not
+    public bool IsEmpty { get;  set; }   //checks if the tile is empty or not
+
+    private Tower myTower;
 
     private Color32 fullColor = new Color32(255, 188, 188, 255);    //tile highlight color when full
 
@@ -54,19 +56,72 @@ public class TileScript : MonoBehaviour
     private void OnMouseOver()
     {
         //will only execute when pointer is not over a gameobject 
-        if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)
+        //if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)  //clicked button not null when carrying tower
+        //{
+        //    if (IsEmpty && !Debugging)
+        //    {
+        //        ColorTile(emptyColor);
+        //    }
+        //    if (!IsEmpty && !Debugging)
+        //    {
+        //        ColorTile(fullColor);
+        //    }
+        //    else if (Input.GetMouseButtonDown(0))   //will only try to place tower if empty
+        //    {
+        //        PlaceTower();
+        //    }
+        //}
+        //else if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn == null && Input.GetMouseButtonDown(0)) //if there is a tower on the tile then
+        //{
+        //    if (myTower != null)
+        //    {
+        //        GameManager.Instance.SelectTower(myTower);
+        //    }
+        //    else
+        //    {
+        //        GameManager.Instance.DeselectTower();
+        //    }
+        //}
+
+        if (!EventSystem.current.IsPointerOverGameObject() && IsEmpty)
         {
-            if (IsEmpty && !Debugging)
+            if (!Debugging)
             {
                 ColorTile(emptyColor);
             }
-            if (!IsEmpty && !Debugging)
+            //if (!IsEmpty && !Debugging)
+            //{
+            //    ColorTile(fullColor);
+            //}
+            if (Input.GetMouseButtonDown(0) && IsEmpty)   //will only try to place tower if empty
+            {
+                Vector2 worldPos = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
+                ClickMenu.Instance.SpawnMenu(worldPos);   //give the on click menu the position of the tile
+                GameManager.Instance.selectedTile = this;
+               // PlaceTower();
+            }
+        } 
+        else if (!EventSystem.current.IsPointerOverGameObject() && !IsEmpty) //if there is a tower on the tile then
+        {
+            if (!Debugging)
             {
                 ColorTile(fullColor);
             }
-            else if (Input.GetMouseButtonDown(0))   //will only try to place tower if empty
+            if (Input.GetMouseButtonDown(0))
             {
-                PlaceTower();
+                ClickMenu.Instance.HideMenu();
+                if (!IsEmpty && !Debugging)
+                {
+                    ColorTile(fullColor);
+                }
+                if (myTower != null)
+                {
+                    GameManager.Instance.SelectTower(myTower);
+                }
+                else
+                {
+                    GameManager.Instance.DeselectTower();
+                }
             }
         }
 
@@ -81,21 +136,34 @@ public class TileScript : MonoBehaviour
 
     }
 
-    private void PlaceTower()
+    public void PlaceTower()
     {
-        GameObject tower = Instantiate(GameManager.Instance.ClickedBtn.TowerPrefab, transform.position, Quaternion.identity);     //quanternion so it does not rotate
+        if (IsEmpty)
+        {
+            WalkAble = false;
+            if (AStar.GetPath(LevelManager.Instance.PortalSpawn, LevelManager.Instance.CoinSpawn) == null)    //tests if path still possible
+            {
+                WalkAble = true;
+                return; //no path ie tower block
+            }
+            GameObject tower = Instantiate(GameManager.Instance.ClickedBtn.TowerPrefab, transform.position, Quaternion.identity);     //quanternion so it does not rotate
 
-        tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y; //stops the towers overlapping 
-        tower.transform.SetParent(transform);       //makes the tower a child of the tiles its on
+            tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y; //stops the towers overlapping 
+            tower.transform.SetParent(transform);       //makes the tower a child of the tiles its on
+            this.myTower = tower.transform.GetChild(0).GetComponent<Tower>();   //get the tower script
 
-        IsEmpty = false;
+            IsEmpty = false;
 
-        ColorTile(Color.white);
+            ColorTile(Color.white);
 
-        GameManager.Instance.BuyTower();
+            myTower.Price = GameManager.Instance.ClickedBtn.Price;
 
-        WalkAble = false; // tower on point so no longer "walkable"
+            GameManager.Instance.BuyTower();
+
+            WalkAble = false; // tower on point so no longer "walkable"
+        }
     }
+
 
     private void ColorTile(Color newColor)
     {

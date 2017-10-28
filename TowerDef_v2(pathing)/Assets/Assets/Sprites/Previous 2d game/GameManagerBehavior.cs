@@ -88,7 +88,6 @@ public class GameManagerBehavior : MonoBehaviour {
                 }
                 else
                 {
-                    Debug.Log("removing: " + i.ToString());
                     healthIndicator[i].SetActive(false);
                 }
             }

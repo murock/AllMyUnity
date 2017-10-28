@@ -1,0 +1,12 @@
+
+3) targeting needs help
+
+4) If you have a tower selected and decide you don't want to build it you can't bind this to right click
+
+5) Shroom stays as girl dead animated from object pool
+
+6) If upgrade mid game then weird stuff happens with mob https://www.youtube.com/watch?v=UmVEmaTREwo&feature=youtu.be
+
+7)Tooltip needs to move dynamically if we use on click menu
+
+10) Remove debugging flag

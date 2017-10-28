@@ -6,9 +6,15 @@ public class Hover : Singleton<Hover> {
 
     private SpriteRenderer spriteRenderer;
 
-	// Use this for initialization
-	void Start () {
-        this.spriteRenderer = GetComponent<SpriteRenderer>();       
+    //reference to range check on tower
+    private SpriteRenderer rangedSpriteRenderer;
+
+    public bool IsVisible { get;private set; }
+
+    // Use this for initialization
+    void Start () {
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.rangedSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();  //gets first child of the hover icon which will be the range    
 	}
 	
 	// Update is called once per frame
@@ -29,11 +35,15 @@ public class Hover : Singleton<Hover> {
     {
         this.spriteRenderer.sprite = sprite;
         this.spriteRenderer.enabled = true;
+        rangedSpriteRenderer.enabled = true;
+        IsVisible = true;
     }
 
     public void Deavtivate()
     {
         spriteRenderer.enabled = false;
         GameManager.Instance.ClickedBtn = null;         //turn off so tower isn't placed
+        rangedSpriteRenderer.enabled = false;
+        IsVisible = false;
     }
 }
