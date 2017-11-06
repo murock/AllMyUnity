@@ -6,6 +6,9 @@ using System;
 public class LevelManager : Singleton<LevelManager> {
 
     [SerializeField]
+    private GameObject mainMenu;
+
+    [SerializeField]
     private int endPointX, endPointY, startPointX, startPointY;
 
     [SerializeField]
@@ -30,7 +33,7 @@ public class LevelManager : Singleton<LevelManager> {
 
     private Stack<Node> path;  //given to monsters 
 
-
+    private bool islevel = false;
 
     public Stack<Node> Path //read only
     {
@@ -68,8 +71,8 @@ public class LevelManager : Singleton<LevelManager> {
 
     // Use this for initialization
     void Start () {
-        CreateLevel();
-        SpawnPortals();
+        //  CreateLevel(); 
+        //SpawnPortals();       
     }
 	
 	// Update is called once per frame
@@ -77,11 +80,15 @@ public class LevelManager : Singleton<LevelManager> {
 		
 	}
 
-    private void CreateLevel()
+    public void CreateLevel(string level = "level")
     {
+        if (islevel)
+        {
+            DeleteLevel();
+        }
         Tiles = new Dictionary<Point, TileScript>();
 
-        string[] mapData = ReadLevelText();
+        string[] mapData = ReadLevelText(level);
 
         mapSize = new global::Point(mapData[0].ToCharArray().Length, mapData.Length);
 
@@ -104,6 +111,21 @@ public class LevelManager : Singleton<LevelManager> {
         maxTile = Tiles[new Point(mapX - 1, mapY - 1)].transform.position;  //furthest right and down tile
 
         cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));  //camera cannot pan  outside of tile area
+
+
+        SpawnPortals();
+
+        islevel = true;
+        mainMenu.SetActive(false);
+    }
+
+    public void DeleteLevel()
+    {
+        foreach (Transform tile  in map)
+        {
+            Destroy(tile.gameObject);
+        }
+        islevel = false;
     }
 
     private void PlaceTile(string tileType,int x, int y, Vector3 worldStart)
@@ -124,9 +146,9 @@ public class LevelManager : Singleton<LevelManager> {
 
     }
 
-    private string[] ReadLevelText()
+    private string[] ReadLevelText(string level = "level")
     {
-        TextAsset bindData = Resources.Load("Level") as TextAsset;
+        TextAsset bindData = Resources.Load(level) as TextAsset;
 
         string data = bindData.text.Replace(Environment.NewLine, string.Empty);
 
@@ -142,7 +164,10 @@ public class LevelManager : Singleton<LevelManager> {
 
         coinSpawn = new Point(endPointX,endPointY);
 
-        Instantiate(coinPrefab, Tiles[coinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+        GameObject coin = (GameObject)Instantiate(coinPrefab, Tiles[coinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+
+        SpawnPortal.transform.SetParent(map);
+        coin.transform.SetParent(map);
     }
 
     public bool InBounds(Point position)

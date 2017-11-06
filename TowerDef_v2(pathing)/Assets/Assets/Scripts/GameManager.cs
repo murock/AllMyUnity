@@ -9,6 +9,8 @@ public delegate void CurrencyChanged();
 
 public class GameManager : Singleton<GameManager> {
 
+    public bool pointerRightSide;
+
     public TileScript selectedTile;
 
     private int numLeftToSpawn;
@@ -305,13 +307,34 @@ public class GameManager : Singleton<GameManager> {
 
     public void ShowStats()
     {
-        statsPanel.SetActive(!statsPanel.activeSelf);   //toggle panel visibility
+        if (statsPanel.activeSelf == false)
+        {
+            statsPanel.SetActive(!statsPanel.activeSelf);   //toggle panel visibility
+        }      
+    }
+
+    public void HideStats()
+    {
+        if (statsPanel.activeSelf == true)
+        {
+            statsPanel.SetActive(!statsPanel.activeSelf);   //toggle panel visibility
+        }
     }
 
     public void ShowSelectedTowerStats()
     {
-        statsPanel.SetActive(!statsPanel.activeSelf);   //toggle panel visibility
+        if (statsPanel.activeSelf == false) //if not active then set as active
+        {
+            statsPanel.SetActive(true);
+        }
         UpdateUpgradeTip();
+    }
+    public void HideSelectedTowerStats()
+    {
+        if (statsPanel.activeSelf == true) //if active then set as not active
+        {
+            statsPanel.SetActive(false);
+        }
     }
     public void SetToolTipText(string txt)
     {
@@ -387,5 +410,15 @@ public class GameManager : Singleton<GameManager> {
     {
         inGameMenu.SetActive(true);
         optionsMenu.SetActive(false);
+    }
+
+    public void FastForward()
+    {
+        Time.timeScale = 3;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
     }
 }

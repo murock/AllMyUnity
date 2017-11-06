@@ -10,3 +10,7 @@
 7)Tooltip needs to move dynamically if we use on click menu
 
 10) Remove debugging flag
+
+1) If on the edge of the screen move on click menu 
+
+- Should not be able to spawn menu while playing
