@@ -1,16 +1,20 @@
 
-3) targeting needs help
+- targeting needs help
 
-4) If you have a tower selected and decide you don't want to build it you can't bind this to right click
+- If you have a tower selected and decide you don't want to build it you can't bind this to right click(only bug if drag menu)
 
-5) Shroom stays as girl dead animated from object pool
+- Shroom stays as girl dead animated from object pool
 
-6) If upgrade mid game then weird stuff happens with mob https://www.youtube.com/watch?v=UmVEmaTREwo&feature=youtu.be
+- If upgrade mid game then weird stuff happens with mob https://www.youtube.com/watch?v=UmVEmaTREwo&feature=youtu.be
 
-7)Tooltip needs to move dynamically if we use on click menu
+- Tooltip needs to move dynamically if we use on click menu
 
-10) Remove debugging flag
+- Remove debugging flag
 
-1) If on the edge of the screen move on click menu 
+- If on the edge of the screen move on click menu 
 
-- Should not be able to spawn menu while playing
+- Tile stats modifiers/non walkable
+
+- terraforming tiles buy an upgrade tile tier system mud -> path -> stone etc..
+
+- Talent system

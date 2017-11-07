@@ -33,7 +33,7 @@ public class LevelManager : Singleton<LevelManager> {
 
     private Stack<Node> path;  //given to monsters 
 
-    private bool islevel = false;
+    private bool islevel = false;   //true while there is a level loaded
 
     public Stack<Node> Path //read only
     {
@@ -66,6 +66,14 @@ public class LevelManager : Singleton<LevelManager> {
         get
         {
             return coinSpawn;
+        }
+    }
+
+    public bool Islevel //read only for other classes
+    {
+        get
+        {
+            return islevel;
         }
     }
 
@@ -139,8 +147,7 @@ public class LevelManager : Singleton<LevelManager> {
 
         TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
 
-        newTile.Setup(new global::Point(x, y), new Vector3(worldStart.x + TileSize * x, worldStart.y - TileSize * y, 0), map);
-
+        newTile.Setup(new global::Point(x, y), new Vector3(worldStart.x + TileSize * x, worldStart.y - TileSize * y, 0), map, tileType);
         
       //  Tiles.Add(new Point(x, y), newTile);
 

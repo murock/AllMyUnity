@@ -18,7 +18,17 @@ public class TileScript : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private int powerLevel;
+
     public bool WalkAble;
+
+    public int PowerLevel {     //MAY NOT BE NEEDED 
+        get
+        {
+            return powerLevel;
+        }
+    }
+
 
     public bool Debugging { get; set; }
     public Vector2 WorldPosition
@@ -42,8 +52,9 @@ public class TileScript : MonoBehaviour
 
     }
 
-    public void Setup(Point gridPos, Vector3 worldPos, Transform parent)
+    public void Setup(Point gridPos, Vector3 worldPos, Transform parent, string tileType)
     {
+        //need to check what tileType is and assign power level from 0->9 powerLevel can give more attack speed as it goes up
         WalkAble = true;
         IsEmpty = true;
         this.GridPosition = gridPos;
@@ -93,7 +104,7 @@ public class TileScript : MonoBehaviour
             //{
             //    ColorTile(fullColor);
             //}
-            if (Input.GetMouseButtonDown(0) && IsEmpty)   //will only try to place tower if empty
+            if (Input.GetMouseButtonDown(0) && IsEmpty && !GameManager.Instance.WaveActive)   //will only try to place tower if empty
             {
                 Vector2 worldPos = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
                 ClickMenu.Instance.SpawnMenu(worldPos);   //give the on click menu the position of the tile

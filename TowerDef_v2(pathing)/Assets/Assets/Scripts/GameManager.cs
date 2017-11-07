@@ -56,6 +56,8 @@ public class GameManager : Singleton<GameManager> {
     private GameObject inGameMenu;
     [SerializeField]
     private GameObject optionsMenu;
+    [SerializeField]
+    private GameObject mainMenu;
 
     public ObjectPool Pool { get; set; }
     public TowerButton ClickedBtn { get; set; }
@@ -400,15 +402,24 @@ public class GameManager : Singleton<GameManager> {
         Hover.Instance.Deavtivate();
     }
 
-    public void ShowOptions()
+    public void ShowOptions(GameObject fromMenu)    //the menu that ShowOptions was invoked from
     {
-        inGameMenu.SetActive(false);
+        //inGameMenu.SetActive(false);
+        fromMenu.SetActive(false);
         optionsMenu.SetActive(true);
     }
 
     public void ShowMain()
     {
-        inGameMenu.SetActive(true);
+        if (LevelManager.Instance.Islevel)  //if there is currently a level loaded
+        {
+            inGameMenu.SetActive(true);
+        }
+        else
+        {
+            mainMenu.SetActive(true);
+        }
+
         optionsMenu.SetActive(false);
     }
 
