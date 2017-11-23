@@ -147,7 +147,7 @@ public class LevelManager : Singleton<LevelManager> {
 
         TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
 
-        newTile.Setup(new global::Point(x, y), new Vector3(worldStart.x + TileSize * x, worldStart.y - TileSize * y, 0), map, tileType);
+        newTile.Setup(new global::Point(x, y), new Vector3(worldStart.x + TileSize * x, worldStart.y - TileSize * y, 0), map, tileType, tileIndex);
         
       //  Tiles.Add(new Point(x, y), newTile);
 

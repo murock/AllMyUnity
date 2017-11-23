@@ -52,9 +52,9 @@ public class TileScript : MonoBehaviour
 
     }
 
-    public void Setup(Point gridPos, Vector3 worldPos, Transform parent, string tileType)
+    public void Setup(Point gridPos, Vector3 worldPos, Transform parent, string tileType, int tilePowerLevel)
     {
-        //need to check what tileType is and assign power level from 0->9 powerLevel can give more attack speed as it goes up
+        this.powerLevel = tilePowerLevel;         //need to check what tileType is and assign power level from 0->9 powerLevel can give more attack speed as it goes up
         WalkAble = true;
         IsEmpty = true;
         this.GridPosition = gridPos;

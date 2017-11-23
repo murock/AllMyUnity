@@ -215,6 +215,8 @@ public class GameManager : Singleton<GameManager> {
         Hover.Instance.Deavtivate();    //drops a tower if the next wave button is pressed
 
         waveBtn.SetActive(false);
+
+        ClickMenu.Instance.HideMenu();
     }
 
     private IEnumerator SpawnWave()

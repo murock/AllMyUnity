@@ -44,7 +44,7 @@ public class ClickMenu : Singleton<ClickMenu>
         //Vector3 pos2 = Twr2Btn.transform.position;
         //Twr1Btn.transform.position = pos2;
         //Twr2Btn.transform.position = pos;
-        for (int i = 3; i > 0; i--)
+        for (int i = TwrBtns.Length - 1; i > 0; i--)
         {
             Vector3 pos = TwrBtns[i].transform.position;
             Vector3 pos2 = TwrBtns[i-1].transform.position;
