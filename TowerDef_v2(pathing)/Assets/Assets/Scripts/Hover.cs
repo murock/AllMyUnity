@@ -46,4 +46,9 @@ public class Hover : Singleton<Hover> {
         rangedSpriteRenderer.enabled = false;
         IsVisible = false;
     }
+
+    private void ShowOnTile()   //make a method to show the tower on the tile when your hover over the button
+    {
+
+    }
 }
