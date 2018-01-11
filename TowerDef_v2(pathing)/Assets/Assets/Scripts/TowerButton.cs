@@ -89,36 +89,33 @@ public class TowerButton : MonoBehaviour {
             case "Water":
                 WaterTower water = towerPrefab.GetComponentInChildren<WaterTower>();
                 tooltip = string.Format("<color=#00ffffff><size=20><b>Water</b></size></color>\n" +
-                                        "Damage: {0}\n" +
-                                        "Range: {4} \n" +
+                                        "Damage: {0}\n" + 
                                         "Proc: {1}% \n" +
                                         "Debuff duration: {2}sec \n" +
                                         "Slowing factor: {3} \n" + 
                                         "Has a chance to slow down the target", 
-                                        water.Damage, water.Proc,water.DebuffDuration, water.SlowingFactor, water.Range);
+                                        water.Damage, water.Proc,water.DebuffDuration, water.SlowingFactor);
 
                 break;
             case "Poison":
                 PoisonTower poison = towerPrefab.GetComponentInChildren<PoisonTower>();
                 tooltip = string.Format("<color=#00ff00ff><size=20><b>Poison</b></size></color>\n" +
                                         "Damage: {0} \n" +
-                                        "Range: {5} \n" +
                                         "Proc: {1}%\n" +
                                         "Debuff duration: {2}sec \n" +
                                         "Tick time: {3} sec \n" +
                                         "Splash damage: {4}\n" +
                                         "Can apply dripping poison",
-                                        poison.Damage, poison.Proc, poison.DebuffDuration, poison.TickTime, poison.SplashDamage, poison.Range);
+                                        poison.Damage, poison.Proc, poison.DebuffDuration, poison.TickTime, poison.SplashDamage);
                 break;
             case "Earth":
                 EarthTower earth = towerPrefab.GetComponentInChildren<EarthTower>();
                 tooltip = string.Format("<color=#8b4513ff><size=20><b>Earth</b></size></color>\n" +
                                         "Damage: {0} \n" +
-                                        "Range: {3} \n" +
                                         "Proc: {1}%\n" +
                                         "Debuff duration: {2}sec\n" +
                                         "Has a chance to stun the target",
-                                        earth.Damage, earth.Proc, earth.DebuffDuration, earth.Range);
+                                        earth.Damage, earth.Proc, earth.DebuffDuration);
                 break;
 
         }

@@ -41,8 +41,6 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
 
     private Monster target;
 
-    private float currentRange;
-
     //towers cuurent upgrade level
 
     public int Level { get;protected set; }
@@ -120,7 +118,6 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
     void Awake () {    
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         Level = 1;
-        currentRange = rangeIncrease;
 	}
 	
 	// Update is called once per frame
@@ -175,10 +172,10 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
     {
         if (NextUpgrade != null)    //if upgrade avaliable
         {
-            return string.Format("\nLevel: {0} \nDamage: {1}  <color=#00ff00ff> +{4}</color>\nRange: {7}  <color=#00ff00ff> +{8}</color>\nProc: {2}% <color=#00ff00ff>+{5}%</color>\nDebuff: {3}sec <color=#00ff00ff>+{6}</color>",
-                Level, damage, proc, DebuffDuration, NextUpgrade.Damage, NextUpgrade.ProcChance, NextUpgrade.DebuffDuration,currentRange, rangeIncrease);
+            return string.Format("\nLevel: {0} \nDamage: {1}  <color=#00ff00ff> +{4}</color>\nProc: {2}% <color=#00ff00ff>+{5}%</color>\nDebuff: {3}sec <color=#00ff00ff>+{6}</color>",
+                Level, damage, proc, DebuffDuration, NextUpgrade.Damage, NextUpgrade.ProcChance, NextUpgrade.DebuffDuration);
         }
-        return string.Format("\nLevel: {0} \nRange: {4}\nDamage: {1} \nProc: {2}% \nDebuff: {3}secs", Level, damage, proc, DebuffDuration,currentRange);
+        return string.Format("\nLevel: {0} \nDamage{1} \nProc: {2}% \nDebuff: {3}secs", Level, damage, proc, DebuffDuration);
     }
 
     private void Shoot()
@@ -198,7 +195,6 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
         this.proc += NextUpgrade.ProcChance;                    //increase proc chance
         this.DebuffDuration += NextUpgrade.DebuffDuration;      //increase debuff duration
         this.range.transform.localScale += new Vector3(rangeIncrease, rangeIncrease, 0);
-        this.currentRange = this.currentRange + rangeIncrease;
         Level++;                                                //increase upgrade level
         GameManager.Instance.UpdateUpgradeTip();                //update tooltip to match
         
