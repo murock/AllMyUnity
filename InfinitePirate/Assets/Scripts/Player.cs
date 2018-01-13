@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
             this.GetComponent<SpriteRenderer>().sprite = rightShipSprite;
             // this.GetComponent<Transform>().position += new Vector3(0.01f,0,0);
             transform.Translate(Vector3.right * playerSpeed * Time.deltaTime);
+           // transform.eulerAngles = new Vector3(0f,0f,-45f);
         }
         else if (0 > direction)
         {
