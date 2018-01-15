@@ -5,9 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     [SerializeField]
-    private GameObject playerShip;
-
-    [SerializeField]
     private float playerSpeed = 3;
 
     private bool rotatedRight, rotatedLeft;
@@ -86,6 +83,15 @@ public class PlayerController : MonoBehaviour {
             }
             rotatedLeft = false;
             rotatedRight = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "pickUp")
+        {
+            GameManager.Instance.IncreaseScore();
+            collision.gameObject.SetActive(false);
         }
     }
 }
