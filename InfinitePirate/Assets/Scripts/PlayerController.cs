@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     [SerializeField]
     private float playerSpeed = 3;
+
+    [SerializeField]
+    GameObject cannonBall;
+
+    private WWW test;
 
     private bool rotatedRight, rotatedLeft;
 
@@ -14,12 +20,17 @@ public class PlayerController : MonoBehaviour {
     {
         rotatedRight = false;
         rotatedLeft = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         this.rotationController();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            this.fireStarboardCannon();
+        }
     }
 
     private void rotateRight()
@@ -69,7 +80,7 @@ public class PlayerController : MonoBehaviour {
                 this.rotateLeft();
                 Vector3 diagonalLeft = new Vector3(-0.5f, 0.5f, 0);
                 transform.Translate(diagonalLeft * playerSpeed * Time.deltaTime);
-            }      
+            }
         }
         else
         {
@@ -93,5 +104,10 @@ public class PlayerController : MonoBehaviour {
             GameManager.Instance.IncreaseScore();
             collision.gameObject.SetActive(false);
         }
+    }
+
+    private void fireStarboardCannon()
+    {
+        Instantiate(cannonBall, transform.position - new Vector3(0,1.1f,0), Quaternion.identity);
     }
 }

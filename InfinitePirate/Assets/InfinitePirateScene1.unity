@@ -294,6 +294,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &250198765
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880823328734898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &277384882
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +841,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4624945043981690, guid: 00ee7f4dd71b2434ebe01f2516f7d28e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.73
+      value: 3.48
       objectReference: {fileID: 0}
     - target: {fileID: 4624945043981690, guid: 00ee7f4dd71b2434ebe01f2516f7d28e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -939,6 +981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  cannonBall: {fileID: 1123142905963898, guid: 366f7fefa156a8042b7e464116d50f62, type: 2}
 --- !u!50 &1534830049
 Rigidbody2D:
   serializedVersion: 4
