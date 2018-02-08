@@ -37,67 +37,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void rotateRight()
-    {
-        Vector3 rightAngle = new Vector3(0f, 0f, -45f);
-        if (!rotatedRight)
-        {
-            transform.Rotate(rightAngle, Space.World);
-            rotatedRight = true;
-        }
-    }
-
-    private void rotateLeft()
-    {
-        Vector3 leftAngle = new Vector3(0f, 0f, 45f);
-        if (!rotatedLeft)
-        {
-            transform.Rotate(leftAngle, Space.Self);
-            rotatedLeft = true;
-        }
-    }
 
     private void rotationController()
     {
         float direction = Input.GetAxisRaw("Horizontal");
-        if (0 < direction)
+        if (0 < direction)  //Right
         {
-            if (rotatedLeft)   //Ensures left rotation is reset before rotating right
-            {
-                rotateRight();
-            }
-            else
-            {
-                this.rotateRight();
-                Vector3 diagonalRight = new Vector3(0.5f, 0.5f, 0);
-                transform.Translate(diagonalRight * playerSpeed * Time.deltaTime);
-            }
+            transform.eulerAngles = new Vector3(0f,0f,-45f);
+            Vector3 diagonalRight = new Vector3(0.5f, 0.5f, 0);
+            transform.Translate(diagonalRight * playerSpeed * Time.deltaTime);
         }
-        else if (0 > direction)
+        else if (0 > direction) //Left
         {
-            if (rotatedRight)
-            {
-                rotateLeft();
-            }
-            else
-            {
-                this.rotateLeft();
-                Vector3 diagonalLeft = new Vector3(-0.5f, 0.5f, 0);
-                transform.Translate(diagonalLeft * playerSpeed * Time.deltaTime);
-            }
+            transform.eulerAngles = new Vector3(0f, 0f, 45f);
+            Vector3 diagonalLeft = new Vector3(-0.5f, 0.5f, 0);
+            transform.Translate(diagonalLeft * playerSpeed * Time.deltaTime);
         }
         else
         {
-            if (rotatedRight)
-            {
-                rotateLeft();
-            }
-            else if (rotatedLeft)
-            {
-                rotateRight();
-            }
-            rotatedLeft = false;
-            rotatedRight = false;
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
     }
 
