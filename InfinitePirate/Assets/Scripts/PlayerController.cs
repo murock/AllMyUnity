@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
         this.rotationController();
         if (Input.GetButtonDown("Fire1"))
         {
+            this.firePortCannon();
+        }
+        else if (Input.GetButtonDown("Fire2"))
+        {
             this.fireStarboardCannon();
         }
     }
@@ -108,6 +112,15 @@ public class PlayerController : MonoBehaviour
 
     private void fireStarboardCannon()
     {
-        Instantiate(cannonBall, transform.position - new Vector3(0,1.1f,0), Quaternion.identity);
+        GameObject cannonBallGameObject = Instantiate(cannonBall, transform.position - new Vector3(0,1.1f,0), this.transform.rotation);
+        CannonballController cannonScript = cannonBallGameObject.GetComponent<CannonballController>();
+        cannonScript.direction =  Vector3.right;
+    }
+
+    private void firePortCannon()
+    {
+        GameObject cannonBallGameObject = Instantiate(cannonBall, transform.position - new Vector3(0, 1.1f, 0), this.transform.rotation);
+        CannonballController cannonScript = cannonBallGameObject.GetComponent<CannonballController>();
+        cannonScript.direction = Vector3.left;
     }
 }

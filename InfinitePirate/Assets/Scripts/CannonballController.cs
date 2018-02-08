@@ -7,8 +7,9 @@ public class CannonballController : MonoBehaviour {
     [SerializeField]
     private float speed = 5;
 
-    //[SerializeField]
-    //private Vector3 direction;
+    [SerializeField]
+    internal Vector3 direction;
+
     // Use this for initialization
     void Start () {
 		
@@ -16,6 +17,6 @@ public class CannonballController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+            transform.Translate(direction * speed * Time.deltaTime);
     }
 }
