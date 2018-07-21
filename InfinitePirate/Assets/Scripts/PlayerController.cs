@@ -11,22 +11,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject cannonBall;
 
-    private WWW test;
-
-    private bool rotatedRight, rotatedLeft;
+    [SerializeField]
+    private float rotationSpeed = 20;
 
     // Use this for initialization
     void Start()
     {
-        rotatedRight = false;
-        rotatedLeft = false;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.rotationController();
+       this.rotationController();
         if (Input.GetButtonDown("Fire1"))
         {
             this.firePortCannon();
@@ -43,9 +39,17 @@ public class PlayerController : MonoBehaviour
         float direction = Input.GetAxisRaw("Horizontal");
         if (0 < direction)  //Right
         {
-            transform.eulerAngles = new Vector3(0f,0f,-45f);
-            Vector3 diagonalRight = new Vector3(0.5f, 0.5f, 0);
-            transform.Translate(diagonalRight * playerSpeed * Time.deltaTime);
+            float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, -45, Time.deltaTime * rotationSpeed);
+            transform.eulerAngles = new Vector3(0, 0, angle);
+            Vector3 diagonalRight = new Vector3(1f, 0f, 0); //movement
+            transform.Translate(diagonalRight * playerSpeed * Time.deltaTime, Space.World);
+            //if (transform.eulerAngles.z > -45f )
+            //{
+            //    //transform.Rotate(0, 0, -Time.deltaTime * rotationSpeed);             
+            //}
+            //  transform.eulerAngles = new Vector3(0f,0f,-45f);    //angle 
+            //Vector3 diagonalRight = new Vector3(0.5f, 0.5f, 0); //movement
+            // transform.Translate(diagonalRight * playerSpeed * Time.deltaTime);
         }
         else if (0 > direction) //Left
         {
@@ -59,12 +63,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Possibly used to pick up treasure
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "pickUp")
         {
             GameManager.Instance.IncreaseScore();
             collision.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            PirateController playerScript = collision.gameObject.GetComponent<PirateController>();
+            playerScript.Respawn();
         }
     }
 

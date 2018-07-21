@@ -80,6 +80,10 @@ public class PirateController : MonoBehaviour {
             //idle
             myAnimator.SetBool("isMoving", false);
         }
+    }
 
+    public void Respawn()
+    {
+        this.gameObject.SetActive(false);
     }
 }

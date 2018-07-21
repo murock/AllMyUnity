@@ -1,0 +1,1 @@
+-OnPointerEnter could be used for when you hover over an object like cards in hand to make them bigger
