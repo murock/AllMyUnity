@@ -8,6 +8,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
+    public bool isDiscarded = false;
 
     //where the card will be placed back to
     private GameObject placeholder = null;
@@ -71,9 +72,37 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Debug.Log("OnEndDrag");
         this.transform.SetParent(parentToReturnTo);
         this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+        CanvasGroup test = this.GetComponent<CanvasGroup>();
+        //become targetable
+        this.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
         Destroy(placeholder);
+        if (this.isDiscarded)
+        {
+            //Fade out card when it goes into the play area
+            //Could do an animation here instead
+            StartCoroutine(Fade());
+        }
+    }
+
+    IEnumerator Fade()
+    {
+        float time = 0f;
+        float duration = 3f;
+        CanvasGroup cardCanvasGroup = this.GetComponent<CanvasGroup>();
+        //become untagetable
+        cardCanvasGroup.blocksRaycasts = false;
+        while (time < duration)//(cardCanvasGroup.alpha != 0f)
+        {
+            time += Time.deltaTime;
+            float blend = Mathf.Clamp01(time / duration);
+            cardCanvasGroup.alpha = Mathf.Lerp(1, 0, blend);
+            //cardCanvasGroup.alpha = Mathf.Lerp(1,0,time * 0.0001f);
+            //time += Time.deltaTime;
+            Debug.Log("in while loop");
+            // yield return null;
+            yield return null;
+        }
     }
 
 }

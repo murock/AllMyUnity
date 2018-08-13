@@ -78,9 +78,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CardAction.cs" />
+    <Compile Include="Assets\Scripts\CardAttack.cs" />
     <Compile Include="Assets\Scripts\CardDraw.cs" />
+    <Compile Include="Assets\Scripts\CardProperties.cs" />
+    <Compile Include="Assets\Scripts\DeckManager.cs" />
     <Compile Include="Assets\Scripts\Draggable.cs" />
     <Compile Include="Assets\Scripts\DropZone.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\MonsterInteraction.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\PlayArea.cs" />
+    <Compile Include="Assets\Scripts\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Tips.txt" />

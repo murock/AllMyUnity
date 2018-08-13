@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 114623866857855484}
   - component: {fileID: 114785835434293868}
   - component: {fileID: 225062416271455416}
+  - component: {fileID: 114386236333252644}
   m_Layer: 5
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +142,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Defence
+  m_Text: Attack
+--- !u!114 &114386236333252644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620271974762526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d667ad186207347888db390abe51f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0
 --- !u!114 &114503623559407766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,7 +214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +1 Defence
+  m_Text: +1 Attack
 --- !u!114 &114623866857855484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeholderParent: {fileID: 0}
+  isDiscarded: 0
 --- !u!114 &114785835434293868
 MonoBehaviour:
   m_ObjectHideFlags: 1

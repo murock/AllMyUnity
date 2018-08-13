@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
+public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+{
+    //Current monster
+    [SerializeField]
+    private MonsterInteraction monster;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         //  Debug.Log("Pointer Enter");
-        //if nothing is being dragged do nothing
+       // if nothing is being dragged do nothing
         if (eventData.pointerDrag == null)
         {
             return;
@@ -35,12 +39,24 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log(eventData.pointerDrag.name + " was dropped on + " + this.gameObject.name);
+
         GameObject card = eventData.pointerDrag;
-
-        Draggable d = card.GetComponent<Draggable>();
+        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         d.parentToReturnTo = this.transform;
-        d.isDiscarded = false;
+        d.isDiscarded = true;
 
+        //Card action logic
+
+        if (card.tag == "card")
+        {
+            CardProperties cardProps = card.GetComponent<CardProperties>();
+            //Attack
+            if (cardProps.Attack > 0)
+            {
+                //apply damage to monster
+                monster.TakeDamage(cardProps.Attack);
+            }
+        }
     }
 
 }
