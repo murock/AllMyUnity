@@ -1,0 +1,7 @@
+2018-08-15 16:54:15.4082 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 16:54:15.4171 [INFO] Setting define symbol SCENE_FUSION
+2018-08-15 16:54:21.5776 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 16:55:21.8025 [INFO] Launching Session: Main Scene
+2018-08-15 16:55:22.4265 [DEBUG] Connecting
+2018-08-15 16:55:22.4444 [DEBUG] Connecting to room (79750:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1026
+2018-08-15 16:57:09.9094 [DEBUG] Sent D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/KSEditorLogs/SessionLogs/session.79750-636699489224744948.log
