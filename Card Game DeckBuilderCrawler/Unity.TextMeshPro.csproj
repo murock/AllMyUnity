@@ -280,6 +280,18 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="KSCommon.Unity2018_2">
+      <HintPath>Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
+    </Reference>
+    <Reference Include="KSCommon-Editor.Unity2018_2">
+      <HintPath>Assets/KinematicSoup/Editor/KSCommon-Editor.Unity2018_2.dll</HintPath>
+    </Reference>
+    <Reference Include="KSSceneFusion.Unity2018_2">
+      <HintPath>Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
+    </Reference>
+    <Reference Include="KSSceneFusion-Editor.Unity2018_2">
+      <HintPath>Assets/KinematicSoup/SceneFusion/Editor/KSSceneFusion-Editor.Unity2018_2.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Alfie/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -297,18 +309,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="KSSceneFusion.Unity2018_2">
-      <HintPath>Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
-    </Reference>
-    <Reference Include="KSCommon-Editor.Unity2018_2">
-      <HintPath>Assets/KinematicSoup/Editor/KSCommon-Editor.Unity2018_2.dll</HintPath>
-    </Reference>
-    <Reference Include="KSCommon.Unity2018_2">
-      <HintPath>Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
-    </Reference>
-    <Reference Include="KSSceneFusion-Editor.Unity2018_2">
-      <HintPath>Assets/KinematicSoup/SceneFusion/Editor/KSSceneFusion-Editor.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll</HintPath>

@@ -5,3 +5,25 @@
 2018-08-15 16:55:22.4265 [DEBUG] Connecting
 2018-08-15 16:55:22.4444 [DEBUG] Connecting to room (79750:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1026
 2018-08-15 16:57:09.9094 [DEBUG] Sent D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/KSEditorLogs/SessionLogs/session.79750-636699489224744948.log
+2018-08-15 19:56:12.5058 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 19:56:17.7882 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 20:01:45.9858 [INFO] Launching Session: Main Scene
+2018-08-15 20:01:46.6368 [DEBUG] Connecting
+2018-08-15 20:01:46.6557 [DEBUG] Connecting to room (79759:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1026
+2018-08-15 20:02:42.9849 [DEBUG] Sent D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/KSEditorLogs/SessionLogs/session.79759-636699601066757227.log
+2018-08-15 20:04:10.9415 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 20:04:10.9824 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-15 20:04:19.3527 [DEBUG] Play mode: False
+2018-08-15 20:04:43.0210 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 20:04:43.0689 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-15 20:04:48.1501 [DEBUG] Play mode: False
+2018-08-15 20:07:04.4689 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 20:07:04.5008 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-15 20:07:12.9120 [DEBUG] Play mode: False
+2018-08-15 20:11:04.8985 [DEBUG] Refresh token (0qChRLnuC7e873kU1ppcciPDDt7hIF7xS46GjGaZO9RJamaxfNcSPodlSiMbZoYJe9DHoOYo211CB66c5FARswOob0sBgZlBX9ro2C06ZFRO6qm0NmSsDiiWfHEh4H5TMWkIoSbLNo3oBb60sMXtsdnWyimfwEotQz9wtCM9h0gOp4M5RwIitCrhnwdqhEShkWn3meFyCFy8a0RWMh5yJYo4wxMgiNNFT3iq9BdBCjtO2cn7s6QbF5k2pRQFJIc) error: {"err":"Error getting response stream (ReadDone2): ReceiveFailure"}
+2018-08-15 20:14:49.1396 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 20:14:54.2084 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-15 20:15:38.8068 [DEBUG] Play mode: False
+2018-08-15 20:15:50.3129 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-15 20:15:50.3687 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-15 20:16:01.4612 [DEBUG] Play mode: False
