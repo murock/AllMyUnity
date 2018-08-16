@@ -129,7 +129,6 @@
     <None Include="Assets\Resources\BugList.txt" />
     <None Include="Assets\Resources\CheatSheet.txt" />
     <None Include="Assets\Resources\Level.txt" />
-    <None Include="Assets\Resources\Level2.txt" />
     <None Include="Assets\Sprites\Previous 2d game\Font\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
