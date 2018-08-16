@@ -1,0 +1,15 @@
+2018-08-16 07:22:19.9657 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:22:24.3411 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:23:32.0660 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:46:36.6134 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:46:41.2669 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:47:17.9238 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:47:39.6873 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:47:39.7711 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-16 07:47:45.5175 [DEBUG] Play mode: False
+2018-08-16 07:48:08.1151 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:48:13.0968 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 07:48:14.4013 [DEBUG] Invalid token sent as part of a web request token. Token = ulm09dOHCn7i9pMZ6RCeage6g7A9B2SDbbpfeJ1o9dHadZZ6whJdrfdreJ12UMJZjHpmgs1pDuJ6kl3lajPzHPb2LK8k7ISWC62AWRoBbzK5SSIuNwXmHzg5kcnG38zFoxgy7Ua6BlMKj1eIMgwsTSKYUimx9d2HENg0uuFaQZy9iEpI6r0GSnRgOfYXI58dSqWelOOPLA2WppHLQxdqwHWOdp03KLZSbHRQueBJhGM7sTiTlRago6LsbTSFNrn
+2018-08-16 07:48:26.5764 [INFO] Launching Session: Main Scene
+2018-08-16 07:48:27.1653 [DEBUG] Connecting
+2018-08-16 07:48:27.1832 [DEBUG] Connecting to room (79804:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1026
