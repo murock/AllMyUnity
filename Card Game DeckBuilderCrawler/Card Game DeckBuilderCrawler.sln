@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{A90B4E59-4D8C-EFD9-093B-6FA4E91F04A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PackageManagerUI.EditorTests", "Unity.PackageManagerUI.EditorTests.csproj", "{9AB8A0CF-48EC-C2B0-4F29-9B45C42FDE96}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PackageManagerUI.Editor", "Unity.PackageManagerUI.Editor.csproj", "{1C19D115-FE64-8501-7B89-78AB22998EA4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{7C0FC9AC-1521-84B8-A1C2-98DF68CD9DD5}"
 EndProject
 Global
@@ -19,14 +15,6 @@ Global
 		{A90B4E59-4D8C-EFD9-093B-6FA4E91F04A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A90B4E59-4D8C-EFD9-093B-6FA4E91F04A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A90B4E59-4D8C-EFD9-093B-6FA4E91F04A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AB8A0CF-48EC-C2B0-4F29-9B45C42FDE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AB8A0CF-48EC-C2B0-4F29-9B45C42FDE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AB8A0CF-48EC-C2B0-4F29-9B45C42FDE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AB8A0CF-48EC-C2B0-4F29-9B45C42FDE96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C19D115-FE64-8501-7B89-78AB22998EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C19D115-FE64-8501-7B89-78AB22998EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C19D115-FE64-8501-7B89-78AB22998EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C19D115-FE64-8501-7B89-78AB22998EA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7C0FC9AC-1521-84B8-A1C2-98DF68CD9DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7C0FC9AC-1521-84B8-A1C2-98DF68CD9DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C0FC9AC-1521-84B8-A1C2-98DF68CD9DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU

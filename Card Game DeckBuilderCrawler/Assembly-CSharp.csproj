@@ -85,6 +85,9 @@
     <None Include="Assets\KinematicSoup\SceneFusion\Shaders\Drag.shader" />
     <None Include="Assets\Scripts\Tips.txt" />
     <None Include="Assets\KinematicSoup\SceneFusion\Shaders\Cutout.shader" />
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
@@ -313,12 +316,6 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Unity.PackageManagerUI.Editor.csproj">
-      <Project>{1C19D115-FE64-8501-7B89-78AB22998EA4}</Project>
-      <Name>Unity.PackageManagerUI.Editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -13,3 +13,16 @@
 2018-08-16 07:48:26.5764 [INFO] Launching Session: Main Scene
 2018-08-16 07:48:27.1653 [DEBUG] Connecting
 2018-08-16 07:48:27.1832 [DEBUG] Connecting to room (79804:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1026
+2018-08-16 16:58:09.8905 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 16:58:14.8398 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 16:58:16.9527 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 16:58:16.9836 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-16 16:58:31.7167 [DEBUG] Play mode: False
+2018-08-16 16:59:15.0363 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 16:59:15.0981 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-16 16:59:28.9489 [DEBUG] Play mode: False
+2018-08-16 17:00:08.2307 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 17:00:08.3204 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-16 17:00:22.3670 [DEBUG] Play mode: False
+2018-08-16 17:00:39.5989 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-16 17:00:44.5251 [DEBUG] Scene Fusion version 1.8.1-0
