@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\MonsterInteraction.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\PlayArea.cs" />
+    <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <None Include="Assets\KinematicSoup\SceneFusion\Stand-Ins\TextAsset.txt" />
     <None Include="Assets\KinematicSoup\SceneFusion\Shaders\BillboardCutout.shader" />

@@ -25,7 +25,7 @@ public class CardDraw : Singleton<CardDraw>{
         //cards still left to draw
         if (deck.Count > 0)
         {
-            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
+            
             int randomNumber = Random.Range(0, deck.Count - 1);
             //Make the hand the parent of the card
             deck[randomNumber].transform.parent = hand.transform;
@@ -36,6 +36,10 @@ public class CardDraw : Singleton<CardDraw>{
 
             //remove card from deck list
             deck.RemoveAt(randomNumber);
+        }
+        if (deck.Count > 0)
+        {
+            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
         }
         else
         {

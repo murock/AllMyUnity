@@ -14,7 +14,7 @@ public class DeckManager : MonoBehaviour {
         for (int i = 0; i < deckSize; i++)
         {
             Card newCard;
-            if (i > 3)
+            if (i < 3)
             {
                 Color cardColor = new Color(1f, 0f, 0f, 1f);
                 newCard = new Card("Attack", "+1 attack", 1, cardColor);
