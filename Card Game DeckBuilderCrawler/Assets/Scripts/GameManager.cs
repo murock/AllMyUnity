@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager> {
 
     public void MakeCardTEST()
     {
-        Card newCard = new Card("Attack", "+1 Attack", 1);
-        newCard.cardPrefab.transform.parent = this.transform;
+       // Card newCard = new Card("Attack", "+1 Attack", 1);
+        // newCard.cardPrefab.transform.parent = this.transform;
     }
 }

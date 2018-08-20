@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardDraw : MonoBehaviour{
+public class CardDraw : Singleton<CardDraw>{
 
     [SerializeField]
     private GameObject deckLabel;
@@ -13,7 +13,7 @@ public class CardDraw : MonoBehaviour{
 
     [SerializeField]
     private List<GameObject> initalDeck;
-    private List<GameObject> deck;
+    public List<GameObject> deck;
 
 
     private void Start()

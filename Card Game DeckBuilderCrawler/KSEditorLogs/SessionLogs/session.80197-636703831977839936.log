@@ -1,0 +1,36 @@
+2018-08-20 17:33:18.1435 [DEBUG] Validating model...
+2018-08-20 17:33:18.3215 [DEBUG] Model updated
+2018-08-20 17:33:18.3215 [DEBUG] Authenticating with server...
+2018-08-20 17:33:18.8273 [DEBUG] Connected to room. (80197:SceneFusion:SceneFusion)
+2018-08-20 17:33:18.8393 [INFO] Connected to server.
+2018-08-20 17:33:18.8393 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-08-20 17:33:18.8393 [DEBUG] Unity Version : 2018.2.3f1
+2018-08-20 17:33:18.8403 [DEBUG] Pro License : False
+2018-08-20 17:33:18.8403 [DEBUG] Platform : WindowsEditor
+2018-08-20 17:33:18.8403 [DEBUG] Build Target : StandaloneWindows64
+2018-08-20 17:33:18.8403 [DEBUG] Scene Fusion version : 1.8.1
+2018-08-20 17:33:18.8403 [DEBUG] Scene Fusion client build : 0
+2018-08-20 17:33:18.8403 [DEBUG] User : ugluten@hotmail.com
+2018-08-20 17:33:18.8403 [DEBUG] Waiting for server response
+2018-08-20 17:33:18.9383 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-08-20 17:33:18.9383 [DEBUG] User Permissions: FFFFFFFF
+2018-08-20 17:33:19.3256 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-08-20 17:33:19.3256 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-08-20 17:33:19.6915 [DEBUG] Uploading scene 'Main Scene'
+2018-08-20 17:33:19.7885 [DEBUG] Compressing scene data
+2018-08-20 17:33:19.8845 [DEBUG] Spawn request. (Objects: 41)
+2018-08-20 17:33:20.1684 [DEBUG] Loading complete
+2018-08-20 17:37:09.6964 [DEBUG] Refresh token (pSLAZd7AppIipRCQhX8zt5MhzmHbBlOSh7Z0a9mwqb7D4n84u8LlxcY5ccYsyQrEaOT3Hfqa2nKjDrKLxsLcHMYfXSOQTajJBXQEqDKfpGzgt1JMmjdqxZRUEzWrmAdmTInxoD0ohEmDEmHNCnrdGLH04baIFGFanlMyHZy1TEoKMpFyXHnh9jhm70wDwaF9C9cEAXChed3GsmaDrfF8W0HEUqek9aUHphC8WzYsOrjG4pnyWaJ5qU9Jdn0Anp8) error: {"err":"Error getting response stream (ReadDone2): ReceiveFailure"}
+2018-08-20 17:53:23.4127 [DEBUG] Disconnecting temporarily to recompile.
+2018-08-20 17:53:23.4137 [DEBUG] Disconnecting from room (80197:SceneFusion:SceneFusion)
+2018-08-20 17:53:23.4277 [INFO] Disconnected from server.
+2018-08-20 17:53:23.4277 [DEBUG] Disconnect. (Duration: 1204)
+2018-08-20 17:53:28.2871 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-20 17:53:28.7470 [DEBUG] Property changes detected after recompile. Will not reconnect.
+2018-08-20 17:53:28.7720 [DEBUG] Connecting to room (80197:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1026
+2018-08-20 17:53:29.1328 [DEBUG] Validating model...
+2018-08-20 17:53:29.3108 [DEBUG] Model updated
+2018-08-20 17:53:29.3108 [DEBUG] Authenticating with server...
+2018-08-20 17:53:29.5277 [DEBUG] Authentication with the remote host failed. (80197:SceneFusion:SceneFusion)
+2018-08-20 17:53:29.6297 [DEBUG] Connection failed. (80197:SceneFusion:SceneFusion)
+2018-08-20 17:53:38.4799 [DEBUG] Connection failed. (80197:SceneFusion:SceneFusion)

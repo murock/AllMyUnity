@@ -8,12 +8,13 @@ public class Card : MonoBehaviour {
     private CardProperties props;
     public GameObject cardPrefab;
 
-    public Card(string cardTitle, string cardDescription, int attack)
+    public Card(string cardTitle, string cardDescription, int attack, Color cardColor)
     {
         props = new CardProperties();
         cardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
         cardPrefab.transform.Find("Card Title").GetComponent<Text>().text = cardTitle;
         cardPrefab.transform.Find("Card Description").GetComponent<Text>().text = cardDescription;
+        cardPrefab.transform.GetComponent<Image>().color = cardColor;
         props.Attack = attack;
     }
 }
