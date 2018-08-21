@@ -43,19 +43,22 @@ public class PlayerInteraction : MonoBehaviour {
         this.playerHealthTxt.text = string.Format("HP: <color=red>{0}</color>", this.playerHealth.ToString());
     }
 
-    public void Healing(int healing)
+    public void AddDefence(int defence)
     {
-        this.playerHealth += healing;
-            if (this.playerHealth > 0)
-            {
-                 this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
-            }    
-            else
-            {
-                this.playerHealth = 0;
-                this.playerHealthTxt.text = "You Died";
-                this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
-            }
+        this.playerHealth += defence;
+        this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
+
+        //This kind of logic probably only applies in something that both takes away and adds to health
+        //if (this.playerHealth > 0)
+        //{
+        //     this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
+        //}    
+        //else
+        //{
+        //    this.playerHealth = 0;
+        //    this.playerHealthTxt.text = "You Died";
+        //    this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
+        //}
     }
 
 

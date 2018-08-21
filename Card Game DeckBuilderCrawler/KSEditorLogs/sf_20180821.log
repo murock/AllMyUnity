@@ -1,0 +1,94 @@
+2018-08-21 16:26:50.8300 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:26:54.8704 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:27:15.4795 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:27:15.5214 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:27:34.5802 [DEBUG] Play mode: False
+2018-08-21 16:32:47.7383 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:36:41.9198 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:36:41.9886 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:36:47.4673 [DEBUG] Play mode: False
+2018-08-21 16:37:28.5704 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:37:28.6253 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:38:46.4856 [DEBUG] Play mode: False
+2018-08-21 16:39:21.8738 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:39:21.9007 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:39:23.4410 [DEBUG] Play mode: False
+2018-08-21 16:40:00.6551 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:40:00.8387 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:41:38.2080 [DEBUG] Play mode: False
+2018-08-21 16:41:40.5185 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:41:46.5631 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:41:46.5990 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:41:51.8904 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDraw.drawCard () (at Assets/Scripts/Cards/CardDraw.cs:31)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-08-21 16:42:24.7378 [DEBUG] Play mode: False
+2018-08-21 16:42:40.5013 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:42:40.5401 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:42:52.7759 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:65)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-08-21 16:43:05.5356 [DEBUG] Play mode: False
+2018-08-21 16:43:20.8949 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:43:21.0485 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:43:46.8299 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:65)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-08-21 16:43:49.2351 [DEBUG] Play mode: False
+2018-08-21 16:44:18.7767 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:44:18.9393 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:44:37.5735 [DEBUG] Play mode: False
+2018-08-21 16:44:49.9778 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:44:49.9987 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:45:14.6282 [DEBUG] Play mode: False
+2018-08-21 16:47:04.3959 [INFO] Launching Session: Main Scene
+2018-08-21 16:47:05.0506 [DEBUG] Connecting
+2018-08-21 16:47:05.0695 [DEBUG] Connecting to room (80268:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1027
+2018-08-21 16:56:50.6431 [DEBUG] Sent D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/KSEditorLogs/SessionLogs/session.80268-636704668250775716.log
+2018-08-21 16:57:52.9708 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:57:53.0316 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:57:58.0551 [DEBUG] Play mode: False
+2018-08-21 17:03:53.5606 [DEBUG] Refresh token (SXT6SFwO4YYJ772xYoPzGccdl3zoYJmdYlOOlrdoiaFg9gBUkq2H2tfAExF4qQLpg9hMzSFPJjNB4gPuaNYsRCufr8dgnRX7iAiP3j6rjzTMJ78Eb4iyqCxBm982IpfZbR2K2IZuylBPE2lfiocH5kyA4cfbplrekyh9DPrIR2y7SNXcPdqSBEDPeGAbmYHcas7dioaBdfa6NaQq5OYE2xMktjitN481pyqmlohjIaog30r2Yr37QHejYNdkpxO) error: {"err":"Error getting response stream (ReadDone2): ReceiveFailure"}
+2018-08-21 17:26:06.0387 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:27:20.8450 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:29:51.2145 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:33:52.0651 [DEBUG] Refresh token (SXT6SFwO4YYJ772xYoPzGccdl3zoYJmdYlOOlrdoiaFg9gBUkq2H2tfAExF4qQLpg9hMzSFPJjNB4gPuaNYsRCufr8dgnRX7iAiP3j6rjzTMJ78Eb4iyqCxBm982IpfZbR2K2IZuylBPE2lfiocH5kyA4cfbplrekyh9DPrIR2y7SNXcPdqSBEDPeGAbmYHcas7dioaBdfa6NaQq5OYE2xMktjitN481pyqmlohjIaog30r2Yr37QHejYNdkpxO) error: {"err":"Error getting response stream (ReadDone2): ReceiveFailure"}
+2018-08-21 17:51:56.9744 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:51:57.0692 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 17:52:02.1366 [DEBUG] Play mode: False
+2018-08-21 17:52:08.7287 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:52:08.8993 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 17:52:11.6289 [DEBUG] Play mode: False
+2018-08-21 17:52:57.9955 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:52:58.0334 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 17:53:03.9513 [DEBUG] Play mode: False
+2018-08-21 17:53:28.4186 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:53:28.5493 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 17:53:40.8854 [DEBUG] Play mode: False
+2018-08-21 17:56:39.2943 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:56:39.5187 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 17:59:45.3222 [DEBUG] Play mode: False
+2018-08-21 17:59:49.2138 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:59:57.1081 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 17:59:57.1590 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:00:16.9889 [DEBUG] Play mode: False
+2018-08-21 18:00:42.6804 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:00:42.7472 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:01:05.1659 [DEBUG] Play mode: False
+2018-08-21 18:01:09.3275 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:01:09.3874 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:01:16.1060 [DEBUG] Play mode: False
+2018-08-21 18:05:09.9707 [DEBUG] Refresh token (SXT6SFwO4YYJ772xYoPzGccdl3zoYJmdYlOOlrdoiaFg9gBUkq2H2tfAExF4qQLpg9hMzSFPJjNB4gPuaNYsRCufr8dgnRX7iAiP3j6rjzTMJ78Eb4iyqCxBm982IpfZbR2K2IZuylBPE2lfiocH5kyA4cfbplrekyh9DPrIR2y7SNXcPdqSBEDPeGAbmYHcas7dioaBdfa6NaQq5OYE2xMktjitN481pyqmlohjIaog30r2Yr37QHejYNdkpxO) error: {"err":"Error getting response stream (ReadDone2): ReceiveFailure"}

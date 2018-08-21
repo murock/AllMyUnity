@@ -5,7 +5,7 @@ using UnityEngine;
 public class CardProperties : MonoBehaviour {
 
     [SerializeField]
-    private int attack;
+    private int attack, defence;
 
     public int Attack
     {
@@ -17,5 +17,17 @@ public class CardProperties : MonoBehaviour {
         {
             this.attack = value;
         }      
+    }
+
+    public int Defense
+    {
+        get
+        {
+            return this.defence;
+        }
+        set
+        {
+            this.defence = value;
+        }
     }
 }

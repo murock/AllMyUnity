@@ -9,6 +9,9 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     [SerializeField]
     private MonsterInteraction monster;
 
+    [SerializeField]
+    private PlayerInteraction player;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         //  Debug.Log("Pointer Enter");
@@ -55,6 +58,11 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             {
                 //apply damage to monster
                 monster.TakeDamage(cardProps.Attack);
+            }
+            if (cardProps.Defense > 0)
+            {
+                //add defence to player
+                player.AddDefence(cardProps.Defense);
             }
         }
     }

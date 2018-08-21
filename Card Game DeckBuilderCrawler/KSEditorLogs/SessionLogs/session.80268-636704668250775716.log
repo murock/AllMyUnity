@@ -1,0 +1,165 @@
+2018-08-21 16:47:05.4440 [DEBUG] Validating model...
+2018-08-21 16:47:05.6365 [DEBUG] Model updated
+2018-08-21 16:47:05.6365 [DEBUG] Authenticating with server...
+2018-08-21 16:47:06.1613 [DEBUG] Connected to room. (80268:SceneFusion:SceneFusion)
+2018-08-21 16:47:06.1633 [INFO] Connected to server.
+2018-08-21 16:47:06.1643 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-08-21 16:47:06.1643 [DEBUG] Unity Version : 2018.2.3f1
+2018-08-21 16:47:06.1643 [DEBUG] Pro License : False
+2018-08-21 16:47:06.1643 [DEBUG] Platform : WindowsEditor
+2018-08-21 16:47:06.1643 [DEBUG] Build Target : StandaloneWindows64
+2018-08-21 16:47:06.1643 [DEBUG] Scene Fusion version : 1.8.1
+2018-08-21 16:47:06.1643 [DEBUG] Scene Fusion client build : 0
+2018-08-21 16:47:06.1653 [DEBUG] User : alfiebpage@gmail.com
+2018-08-21 16:47:06.1653 [DEBUG] Waiting for server response
+2018-08-21 16:47:06.2711 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-08-21 16:47:06.2711 [DEBUG] User Permissions: FFFFFFFF
+2018-08-21 16:47:06.6291 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-08-21 16:47:06.6291 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-08-21 16:47:06.9443 [DEBUG] Uploading scene 'Main Scene'
+2018-08-21 16:47:07.0051 [DEBUG] Compressing scene data
+2018-08-21 16:47:07.0789 [DEBUG] Spawn request. (Objects: 19)
+2018-08-21 16:47:07.3213 [DEBUG] Loading complete
+2018-08-21 16:51:01.4145 [DEBUG] Refresh token (SXT6SFwO4YYJ772xYoPzGccdl3zoYJmdYlOOlrdoiaFg9gBUkq2H2tfAExF4qQLpg9hMzSFPJjNB4gPuaNYsRCufr8dgnRX7iAiP3j6rjzTMJ78Eb4iyqCxBm982IpfZbR2K2IZuylBPE2lfiocH5kyA4cfbplrekyh9DPrIR2y7SNXcPdqSBEDPeGAbmYHcas7dioaBdfa6NaQq5OYE2xMktjitN481pyqmlohjIaog30r2Yr37QHejYNdkpxO) error: {"err":"Error getting response stream (ReadDone2): ReceiveFailure"}
+2018-08-21 16:54:09.6574 [DEBUG] Disconnecting temporarily to recompile.
+2018-08-21 16:54:09.6574 [DEBUG] Disconnecting from room (80268:SceneFusion:SceneFusion)
+2018-08-21 16:54:09.6734 [INFO] Disconnected from server.
+2018-08-21 16:54:09.6734 [DEBUG] Disconnect. (Duration: 423)
+2018-08-21 16:54:14.1504 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:54:14.1937 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:54:14.3363 [DEBUG] Connecting to room (80268:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1027
+2018-08-21 16:54:14.3443 [DEBUG] Host connection. (Session: 80268)
+2018-08-21 16:54:14.7173 [DEBUG] Validating model...
+2018-08-21 16:54:14.8978 [DEBUG] Model updated
+2018-08-21 16:54:14.8988 [DEBUG] Authenticating with server...
+2018-08-21 16:54:15.1112 [DEBUG] Connected to room. (80268:SceneFusion:SceneFusion)
+2018-08-21 16:54:15.1222 [INFO] Connected to server.
+2018-08-21 16:54:15.1232 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-08-21 16:54:15.1232 [DEBUG] Unity Version : 2018.2.3f1
+2018-08-21 16:54:15.1232 [DEBUG] Pro License : False
+2018-08-21 16:54:15.1232 [DEBUG] Platform : WindowsEditor
+2018-08-21 16:54:15.1232 [DEBUG] Build Target : StandaloneWindows64
+2018-08-21 16:54:15.1232 [DEBUG] Scene Fusion version : 1.8.1
+2018-08-21 16:54:15.1232 [DEBUG] Scene Fusion client build : 0
+2018-08-21 16:54:15.1232 [DEBUG] User : alfiebpage@gmail.com
+2018-08-21 16:54:15.1920 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-08-21 16:54:15.1920 [DEBUG] User Permissions: FFFFFFFF
+2018-08-21 16:54:15.2578 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-08-21 16:54:15.2578 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-08-21 16:54:27.7620 [DEBUG] Play mode: False
+2018-08-21 16:54:27.8298 [DEBUG] Loading complete
+2018-08-21 16:54:32.2675 [DEBUG] Disconnecting temporarily to enter play mode.
+2018-08-21 16:54:32.2685 [DEBUG] Disconnecting from room (80268:SceneFusion:SceneFusion)
+2018-08-21 16:54:32.2824 [INFO] Disconnected from server.
+2018-08-21 16:54:32.2824 [DEBUG] Disconnect. (Duration: -107)
+2018-08-21 16:54:32.2994 [INFO] Static batching in play mode is not supported in a Scene Fusion session and will be temporarily disabled.
+2018-08-21 16:54:34.3902 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:54:34.4431 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:54:34.5051 [DEBUG] Connecting to room (80268:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1027
+2018-08-21 16:54:34.5120 [DEBUG] Host connection. (Session: 80268)
+2018-08-21 16:54:34.8621 [DEBUG] Validating model...
+2018-08-21 16:54:35.0451 [DEBUG] Model updated
+2018-08-21 16:54:35.0451 [DEBUG] Authenticating with server...
+2018-08-21 16:54:35.2622 [DEBUG] Connected to room. (80268:SceneFusion:SceneFusion)
+2018-08-21 16:54:35.2752 [INFO] Connected to server.
+2018-08-21 16:54:35.2752 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-08-21 16:54:35.2762 [DEBUG] Unity Version : 2018.2.3f1
+2018-08-21 16:54:35.2762 [DEBUG] Pro License : False
+2018-08-21 16:54:35.2762 [DEBUG] Platform : WindowsEditor
+2018-08-21 16:54:35.2762 [DEBUG] Build Target : StandaloneWindows64
+2018-08-21 16:54:35.2762 [DEBUG] Scene Fusion version : 1.8.1
+2018-08-21 16:54:35.2762 [DEBUG] Scene Fusion client build : 0
+2018-08-21 16:54:35.2762 [DEBUG] User : alfiebpage@gmail.com
+2018-08-21 16:54:35.3413 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-08-21 16:54:35.3413 [DEBUG] User Permissions: FFFFFFFF
+2018-08-21 16:54:35.4055 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-08-21 16:54:35.4055 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-08-21 16:54:38.1824 [DEBUG] Play mode: False
+2018-08-21 16:54:38.2492 [DEBUG] Loading complete
+2018-08-21 16:54:39.9528 [DEBUG] Disconnecting temporarily to enter play mode.
+2018-08-21 16:54:39.9528 [DEBUG] Disconnecting from room (80268:SceneFusion:SceneFusion)
+2018-08-21 16:54:39.9558 [INFO] Disconnected from server.
+2018-08-21 16:54:39.9558 [DEBUG] Disconnect. (Duration: -110)
+2018-08-21 16:54:39.9718 [INFO] Static batching in play mode is not supported in a Scene Fusion session and will be temporarily disabled.
+2018-08-21 16:54:42.0196 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:54:42.1153 [DEBUG] Connecting to room (80268:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1027
+2018-08-21 16:54:42.1223 [DEBUG] Host connection. (Session: 80268)
+2018-08-21 16:54:42.1233 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:54:42.4819 [DEBUG] Validating model...
+2018-08-21 16:54:42.6668 [DEBUG] Model updated
+2018-08-21 16:54:42.6668 [DEBUG] Authenticating with server...
+2018-08-21 16:54:42.9026 [DEBUG] Connected to room. (80268:SceneFusion:SceneFusion)
+2018-08-21 16:54:42.9156 [INFO] Connected to server.
+2018-08-21 16:54:42.9156 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-08-21 16:54:42.9156 [DEBUG] Unity Version : 2018.2.3f1
+2018-08-21 16:54:42.9166 [DEBUG] Pro License : False
+2018-08-21 16:54:42.9166 [DEBUG] Platform : WindowsEditor
+2018-08-21 16:54:42.9166 [DEBUG] Build Target : StandaloneWindows64
+2018-08-21 16:54:42.9166 [DEBUG] Scene Fusion version : 1.8.1
+2018-08-21 16:54:42.9166 [DEBUG] Scene Fusion client build : 0
+2018-08-21 16:54:42.9166 [DEBUG] User : alfiebpage@gmail.com
+2018-08-21 16:54:42.9844 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-08-21 16:54:42.9844 [DEBUG] User Permissions: FFFFFFFF
+2018-08-21 16:54:43.0473 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-08-21 16:54:43.0473 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-08-21 16:54:55.4362 [DEBUG] Play mode: False
+2018-08-21 16:54:55.5043 [DEBUG] Loading complete
+2018-08-21 16:55:24.5372 [DEBUG] Disconnecting temporarily to enter play mode.
+2018-08-21 16:55:24.5372 [DEBUG] Disconnecting from room (80268:SceneFusion:SceneFusion)
+2018-08-21 16:55:24.5562 [INFO] Disconnected from server.
+2018-08-21 16:55:24.5562 [DEBUG] Disconnect. (Duration: -82)
+2018-08-21 16:55:24.5721 [INFO] Static batching in play mode is not supported in a Scene Fusion session and will be temporarily disabled.
+2018-08-21 16:55:26.8378 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:55:26.8956 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:55:26.9654 [DEBUG] Connecting to room (80268:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1027
+2018-08-21 16:55:26.9724 [DEBUG] Host connection. (Session: 80268)
+2018-08-21 16:55:27.3377 [DEBUG] Validating model...
+2018-08-21 16:55:27.5335 [DEBUG] Model updated
+2018-08-21 16:55:27.5345 [DEBUG] Authenticating with server...
+2018-08-21 16:55:27.7511 [DEBUG] Connected to room. (80268:SceneFusion:SceneFusion)
+2018-08-21 16:55:27.7691 [INFO] Connected to server.
+2018-08-21 16:55:27.7691 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-08-21 16:55:27.7691 [DEBUG] Unity Version : 2018.2.3f1
+2018-08-21 16:55:27.7691 [DEBUG] Pro License : False
+2018-08-21 16:55:27.7701 [DEBUG] Platform : WindowsEditor
+2018-08-21 16:55:27.7701 [DEBUG] Build Target : StandaloneWindows64
+2018-08-21 16:55:27.7701 [DEBUG] Scene Fusion version : 1.8.1
+2018-08-21 16:55:27.7701 [DEBUG] Scene Fusion client build : 0
+2018-08-21 16:55:27.7701 [DEBUG] User : alfiebpage@gmail.com
+2018-08-21 16:55:27.8189 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-08-21 16:55:27.8189 [DEBUG] User Permissions: FFFFFFFF
+2018-08-21 16:55:27.8509 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-08-21 16:55:27.8509 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-08-21 16:55:29.1524 [DEBUG] Play mode: False
+2018-08-21 16:55:29.2292 [DEBUG] Loading complete
+2018-08-21 16:56:36.6270 [DEBUG] Disconnecting temporarily to enter play mode.
+2018-08-21 16:56:36.6280 [DEBUG] Disconnecting from room (80268:SceneFusion:SceneFusion)
+2018-08-21 16:56:36.6390 [INFO] Disconnected from server.
+2018-08-21 16:56:36.6400 [DEBUG] Disconnect. (Duration: -44)
+2018-08-21 16:56:36.6539 [INFO] Static batching in play mode is not supported in a Scene Fusion session and will be temporarily disabled.
+2018-08-21 16:56:38.8425 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 16:56:38.9013 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 16:56:38.9671 [DEBUG] Connecting to room (80268:SceneFusion:SceneFusion) via TCP at ec2-34-211-100-27.us-west-2.compute.amazonaws.com:1027
+2018-08-21 16:56:38.9741 [DEBUG] Host connection. (Session: 80268)
+2018-08-21 16:56:39.3346 [DEBUG] Validating model...
+2018-08-21 16:56:39.5326 [DEBUG] Model updated
+2018-08-21 16:56:39.5336 [DEBUG] Authenticating with server...
+2018-08-21 16:56:39.7561 [DEBUG] Connected to room. (80268:SceneFusion:SceneFusion)
+2018-08-21 16:56:39.7730 [INFO] Connected to server.
+2018-08-21 16:56:39.7730 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-08-21 16:56:39.7730 [DEBUG] Unity Version : 2018.2.3f1
+2018-08-21 16:56:39.7730 [DEBUG] Pro License : False
+2018-08-21 16:56:39.7740 [DEBUG] Platform : WindowsEditor
+2018-08-21 16:56:39.7740 [DEBUG] Build Target : StandaloneWindows64
+2018-08-21 16:56:39.7740 [DEBUG] Scene Fusion version : 1.8.1
+2018-08-21 16:56:39.7740 [DEBUG] Scene Fusion client build : 0
+2018-08-21 16:56:39.7740 [DEBUG] User : alfiebpage@gmail.com
+2018-08-21 16:56:39.8089 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-08-21 16:56:39.8089 [DEBUG] User Permissions: FFFFFFFF
+2018-08-21 16:56:39.8388 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-08-21 16:56:39.8388 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-08-21 16:56:44.9140 [DEBUG] Play mode: False
+2018-08-21 16:56:44.9888 [DEBUG] Loading complete
+2018-08-21 16:56:50.6252 [DEBUG] Disconnecting from room (80268:SceneFusion:SceneFusion)
+2018-08-21 16:56:50.6282 [INFO] Disconnected from server.
+2018-08-21 16:56:50.6282 [DEBUG] Disconnect. (Duration: -106)

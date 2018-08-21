@@ -11,15 +11,9 @@ public class CardDraw : Singleton<CardDraw>{
     [SerializeField]
     private GameObject hand;
 
-    [SerializeField]
-    private List<GameObject> initalDeck;
     public List<GameObject> deck;
 
 
-    private void Start()
-    {
-        deck = initalDeck;
-    }
     public void drawCard()
     {
         //cards still left to draw

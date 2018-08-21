@@ -5,10 +5,17 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager> {
 
     public ObjectPool Pool { get; set; }
+    private TurnManager turnManager;
 
+    //This is called before Start()
     private void Awake()
     {
         Pool = GetComponent<ObjectPool>();
+    }
+
+    private void Start()
+    {
+        turnManager = new TurnManager();
     }
 
     public void MakeCardTEST()
