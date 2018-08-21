@@ -92,3 +92,25 @@ UnityEngine.EventSystems.EventSystem:Update()
 2018-08-21 18:01:09.3874 [DEBUG] Play mode: True, sync in play mode: False
 2018-08-21 18:01:16.1060 [DEBUG] Play mode: False
 2018-08-21 18:05:09.9707 [DEBUG] Refresh token (SXT6SFwO4YYJ772xYoPzGccdl3zoYJmdYlOOlrdoiaFg9gBUkq2H2tfAExF4qQLpg9hMzSFPJjNB4gPuaNYsRCufr8dgnRX7iAiP3j6rjzTMJ78Eb4iyqCxBm982IpfZbR2K2IZuylBPE2lfiocH5kyA4cfbplrekyh9DPrIR2y7SNXcPdqSBEDPeGAbmYHcas7dioaBdfa6NaQq5OYE2xMktjitN481pyqmlohjIaog30r2Yr37QHejYNdkpxO) error: {"err":"Error getting response stream (ReadDone2): ReceiveFailure"}
+2018-08-21 18:07:56.5071 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:08:00.8325 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:26:49.3250 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:26:54.5951 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:26:54.6270 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:27:16.6671 [DEBUG] Play mode: False
+2018-08-21 18:27:32.4061 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:27:32.5128 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:27:34.1357 [DEBUG] Play mode: False
+2018-08-21 18:27:43.5020 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:27:43.5877 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:27:56.5152 [DEBUG] Play mode: False
+2018-08-21 18:28:04.4772 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:28:04.6218 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:28:07.4129 [DEBUG] Play mode: False
+2018-08-21 18:28:34.3511 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:29:33.2975 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:29:33.3664 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:30:05.0510 [DEBUG] Play mode: False
+2018-08-21 18:30:08.8323 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-21 18:30:08.8718 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-21 18:30:13.1628 [DEBUG] Play mode: False

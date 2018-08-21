@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager> {
     private void Start()
     {
         turnManager = new TurnManager();
+        StartCoroutine(turnManager.DrawInitialHand());
     }
 
     public void MakeCardTEST()
