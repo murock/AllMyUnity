@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26cebfd2f7a9c29439ef913f4998ace3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hand: {fileID: 865154091}
   monster: {fileID: 873246260}
 --- !u!1 &96555546
 GameObject:

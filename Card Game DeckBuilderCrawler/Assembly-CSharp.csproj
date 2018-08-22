@@ -70,8 +70,8 @@
     <Compile Include="Assets\Scripts\Cards\CardProperties.cs" />
     <Compile Include="Assets\Scripts\Cards\DeckManager.cs" />
     <Compile Include="Assets\Scripts\Draggable.cs" />
-    <Compile Include="Assets\Scripts\DropZone.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\MonsterInteraction.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\PlayArea.cs" />

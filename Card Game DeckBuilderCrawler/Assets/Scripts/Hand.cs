@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
+public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -40,7 +40,19 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Draggable d = card.GetComponent<Draggable>();
         d.parentToReturnTo = this.transform;
         d.isDiscarded = false;
-
     }
 
+    private void discardHand()
+    {
+        //loop through all children in the hand
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            Transform card = this.transform.GetChild(i);
+            //If the tag is card then child is a card
+            if (card.tag == "card")
+            {
+
+            }
+        }
+    }
 }
