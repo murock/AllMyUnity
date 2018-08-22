@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager> {
 
     public ObjectPool Pool { get; set; }
-    private TurnManager turnManager;
 
     //This is called before Start()
     private void Awake()
@@ -15,8 +14,7 @@ public class GameManager : Singleton<GameManager> {
 
     private void Start()
     {
-        turnManager = new TurnManager();
-        StartCoroutine(turnManager.DrawInitialHand());
+        TurnManager.Instance.StartCoroutine(TurnManager.Instance.DrawInitialHand());
     }
 
     public void MakeCardTEST()

@@ -15,38 +15,15 @@ public class PlayerInteraction : MonoBehaviour {
     [SerializeField]
     private int playerHealth;
 
-    public Text PlayerNameTxt
-    {
-        get
-        {
-            return this.playerNameTxt;
-        }
-        set
-        {
-            this.playerNameTxt = value;
-        }
-    }
-    public Text PlayerHealthtxt
-    {
-        get
-        {
-            return this.playerHealthTxt;          
-        }
-        set
-        {
-            this.playerHealthTxt = value;
-        }
-    }
-
     private void Start()
     {
-        this.playerHealthTxt.text = string.Format("HP: <color=red>{0}</color>", this.playerHealth.ToString());
+        this.UpdateHP();
     }
 
     public void AddDefence(int defence)
     {
         this.playerHealth += defence;
-        this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
+        this.UpdateHP();
 
         //This kind of logic probably only applies in something that both takes away and adds to health
         //if (this.playerHealth > 0)
@@ -61,7 +38,23 @@ public class PlayerInteraction : MonoBehaviour {
         //}
     }
 
+    public void TakeDamage(int damage)
+    {
+        this.playerHealth -= damage;
+        this.UpdateHP();
+    }
 
+    private void UpdateHP()
+    {
+        if (this.playerHealth > 0)
+        {
+            this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
+        }
+        else
+        {
+            this.playerHealthTxt.text = string.Format("<color=red>Player Dead</color>");
+        }
 
+    }
 
 }

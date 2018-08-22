@@ -14,7 +14,16 @@ public class MonsterInteraction : MonoBehaviour {
     private Text healthTxt;
 
     [SerializeField]
-    private int health;
+    private Text attackTxt;
+
+    [SerializeField]
+    private int health = 15;
+
+    [SerializeField]
+    private int attack = 4;
+
+    [SerializeField]
+    private GameObject player;
 
     public Text NameTxt
     {
@@ -43,6 +52,7 @@ public class MonsterInteraction : MonoBehaviour {
     private void Start()
     {
         this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
+        this.attackTxt.text = string.Format("Attack: {0}", this.attack.ToString());
     }
 
     public void TakeDamage(int damage)
@@ -58,5 +68,11 @@ public class MonsterInteraction : MonoBehaviour {
         {
             this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
         }
+    }
+
+    public void DoDamage()
+    {
+        PlayerInteraction playerInter = player.transform.GetComponent<PlayerInteraction>();
+        playerInter.TakeDamage(this.attack);
     }
 }
