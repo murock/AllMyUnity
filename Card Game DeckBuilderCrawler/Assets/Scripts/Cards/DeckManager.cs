@@ -14,16 +14,21 @@ public class DeckManager : MonoBehaviour {
         for (int i = 0; i < deckSize; i++)
         {
             Card newCard;
-            if (i < 3)
+            if (i < 5)
             {
                 Color cardColor = new Color(1f, 0f, 0f, 1f);
-                newCard = new Card("Attack", "+1 attack", 1, 0, cardColor);
+                newCard = new Card("Attack", "+1 attack", 1, 0, 0, cardColor);
                 
+            }
+            else if ( 5 <= i && 8 > i)
+            {
+                Color cardColor = new Color(0f, 0f, 1f, 1f);
+                newCard = new Card("Defense", "+1 Defense", 0, 1, 0, cardColor);
             }
             else
             {
-                Color cardColor = new Color(0f, 0f, 1f, 1f);
-                newCard = new Card("Defense", "+1 Defense", 0, 1, cardColor);
+                Color cardColor = new Color(250f, 69f, 0f, 1f);
+                newCard = new Card("Draw", "+1 Draw", 0, 0, 1, cardColor);
             }
 
             newCard.cardPrefab.transform.parent = this.transform; // making the deck its parent

@@ -64,6 +64,11 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 //add defence to player
                 player.AddDefence(cardProps.Defense);
             }
+            if (cardProps.Drawcard > 0)
+            {
+                // Draw 1 card
+                CardDraw.Instance.drawCard();
+            }
         }
     }
 

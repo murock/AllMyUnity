@@ -8,7 +8,7 @@ public class Card : MonoBehaviour {
   //  private CardProperties props;
     public GameObject cardPrefab;
 
-    public Card(string cardTitle, string cardDescription, int attack, int defense, Color cardColor)
+    public Card(string cardTitle, string cardDescription, int attack, int defense, int cardDraw, Color cardColor)
     {
         // props = new CardProperties();
         cardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
@@ -18,5 +18,6 @@ public class Card : MonoBehaviour {
         CardProperties props = cardPrefab.transform.GetComponent<CardProperties>();
         props.Attack = attack;
         props.Defense = defense;
+        props.Drawcard = cardDraw;
     }
 }

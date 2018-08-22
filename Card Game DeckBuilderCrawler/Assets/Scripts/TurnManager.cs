@@ -37,5 +37,7 @@ public class TurnManager : Singleton<TurnManager> {
         monster.DoDamage();
         StartCoroutine(DrawHand());
         //Hand.Instance.
+
+
     }
 }

@@ -30,4 +30,6 @@ public class CardProperties : MonoBehaviour {
             this.defence = value;
         }
     }
+
+    public int Drawcard { get; internal set; }
 }
