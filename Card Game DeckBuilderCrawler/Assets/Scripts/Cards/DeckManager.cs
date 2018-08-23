@@ -28,7 +28,7 @@ public class DeckManager : MonoBehaviour {
             else
             {
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
-                newCard = new Card("Draw", "+1 Draw", 0, 0, 1, cardColor);
+                newCard = new Card("Draw", "+2 Draw", 0, 0, 2, cardColor);
             }
 
             newCard.cardPrefab.transform.parent = this.transform; // making the deck its parent

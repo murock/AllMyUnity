@@ -66,8 +66,11 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             }
             if (cardProps.Drawcard > 0)
             {
-                // Draw 1 card
-                CardDraw.Instance.drawCard();
+                // Draw cards
+                for (int i = 0; i < cardProps.Drawcard; i++)
+                {
+                    CardDraw.Instance.drawCard();
+                }
             }
         }
     }

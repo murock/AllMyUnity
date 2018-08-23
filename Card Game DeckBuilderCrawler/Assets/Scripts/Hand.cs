@@ -42,17 +42,25 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
         d.isDiscarded = false;
     }
 
-    private void discardHand()
+    public void DiscardHand()
     {
+        List<Draggable> cardsToDiscard = new List<Draggable>();
         //loop through all children in the hand
         for (int i = 0; i < this.transform.childCount; i++)
         {
             Transform card = this.transform.GetChild(i);
+            Draggable d = card.GetComponent<Draggable>();
             //If the tag is card then child is a card
             if (card.tag == "card")
             {
-
+                cardsToDiscard.Add(d);
             }
+        }
+        foreach (Draggable card in cardsToDiscard)
+        {
+            card.parentToReturnTo = GameManager.Instance.transform;
+            card.isDiscarded = true;
+            card.DiscardCard();
         }
     }
 }

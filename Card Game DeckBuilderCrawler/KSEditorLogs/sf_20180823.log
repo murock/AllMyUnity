@@ -1,0 +1,93 @@
+2018-08-23 06:18:55.5028 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:18:59.7211 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:19:26.4878 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:19:26.5177 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:19:43.7966 [DEBUG] Play mode: False
+2018-08-23 06:23:21.7228 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:23:21.7587 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:23:30.3631 [DEBUG] Play mode: False
+2018-08-23 06:26:05.3167 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:26:13.3272 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:26:13.4918 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:29:13.6425 [DEBUG] Play mode: False
+2018-08-23 06:32:36.1607 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:32:36.2115 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:41:53.7242 [DEBUG] Play mode: False
+2018-08-23 06:41:57.3896 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:42:01.5594 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:42:01.6053 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:42:04.9974 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Draggable.DiscardCard () (at Assets/Scripts/Draggable.cs:79)
+Hand.DiscardHand () (at Assets/Scripts/Hand.cs:57)
+TurnManager.EndTurn () (at Assets/Scripts/TurnManager.cs:39)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-08-23 06:42:09.7903 [DEBUG] Play mode: False
+2018-08-23 06:42:13.0028 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:42:13.0437 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:42:15.2925 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Draggable.DiscardCard () (at Assets/Scripts/Draggable.cs:79)
+Hand.DiscardHand () (at Assets/Scripts/Hand.cs:57)
+TurnManager.EndTurn () (at Assets/Scripts/TurnManager.cs:39)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-08-23 06:42:18.9900 [DEBUG] Play mode: False
+2018-08-23 06:42:54.8606 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:44:32.6673 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:44:32.8089 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:46:16.2476 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Draggable.DiscardCard () (at Assets/Scripts/Draggable.cs:79)
+Hand.DiscardHand () (at Assets/Scripts/Hand.cs:57)
+TurnManager.EndTurn () (at Assets/Scripts/TurnManager.cs:39)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-08-23 06:46:36.2637 [DEBUG] Play mode: False
+2018-08-23 06:46:39.9620 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:46:43.8187 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:46:43.8756 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:46:57.4747 [DEBUG] Play mode: False
+2018-08-23 06:47:00.2704 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:47:00.3318 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:47:12.0895 [DEBUG] Play mode: False
+2018-08-23 06:47:14.5895 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 06:47:14.6494 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 06:47:26.7358 [DEBUG] Play mode: False
+2018-08-23 07:04:06.9478 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:04:07.0007 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 07:05:10.2342 [DEBUG] Play mode: False
+2018-08-23 07:05:13.9831 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:05:17.2418 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:05:17.2771 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 07:05:50.1839 [DEBUG] Play mode: False
+2018-08-23 07:05:54.1140 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:05:54.1718 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 07:06:58.2088 [DEBUG] Play mode: False
+2018-08-23 07:08:30.3507 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:08:30.3926 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 07:08:36.8205 [DEBUG] Play mode: False
+2018-08-23 07:08:51.1837 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:08:51.2166 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 07:09:40.0473 [DEBUG] Play mode: False
+2018-08-23 07:15:58.7560 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:15:58.7979 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-23 07:16:31.4989 [DEBUG] Play mode: False
+2018-08-23 07:16:46.5057 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-23 07:27:38.1629 [DEBUG] Scene Fusion version 1.8.1-0

@@ -70,8 +70,17 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("OnEndDrag");
+        this.DiscardCard();
+    }
+
+    public void DiscardCard()
+    {
         this.transform.SetParent(parentToReturnTo);
-        this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
+        if (placeholder != null)
+        {
+            this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
+        }
+
         //become targetable
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
 

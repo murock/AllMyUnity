@@ -69,7 +69,7 @@
     <Compile Include="Assets\KinematicSoup\SceneFusion\Extensions\ProBuilder\Editor\ProBuilderExtension.cs" />
     <Compile Include="Assets\KinematicSoup\SceneFusion\Extensions\TerrainComposer2\Editor\TerrainComposer2Extension.cs" />
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -315,16 +315,16 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="KSCommon.Unity2018_2">
-      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="KSCommon-Editor.Unity2018_2">
-      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/Editor/KSCommon-Editor.Unity2018_2.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/Editor/KSCommon-Editor.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="KSSceneFusion.Unity2018_2">
-      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="KSSceneFusion-Editor.Unity2018_2">
-      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/Editor/KSSceneFusion-Editor.Unity2018_2.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/Editor/KSSceneFusion-Editor.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>

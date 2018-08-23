@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 39092425}
   - component: {fileID: 39092424}
   - component: {fileID: 39092426}
+  - component: {fileID: 39092427}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -165,8 +166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26cebfd2f7a9c29439ef913f4998ace3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: {fileID: 865154091}
   monster: {fileID: 873246260}
+--- !u!114 &39092427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39092423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984197189549165449681c137ded015c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs: []
 --- !u!1 &96555546
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,9 +17,4 @@ public class GameManager : Singleton<GameManager> {
         TurnManager.Instance.StartCoroutine(TurnManager.Instance.DrawHand());
     }
 
-    public void MakeCardTEST()
-    {
-       // Card newCard = new Card("Attack", "+1 Attack", 1);
-        // newCard.cardPrefab.transform.parent = this.transform;
-    }
 }

@@ -34,10 +34,8 @@ public class TurnManager : Singleton<TurnManager> {
 
     public void EndTurn()
     {
+        Hand.Instance.DiscardHand();
         monster.DoDamage();
         StartCoroutine(DrawHand());
-        //Hand.Instance.
-
-
     }
 }
