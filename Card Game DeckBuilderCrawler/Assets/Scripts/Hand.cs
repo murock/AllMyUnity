@@ -49,10 +49,10 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
         for (int i = 0; i < this.transform.childCount; i++)
         {
             Transform card = this.transform.GetChild(i);
-            Draggable d = card.GetComponent<Draggable>();
             //If the tag is card then child is a card
             if (card.tag == "card")
             {
+                Draggable d = card.GetComponent<Draggable>();
                 cardsToDiscard.Add(d);
             }
         }

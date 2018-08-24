@@ -82,7 +82,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
 
         //become targetable
-        this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        this.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
         Destroy(placeholder);
         if (this.isDiscarded)
