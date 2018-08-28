@@ -7,7 +7,7 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
 {
     //Current monster
     [SerializeField]
-    private MonsterInteraction monster;
+    internal MonsterInteraction monster;
 
     [SerializeField]
     private PlayerInteraction player;

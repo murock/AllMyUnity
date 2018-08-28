@@ -49,6 +49,28 @@ public class MonsterInteraction : MonoBehaviour {
         }
     }
 
+    public int Attack
+    {
+        get
+        {
+            return this.attack;
+        }
+        set
+        {
+            this.attack = value;
+        }
+    }
+
+    public int Health
+    {
+        get
+        {
+            return this.health;
+        }
+    }
+       
+
+
     private void Start()
     {
         this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());

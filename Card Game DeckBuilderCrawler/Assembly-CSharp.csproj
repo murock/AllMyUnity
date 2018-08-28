@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\MonsterInteraction.cs" />
+    <Compile Include="Assets\Scripts\NEWscript.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\PlayArea.cs" />
     <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
@@ -88,7 +89,7 @@
     <None Include="Assets\Scripts\Tips.txt" />
     <None Include="Assets\KinematicSoup\SceneFusion\Shaders\Cutout.shader" />
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -286,10 +287,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="KSCommon.Unity2018_2">
-      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
+      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="KSSceneFusion.Unity2018_2">
-      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
+      <HintPath>D:/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
