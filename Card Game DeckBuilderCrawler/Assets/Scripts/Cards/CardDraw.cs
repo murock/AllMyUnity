@@ -11,7 +11,7 @@ public class CardDraw : Singleton<CardDraw>{
     [SerializeField]
     private GameObject hand;
 
-    public List<GameObject> deck;
+    public List<Transform> deck;
 
 
     public void drawCard()
@@ -58,15 +58,17 @@ public class CardDraw : Singleton<CardDraw>{
         //If the tag is card then is a card
         if (card.tag == "card")
         {
+            deck.Add(card);
             Draggable d = card.GetComponent<Draggable>();
-            CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-            //visible
-            cardCanvasGroup.alpha = 1;
-            //interactable
-            cardCanvasGroup.blocksRaycasts = true;
+            
+            //CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
+            ////visible
+            //cardCanvasGroup.alpha = 1;
+            ////interactable
+            //cardCanvasGroup.blocksRaycasts = true;
             d.parentToReturnTo = this.transform;
-            d.isDiscarded = false;
-           // d.DiscardCard();
+          //  d.isDiscarded = false;
+            d.ShuffleCardBack();
         }
     }
 }

@@ -1,0 +1,37 @@
+2018-08-29 06:57:56.1106 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 06:58:00.2607 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 07:18:18.7654 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 07:18:18.8092 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-29 07:19:27.4272 [DEBUG] Play mode: False
+2018-08-29 07:27:32.5955 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 07:27:32.6444 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-29 07:27:39.5308 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDraw.reShuffleCard (UnityEngine.Transform card) (at Assets/Scripts/Cards/CardDraw.cs:61)
+CardDraw.drawCard () (at Assets/Scripts/Cards/CardDraw.cs:50)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-08-29 07:27:54.8603 [DEBUG] Play mode: False
+2018-08-29 07:28:04.8684 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 07:28:05.0101 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-29 07:31:20.5545 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDraw.reShuffleCard (UnityEngine.Transform card) (at Assets/Scripts/Cards/CardDraw.cs:61)
+CardDraw.drawCard () (at Assets/Scripts/Cards/CardDraw.cs:45)
+TurnManager+<DrawHand>c__Iterator0.MoveNext () (at Assets/Scripts/TurnManager.cs:29)
+UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)
+
+2018-08-29 07:33:49.7502 [DEBUG] Play mode: False
+2018-08-29 07:36:00.9697 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 07:36:01.0195 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-29 07:36:40.1524 [DEBUG] Play mode: False
+2018-08-29 07:36:46.5802 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 07:36:46.6301 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-29 07:38:26.0721 [DEBUG] Play mode: False
+2018-08-29 07:39:12.8472 [DEBUG] Scene Fusion version 1.8.1-0
+2018-08-29 07:39:12.8772 [DEBUG] Play mode: True, sync in play mode: False
+2018-08-29 07:39:22.0700 [DEBUG] Play mode: False

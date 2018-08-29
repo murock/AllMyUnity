@@ -79,18 +79,26 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if (placeholder != null)
         {
             this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
+            Destroy(placeholder);
         }
 
-        //become targetable
-        this.GetComponent<CanvasGroup>().blocksRaycasts = false;
-
-        Destroy(placeholder);
         if (this.isDiscarded)
         {
             //Fade out card when it goes into the play area
             //Could do an animation here instead
             StartCoroutine(Fade());
         }
+    }
+
+    public void ShuffleCardBack()
+    {
+        this.transform.SetParent(parentToReturnTo);
+        if (placeholder != null)
+        {
+            this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
+            Destroy(placeholder);
+        }
+        this.isDiscarded = false;
     }
 
     IEnumerator Fade()

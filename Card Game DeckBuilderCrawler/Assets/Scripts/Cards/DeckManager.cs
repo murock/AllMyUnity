@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour {
 
-    private List<GameObject> deck;
+    private List<Transform> deck;
     private int deckSize;
 
     // Use this for initialization
     void Awake () {
-        deck = new List<GameObject>();
+        deck = new List<Transform>();
         deckSize = 10;
         for (int i = 0; i < deckSize; i++)
         {
@@ -35,12 +35,11 @@ public class DeckManager : MonoBehaviour {
             CanvasGroup cardCanvasGroup = newCard.cardPrefab.GetComponent<CanvasGroup>();
             cardCanvasGroup.alpha = 0; //making it not visible
             cardCanvasGroup.blocksRaycasts = false;
-            deck.Add(newCard.cardPrefab);
+            deck.Add(newCard.cardPrefab.transform);
 
         }
         CardDraw.Instance.deck = this.deck;
 
 	}
-
 	
 }
