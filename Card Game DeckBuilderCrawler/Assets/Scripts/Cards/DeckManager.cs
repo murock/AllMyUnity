@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeckManager : MonoBehaviour {
+public class DeckManager : Singleton<DeckManager> {
 
-    private List<Transform> deck;
+    internal List<Transform> deck;
     private int deckSize;
+
+
+
+
 
     // Use this for initialization
     void Awake () {

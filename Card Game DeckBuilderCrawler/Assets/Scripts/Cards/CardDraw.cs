@@ -52,6 +52,8 @@ public class CardDraw : Singleton<CardDraw>{
             }
             reShuffleCards(cardsToReshuffle);
         }
+        DeckManager.Instance.deck = this.deck;
+
         if (cardAdded)
         {
             return true;
@@ -88,5 +90,6 @@ public class CardDraw : Singleton<CardDraw>{
             }
         }
         deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
+        DeckManager.Instance.deck = this.deck;
     }
 }

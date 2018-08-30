@@ -71,13 +71,23 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         Debug.Log("OnEndDrag");
         this.transform.SetParent(parentToReturnTo);
-        this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
-        CanvasGroup test = this.GetComponent<CanvasGroup>();
+        if(placeholder != null)
+        {
+            this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
+            Destroy(placeholder); //this.DiscardCard();
+        }
+        
         //become targetable
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
-        Destroy(placeholder);
-        //this.DiscardCard();
+        if (this.isDiscarded)
+        {
+            //Fade out card when it goes into the play area
+            //Could do an animation here instead
+            StartCoroutine(Fade());
+        }
+
+
     }
 
     public void DiscardCard()

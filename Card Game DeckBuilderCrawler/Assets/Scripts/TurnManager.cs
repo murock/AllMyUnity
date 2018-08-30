@@ -33,7 +33,7 @@ public class TurnManager : Singleton<TurnManager> {
                 i++;
             }
             //if there are no cards left to draw increment i
-            else if (CardDraw.Instance.deck.Count == 0)
+            else if (DeckManager.Instance.deck.Count == 0)
             {
                 i++;
             }        
