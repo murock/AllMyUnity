@@ -24,10 +24,19 @@ public class TurnManager : Singleton<TurnManager> {
     {
         //1) draw 5 cards
         int i = 0;
+        //DANGER INFINITE LOOP as i not always incremented CHECK THIS LOGIC
         while (i < this.handSize)
         {
-            CardDraw.Instance.drawCard();
-            i++;
+            //if a card was drawn increment i
+            if (CardDraw.Instance.drawCard())
+            {
+                i++;
+            }
+            //if there are no cards left to draw increment i
+            else if (CardDraw.Instance.deck.Count == 0)
+            {
+                i++;
+            }        
             yield return new WaitForSeconds(0.25f);
         }
     }

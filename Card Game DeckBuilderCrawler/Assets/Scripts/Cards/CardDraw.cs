@@ -13,13 +13,12 @@ public class CardDraw : Singleton<CardDraw>{
 
     public List<Transform> deck;
 
-
-    public void drawCard()
+    public bool drawCard()
     {
+        bool cardAdded = false;
         //cards still left to draw
         if (deck.Count > 0)
-        {
-            
+        {           
             int randomNumber = Random.Range(0, deck.Count - 1);
             //Make the hand the parent of the card
             deck[randomNumber].transform.parent = hand.transform;
@@ -30,6 +29,7 @@ public class CardDraw : Singleton<CardDraw>{
 
             //remove card from deck list
             deck.RemoveAt(randomNumber);
+            cardAdded = true;
         }
         if (deck.Count > 0)
         {
@@ -39,36 +39,54 @@ public class CardDraw : Singleton<CardDraw>{
         {
             deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine +  "Out of Cards";
             //Put cards back into the deck
-            //for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
-            //{
-            //    Transform card = GameManager.Instance.transform.GetChild(i);
-            //    reShuffleCard(card);
-            //}
-            //for (int i = 0; i < PlayArea.Instance.transform.childCount; i++)
-            //{
-            //    Transform card = PlayArea.Instance.transform.GetChild(i);
-            //    reShuffleCard(card);
-            //}
+            List<Transform> cardsToReshuffle = new List<Transform>();
+            for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
+            {
+                Transform card = GameManager.Instance.transform.GetChild(i);
+                cardsToReshuffle.Add(card);
+            }
+            for (int i = 0; i < PlayArea.Instance.transform.childCount; i++)
+            {
+                Transform card = PlayArea.Instance.transform.GetChild(i);
+                cardsToReshuffle.Add(card);
+            }
+            reShuffleCards(cardsToReshuffle);
         }
-
+        if (cardAdded)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    private void reShuffleCard(Transform card)
+    public void drawCardButtonHOTFIX()
     {
-        //If the tag is card then is a card
-        if (card.tag == "card")
+        drawCard();
+    }
+
+    private void reShuffleCards(List<Transform> cards)
+    {
+        foreach (Transform card in cards)
         {
-            deck.Add(card);
-            Draggable d = card.GetComponent<Draggable>();
-            
-            //CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-            ////visible
-            //cardCanvasGroup.alpha = 1;
-            ////interactable
-            //cardCanvasGroup.blocksRaycasts = true;
-            d.parentToReturnTo = this.transform;
-          //  d.isDiscarded = false;
-            d.ShuffleCardBack();
+            //If the tag is card then is a card
+            if (card.tag == "card")
+            {
+                deck.Add(card);
+                Draggable d = card.GetComponent<Draggable>();
+
+                //CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
+                ////visible
+                //cardCanvasGroup.alpha = 1;
+                ////interactable
+                //cardCanvasGroup.blocksRaycasts = true;
+                d.parentToReturnTo = this.transform;
+                //  d.isDiscarded = false;
+                d.ShuffleCardBack();
+            }
         }
+        deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
     }
 }
