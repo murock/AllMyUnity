@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class DeckManager : Singleton<DeckManager> {
 
-    internal List<Transform> deck;
+
     private int deckSize;
 
-
+    internal List<Transform> cardsInPlay;
+    internal List<Transform> cardsDiscarded;
+    internal List<Transform> cardsInDeck;
 
 
 
     // Use this for initialization
     void Awake () {
-        deck = new List<Transform>();
+        cardsInDeck = new List<Transform>();
         deckSize = 10;
         for (int i = 0; i < deckSize; i++)
         {
@@ -39,10 +41,10 @@ public class DeckManager : Singleton<DeckManager> {
             CanvasGroup cardCanvasGroup = newCard.cardPrefab.GetComponent<CanvasGroup>();
             cardCanvasGroup.alpha = 0; //making it not visible
             cardCanvasGroup.blocksRaycasts = false;
-            deck.Add(newCard.cardPrefab.transform);
+            cardsInDeck.Add(newCard.cardPrefab.transform);
 
         }
-        CardDraw.Instance.deck = this.deck;
+        CardDraw.Instance.deck = this.cardsInDeck;
 
 	}
 	

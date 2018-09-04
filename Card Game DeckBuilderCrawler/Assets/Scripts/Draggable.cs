@@ -84,7 +84,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             //Fade out card when it goes into the play area
             //Could do an animation here instead
-            StartCoroutine(Fade());
+            //StartCoroutine(Fade());
+            InstantFade();
         }
 
 
@@ -102,7 +103,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             //Fade out card when it goes into the play area
             //Could do an animation here instead
-            StartCoroutine(Fade());
+            // StartCoroutine(Fade());
+            InstantFade();
         }
     }
 
@@ -135,6 +137,15 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             // yield return null;
             yield return null;
         }
+    }
+
+    //Put this in as bug with Fade() race condition of wanting alpha to be 1 but fade setting it to 0 when ending turn and wanting cards there were just in the hand
+    private void InstantFade()
+    {
+        CanvasGroup cardCanvasGroup = this.GetComponent<CanvasGroup>();
+        //become untagetable
+        cardCanvasGroup.blocksRaycasts = false;
+        cardCanvasGroup.alpha = 0;
     }
 
 }

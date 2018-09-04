@@ -20,7 +20,7 @@ public class NEWscript : MonoBehaviour {
             CanvasGroup cardCanvasGroup = CardChoice1.cardPrefab.GetComponent<CanvasGroup>();
             cardCanvasGroup.alpha = 0;
             cardCanvasGroup.blocksRaycasts = false;
-            DeckManager.Instance.deck.Add(CardChoice1.cardPrefab.transform);
+            DeckManager.Instance.cardsInDeck.Add(CardChoice1.cardPrefab.transform);
 
         }
     }

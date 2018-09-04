@@ -6,6 +6,7 @@ public class TurnManager : Singleton<TurnManager> {
 
     //Each turn
     //1) draw 5 cards
+    // mulligan cards?
     //2) Play cards -- monster dead check - done in MonsterInteraction
     //3) End Turn - Discard remaining cards
     //4) Monster Attacks
@@ -33,7 +34,7 @@ public class TurnManager : Singleton<TurnManager> {
                 i++;
             }
             //if there are no cards left to draw increment i
-            else if (DeckManager.Instance.deck.Count == 0)
+            else if (DeckManager.Instance.cardsInDeck.Count == 0)
             {
                 i++;
             }        
@@ -46,5 +47,10 @@ public class TurnManager : Singleton<TurnManager> {
         Hand.Instance.DiscardHand();
         monster.DoDamage();
         StartCoroutine(DrawHand());
+    }
+
+    private void Mulligan()
+    {
+
     }
 }
