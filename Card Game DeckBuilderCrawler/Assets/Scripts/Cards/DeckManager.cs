@@ -28,7 +28,8 @@ public class DeckManager : Singleton<DeckManager> {
             }
             else if ( 5 <= i && 8 > i)
             {
-                Color cardColor = new Color(0f, 0f, 1f, 1f);
+                //    Color cardColor = new Color(0f, 0.7f, 0.7f, 1f);
+                Color cardColor = new Color32(0, 250, 148, 255);
                 newCard = new Card("Defense", "+1 Defense", 0, 1, 0, cardColor);
             }
             else
