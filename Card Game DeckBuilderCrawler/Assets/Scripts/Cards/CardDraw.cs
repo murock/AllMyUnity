@@ -27,6 +27,8 @@ public class CardDraw : Singleton<CardDraw>{
             cardCanvasGroup.alpha = 1;
             cardCanvasGroup.blocksRaycasts = true;
 
+            //Add the card to the list of cards in play
+            DeckManager.Instance.cardsInPlay.Add(deck[randomNumber]);
             //remove card from deck list
             deck.RemoveAt(randomNumber);
             cardAdded = true;
@@ -54,6 +56,7 @@ public class CardDraw : Singleton<CardDraw>{
         }
         DeckManager.Instance.cardsInDeck = this.deck;
 
+
         if (cardAdded)
         {
             return true;
@@ -71,6 +74,7 @@ public class CardDraw : Singleton<CardDraw>{
 
     private void reShuffleCards(List<Transform> cards)
     {
+        //Need to reorganise this so it goes through the cardsdiscarded
         foreach (Transform card in cards)
         {
             //If the tag is card then is a card

@@ -94,6 +94,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void DiscardCard()
     {
         this.transform.SetParent(parentToReturnTo);
+        DeckManager.Instance.cardsDiscarded.Add(this.transform);
         if (placeholder != null)
         {
             this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
@@ -111,6 +112,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void ShuffleCardBack()
     {
         this.transform.SetParent(parentToReturnTo);
+        DeckManager.Instance.cardsInDeck.Add(this.transform);
         if (placeholder != null)
         {
             this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
