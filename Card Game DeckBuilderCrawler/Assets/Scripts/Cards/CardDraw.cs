@@ -41,18 +41,18 @@ public class CardDraw : Singleton<CardDraw>{
         {
             deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine +  "Out of Cards";
             //Put cards back into the deck
-            List<Transform> cardsToReshuffle = new List<Transform>();
-            for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
-            {
-                Transform card = GameManager.Instance.transform.GetChild(i);
-                cardsToReshuffle.Add(card);
-            }
-            for (int i = 0; i < PlayArea.Instance.transform.childCount; i++)
-            {
-                Transform card = PlayArea.Instance.transform.GetChild(i);
-                cardsToReshuffle.Add(card);
-            }
-            reShuffleCards(cardsToReshuffle);
+            //List<Transform> cardsToReshuffle = new List<Transform>();
+            //for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
+            //{
+            //    Transform card = GameManager.Instance.transform.GetChild(i);
+            //    cardsToReshuffle.Add(card);
+            //}
+            //for (int i = 0; i < PlayArea.Instance.transform.childCount; i++)
+            //{
+            //    Transform card = PlayArea.Instance.transform.GetChild(i);
+            //    cardsToReshuffle.Add(card);
+            //}
+            reShuffleCards();
         }
         DeckManager.Instance.cardsInDeck = this.deck;
 
@@ -72,7 +72,7 @@ public class CardDraw : Singleton<CardDraw>{
         drawCard();
     }
 
-    private void reShuffleCards(List<Transform> cards)
+    private void reShuffleCards1(List<Transform> cards)
     {
         //Need to reorganise this so it goes through the cardsdiscarded
         foreach (Transform card in cards)
@@ -93,6 +93,21 @@ public class CardDraw : Singleton<CardDraw>{
                 d.ShuffleCardBack();
             }
         }
+        deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
+        DeckManager.Instance.cardsInDeck = this.deck;
+    }
+
+    private void reShuffleCards()
+    {
+        foreach (Transform card in DeckManager.Instance.cardsDiscarded)
+        {
+            deck.Add(card);
+            Draggable d = card.GetComponent<Draggable>();
+            d.parentToReturnTo = this.transform;
+            d.ShuffleCardBack();
+        }
+        //remove cards form cards discarded list since they are all now back in the deck
+        DeckManager.Instance.cardsDiscarded.Clear();
         deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
         DeckManager.Instance.cardsInDeck = this.deck;
     }

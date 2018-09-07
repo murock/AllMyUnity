@@ -15,8 +15,10 @@ public class DeckManager : Singleton<DeckManager> {
 
     // Use this for initialization
     void Awake () {
+        cardsInPlay = new List<Transform>();
+        cardsDiscarded = new List<Transform>();
         cardsInDeck = new List<Transform>();
-        deckSize = 10;
+        deckSize = 11;
         for (int i = 0; i < deckSize; i++)
         {
             Card newCard;

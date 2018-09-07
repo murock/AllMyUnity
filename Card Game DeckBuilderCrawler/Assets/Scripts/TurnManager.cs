@@ -46,11 +46,23 @@ public class TurnManager : Singleton<TurnManager> {
     {
         Hand.Instance.DiscardHand();
         monster.DoDamage();
+        DiscardCardsInPlay();
         StartCoroutine(DrawHand());
     }
 
     private void Mulligan()
     {
 
+    }
+
+    private void DiscardCardsInPlay()
+    {
+        foreach (Transform card in DeckManager.Instance.cardsInPlay)
+        {
+            //Add card to discarded cards
+            DeckManager.Instance.cardsDiscarded.Add(card);
+        }
+        //Remove cards from cardsinplay
+        DeckManager.Instance.cardsInPlay.Clear();
     }
 }
