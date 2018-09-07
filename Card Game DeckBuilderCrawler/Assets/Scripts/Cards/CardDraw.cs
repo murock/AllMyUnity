@@ -5,20 +5,24 @@ using UnityEngine.UI;
 
 public class CardDraw : Singleton<CardDraw>{
 
+    //Label on top of the deck
     [SerializeField]
     private GameObject deckLabel;
 
     [SerializeField]
     private GameObject hand;
 
+    //Local copy of the deck
     public List<Transform> deck;
 
+    //Returns true if a card was added to the hand
     public bool drawCard()
     {
         bool cardAdded = false;
         //cards still left to draw
         if (deck.Count > 0)
-        {           
+        {
+            //random number between 0 and the max deck size
             int randomNumber = Random.Range(0, deck.Count - 1);
             //Make the hand the parent of the card
             deck[randomNumber].transform.parent = hand.transform;
@@ -41,21 +45,10 @@ public class CardDraw : Singleton<CardDraw>{
         {
             deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine +  "Out of Cards";
             //Put cards back into the deck
-            //List<Transform> cardsToReshuffle = new List<Transform>();
-            //for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
-            //{
-            //    Transform card = GameManager.Instance.transform.GetChild(i);
-            //    cardsToReshuffle.Add(card);
-            //}
-            //for (int i = 0; i < PlayArea.Instance.transform.childCount; i++)
-            //{
-            //    Transform card = PlayArea.Instance.transform.GetChild(i);
-            //    cardsToReshuffle.Add(card);
-            //}
             reShuffleCards();
         }
+        //Update global deck list
         DeckManager.Instance.cardsInDeck = this.deck;
-
 
         if (cardAdded)
         {
@@ -67,48 +60,27 @@ public class CardDraw : Singleton<CardDraw>{
         }
     }
 
+    //Temporary function to draw cards by clicking on the deck
     public void drawCardButtonHOTFIX()
     {
         drawCard();
     }
 
-    private void reShuffleCards1(List<Transform> cards)
-    {
-        //Need to reorganise this so it goes through the cardsdiscarded
-        foreach (Transform card in cards)
-        {
-            //If the tag is card then is a card
-            if (card.tag == "card")
-            {
-                deck.Add(card);
-                Draggable d = card.GetComponent<Draggable>();
-
-                //CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-                ////visible
-                //cardCanvasGroup.alpha = 1;
-                ////interactable
-                //cardCanvasGroup.blocksRaycasts = true;
-                d.parentToReturnTo = this.transform;
-                //  d.isDiscarded = false;
-                d.ShuffleCardBack();
-            }
-        }
-        deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
-        DeckManager.Instance.cardsInDeck = this.deck;
-    }
-
+    //reshuffles all the cards that have been discarded
     private void reShuffleCards()
     {
+        //go through every card in the discarded list and add it to the deck
         foreach (Transform card in DeckManager.Instance.cardsDiscarded)
         {
             deck.Add(card);
-            Draggable d = card.GetComponent<Draggable>();
+            CardActions d = card.GetComponent<CardActions>();
             d.parentToReturnTo = this.transform;
             d.ShuffleCardBack();
         }
         //remove cards form cards discarded list since they are all now back in the deck
         DeckManager.Instance.cardsDiscarded.Clear();
         deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
+        //update the global list of cards in the deck
         DeckManager.Instance.cardsInDeck = this.deck;
     }
 }

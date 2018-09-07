@@ -13,7 +13,7 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
         {
             return;
         }
-        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
         d.placeholderParent = this.transform;
     }
 
@@ -25,7 +25,7 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
         {
             return;
         }
-        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
         if (d.placeholderParent == this.transform)
         {
             d.placeholderParent = d.parentToReturnTo;
@@ -37,14 +37,14 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
         Debug.Log(eventData.pointerDrag.name + " was dropped on + " + this.gameObject.name);
         GameObject card = eventData.pointerDrag;
 
-        Draggable d = card.GetComponent<Draggable>();
+        CardActions d = card.GetComponent<CardActions>();
         d.parentToReturnTo = this.transform;
         d.isDiscarded = false;
     }
 
     public void DiscardHand()
     {
-        List<Draggable> cardsToDiscard = new List<Draggable>();
+        List<CardActions> cardsToDiscard = new List<CardActions>();
         //loop through all children in the hand
         for (int i = 0; i < this.transform.childCount; i++)
         {
@@ -52,11 +52,11 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
             //If the tag is card then child is a card
             if (card.tag == "card")
             {
-                Draggable d = card.GetComponent<Draggable>();
+                CardActions d = card.GetComponent<CardActions>();
                 cardsToDiscard.Add(d);
             }
         }
-        foreach (Draggable card in cardsToDiscard)
+        foreach (CardActions card in cardsToDiscard)
         {
             card.parentToReturnTo = GameManager.Instance.transform;
             card.isDiscarded = true;

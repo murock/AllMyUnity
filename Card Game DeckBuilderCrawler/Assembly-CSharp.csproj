@@ -64,12 +64,10 @@
     <Compile Include="Assets\KinematicSoup\SceneFusion\Extensions\Ferr2D\sfFerr2DAdaptor.cs" />
     <Compile Include="Assets\KinematicSoup\SceneFusion\FusionRoot.cs" />
     <Compile Include="Assets\Scripts\Cards\Card.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardAction.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardAttack.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardActions.cs" />
     <Compile Include="Assets\Scripts\Cards\CardDraw.cs" />
     <Compile Include="Assets\Scripts\Cards\CardProperties.cs" />
     <Compile Include="Assets\Scripts\Cards\DeckManager.cs" />
-    <Compile Include="Assets\Scripts\Draggable.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\MonsterInteraction.cs" />

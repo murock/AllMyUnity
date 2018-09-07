@@ -20,7 +20,7 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
         {
             return;
         }
-        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
         d.placeholderParent = this.transform;
     }
 
@@ -32,7 +32,7 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
         {
             return;
         }
-        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
         if (d.placeholderParent == this.transform)
         {
             d.placeholderParent = d.parentToReturnTo;
@@ -44,7 +44,7 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
         Debug.Log(eventData.pointerDrag.name + " was dropped on + " + this.gameObject.name);
 
         GameObject card = eventData.pointerDrag;
-        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
         d.parentToReturnTo = this.transform;
         d.isDiscarded = true;
 
