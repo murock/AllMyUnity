@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager> {
 
 
-    //Might be better to maintain 3 lists of cards
-    //CardsInDeck,CardsInPlay,CardsDiscarded
+
+    //To be implmented still for efficency
     public ObjectPool Pool { get; set; }
 
     //This is called before Start()

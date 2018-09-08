@@ -14,7 +14,6 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //  Debug.Log("Pointer Enter");
        // if nothing is being dragged do nothing
         if (eventData.pointerDrag == null)
         {

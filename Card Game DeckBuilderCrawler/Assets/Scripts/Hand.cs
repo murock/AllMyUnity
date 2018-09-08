@@ -7,24 +7,24 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //  Debug.Log("Pointer Enter");
         //if nothing is being dragged do nothing
         if (eventData.pointerDrag == null)
         {
             return;
         }
-        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
-        d.placeholderParent = this.transform;
+        //Make the cards placeholder parent the location you are dragging the card to
+        CardActions cardAction = eventData.pointerDrag.GetComponent<CardActions>();
+        cardAction.placeholderParent = this.transform;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //  Debug.Log("Pointer Exit");
         //if nothing is being dragged do nothing
         if (eventData.pointerDrag == null)
         {
             return;
         }
+        //Make the cards placeholder parent the previous location it was in
         CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
         if (d.placeholderParent == this.transform)
         {
@@ -34,12 +34,14 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log(eventData.pointerDrag.name + " was dropped on + " + this.gameObject.name);
+        //make the parent of the card the hand when dropped into the hand
         GameObject card = eventData.pointerDrag;
-
-        CardActions d = card.GetComponent<CardActions>();
-        d.parentToReturnTo = this.transform;
-        d.isDiscarded = false;
+        CardActions cardAction = card.GetComponent<CardActions>();
+        if (cardAction != null)
+        {
+            cardAction.parentToReturnTo = this.transform;
+            cardAction.isDiscarded = false;
+        }
     }
 
     public void DiscardHand()

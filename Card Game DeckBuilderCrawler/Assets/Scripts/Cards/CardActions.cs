@@ -35,6 +35,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         placeholderParent = parentToReturnTo;
         //puts the card 1 level up e.g Canvas DANGER CODE MAY BREAK IF HIERARCHY IS CHANGED
         this.transform.SetParent(this.transform.parent.parent);
+        //Allow raycast to go through, useful if we want cards to move underneath the dragged card
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
@@ -70,14 +71,16 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         placeholder.transform.SetSiblingIndex(newSiblingIndex);
     }
 
+    //OnEndDrag and DiscardCard should be reworked as they do almost the same thing?
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
+        //sets the parent to the previous parent so the card can return
         this.transform.SetParent(parentToReturnTo);
         if(placeholder != null)
         {
+            //puts the card in the same place as the placeholder
             this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
-            Destroy(placeholder); //this.DiscardCard();
+            Destroy(placeholder);
         }
         
         //become targetable
@@ -90,16 +93,15 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             //StartCoroutine(Fade());
             InstantFade();
         }
-
-
     }
 
     public void DiscardCard()
     {
+        //moves the card to where you've set the parentToReturnTo
         this.transform.SetParent(parentToReturnTo);
+        //if placeholder exists destroy it
         if (placeholder != null)
         {
-            this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
             Destroy(placeholder);
         }
         if (this.isDiscarded)
@@ -113,15 +115,17 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void ShuffleCardBack()
     {
+        //Puts the card back to(most likely) the deck
         this.transform.SetParent(parentToReturnTo);
         if (placeholder != null)
         {
-            this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
             Destroy(placeholder);
         }
+        //No longer discarded as back in deck
         this.isDiscarded = false;
     }
 
+    //Currently disabled
     IEnumerator Fade()
     {
         float time = 0f;
