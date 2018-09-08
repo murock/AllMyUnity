@@ -12,6 +12,9 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
     [SerializeField]
     private PlayerInteraction player;
 
+    public delegate void OnApplyCardActionDelegate();
+    public static event OnApplyCardActionDelegate applyCardActionDelegate;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
        // if nothing is being dragged do nothing
@@ -42,36 +45,59 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
     {
         Debug.Log(eventData.pointerDrag.name + " was dropped on + " + this.gameObject.name);
 
-        GameObject card = eventData.pointerDrag;
-        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
-        d.parentToReturnTo = this.transform;
-        d.isDiscarded = true;
-
-        //Card action logic
-
-        if (card.tag == "card")
+        CardActions cardAction = eventData.pointerDrag.GetComponent<CardActions>();
+        if (cardAction != null)
         {
-            CardProperties cardProps = card.GetComponent<CardProperties>();
-            //Attack
-            if (cardProps.Attack > 0)
-            {
-                //apply damage to monster
-                monster.TakeDamage(cardProps.Attack);
-            }
-            if (cardProps.Defense > 0)
-            {
-                //add defence to player
-                player.AddDefence(cardProps.Defense);
-            }
-            if (cardProps.Drawcard > 0)
-            {
-                // Draw cards
-                for (int i = 0; i < cardProps.Drawcard; i++)
-                {
-                    CardDraw.Instance.drawCard();
-                }
-            }
+            cardAction.parentToReturnTo = this.transform;
+            cardAction.isDiscarded = true;
         }
+        GameObject cardTransform = eventData.pointerDrag;
+        if (cardTransform.tag == "card")
+        {
+            //MECHANICS ARE CLASSES
+            //Triggers the card action event
+            // OnApplyCardAction();
+            Card card = eventData.pointerDrag.GetComponent<Card>();
+            if (card != null)
+            {
+                card.OnApplyCardAction();
+            }
+
+
+            //CARD INHERITANCE
+            //Card card = eventData.pointerDrag.GetComponent<Card>();
+            //if (card != null)
+            //{
+            //    card.ApplyAction();
+            //}
+
+            //ORGINAL
+            //CardProperties cardProps = card.GetComponent<CardProperties>();
+            ////Attack
+            //if (cardProps.Attack > 0)
+            //{
+            //    //apply damage to monster
+            //    monster.TakeDamage(cardProps.Attack);
+            //}
+            //if (cardProps.Defense > 0)
+            //{
+            //    //add defence to player
+            //    player.AddDefence(cardProps.Defense);
+            //}
+            //if (cardProps.Drawcard > 0)
+            //{
+            //    // Draw cards
+            //    for (int i = 0; i < cardProps.Drawcard; i++)
+            //    {
+            //        CardDraw.Instance.drawCard();
+            //    }
+            //}
+        }
+    }
+
+    public void OnApplyCardAction()
+    {
+        applyCardActionDelegate();
     }
 
 }

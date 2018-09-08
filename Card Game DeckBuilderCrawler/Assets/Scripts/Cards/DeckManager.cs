@@ -26,37 +26,46 @@ public class DeckManager : Singleton<DeckManager> {
             GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
             if (i < 5)
             {
+
                 Color cardColor = new Color(1f, 0f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                newCard.PopulateCard("Attack", "+1 Attack", 1, 0, 0, cardColor);
+                CreateCard(newCard, newCardPrefab, "Attack", "+1 Attack", 0, cardColor);
+                //attach the card attack mechanic to the card prefab
+                CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
+                cardAttackMechanic.Attack = 1;
             }
             else if ( 5 <= i && 8 > i)
             {
+                //NEEDS TO BE UPDATED TO NEW VERSION
                 Color cardColor = new Color32(0, 250, 148, 255);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                newCard.PopulateCard("Defense", "+1 Defense", 0, 1, 0, cardColor);
+                newCard.PopulateCard("Defense", "+1 Defense", 1, cardColor);
+                // making the deck its parent
+                newCard.transform.SetParent(this.transform);
+                //add the card to the global list
+                cardsInDeck.Add(newCard.transform);
             }
             else
             {
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                newCard.PopulateCard("Draw", "+2 Draw", 0, 0, 2, cardColor);
+                CreateCard(newCard,newCardPrefab,"Draw", "+2 Draw", 0, cardColor);
+                //attach the card draw mechanic to the card prefab
+                CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
+                cardDrawMechanic.NumCardsToDraw = 2;
             }
-
-            // making the deck its parent
-            newCard.transform.SetParent(this.transform);
-            CanvasGroup cardCanvasGroup = newCard.GetComponent<CanvasGroup>();
-            //making it not visible
-            cardCanvasGroup.alpha = 0;
-            //not interactable
-            cardCanvasGroup.blocksRaycasts = false;
-            //add the card to the global list
-            cardsInDeck.Add(newCard.transform);
-
         }
         //give a copy of the deck to the card draw class
         CardDraw.Instance.deck = this.cardsInDeck;
-
-	}
+    }
 	
+    private void CreateCard(Card cardType, GameObject cardPrefab,string cardTitle, string cardDescription, int defense, Color cardColor)
+    {
+        cardType.PopulateCard(cardTitle, cardDescription, defense, cardColor);
+        // making the deck its parent
+        cardType.transform.SetParent(this.transform);
+        //add the card to the global list
+        cardsInDeck.Add(cardType.transform);
+    }
+
 }

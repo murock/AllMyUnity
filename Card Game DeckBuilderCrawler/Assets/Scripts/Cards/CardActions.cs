@@ -41,6 +41,11 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnDrag(PointerEventData eventData)
     {
+        //placeHolderParent = Hand
+        //this.transform = card being Dragged
+        //newSiblingIndex = the index the card will be set to when finished with logic
+        //placeHolder = location of the gap 
+
         //allows movement of the card
         this.transform.position = eventData.position;
         //Ensure placeholder parent stays what we set it to in the begin drag
@@ -59,12 +64,11 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             if (this.transform.position.x < placeholderParent.GetChild(i).position.x)
             {
                 newSiblingIndex = i;
-                Debug.Log("newSibling Index: " + newSiblingIndex.ToString() + "placeHolder sibling Index: " + placeholder.transform.GetSiblingIndex().ToString());
-                //Not quite sure why this works!! Need to think about it some more with the help of the above debug line
                 if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
                 {
                     newSiblingIndex--;
                 }
+                //Get the first card from left to right that is further right than the card you are dragging then break loop 
                 break;
             }
         }

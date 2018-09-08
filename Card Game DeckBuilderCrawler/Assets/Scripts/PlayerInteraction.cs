@@ -12,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour {
     [SerializeField]
     private Text playerHealthTxt;
 
+    //numeric value of player health
     [SerializeField]
     private int playerHealth;
 

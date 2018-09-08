@@ -25,7 +25,7 @@ public class TurnManager : Singleton<TurnManager> {
     {
         //1) draw 5 cards
         int i = 0;
-        //DANGER INFINITE LOOP as i not always incremented CHECK THIS LOGIC
+        //DANGER INFINITE LOOP as i not always incremented CHECK THIS LOGIC (temp)
         while (i < this.handSize)
         {
             //if a card was drawn increment i
@@ -42,6 +42,7 @@ public class TurnManager : Singleton<TurnManager> {
         }
     }
 
+    //Called when the end turn button is hit
     public void EndTurn()
     {
         Hand.Instance.DiscardHand();
@@ -55,6 +56,7 @@ public class TurnManager : Singleton<TurnManager> {
 
     }
 
+    //Discard all cards in play
     private void DiscardCardsInPlay()
     {
         foreach (Transform card in DeckManager.Instance.cardsInPlay)

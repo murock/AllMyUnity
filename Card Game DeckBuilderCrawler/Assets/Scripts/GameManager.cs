@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager> {
 
-
+    [SerializeField]
+    public MonsterInteraction monster;
 
     //To be implmented still for efficency
     public ObjectPool Pool { get; set; }
