@@ -25,7 +25,7 @@ public class CardDraw : Singleton<CardDraw>{
             //random number between 0 and the max deck size
             int randomNumber = Random.Range(0, deck.Count - 1);
             //Make the hand the parent of the card
-            deck[randomNumber].transform.parent = hand.transform;
+            deck[randomNumber].transform.SetParent(hand.transform);
             //Make visible and clickable
             CanvasGroup cardCanvasGroup = deck[randomNumber].GetComponent<CanvasGroup>();
             cardCanvasGroup.alpha = 1;

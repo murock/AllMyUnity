@@ -6,8 +6,11 @@ using UnityEngine.UI;
 
 public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
+    //tells the card where it needs to go back to e.g hand,play area,deck
     public Transform parentToReturnTo = null;
+    //The parent of the last place the card was
     public Transform placeholderParent = null;
+    //Flag to tell if the card is discarded e.g has been played
     public bool isDiscarded = false;
 
     //where the card will be placed back to
@@ -16,37 +19,36 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Could do something here to work out difference from where its being clicked on to the anchor point of the card to avoid it jumping
-        Debug.Log("OnBeginDrag");
-
         placeholder = new GameObject();
         placeholder.transform.SetParent(this.transform.parent);
+        //sets the width of the placeholder gameobject so that cards move around when you hover a card over them
         LayoutElement le = placeholder.AddComponent<LayoutElement>();
         le.preferredWidth = this.GetComponent<LayoutElement>().preferredWidth;
         le.preferredHeight = this.GetComponent<LayoutElement>().preferredHeight;
         le.flexibleWidth = 0;
         le.flexibleHeight = 0;
-
+        //Puts the placeholder at the same sibling index as the card so the gap is created in the right place
         placeholder.transform.SetSiblingIndex(this.transform.GetSiblingIndex());
-
+        //ensures the card will return to where it came from if dropped
         parentToReturnTo = this.transform.parent;
+        //Puts the placeholder under the parent which you are dragging the card from
         placeholderParent = parentToReturnTo;
+        //puts the card 1 level up e.g Canvas DANGER CODE MAY BREAK IF HIERARCHY IS CHANGED
         this.transform.SetParent(this.transform.parent.parent);
-
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
-
         //allows movement of the card
         this.transform.position = eventData.position;
-
+        //Ensure placeholder parent stays what we set it to in the begin drag
         if (placeholder.transform.parent != placeholderParent)
         {
             placeholder.transform.SetParent(placeholderParent);
         }
 
+        //New index for the placeholder as you move the card around
         int newSiblingIndex = placeholderParent.childCount;
 
         //loop through every card in the hand/table
@@ -56,6 +58,8 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             if (this.transform.position.x < placeholderParent.GetChild(i).position.x)
             {
                 newSiblingIndex = i;
+                Debug.Log("newSibling Index: " + newSiblingIndex.ToString() + "placeHolder sibling Index: " + placeholder.transform.GetSiblingIndex().ToString());
+                //Not quite sure why this works!! Need to think about it some more with the help of the above debug line
                 if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
                 {
                     newSiblingIndex--;
@@ -63,7 +67,6 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 break;
             }
         }
-
         placeholder.transform.SetSiblingIndex(newSiblingIndex);
     }
 

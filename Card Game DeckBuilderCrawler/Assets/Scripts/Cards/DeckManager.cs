@@ -44,7 +44,8 @@ public class DeckManager : Singleton<DeckManager> {
                 // newCard = new Card("Draw", "+2 Draw", 0, 0, 2, cardColor);
             }
 
-            newCard.transform.parent = this.transform; // making the deck its parent
+            // making the deck its parent
+            newCard.transform.SetParent(this.transform);
             CanvasGroup cardCanvasGroup = newCard.GetComponent<CanvasGroup>();
             cardCanvasGroup.alpha = 0; //making it not visible
             cardCanvasGroup.blocksRaycasts = false;
