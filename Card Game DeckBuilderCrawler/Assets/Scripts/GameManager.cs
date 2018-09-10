@@ -6,8 +6,10 @@ public class GameManager : Singleton<GameManager> {
 
     [SerializeField]
     public MonsterInteraction monster;
+    public Hand hand;
+    public GameObject centrePanel;
 
-    //To be implmented still for efficency
+    //To be implemented still for efficency
     public ObjectPool Pool { get; set; }
 
     //This is called before Start()
