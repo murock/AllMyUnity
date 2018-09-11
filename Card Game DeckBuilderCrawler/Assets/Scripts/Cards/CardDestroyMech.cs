@@ -31,6 +31,24 @@ public class CardDestroyMech : MonoBehaviour {
     private void ApplyDestroyCards()
     {
         //Destroy Cards
-
+        //Make panel visible
+        this.centrePanel.SetActive(true);
+        List<Transform> cardsInHand = new List<Transform>();
+        for (int i = 0; i < this.hand.transform.childCount; i++)
+        {
+            Transform card = this.hand.transform.GetChild(i);
+            //If the tag is card then child is a card
+            if (card.tag == "card")
+            {
+                cardsInHand.Add(card);
+            }
+        }
+        foreach (Transform card in cardsInHand)
+        {
+            //make the centrePanel the parent control of the card
+            card.SetParent(this.centrePanel.transform);
+        }
+        //Make panel invisible
+        //this.centrePanel.SetActive(false);
     }
 }

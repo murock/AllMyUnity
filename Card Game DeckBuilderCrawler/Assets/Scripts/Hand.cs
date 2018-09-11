@@ -54,8 +54,8 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
             //If the tag is card then child is a card
             if (card.tag == "card")
             {
-                CardActions d = card.GetComponent<CardActions>();
-                cardsToDiscard.Add(d);
+                CardActions cardAction = card.GetComponent<CardActions>();
+                cardsToDiscard.Add(cardAction);
             }
         }
         foreach (CardActions card in cardsToDiscard)

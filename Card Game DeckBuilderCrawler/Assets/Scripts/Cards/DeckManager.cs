@@ -47,12 +47,21 @@ public class DeckManager : Singleton<DeckManager> {
             }
             else
             {
+                //CARD DRAW --------------------
+                //Color cardColor = new Color(250f, 69f, 0f, 1f);
+                //newCard = newCardPrefab.AddComponent<Card>() as Card;
+                //CreateCard(newCard,newCardPrefab,"Draw", "+2 Draw", 0, cardColor);
+                ////attach the card draw mechanic to the card prefab
+                //CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
+                //cardDrawMechanic.NumCardsToDraw = 2;
+
+                //CARD DESTROY ---------------------------
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                CreateCard(newCard,newCardPrefab,"Draw", "+2 Draw", 0, cardColor);
+                CreateCard(newCard, newCardPrefab, "Destroy", "+1 Destroy", 0, cardColor);
                 //attach the card draw mechanic to the card prefab
-                CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
-                cardDrawMechanic.NumCardsToDraw = 2;
+                CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
+                cardDestroyMechanic.NumCardsToDestroy = 1;
             }
         }
         //give a copy of the deck to the card draw class
