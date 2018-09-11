@@ -37,6 +37,11 @@ public class CardDestroyMech : MonoBehaviour {
         for (int i = 0; i < this.hand.transform.childCount; i++)
         {
             Transform card = this.hand.transform.GetChild(i);
+            CardActions cardAction = card.GetComponent<CardActions>();
+            if (cardAction != null)
+            {
+                cardAction.isDragable = false;
+            }
             //If the tag is card then child is a card
             if (card.tag == "card")
             {

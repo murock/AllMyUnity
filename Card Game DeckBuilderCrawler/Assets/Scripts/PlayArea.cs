@@ -22,8 +22,8 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
         {
             return;
         }
-        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
-        d.placeholderParent = this.transform;
+        CardActions cardAction = eventData.pointerDrag.GetComponent<CardActions>();
+        cardAction.placeholderParent = this.transform;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -34,10 +34,10 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
         {
             return;
         }
-        CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
-        if (d.placeholderParent == this.transform)
+        CardActions cardAction = eventData.pointerDrag.GetComponent<CardActions>();
+        if (cardAction != null && cardAction.placeholderParent == this.transform)
         {
-            d.placeholderParent = d.parentToReturnTo;
+            cardAction.placeholderParent = cardAction.parentToReturnTo;
         }
     }
 
@@ -46,52 +46,53 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
         Debug.Log(eventData.pointerDrag.name + " was dropped on + " + this.gameObject.name);
 
         CardActions cardAction = eventData.pointerDrag.GetComponent<CardActions>();
-        if (cardAction != null)
+        if (cardAction != null && cardAction.isDragable)
         {
             cardAction.parentToReturnTo = this.transform;
             cardAction.isDiscarded = true;
-        }
-        GameObject cardTransform = eventData.pointerDrag;
-        if (cardTransform.tag == "card")
-        {
-            //MECHANICS ARE CLASSES
-            //Triggers the card action event
-            // OnApplyCardAction();
-            Card card = eventData.pointerDrag.GetComponent<Card>();
-            if (card != null)
+
+            GameObject cardTransform = eventData.pointerDrag;
+            if (cardTransform.tag == "card")
             {
-                card.OnApplyCardAction();
+                //MECHANICS ARE CLASSES
+                //Triggers the card action event
+                // OnApplyCardAction();
+                Card card = eventData.pointerDrag.GetComponent<Card>();
+                if (card != null)
+                {
+                    card.OnApplyCardAction();
+                }
+
+
+                //CARD INHERITANCE
+                //Card card = eventData.pointerDrag.GetComponent<Card>();
+                //if (card != null)
+                //{
+                //    card.ApplyAction();
+                //}
+
+                //ORGINAL
+                //CardProperties cardProps = card.GetComponent<CardProperties>();
+                ////Attack
+                //if (cardProps.Attack > 0)
+                //{
+                //    //apply damage to monster
+                //    monster.TakeDamage(cardProps.Attack);
+                //}
+                //if (cardProps.Defense > 0)
+                //{
+                //    //add defence to player
+                //    player.AddDefence(cardProps.Defense);
+                //}
+                //if (cardProps.Drawcard > 0)
+                //{
+                //    // Draw cards
+                //    for (int i = 0; i < cardProps.Drawcard; i++)
+                //    {
+                //        CardDraw.Instance.drawCard();
+                //    }
+                //}
             }
-
-
-            //CARD INHERITANCE
-            //Card card = eventData.pointerDrag.GetComponent<Card>();
-            //if (card != null)
-            //{
-            //    card.ApplyAction();
-            //}
-
-            //ORGINAL
-            //CardProperties cardProps = card.GetComponent<CardProperties>();
-            ////Attack
-            //if (cardProps.Attack > 0)
-            //{
-            //    //apply damage to monster
-            //    monster.TakeDamage(cardProps.Attack);
-            //}
-            //if (cardProps.Defense > 0)
-            //{
-            //    //add defence to player
-            //    player.AddDefence(cardProps.Defense);
-            //}
-            //if (cardProps.Drawcard > 0)
-            //{
-            //    // Draw cards
-            //    for (int i = 0; i < cardProps.Drawcard; i++)
-            //    {
-            //        CardDraw.Instance.drawCard();
-            //    }
-            //}
         }
     }
 
