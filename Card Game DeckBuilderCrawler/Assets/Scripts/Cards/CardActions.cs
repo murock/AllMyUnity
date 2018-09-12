@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler 
 {
 
     //tells the card where it needs to go back to e.g hand,play area,deck
@@ -17,8 +17,11 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //where the card will be placed back to
     private GameObject placeholder = null;
 
-    //If true the card can be dragged
+    //True if the card can be dragged
     internal bool isDragable = true;
+
+    //True if the card is selected
+    internal bool isSelected = false;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -123,11 +126,19 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (!this.isDragable)
+        if (!this.isDragable && !this.isSelected)
         {
             this.GetComponent<CanvasGroup>().alpha = 1f;
         }
         Debug.Log("Pointer exit");
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!this.isDragable)
+        {
+            this.isSelected = !this.isSelected;
+            Debug.Log("card: " + this.name);
+        }
     }
 
     public void DiscardCard()
