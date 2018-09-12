@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerInteraction : MonoBehaviour {
+public class PlayerInteraction : Singleton<PlayerInteraction> {
 
     // Player Name
     [SerializeField]
@@ -16,6 +16,14 @@ public class PlayerInteraction : MonoBehaviour {
     [SerializeField]
     private int playerHealth;
 
+    public int PlayerHealth
+    {
+        get
+        {
+            return this.playerHealth;
+        }
+    }
+        
     private void Start()
     {
         this.UpdateHP();

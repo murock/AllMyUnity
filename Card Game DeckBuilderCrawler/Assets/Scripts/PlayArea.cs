@@ -9,9 +9,6 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
     [SerializeField]
     internal MonsterInteraction monster;
 
-    [SerializeField]
-    private PlayerInteraction player;
-
     public delegate void OnApplyCardActionDelegate();
     public static event OnApplyCardActionDelegate applyCardActionDelegate;
 

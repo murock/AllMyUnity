@@ -94,7 +94,8 @@ public class MonsterInteraction : MonoBehaviour {
 
     public void DoDamage()
     {
-        PlayerInteraction playerInter = player.transform.GetComponent<PlayerInteraction>();
-        playerInter.TakeDamage(this.attack);
+        //PlayerInteraction playerInter = player.transform.GetComponent<PlayerInteraction>();
+        //playerInter.TakeDamage(this.attack);
+        PlayerInteraction.Instance.TakeDamage(this.attack);
     }
 }

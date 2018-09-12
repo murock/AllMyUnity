@@ -1,0 +1,158 @@
+2018-09-12 15:40:17.9298 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 15:40:22.3999 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 15:43:00.6630 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 15:50:33.0543 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 15:50:33.0983 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 15:50:36.4622 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 15:50:43.1150 [DEBUG] Play mode: False
+2018-09-12 15:53:40.3811 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 15:53:40.4421 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 15:53:42.2255 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 15:53:44.7757 [DEBUG] Play mode: False
+2018-09-12 16:00:02.1370 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:00:02.1780 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:01:34.1790 [DEBUG] Play mode: False
+2018-09-12 16:01:37.6938 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:01:37.7438 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:01:58.2322 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:01:59.0760 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:02:01.7741 [DEBUG] Play mode: False
+2018-09-12 16:02:05.4829 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:02:05.5089 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:02:12.8215 [DEBUG] Play mode: False
+2018-09-12 16:09:12.1086 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:09:12.1656 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:09:14.0140 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:09:32.8899 [DEBUG] Play mode: False
+2018-09-12 16:10:53.2928 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:10:53.3478 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:10:56.2848 [DEBUG] Play mode: False
+2018-09-12 16:16:26.3499 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:16:26.4049 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:16:28.0219 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:16:32.5859 [DEBUG] Play mode: False
+2018-09-12 16:16:35.4380 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:16:35.4790 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:16:38.7864 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:17:54.3402 [DEBUG] Play mode: False
+2018-09-12 16:20:03.5147 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:20:03.5567 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:20:06.5492 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:20:19.5476 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:20:42.4057 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:21:04.5152 [DEBUG] Play mode: False
+2018-09-12 16:21:09.2751 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:21:09.3471 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:21:10.8656 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:32:07.2348 [DEBUG] Play mode: False
+2018-09-12 16:32:13.9747 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:32:14.1551 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:33:04.7459 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:33:55.3958 [DEBUG] Play mode: False
+2018-09-12 16:33:58.8487 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:33:58.9047 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:34:00.3568 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:34:01.9782 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDefenseMech.ApplyDefense () (at Assets/Scripts/Cards/CardDefenseMech.cs:34)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:21)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:63)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-12 16:37:12.2907 [DEBUG] Play mode: False
+2018-09-12 16:37:16.5883 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:37:16.6318 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:37:24.3726 [DEBUG] Play mode: False
+2018-09-12 16:40:04.1125 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:40:04.1555 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:40:27.5227 [DEBUG] Play mode: False
+2018-09-12 16:42:41.1465 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-12 16:42:41.1845 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-12 16:42:49.7949 [DEBUG] Play mode: False

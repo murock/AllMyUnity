@@ -29,21 +29,28 @@ public class DeckManager : Singleton<DeckManager> {
 
                 Color cardColor = new Color(1f, 0f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                CreateCard(newCard, newCardPrefab, "Attack", "+1 Attack", 0, cardColor);
+                CreateCard(newCard, newCardPrefab, "Attack", "+1 Attack", cardColor);
                 //attach the card attack mechanic to the card prefab
                 CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
                 cardAttackMechanic.Attack = 1;
             }
             else if ( 5 <= i && 8 > i)
             {
-                //NEEDS TO BE UPDATED TO NEW VERSION
-                Color cardColor = new Color32(0, 250, 148, 255);
+                Color cardColor = new Color(0f, 250f, 148f, 255f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                newCard.PopulateCard("Defense", "+1 Defense", 1, cardColor);
+                CreateCard(newCard, newCardPrefab, "Defense", "+1 Defense", cardColor);
+                //attach the card defense mechanic to the card prefab
+                CardDefenseMech cardDefenseMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
+                cardDefenseMechanic.Defense = 1;
+                                                                                                         
+                //NEEDS TO BE UPDATED TO NEW VERSION
+                //Color cardColor = new Color32(0, 250, 148, 255);
+               // newCard = newCardPrefab.AddComponent<Card>() as Card;
+               // newCard.PopulateCard("Defense", "+1 Defense", 1, cardColor);
                 // making the deck its parent
-                newCard.transform.SetParent(this.transform);
+              //  newCard.transform.SetParent(this.transform);
                 //add the card to the global list
-                cardsInDeck.Add(newCard.transform);
+              //  cardsInDeck.Add(newCard.transform);
             }
             else
             {
@@ -58,7 +65,7 @@ public class DeckManager : Singleton<DeckManager> {
                 //CARD DESTROY ---------------------------
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                CreateCard(newCard, newCardPrefab, "Destroy", "+1 Destroy", 0, cardColor);
+                CreateCard(newCard, newCardPrefab, "Destroy", "+1 Destroy", cardColor);
                 //attach the card draw mechanic to the card prefab
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
                 cardDestroyMechanic.NumCardsToDestroy = 1;
@@ -68,9 +75,9 @@ public class DeckManager : Singleton<DeckManager> {
         CardDraw.Instance.deck = this.cardsInDeck;
     }
 	
-    private void CreateCard(Card cardType, GameObject cardPrefab,string cardTitle, string cardDescription, int defense, Color cardColor)
+    private void CreateCard(Card cardType, GameObject cardPrefab,string cardTitle, string cardDescription, Color cardColor)
     {
-        cardType.PopulateCard(cardTitle, cardDescription, defense, cardColor);
+        cardType.PopulateCard(cardTitle, cardDescription, cardColor);
         // making the deck its parent
         cardType.transform.SetParent(this.transform);
         //add the card to the global list
