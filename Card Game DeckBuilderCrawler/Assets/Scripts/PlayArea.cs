@@ -9,9 +9,6 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
     [SerializeField]
     internal MonsterInteraction monster;
 
-    public delegate void OnApplyCardActionDelegate();
-    public static event OnApplyCardActionDelegate applyCardActionDelegate;
-
     public void OnPointerEnter(PointerEventData eventData)
     {
        // if nothing is being dragged do nothing
@@ -92,10 +89,4 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
             }
         }
     }
-
-    public void OnApplyCardAction()
-    {
-        applyCardActionDelegate();
-    }
-
 }

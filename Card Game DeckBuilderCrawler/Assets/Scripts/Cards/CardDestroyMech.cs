@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardDestroyMech : MonoBehaviour {
+public class CardDestroyMech : MonoBehaviour, ICardSelectableMech {
 
 
     private int numCardsToDestroy;
@@ -23,9 +23,14 @@ public class CardDestroyMech : MonoBehaviour {
             this.hand = GameManager.Instance.hand;
             this.centrePanel = GameManager.Instance.centrePanel;
             this.card = this.GetComponent<Card>();
-            //attach the apply attack function to the apply card action event
+            //attach the apply destroy function to the apply card action event
             this.card.applyCardActionDelegate += ApplyDestroyCards;
         }
+    }
+
+    private void Card_applyCardSelectionActionDelegate()
+    {
+        Destroy(this.gameObject);
     }
 
     private void ApplyDestroyCards()
@@ -51,9 +56,23 @@ public class CardDestroyMech : MonoBehaviour {
         foreach (Transform card in cardsInHand)
         {
             //make the centrePanel the parent control of the card
-            card.SetParent(this.centrePanel.transform);
+            //card.SetParent(this.centrePanel.transform);
+            SelectionPanel.Instance.PassToPanel(card, this);
         }
         //Make panel invisible
         //this.centrePanel.SetActive(false);
+    }
+
+    void ICardSelectableMech.ApplySelectionAction(List<Transform> cardsSelected, List<Transform> cardsNotSelected)
+    {
+        for (int i = cardsSelected.Count - 1; i >= 0; i--)
+        {
+            //Would be good to have a card destroying animation show here e.g burning card
+            Destroy(cardsSelected[i].gameObject);
+        }
+        foreach (Transform card in cardsNotSelected)
+        {
+            card.SetParent(this.hand.transform);
+        }
     }
 }

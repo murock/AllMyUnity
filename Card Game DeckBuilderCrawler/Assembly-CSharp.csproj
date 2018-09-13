@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Cards\CardDraw.cs" />
     <Compile Include="Assets\Scripts\Cards\CardDrawMech.cs" />
     <Compile Include="Assets\Scripts\Cards\DeckManager.cs" />
+    <Compile Include="Assets\Scripts\Cards\ICardSelectableMech.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\MonsterInteraction.cs" />

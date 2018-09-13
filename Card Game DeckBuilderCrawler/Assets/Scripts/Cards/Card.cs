@@ -7,6 +7,7 @@ public class Card : MonoBehaviour {
 
     public delegate void OnApplyCardActionDelegate();
     public event OnApplyCardActionDelegate applyCardActionDelegate;
+
     public void PopulateCard(string cardTitle, string cardDescription, Color cardColor)
     {
         this.transform.Find("Card Title").GetComponent<Text>().text = cardTitle;
