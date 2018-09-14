@@ -35,32 +35,33 @@ public class CardDestroyMech : MonoBehaviour, ICardSelectableMech {
 
     private void ApplyDestroyCards()
     {
-        //Destroy Cards
-        //Make panel visible
-        this.centrePanel.SetActive(true);
         List<Transform> cardsInHand = new List<Transform>();
         for (int i = 0; i < this.hand.transform.childCount; i++)
         {
             Transform card = this.hand.transform.GetChild(i);
-            CardActions cardAction = card.GetComponent<CardActions>();
-            if (cardAction != null)
-            {
-                cardAction.isDragable = false;
-            }
+            //CardActions cardAction = card.GetComponent<CardActions>();
+            //if (cardAction != null)
+            //{
+            //    cardAction.isDragable = false;
+            //}
             //If the tag is card then child is a card
             if (card.tag == "card")
             {
                 cardsInHand.Add(card);
             }
         }
-        foreach (Transform card in cardsInHand)
+        //If there are no cards in hand do nothing
+        if (cardsInHand.Count > 0)
         {
-            //make the centrePanel the parent control of the card
-            //card.SetParent(this.centrePanel.transform);
-            SelectionPanel.Instance.PassToPanel(card, this);
+            //Make panel visible
+            this.centrePanel.SetActive(true);
+            foreach (Transform card in cardsInHand)
+            {
+                //make the centrePanel the parent control of the card
+                //card.SetParent(this.centrePanel.transform);
+                SelectionPanel.Instance.PassToPanel(card, this);
+            }
         }
-        //Make panel invisible
-        //this.centrePanel.SetActive(false);
     }
 
     void ICardSelectableMech.ApplySelectionAction(List<Transform> cardsSelected, List<Transform> cardsNotSelected)
@@ -68,10 +69,19 @@ public class CardDestroyMech : MonoBehaviour, ICardSelectableMech {
         for (int i = cardsSelected.Count - 1; i >= 0; i--)
         {
             //Would be good to have a card destroying animation show here e.g burning card
+            if (DeckManager.Instance.cardsInPlay.Contains(cardsSelected[i]))
+            {
+                DeckManager.Instance.cardsInPlay.Remove(cardsSelected[i]);
+            }
             Destroy(cardsSelected[i].gameObject);
         }
         foreach (Transform card in cardsNotSelected)
         {
+            CardActions cardAction = card.GetComponent<CardActions>();
+            if (cardAction != null)
+            {
+                cardAction.isDragable = true;
+            }
             card.SetParent(this.hand.transform);
         }
     }

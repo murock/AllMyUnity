@@ -85,6 +85,8 @@ public class MonsterInteraction : MonoBehaviour {
             this.health = 0;
             this.nameTxt.text = "DEFEATED!!!";
             this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
+            GameManager.Instance.centrePanel.SetActive(true);
+            ShopManager.Instance.StartShop();
         }
         else
         {

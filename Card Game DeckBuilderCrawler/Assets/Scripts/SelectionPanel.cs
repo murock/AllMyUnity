@@ -38,6 +38,12 @@ public class SelectionPanel : Singleton<SelectionPanel>
 
     public void PassToPanel(Transform card, ICardSelectableMech cardMech)
     {
+        CardActions cardAction = card.GetComponent<CardActions>();
+        if (cardAction != null)
+        {
+            cardAction.isDragable = false;
+        }
+
         card.SetParent(this.transform);
         cardsInPanel.Add(card);
         currentMech = cardMech;

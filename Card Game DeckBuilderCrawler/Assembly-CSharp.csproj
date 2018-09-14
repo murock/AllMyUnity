@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\PlayArea.cs" />
     <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\SelectionPanel.cs" />
+    <Compile Include="Assets\Scripts\ShopManager.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\TurnManager.cs" />
     <None Include="Assets\KinematicSoup\SceneFusion\Stand-Ins\TextAsset.txt" />
