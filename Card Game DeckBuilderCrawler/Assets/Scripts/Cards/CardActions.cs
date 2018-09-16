@@ -117,9 +117,9 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!this.isDragable)
+        if (!this.isDragable && !this.isSelected)
         {
-            this.GetComponent<CanvasGroup>().alpha = 0.5f;
+            this.GetComponent<CanvasGroup>().alpha = 0.7f;
         }
         Debug.Log("Pointer enter");
     }
@@ -134,11 +134,21 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        //Only enter if loop when selectionPanel is active
         if (!this.isDragable)
         {
-            this.isSelected = !this.isSelected;
-            Debug.Log("card: " + this.name);
+            SelectionPanel.Instance.SelectCard(this.gameObject);
         }
+        //if (!this.isDragable && this.isSelected)
+        //{
+        //    //Unselect card
+        //    this.isSelected = false;
+        //}
+        //else if (!this.isDragable && (SelectionPanel.Instance.CurrentAmtSelected < SelectionPanel.Instance.MaxSelectable))
+        //{
+        //    //Select card only if maxSelectable allows for it
+        //    this.isSelected = true;
+        //}
     }
 
     public void DiscardCard()

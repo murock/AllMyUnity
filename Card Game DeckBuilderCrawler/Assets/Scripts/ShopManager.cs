@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ShopManager : Singleton<ShopManager> {
 
-    List<Transform> CardsTobuy;
+    List<Transform> CardsToBuy;
+    public bool isShopping;
 
     private void PopulateShop()
     {
-        CardsTobuy = new List<Transform>();
+        isShopping = true;
+        CardsToBuy = new List<Transform>();
         int numUniqueCards = 2;
         //IMPROVE SYSTEM TO ACCOUNT TO UP TO 5 CARDS IN SHOP?
         for (int i = 0; i < numUniqueCards; i++)
@@ -26,7 +28,7 @@ public class ShopManager : Singleton<ShopManager> {
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
                 cardDestroyMechanic.NumCardsToDestroy = 1;
                 // making the centrePanel its parent
-                SelectionPanel.Instance.PassToPanel(newCard.transform, cardDestroyMechanic);
+                SelectionPanel.Instance.PassToPanel(newCard.transform, cardDestroyMechanic, cardDestroyMechanic.NumCardsToDestroy);
             }
             else
             {
@@ -43,19 +45,16 @@ public class ShopManager : Singleton<ShopManager> {
     private void CreateCard(Card cardType, GameObject cardPrefab, string cardTitle, string cardDescription, Color cardColor)
     {
         cardType.PopulateCard(cardTitle, cardDescription, cardColor);
-
-        //cardType.transform.SetParent(this.transform);
-        //add the card to the global list
-        CardsTobuy.Add(cardType.transform);
+        CardsToBuy.Add(cardType.transform);
     }
 
     public void StartShop()
     {
-        if (this.CardsTobuy == null)
+        if (this.CardsToBuy == null)
         {
             this.PopulateShop();
         }
-        foreach (Transform card in this.CardsTobuy)
+        foreach (Transform card in this.CardsToBuy)
         {
             CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
             if (cardCanvasGroup != null)

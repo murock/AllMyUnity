@@ -18,7 +18,7 @@ public class DeckManager : Singleton<DeckManager> {
         cardsDiscarded = new List<Transform>();
         cardsInDeck = new List<Transform>();
         //temp change deck size for testing
-        initialDeckSize = 11;
+        initialDeckSize = 10;
         for (int i = 0; i < initialDeckSize; i++)
         {
             Card newCard;
@@ -65,10 +65,10 @@ public class DeckManager : Singleton<DeckManager> {
                 //CARD DESTROY ---------------------------
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                CreateCard(newCard, newCardPrefab, "Destroy", "+1 Destroy", cardColor);
+                CreateCard(newCard, newCardPrefab, "Destroy", "+2 Destroy", cardColor);
                 //attach the card draw mechanic to the card prefab
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
-                cardDestroyMechanic.NumCardsToDestroy = 1;
+                cardDestroyMechanic.NumCardsToDestroy = 2;
             }
         }
         //give a copy of the deck to the card draw class
