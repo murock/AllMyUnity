@@ -151,6 +151,16 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         //}
     }
 
+    public void HighlightCard()
+    {
+        this.GetComponent<CanvasGroup>().alpha = 0.7f;
+    }
+
+    public void HighlightSelectedCard()
+    {
+        this.GetComponent<CanvasGroup>().alpha = 0.3f;
+    }
+
     public void DiscardCard()
     {
         //moves the card to where you've set the parentToReturnTo

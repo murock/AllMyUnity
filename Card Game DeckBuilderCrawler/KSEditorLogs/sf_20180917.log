@@ -1,0 +1,30 @@
+2018-09-17 06:45:59.0244 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 06:46:03.6675 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 06:46:41.5576 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 06:46:41.5965 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 06:47:45.0212 [ERROR] InvalidOperationException: Operation is not valid due to the current state of the object
+System.Collections.Generic.Queue`1[UnityEngine.Transform].Peek ()
+System.Collections.Generic.Queue`1[UnityEngine.Transform].Dequeue ()
+SelectionPanel.SelectCard (UnityEngine.GameObject card) (at Assets/Scripts/SelectionPanel.cs:49)
+CardActions.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/Cards/CardActions.cs:140)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 06:51:23.0568 [DEBUG] Play mode: False
+2018-09-17 06:51:27.0535 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 06:53:18.1206 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 06:53:18.1605 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 06:53:34.8183 [ERROR] InvalidOperationException: Operation is not valid due to the current state of the object
+System.Collections.Generic.Queue`1[UnityEngine.Transform].Peek ()
+System.Collections.Generic.Queue`1[UnityEngine.Transform].Dequeue ()
+SelectionPanel.SelectCard (UnityEngine.GameObject card) (at Assets/Scripts/SelectionPanel.cs:58)
+CardActions.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/Cards/CardActions.cs:140)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 07:10:15.4786 [DEBUG] Play mode: False
+2018-09-17 07:13:24.4212 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 07:13:24.4502 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 07:14:15.1591 [DEBUG] Play mode: False

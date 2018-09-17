@@ -12,7 +12,6 @@ public class SelectionPanel : Singleton<SelectionPanel>
     ICardSelectableMech currentMech;
     //The maximum number of cards you can select
     int maxSelectable = 0;
-    int currentAmtSelected = 0;
 
     public int CurrentAmtSelected
     {
@@ -46,12 +45,11 @@ public class SelectionPanel : Singleton<SelectionPanel>
         //If already selected just unselect
         if (cardAction.isSelected)
         {
-            //check Q length???????
-            cardsSelectedQueue.Dequeue();
+            //Remove specific item from Q
+            cardsSelectedQueue = new Queue<Transform>(cardsSelectedQueue.Where(t => t != card.transform));
             cardAction.isSelected = false;
             cardsNotSelected.Add(card.transform);
-            //DO NOT HARD CODE LIKE THIS TODO: remove later
-            card.GetComponent<CanvasGroup>().alpha = 0.6f;
+            cardAction.HighlightCard();
             return;
         }
         //If maxed out on selections already unSelected the first one that was selected??
@@ -72,7 +70,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
             {
                 cardAction.isSelected = true;
                 cardsSelectedQueue.Enqueue(card.transform);
-                card.GetComponent<CanvasGroup>().alpha = 0.3f;
+                cardAction.HighlightSelectedCard();
             }
             if (cardsNotSelected.Contains(card.transform))
             {
