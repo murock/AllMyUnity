@@ -28,3 +28,271 @@ UnityEngine.EventSystems.EventSystem:Update()
 2018-09-17 07:13:24.4212 [DEBUG] Scene Fusion version 1.8.1-0
 2018-09-17 07:13:24.4502 [DEBUG] Play mode: True, sync in play mode: False
 2018-09-17 07:14:15.1591 [DEBUG] Play mode: False
+2018-09-17 14:59:07.4399 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 14:59:11.9615 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:07:06.9743 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:07:28.9692 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:34:44.1741 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:34:46.6143 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:34:46.6523 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:34:57.0369 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+UnityEngine.Component.GetComponent[CanvasGroup] () (at C:/buildslave/unity/build/Runtime/Export/Component.bindings.cs:42)
+ShopManager.StartShop () (at Assets/Scripts/ShopManager.cs:59)
+MonsterInteraction.TakeDamage (Int32 damage) (at Assets/Scripts/MonsterInteraction.cs:89)
+CardAttackMech.ApplyAttack () (at Assets/Scripts/Cards/CardAttackMech.cs:29)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:20)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:34:57.9796 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+CardDestroyMech.ICardSelectableMech.ApplySelectionAction (System.Collections.Generic.List`1 cardsSelected, System.Collections.Generic.List`1 cardsNotSelected) (at Assets/Scripts/Cards/CardDestroyMech.cs:77)
+SelectionPanel.Accept () (at Assets/Scripts/SelectionPanel.cs:105)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:34:58.7744 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+CardDestroyMech.ICardSelectableMech.ApplySelectionAction (System.Collections.Generic.List`1 cardsSelected, System.Collections.Generic.List`1 cardsNotSelected) (at Assets/Scripts/Cards/CardDestroyMech.cs:77)
+SelectionPanel.Accept () (at Assets/Scripts/SelectionPanel.cs:105)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:35:01.8234 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+UnityEngine.Component.GetComponent[CardActions] () (at C:/buildslave/unity/build/Runtime/Export/Component.bindings.cs:42)
+SelectionPanel.get_CurrentAmtSelected () (at Assets/Scripts/SelectionPanel.cs:24)
+SelectionPanel.SelectCard (UnityEngine.GameObject card) (at Assets/Scripts/SelectionPanel.cs:56)
+CardActions.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/Cards/CardActions.cs:140)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:35:02.1873 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+CardDestroyMech.ICardSelectableMech.ApplySelectionAction (System.Collections.Generic.List`1 cardsSelected, System.Collections.Generic.List`1 cardsNotSelected) (at Assets/Scripts/Cards/CardDestroyMech.cs:77)
+SelectionPanel.Accept () (at Assets/Scripts/SelectionPanel.cs:105)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:35:04.7605 [DEBUG] Play mode: False
+2018-09-17 15:35:07.4126 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:35:07.4466 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:35:17.5454 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+CardDestroyMech.ICardSelectableMech.ApplySelectionAction (System.Collections.Generic.List`1 cardsSelected, System.Collections.Generic.List`1 cardsNotSelected) (at Assets/Scripts/Cards/CardDestroyMech.cs:77)
+SelectionPanel.Accept () (at Assets/Scripts/SelectionPanel.cs:105)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:35:17.9083 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+CardDestroyMech.ICardSelectableMech.ApplySelectionAction (System.Collections.Generic.List`1 cardsSelected, System.Collections.Generic.List`1 cardsNotSelected) (at Assets/Scripts/Cards/CardDestroyMech.cs:77)
+SelectionPanel.Accept () (at Assets/Scripts/SelectionPanel.cs:105)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:35:20.1985 [DEBUG] Play mode: False
+2018-09-17 15:35:25.8847 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:35:25.9167 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:35:32.2987 [DEBUG] Play mode: False
+2018-09-17 15:36:20.1164 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:36:20.1674 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:36:29.8853 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+UnityEngine.Component.GetComponent[CardActions] () (at C:/buildslave/unity/build/Runtime/Export/Component.bindings.cs:42)
+SelectionPanel.get_CurrentAmtSelected () (at Assets/Scripts/SelectionPanel.cs:24)
+SelectionPanel.SelectCard (UnityEngine.GameObject card) (at Assets/Scripts/SelectionPanel.cs:56)
+CardActions.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/Cards/CardActions.cs:140)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:36:30.2981 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+CardDestroyMech.ICardSelectableMech.ApplySelectionAction (System.Collections.Generic.List`1 cardsSelected, System.Collections.Generic.List`1 cardsNotSelected) (at Assets/Scripts/Cards/CardDestroyMech.cs:77)
+SelectionPanel.Accept () (at Assets/Scripts/SelectionPanel.cs:105)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:36:31.0269 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+UnityEngine.Component.GetComponent[CardActions] () (at C:/buildslave/unity/build/Runtime/Export/Component.bindings.cs:42)
+SelectionPanel.get_CurrentAmtSelected () (at Assets/Scripts/SelectionPanel.cs:24)
+SelectionPanel.SelectCard (UnityEngine.GameObject card) (at Assets/Scripts/SelectionPanel.cs:56)
+CardActions.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/Cards/CardActions.cs:140)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 15:36:32.2875 [DEBUG] Play mode: False
+2018-09-17 15:44:12.5802 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:44:12.6292 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:44:44.9529 [DEBUG] Play mode: False
+2018-09-17 15:44:48.9276 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:44:48.9556 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:44:49.5594 [DEBUG] Play mode: False
+2018-09-17 15:44:59.1013 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:44:59.1533 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:45:05.0504 [DEBUG] Play mode: False
+2018-09-17 15:45:38.8146 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:45:38.8796 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:45:43.2747 [DEBUG] Play mode: False
+2018-09-17 15:46:00.1503 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:46:00.1883 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:46:07.7659 [DEBUG] Play mode: False
+2018-09-17 15:47:57.6417 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:48:03.0660 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:48:03.1080 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:48:09.9128 [DEBUG] Play mode: False
+2018-09-17 15:48:32.3046 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:48:32.3456 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:48:38.4626 [DEBUG] Play mode: False
+2018-09-17 15:50:45.9409 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:50:45.9718 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:50:54.5261 [DEBUG] Play mode: False
+2018-09-17 15:51:10.6140 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:51:12.9712 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:51:13.0092 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:51:16.8610 [DEBUG] Play mode: False
+2018-09-17 15:55:08.6323 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:55:16.4588 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:55:16.4918 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:55:27.9111 [DEBUG] Play mode: False
+2018-09-17 15:59:33.2437 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:59:38.9778 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 15:59:39.0198 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 15:59:46.8393 [DEBUG] Play mode: False
+2018-09-17 16:00:02.9192 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:00:02.9492 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:00:08.9342 [DEBUG] Play mode: False
+2018-09-17 16:00:11.4214 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:00:11.4584 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:00:16.4168 [DEBUG] Play mode: False
+2018-09-17 16:00:31.1456 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:00:31.1756 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:00:39.6119 [DEBUG] Play mode: False
+2018-09-17 16:09:16.3041 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:09:16.3511 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:09:21.4375 [DEBUG] Play mode: False
+2018-09-17 16:09:37.1145 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:09:37.1425 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:09:45.5808 [DEBUG] Play mode: False
+2018-09-17 16:09:57.1091 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:09:57.1510 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:10:04.3797 [DEBUG] Play mode: False
+2018-09-17 16:12:46.3104 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:12:46.3484 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:12:53.9740 [DEBUG] Play mode: False
+2018-09-17 16:13:50.3749 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:13:50.4239 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:14:05.4901 [DEBUG] Play mode: False
+2018-09-17 16:14:47.7071 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:14:47.7571 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:15:42.1357 [DEBUG] Play mode: False
+2018-09-17 16:15:45.3337 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:15:45.3906 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:16:09.4519 [DEBUG] Play mode: False
+2018-09-17 16:16:21.2717 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:16:21.3166 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:16:27.5846 [DEBUG] Play mode: False
+2018-09-17 16:17:07.3364 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:17:07.3644 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:17:09.9221 [DEBUG] Play mode: False
+2018-09-17 16:33:14.5330 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:33:14.5840 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:33:20.8285 [DEBUG] Play mode: False
+2018-09-17 16:34:37.7299 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:34:40.3411 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:34:40.3840 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:34:46.4576 [DEBUG] Play mode: False
+2018-09-17 16:36:03.8408 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:36:03.8858 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:36:09.3006 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+UnityEngine.Component.GetComponent[CanvasGroup] () (at C:/buildslave/unity/build/Runtime/Export/Component.bindings.cs:42)
+ShopManager.StartShop () (at Assets/Scripts/ShopManager.cs:59)
+MonsterInteraction.TakeDamage (Int32 damage) (at Assets/Scripts/MonsterInteraction.cs:89)
+CardAttackMech.ApplyAttack () (at Assets/Scripts/Cards/CardAttackMech.cs:29)
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:31)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:57)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 16:36:10.2843 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+CardDestroyMech.ICardSelectableMech.ApplySelectionAction (System.Collections.Generic.List`1 cardsSelected, System.Collections.Generic.List`1 cardsNotSelected) (at Assets/Scripts/Cards/CardDestroyMech.cs:77)
+SelectionPanel.Accept () (at Assets/Scripts/SelectionPanel.cs:105)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-17 16:36:11.5969 [DEBUG] Play mode: False
+2018-09-17 16:45:36.9145 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:45:36.9545 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:45:55.5415 [DEBUG] Play mode: False
+2018-09-17 16:45:58.0307 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:45:58.0687 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:46:04.6381 [DEBUG] Play mode: False
+2018-09-17 16:46:06.9744 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:46:07.0124 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:46:12.0468 [DEBUG] Play mode: False
+2018-09-17 16:46:48.5626 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:46:48.6016 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:46:56.3521 [DEBUG] Play mode: False
+2018-09-17 16:47:15.4790 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:47:15.5230 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:47:22.4407 [DEBUG] Play mode: False
+2018-09-17 16:48:10.8553 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:48:10.8962 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:48:20.3632 [DEBUG] Play mode: False
+2018-09-17 16:48:51.2593 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 16:48:51.3363 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 16:48:56.8086 [DEBUG] Play mode: False
+2018-09-17 17:05:34.4739 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 17:05:34.5309 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 17:05:46.2504 [DEBUG] Play mode: False
+2018-09-17 17:49:47.4111 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 17:49:47.4701 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 17:50:16.4253 [DEBUG] Play mode: False
+2018-09-17 17:50:40.5456 [DEBUG] Scene Fusion version 1.8.1-0
+2018-09-17 17:50:40.6046 [DEBUG] Play mode: True, sync in play mode: False
+2018-09-17 17:51:00.2508 [DEBUG] Play mode: False

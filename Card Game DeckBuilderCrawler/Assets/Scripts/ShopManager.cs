@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class ShopManager : Singleton<ShopManager> {
 
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                CreateCard(newCard, newCardPrefab, "Destroy", "+1 Destroy", cardColor);
+                CreateCard(newCard, newCardPrefab, "Destroy", "+1 Destroy", 1, cardColor);
                 //attach the card draw mechanic to the card prefab
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
                 cardDestroyMechanic.NumCardsToDestroy = 1;
@@ -34,7 +35,7 @@ public class ShopManager : Singleton<ShopManager> {
             {
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
-                CreateCard(newCard, newCardPrefab, "Draw", "+2 Draw", cardColor);
+                CreateCard(newCard, newCardPrefab, "Draw", "+2 Draw", 2, cardColor);
                 //attach the card draw mechanic to the card prefab
                 CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
                 cardDrawMechanic.NumCardsToDraw = 2;
@@ -42,9 +43,14 @@ public class ShopManager : Singleton<ShopManager> {
         }
     }
 
-    private void CreateCard(Card cardType, GameObject cardPrefab, string cardTitle, string cardDescription, Color cardColor)
+    private void CreateCard(Card newCard, GameObject newCardPrefab, string v1, string v2, int v3, Color cardColor)
     {
-        cardType.PopulateCard(cardTitle, cardDescription, cardColor);
+        throw new NotImplementedException();
+    }
+
+    private void CreateCard(Card cardType, GameObject cardPrefab, string cardTitle, string cardDescription, ICardMech iCard, Color cardColor)
+    {
+        cardType.PopulateCard(cardTitle, cardDescription, iCard, cardColor);
         CardsToBuy.Add(cardType.transform);
     }
 

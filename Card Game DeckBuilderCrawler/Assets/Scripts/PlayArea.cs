@@ -52,11 +52,15 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
                 //Triggers the card action event
                 // OnApplyCardAction();
                 Card card = eventData.pointerDrag.GetComponent<Card>();
-                if (card != null)
+               // if (card != null)
+               // {
+               //     card.OnApplyCardAction();
+               // }
+                
+                for (int i = 0; i < card.iCard.GetValue(); i++)
                 {
                     card.OnApplyCardAction();
                 }
-
 
                 //CARD INHERITANCE
                 //Card card = eventData.pointerDrag.GetComponent<Card>();

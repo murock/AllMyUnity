@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardDefenseMech : MonoBehaviour
+public class CardDefenseMech : MonoBehaviour, ICardMech
 {
 
     private int defense;
     //the card which this defense mechanic is attached to
     private Card card;
+
+    int ICardMech.GetValue()
+    {
+        return this.defense;
+    }
 
     [SerializeField]
     private GameObject player;

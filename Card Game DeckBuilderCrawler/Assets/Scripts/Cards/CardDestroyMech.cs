@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardDestroyMech : MonoBehaviour, ICardSelectableMech {
+public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
 
 
     private int numCardsToDestroy;
@@ -10,6 +10,10 @@ public class CardDestroyMech : MonoBehaviour, ICardSelectableMech {
     private Card card;
     private Hand hand;
     private GameObject centrePanel;
+    int ICardMech.GetValue()
+    {
+        return this.numCardsToDestroy;
+    }
 
     //TODO: Implement this so the number affects how many are destroyed
     public int NumCardsToDestroy

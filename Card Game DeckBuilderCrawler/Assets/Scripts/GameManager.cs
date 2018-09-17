@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager> {
     public MonsterInteraction monster;
     public Hand hand;
     public GameObject centrePanel;
+    public bool multilyOn;
 
     //To be implemented still for efficency
     public ObjectPool Pool { get; set; }
@@ -23,4 +24,5 @@ public class GameManager : Singleton<GameManager> {
         TurnManager.Instance.StartCoroutine(TurnManager.Instance.DrawHand());
     }
 
+   
 }

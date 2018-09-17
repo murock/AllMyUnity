@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardAttackMech : MonoBehaviour {
+public class CardAttackMech : MonoBehaviour, ICardMech {
 
     private int attack;
     //the card which this attack mechanic is attached to
     private Card card;
+
+    int ICardMech.GetValue()
+    {
+        return this.attack;
+    }
 
     public int Attack
     {
