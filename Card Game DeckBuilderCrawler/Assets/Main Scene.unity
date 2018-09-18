@@ -145,6 +145,7 @@ MonoBehaviour:
   monster: {fileID: 873246260}
   hand: {fileID: 865154096}
   centrePanel: {fileID: 559421107}
+  multilyOn: 0
 --- !u!4 &39092425
 Transform:
   m_ObjectHideFlags: 0
@@ -770,6 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0750178a3f81fa646be55fbdcadde2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShopping: 0
 --- !u!1 &561074426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1339,7 @@ MonoBehaviour:
   nameTxt: {fileID: 2117589838}
   healthTxt: {fileID: 692408153}
   attackTxt: {fileID: 96555548}
-  health: 2
+  health: 15
   attack: 4
   player: {fileID: 111905534}
 --- !u!225 &873246261
@@ -2163,6 +2165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 873246260}
+  multiplierOn: 0
+  multiplierNum: 0
 --- !u!114 &1652258117
 MonoBehaviour:
   m_ObjectHideFlags: 0

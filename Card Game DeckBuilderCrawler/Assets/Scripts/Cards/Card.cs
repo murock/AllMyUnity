@@ -17,8 +17,6 @@ public class Card : MonoBehaviour {
         this.iCard = iCard;
     }
 
-
-
     public void OnApplyCardAction()
     {
 

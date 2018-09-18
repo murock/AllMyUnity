@@ -9,6 +9,9 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
     [SerializeField]
     internal MonsterInteraction monster;
 
+    public bool multiplierOn;
+    public int multiplierNum;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
        // if nothing is being dragged do nothing
@@ -52,15 +55,21 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
                 //Triggers the card action event
                 // OnApplyCardAction();
                 Card card = eventData.pointerDrag.GetComponent<Card>();
-               // if (card != null)
-               // {
-               //     card.OnApplyCardAction();
-               // }
-                
-                for (int i = 0; i < card.iCard.GetValue(); i++)
+                //This is a shitty way to do this IMPROVE!!
+                if (card != null && this.multiplierOn)
+                {
+                    for (int i = 0; i < multiplierNum ; i++)
+                    {
+                        card.OnApplyCardAction();
+                    }
+                    this.multiplierOn = false;
+                    this.multiplierNum = 0;
+                }
+                else if (card != null)
                 {
                     card.OnApplyCardAction();
                 }
+
 
                 //CARD INHERITANCE
                 //Card card = eventData.pointerDrag.GetComponent<Card>();
