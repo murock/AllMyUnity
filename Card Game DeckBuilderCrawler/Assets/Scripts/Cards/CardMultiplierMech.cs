@@ -9,7 +9,6 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech
     private int numTimesToMultiply;
     //the card which this multiply mechanic is attached to
     private Card card;
-    private Hand hand;
 
     int ICardMech.GetValue()
     {
@@ -26,7 +25,6 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech
         set
         {
             this.numTimesToMultiply = value;
-            this.hand = GameManager.Instance.hand;
             this.card = this.GetComponent<Card>();
             //attach the apply multipy function to the apply card action event
             this.card.applyCardActionDelegate += ApplyMultiplier;
