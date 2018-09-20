@@ -213,7 +213,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
 
     //Put this in as bug with Fade() race condition of wanting alpha to be 1 but fade setting it to 0 when ending turn and wanting cards there were just in the hand
-    private void InstantFade()
+    public void InstantFade()
     {
         CanvasGroup cardCanvasGroup = this.GetComponent<CanvasGroup>();
         //become untagetable

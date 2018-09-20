@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardDraw : Singleton<CardDraw>{
 
+public class CardDraw : Singleton<CardDraw>{
     //Label on top of the deck
     [SerializeField]
     private GameObject deckLabel;
@@ -82,5 +82,19 @@ public class CardDraw : Singleton<CardDraw>{
         deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
         //update the global list of cards in the deck
         DeckManager.Instance.cardsInDeck = this.deck;
+    }
+
+    //Should maybe move to deck manager?
+    public void UpdateLabel()
+    {
+        if (DeckManager.Instance.cardsInDeck.Count > 0)
+        {
+            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + DeckManager.Instance.cardsInDeck.Count.ToString();
+        }
+        else
+        {
+            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Out of Cards";
+        }
+
     }
 }

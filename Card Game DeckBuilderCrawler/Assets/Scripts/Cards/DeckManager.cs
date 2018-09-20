@@ -77,7 +77,7 @@ public class DeckManager : Singleton<DeckManager> {
                 //cardDrawMechanic.NumCardsToDraw = 2;
 
                 //CARD DESTROY ---------------------------
-                Color cardColor = new Color(250f, 69f, 0f, 1f);
+                Color cardColor = new Color(255f, 255f, 255f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
@@ -99,4 +99,15 @@ public class DeckManager : Singleton<DeckManager> {
         cardsInDeck.Add(cardType.transform);
     }
 
+    internal void AddCardToDeck(Transform card)
+    {
+        cardsInDeck.Add(card);
+        card.transform.SetParent(this.transform);
+        CardActions cardAction = card.GetComponent<CardActions>();
+        if (cardAction != null)
+        {
+            cardAction.InstantFade();
+        }
+
+    }
 }

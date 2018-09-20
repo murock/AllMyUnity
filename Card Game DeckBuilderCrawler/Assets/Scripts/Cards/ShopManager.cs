@@ -20,18 +20,17 @@ public class ShopManager : Singleton<ShopManager> {
             Card newCard;
             //Creates a new gameobject which based off the card in the Resource folder
             GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
-            if (i < 2)
+            if (i < 1)
             {
-
-                Color cardColor = new Color(250f, 69f, 0f, 1f);
+                Color cardColor = new Color(255f, 255f, 255f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
                 cardDestroyMechanic.NumCardsToDestroy = 1;
                 newCard.PopulateCard("Destroy", "+2 Destroy", cardDestroyMechanic, cardColor);
                 // making the centrePanel its parent
-                //SelectionPanel.Instance.PassToPanel(newCard.transform, cardDestroyMechanic, cardDestroyMechanic.NumCardsToDestroy);
-
+                SelectionPanel.Instance.PassToPanel(newCard.transform, cardDestroyMechanic, cardDestroyMechanic.NumCardsToDestroy);
+                CardsToBuy.Add(newCard.transform);
             }
             else
             {
@@ -42,7 +41,8 @@ public class ShopManager : Singleton<ShopManager> {
                 cardDrawMechanic.NumCardsToDraw = 2;
                 newCard.PopulateCard("Draw", "+2 Draw", cardDrawMechanic, cardColor);
                 // making the centrePanel its parent
-                //SelectionPanel.Instance.PassToPanel(newCard.transform, cardDrawMechanic, cardDrawMechanic.NumCardsToDraw);
+                SelectionPanel.Instance.PassToPanel(newCard.transform, null, cardDrawMechanic.NumCardsToDraw);
+                CardsToBuy.Add(newCard.transform);
             }
         }
     }
@@ -62,5 +62,15 @@ public class ShopManager : Singleton<ShopManager> {
                 cardCanvasGroup.blocksRaycasts = true;
             }
         }
+    }
+
+    public void BuyCards(List<Transform> boughtCards)
+    {
+        foreach (Transform card in boughtCards)
+        {
+            DeckManager.Instance.AddCardToDeck(card);
+        }
+        this.isShopping = false;
+        CardDraw.Instance.UpdateLabel();
     }
 }

@@ -81,34 +81,35 @@ public class SelectionPanel : Singleton<SelectionPanel>
 
     public void Accept()
     {
-       // List<Transform> cardsSelected = new List<Transform>();
-       // List<Transform> cardsNotSelected = new List<Transform>();
-       // foreach (Transform card in this.cardsInPanel)
-       //// foreach (Transform card in this.cardsInPanelQueue)
-       // {
-       //     CardActions cardAction = card.GetComponent<CardActions>();
-       //     if (cardAction != null && cardAction.isSelected)
-       //     {
-       //         //Card is selected
-       //         cardsSelected.Add(card);
-       //     }
-       //     else
-       //     {
-       //         //Card not selected
-       //         cardsNotSelected.Add(card);
-       //     }
-       // }
-
-        //Apply Selection Action
-        if (currentMech != null)
-        {
-            currentMech.ApplySelectionAction(this.cardsSelectedQueue.ToList(), this.cardsNotSelected);
-        }
+        // List<Transform> cardsSelected = new List<Transform>();
+        // List<Transform> cardsNotSelected = new List<Transform>();
+        // foreach (Transform card in this.cardsInPanel)
+        //// foreach (Transform card in this.cardsInPanelQueue)
+        // {
+        //     CardActions cardAction = card.GetComponent<CardActions>();
+        //     if (cardAction != null && cardAction.isSelected)
+        //     {
+        //         //Card is selected
+        //         cardsSelected.Add(card);
+        //     }
+        //     else
+        //     {
+        //         //Card not selected
+        //         cardsNotSelected.Add(card);
+        //     }
+        // }
         //Do shop action if shopping
         if (ShopManager.Instance.isShopping)
         {
             //Send card(s) to buy and not to buy to the shop manager
+            ShopManager.Instance.BuyCards(this.cardsSelectedQueue.ToList());
         }
+        //Apply Selection Action
+        else if (currentMech != null)
+        {
+            currentMech.ApplySelectionAction(this.cardsSelectedQueue.ToList(), this.cardsNotSelected);
+        }
+
 
 
         this.gameObject.SetActive(false);

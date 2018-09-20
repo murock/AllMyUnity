@@ -1339,7 +1339,7 @@ MonoBehaviour:
   nameTxt: {fileID: 2117589838}
   healthTxt: {fileID: 692408153}
   attackTxt: {fileID: 96555548}
-  health: 15
+  health: 2
   attack: 4
   player: {fileID: 111905534}
 --- !u!225 &873246261

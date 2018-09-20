@@ -55,7 +55,7 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
                 //Triggers the card action event
                 // OnApplyCardAction();
                 Card card = eventData.pointerDrag.GetComponent<Card>();
-                //This is a shitty way to do this IMPROVE!!
+                //This is a shitty way to do this IMPROVE!! BROKEN FOR DESTROY
                 if (card != null && this.multiplierOn)
                 {
                     for (int i = 0; i < multiplierNum ; i++)

@@ -19,9 +19,7 @@ public class Card : MonoBehaviour {
 
     public void OnApplyCardAction()
     {
-
-         applyCardActionDelegate();  
-          
+         applyCardActionDelegate();           
     }
 
     
