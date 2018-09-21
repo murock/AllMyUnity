@@ -13,6 +13,11 @@ public class CardDrawMech : MonoBehaviour, ICardMech {
         return this.numCardsToDraw;
     }
 
+    void ICardMech.SetValue(int value)
+    {
+        this.numCardsToDraw = value;
+    }
+
     public int NumCardsToDraw
     {
         get

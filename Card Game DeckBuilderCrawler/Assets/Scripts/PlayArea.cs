@@ -58,10 +58,20 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
                 //This is a shitty way to do this IMPROVE!! BROKEN FOR DESTROY
                 if (card != null && this.multiplierOn)
                 {
-                    for (int i = 0; i < multiplierNum ; i++)
-                    {
-                        card.OnApplyCardAction();
-                    }
+                    //for (int i = 0; i < multiplierNum ; i++)
+                    //{
+                    //    card.OnApplyCardAction();
+                    //}
+
+                    //Get the orginal card value
+                    int cardValue = card.iCard.GetValue();
+                    //Multiply that value
+                    card.iCard.SetValue(cardValue * this.multiplierNum);
+                    //Apply the action with the multipled value
+                    card.OnApplyCardAction();
+                    //Return the value to its orginal number
+                    card.iCard.SetValue(cardValue);
+
                     this.multiplierOn = false;
                     this.multiplierNum = 0;
                 }

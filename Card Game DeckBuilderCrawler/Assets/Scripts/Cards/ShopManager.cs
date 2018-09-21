@@ -68,6 +68,11 @@ public class ShopManager : Singleton<ShopManager> {
     {
         foreach (Transform card in boughtCards)
         {
+            CardActions cardAction = card.GetComponent<CardActions>();
+            if (cardAction != null)
+            {
+                cardAction.isDragable = true;
+            }
             DeckManager.Instance.AddCardToDeck(card);
         }
         this.isShopping = false;

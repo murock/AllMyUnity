@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ICardMech
 {
     int GetValue();
+    void SetValue(int value);
 }

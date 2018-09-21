@@ -10,9 +10,15 @@ public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
     private Card card;
     private Hand hand;
     private GameObject centrePanel;
+
     int ICardMech.GetValue()
     {
         return this.numCardsToDestroy;
+    }
+
+    void ICardMech.SetValue(int value)
+    {
+        this.numCardsToDestroy= value;
     }
 
     //TODO: Implement this so the number affects how many are destroyed

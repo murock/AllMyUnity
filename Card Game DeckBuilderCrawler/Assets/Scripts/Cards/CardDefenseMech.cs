@@ -14,6 +14,11 @@ public class CardDefenseMech : MonoBehaviour, ICardMech
         return this.defense;
     }
 
+    void ICardMech.SetValue(int value)
+    {
+        this.defense = value;
+    }
+
     [SerializeField]
     private GameObject player;
 

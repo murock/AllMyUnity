@@ -45,6 +45,8 @@ public class TurnManager : Singleton<TurnManager> {
     //Called when the end turn button is hit
     public void EndTurn()
     {
+        PlayArea.Instance.multiplierNum = 1;
+        PlayArea.Instance.multiplierOn = false;
         Hand.Instance.DiscardHand();
         monster.DoDamage();
         DiscardCardsInPlay();

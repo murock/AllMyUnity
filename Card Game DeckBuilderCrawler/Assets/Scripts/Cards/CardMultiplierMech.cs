@@ -15,6 +15,11 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech
         return this.numTimesToMultiply;
     }
 
+    void ICardMech.SetValue(int value)
+    {
+        this.numTimesToMultiply = value;
+    }
+
 
     public int NumTimesToMultiply
     {

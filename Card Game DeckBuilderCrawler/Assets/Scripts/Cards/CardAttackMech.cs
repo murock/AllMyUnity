@@ -13,6 +13,11 @@ public class CardAttackMech : MonoBehaviour, ICardMech {
         return this.attack;
     }
 
+    void ICardMech.SetValue(int value)
+    {
+        this.attack = value;
+    }
+
     public int Attack
     {
         get
