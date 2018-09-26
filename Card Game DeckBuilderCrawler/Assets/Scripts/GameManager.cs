@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager> {
 
     [SerializeField]
+    private Text moneyText;
     public MonsterInteraction monster;
     public Hand hand;
     public GameObject centrePanel;
     public bool multilyOn;
-    public Text moneyText;
+    public GameObject player;
+
+    private int money;
 
     //To be implemented still for efficency
     public ObjectPool Pool { get; set; }
@@ -26,5 +29,10 @@ public class GameManager : Singleton<GameManager> {
         TurnManager.Instance.StartCoroutine(TurnManager.Instance.DrawHand());
     }
 
-   
+    public void AdjustMoney(int amount)
+    {
+        this.money += amount;
+        this.moneyText.text = "Cash Money: <color=green>$" + this.money.ToString() + "</color>";
+    }
+
 }

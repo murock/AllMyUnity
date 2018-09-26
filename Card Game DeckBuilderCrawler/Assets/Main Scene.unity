@@ -142,11 +142,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2999a22cf6a9c64b841f0fec1436419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyText: {fileID: 1215940729}
   monster: {fileID: 873246260}
   hand: {fileID: 865154096}
   centrePanel: {fileID: 559421107}
   multilyOn: 0
-  moneyText: {fileID: 1215940729}
+  player: {fileID: 111905534}
 --- !u!4 &39092425
 Transform:
   m_ObjectHideFlags: 0
@@ -2080,7 +2081,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cash Money: $0'
+  m_Text: 'Cash Money: <color=green>$0</color>'
 --- !u!222 &1215940730
 CanvasRenderer:
   m_ObjectHideFlags: 0

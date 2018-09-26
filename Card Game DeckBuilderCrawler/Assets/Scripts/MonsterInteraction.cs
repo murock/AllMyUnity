@@ -98,6 +98,18 @@ public class MonsterInteraction : MonoBehaviour {
     {
         //PlayerInteraction playerInter = player.transform.GetComponent<PlayerInteraction>();
         //playerInter.TakeDamage(this.attack);
+
         PlayerInteraction.Instance.TakeDamage(this.attack);
+       // StartCoroutine(MoveMonster());
+    }
+
+    private void MoveMonster()
+    {
+        var startPos = this.transform.position;
+        var endPos = GameManager.Instance.player.transform.position;
+        var speed = 10f;
+
+        this.transform.position = Vector3.Lerp(startPos, endPos, speed * Time.deltaTime);
+        // this.transform.position = startPos;
     }
 }
