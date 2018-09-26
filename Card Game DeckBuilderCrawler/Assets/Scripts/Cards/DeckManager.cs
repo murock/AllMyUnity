@@ -43,15 +43,6 @@ public class DeckManager : Singleton<DeckManager> {
                 CardDefenseMech cardDefenseMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
                 cardDefenseMechanic.Defense = 1;
                 CreateCard(newCard, newCardPrefab, "Defense", "+1 Defense", cardDefenseMechanic, cardColor);
-
-                //NEEDS TO BE UPDATED TO NEW VERSION
-                //Color cardColor = new Color32(0, 250, 148, 255);
-                // newCard = newCardPrefab.AddComponent<Card>() as Card;
-                // newCard.PopulateCard("Defense", "+1 Defense", 1, cardColor);
-                // making the deck its parent
-                //  newCard.transform.SetParent(this.transform);
-                //add the card to the global list
-                //  cardsInDeck.Add(newCard.transform);
             }
 
             //Multiplier test
@@ -77,12 +68,20 @@ public class DeckManager : Singleton<DeckManager> {
                 //cardDrawMechanic.NumCardsToDraw = 2;
 
                 //CARD DESTROY ---------------------------
-                Color cardColor = new Color(255f, 255f, 255f, 1f);
+                //Color cardColor = new Color(255f, 255f, 255f, 1f);
+                //newCard = newCardPrefab.AddComponent<Card>() as Card;
+                ////attach the card draw mechanic to the card prefab
+                //CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
+                //cardDestroyMechanic.NumCardsToDestroy = 2;
+                //CreateCard(newCard, newCardPrefab, "Destroy", "+2 Destroy", cardDestroyMechanic, cardColor);
+
+                //CARD MONEY ---------------------------
+                Color cardColor = new Color(0, 1f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
-                CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
-                cardDestroyMechanic.NumCardsToDestroy = 2;
-                CreateCard(newCard, newCardPrefab, "Destroy", "+2 Destroy", cardDestroyMechanic, cardColor);
+                CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                cardMoneyMechanic.Money = 1;
+                CreateCard(newCard, newCardPrefab, "Cash", "+1 Cash", cardMoneyMechanic, cardColor);
             }
         }
         //give a copy of the deck to the card draw class
