@@ -25,6 +25,9 @@ public class MonsterInteraction : MonoBehaviour {
     [SerializeField]
     private GameObject player;
 
+
+    private Vector3 startPos;
+
     public Text NameTxt
     {
         get
@@ -75,6 +78,7 @@ public class MonsterInteraction : MonoBehaviour {
     {
         this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
         this.attackTxt.text = string.Format("Attack: {0}", this.attack.ToString());
+        this.startPos = transform.position;
     }
 
     public void TakeDamage(int damage)
@@ -96,20 +100,24 @@ public class MonsterInteraction : MonoBehaviour {
 
     public void DoDamage()
     {
-        //PlayerInteraction playerInter = player.transform.GetComponent<PlayerInteraction>();
-        //playerInter.TakeDamage(this.attack);
-
-        PlayerInteraction.Instance.TakeDamage(this.attack);
-       // StartCoroutine(MoveMonster());
+        StartCoroutine(MoveMonster());
     }
 
-    private void MoveMonster()
+    private IEnumerator MoveMonster()
     {
-        var startPos = this.transform.position;
-        var endPos = GameManager.Instance.player.transform.position;
-        var speed = 10f;
 
-        this.transform.position = Vector3.Lerp(startPos, endPos, speed * Time.deltaTime);
+        var endPos = GameManager.Instance.player.transform.position;
+        var speed = 1000f;
+
+        while (this.transform.position != endPos)
+        {
+            this.transform.position = Vector3.MoveTowards(this.transform.position, endPos, speed * Time.deltaTime);
+            yield return new WaitForSeconds(0.05f);
+        }
+        this.transform.position = this.startPos;
+        PlayerInteraction.Instance.TakeDamage(this.attack);
+        GameManager.Instance.centrePanel.SetActive(true);
+        ShopManager.Instance.StartShop();
         // this.transform.position = startPos;
     }
 }
