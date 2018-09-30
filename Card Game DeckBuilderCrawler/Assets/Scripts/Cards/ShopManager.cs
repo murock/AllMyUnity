@@ -11,7 +11,6 @@ public class ShopManager : Singleton<ShopManager> {
 
     private void PopulateShop()
     {
-        isShopping = true;
         CardsToBuy = new List<Transform>();
         int numUniqueCards = 2;
         //IMPROVE SYSTEM TO ACCOUNT TO UP TO 5 CARDS IN SHOP?
@@ -27,8 +26,8 @@ public class ShopManager : Singleton<ShopManager> {
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
-                cardDestroyMechanic.NumCardsToDestroy = 1;
-                newCard.PopulateCard("Destroy", "+2 Destroy", cardDestroyMechanic, cardColor);
+                cardDestroyMechanic.NumCardsToDestroy = 2;
+                newCard.PopulateCard("Destroy", "+2 Destroy", 2, cardDestroyMechanic, cardColor);
                 // making the centrePanel its parent
                 SelectionPanel.Instance.PassToPanel(newCard.transform, cardDestroyMechanic, cardDestroyMechanic.NumCardsToDestroy);
                 CardsToBuy.Add(newCard.transform);
@@ -40,7 +39,7 @@ public class ShopManager : Singleton<ShopManager> {
                 //attach the card draw mechanic to the card prefab
                 CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
                 cardDrawMechanic.NumCardsToDraw = 2;
-                newCard.PopulateCard("Draw", "+2 Draw", cardDrawMechanic, cardColor);
+                newCard.PopulateCard("Draw", "+2 Draw", 1, cardDrawMechanic, cardColor);
                 // making the centrePanel its parent
                 SelectionPanel.Instance.PassToPanel(newCard.transform, null, cardDrawMechanic.NumCardsToDraw);
                 CardsToBuy.Add(newCard.transform);
@@ -50,6 +49,8 @@ public class ShopManager : Singleton<ShopManager> {
 
     public void StartShop()
     {
+        isShopping = true;
+        SelectionPanel.Instance.titleLabel.text = "Shop";
         if (this.CardsToBuy == null)
         {
             this.PopulateShop();

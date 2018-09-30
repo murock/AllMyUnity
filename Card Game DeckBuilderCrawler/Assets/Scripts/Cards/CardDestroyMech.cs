@@ -70,6 +70,7 @@ public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
             {
                 //make the centrePanel the parent control of the card
                 //card.SetParent(this.centrePanel.transform);
+                SelectionPanel.Instance.titleLabel.text = "Destory Cards";
                 SelectionPanel.Instance.PassToPanel(card, this, this.numCardsToDestroy);
             }
         }

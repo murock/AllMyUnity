@@ -51,18 +51,10 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
             GameObject cardTransform = eventData.pointerDrag;
             if (cardTransform.tag == "card")
             {
-                //MECHANICS ARE CLASSES
-                //Triggers the card action event
-                // OnApplyCardAction();
                 Card card = eventData.pointerDrag.GetComponent<Card>();
-                //This is a shitty way to do this IMPROVE!! BROKEN FOR DESTROY
+                //This is a bad way to do this IMPROVE!! 
                 if (card != null && this.multiplierOn)
                 {
-                    //for (int i = 0; i < multiplierNum ; i++)
-                    //{
-                    //    card.OnApplyCardAction();
-                    //}
-
                     //Get the orginal card value
                     int cardValue = card.iCard.GetValue();
                     //Multiply that value
@@ -79,36 +71,6 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
                 {
                     card.OnApplyCardAction();
                 }
-
-
-                //CARD INHERITANCE
-                //Card card = eventData.pointerDrag.GetComponent<Card>();
-                //if (card != null)
-                //{
-                //    card.ApplyAction();
-                //}
-
-                //ORGINAL
-                //CardProperties cardProps = card.GetComponent<CardProperties>();
-                ////Attack
-                //if (cardProps.Attack > 0)
-                //{
-                //    //apply damage to monster
-                //    monster.TakeDamage(cardProps.Attack);
-                //}
-                //if (cardProps.Defense > 0)
-                //{
-                //    //add defence to player
-                //    player.AddDefence(cardProps.Defense);
-                //}
-                //if (cardProps.Drawcard > 0)
-                //{
-                //    // Draw cards
-                //    for (int i = 0; i < cardProps.Drawcard; i++)
-                //    {
-                //        CardDraw.Instance.drawCard();
-                //    }
-                //}
             }
         }
     }

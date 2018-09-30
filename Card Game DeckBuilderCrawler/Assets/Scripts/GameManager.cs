@@ -15,6 +15,19 @@ public class GameManager : Singleton<GameManager> {
 
     private int money;
 
+    public int Money
+    {
+        get
+        {
+            return this.money;
+        }
+        set
+        {
+            this.AdjustMoney(value);
+        }
+    }
+
+
     //To be implemented still for efficency
     public ObjectPool Pool { get; set; }
 
@@ -32,7 +45,7 @@ public class GameManager : Singleton<GameManager> {
     public void AdjustMoney(int amount)
     {
         this.money += amount;
-        this.moneyText.text = "Cash Money: <color=green>$" + this.money.ToString() + "</color>";
+        this.moneyText.text = "Cash Money: <color=green>$</color>" + this.money.ToString();
     }
 
 }
