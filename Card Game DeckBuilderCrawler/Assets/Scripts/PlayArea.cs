@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     //Current monster
     [SerializeField]
     internal MonsterInteraction monster;
-
-    public bool multiplierOn;
-    public int multiplierNum;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -51,21 +48,26 @@ public class PlayArea : Singleton<PlayArea>, IDropHandler, IPointerEnterHandler,
             GameObject cardTransform = eventData.pointerDrag;
             if (cardTransform.tag == "card")
             {
+                if (this.monster != null)
+                {
+                    //Set the current monster to the opne being interacted with
+                    GameManager.Instance.currentMonster = this.monster;
+                }
                 Card card = eventData.pointerDrag.GetComponent<Card>();
                 //This is a bad way to do this IMPROVE!! 
-                if (card != null && this.multiplierOn)
+                if (card != null && GameManager.Instance.multiplierOn)
                 {
                     //Get the orginal card value
                     int cardValue = card.iCard.GetValue();
                     //Multiply that value
-                    card.iCard.SetValue(cardValue * this.multiplierNum);
+                    card.iCard.SetValue(cardValue * GameManager.Instance.multiplierNum);
                     //Apply the action with the multipled value
                     card.OnApplyCardAction();
                     //Return the value to its orginal number
                     card.iCard.SetValue(cardValue);
 
-                    this.multiplierOn = false;
-                    this.multiplierNum = 0;
+                    GameManager.Instance.multiplierOn = false;
+                    GameManager.Instance.multiplierNum = 0;
                 }
                 else if (card != null)
                 {

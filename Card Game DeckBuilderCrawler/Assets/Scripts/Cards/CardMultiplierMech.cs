@@ -68,8 +68,8 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech
     public void ApplyMultiplier()
     {
 
-        PlayArea.Instance.multiplierOn = true;
-        PlayArea.Instance.multiplierNum = this.numTimesToMultiply;
+        GameManager.Instance.multiplierOn = true;
+        GameManager.Instance.multiplierNum = this.numTimesToMultiply;
         //Multicheck = true;
 
         //for (int i = this.numCardsToMultiply; i < 0; i--)

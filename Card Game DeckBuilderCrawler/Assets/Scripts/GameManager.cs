@@ -7,11 +7,12 @@ public class GameManager : Singleton<GameManager> {
 
     [SerializeField]
     private Text moneyText;
-    public MonsterInteraction monster;
+    public MonsterInteraction currentMonster;
     public Hand hand;
     public GameObject centrePanel;
-    public bool multilyOn;
     public GameObject player;
+    public bool multiplierOn;
+    public int multiplierNum;
 
     private int money;
 
@@ -45,7 +46,7 @@ public class GameManager : Singleton<GameManager> {
     public void AdjustMoney(int amount)
     {
         this.money += amount;
-        this.moneyText.text = "Cash Money: <color=green>$</color>" + this.money.ToString();
+        this.moneyText.text = "<color=green>$</color>" + this.money.ToString();
     }
 
 }

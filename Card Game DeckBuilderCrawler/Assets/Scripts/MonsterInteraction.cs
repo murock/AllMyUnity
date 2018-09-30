@@ -25,8 +25,13 @@ public class MonsterInteraction : MonoBehaviour {
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    private float travelTime = 2f;
 
     private Vector3 startPos;
+    private float t;
+
+    private bool isAlive = true;
 
     public Text NameTxt
     {
@@ -71,7 +76,14 @@ public class MonsterInteraction : MonoBehaviour {
             return this.health;
         }
     }
-       
+
+    public bool IsAlive
+    {
+        get
+        {
+            return this.isAlive;
+        }
+    }
 
 
     private void Start()
@@ -86,11 +98,13 @@ public class MonsterInteraction : MonoBehaviour {
         this.health -= damage;
         if (this.health <= 0)
         {
+            this.isAlive = false;
             this.health = 0;
             this.nameTxt.text = "DEFEATED!!!";
             this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
-            GameManager.Instance.centrePanel.SetActive(true);
-            ShopManager.Instance.StartShop();
+            //Instead of opening shop, could open centre panel with some 'Loot' to pick up??
+            //GameManager.Instance.centrePanel.SetActive(true);
+            //ShopManager.Instance.StartShop();
         }
         else
         {
@@ -100,6 +114,7 @@ public class MonsterInteraction : MonoBehaviour {
 
     public void DoDamage()
     {
+        t = 0;
         StartCoroutine(MoveMonster());
     }
 
@@ -107,12 +122,12 @@ public class MonsterInteraction : MonoBehaviour {
     {
 
         var endPos = GameManager.Instance.player.transform.position;
-        var speed = 1000f;
 
         while (this.transform.position != endPos)
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, endPos, speed * Time.deltaTime);
-            yield return new WaitForSeconds(0.05f);
+            this.t += Time.deltaTime / this.travelTime;
+            this.transform.position = Vector3.Lerp(this.startPos, endPos, this.t);
+            yield return new WaitForEndOfFrame();
         }
         this.transform.position = this.startPos;
         PlayerInteraction.Instance.TakeDamage(this.attack);

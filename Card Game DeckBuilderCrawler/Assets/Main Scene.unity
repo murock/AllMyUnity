@@ -143,11 +143,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 1215940729}
-  monster: {fileID: 873246260}
+  currentMonster: {fileID: 0}
   hand: {fileID: 865154096}
   centrePanel: {fileID: 559421107}
-  multilyOn: 0
   player: {fileID: 111905534}
+  multiplierOn: 0
+  multiplierNum: 0
 --- !u!4 &39092425
 Transform:
   m_ObjectHideFlags: 0
@@ -172,7 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26cebfd2f7a9c29439ef913f4998ace3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 873246260}
+  spawnText: {fileID: 733348750}
+  monsters:
+  - {fileID: 873246260}
+  - {fileID: 1292078074}
 --- !u!114 &39092427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,6 +735,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &448878392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448878393}
+  - component: {fileID: 448878395}
+  - component: {fileID: 448878394}
+  m_Layer: 5
+  m_Name: SpawnTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &448878393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448878392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 733348749}
+  m_Father: {fileID: 687891878}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000022888, y: 472}
+  m_SizeDelta: {x: 313.4, y: 94}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &448878394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448878392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &448878395
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448878392}
+  m_CullTransparentMesh: 0
 --- !u!1 &559421107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1220,7 @@ RectTransform:
   - {fileID: 928964514}
   - {fileID: 559421108}
   - {fileID: 1069853290}
+  - {fileID: 448878393}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1228,6 +1303,81 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 692408151}
+  m_CullTransparentMesh: 0
+--- !u!1 &733348748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733348749}
+  - component: {fileID: 733348751}
+  - component: {fileID: 733348750}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &733348749
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733348748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 448878393}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.975, y: 0}
+  m_SizeDelta: {x: 319.35, y: 94}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &733348750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733348748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Next Spawn: 5'
+--- !u!222 &733348751
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733348748}
   m_CullTransparentMesh: 0
 --- !u!1 &765590549
 GameObject:
@@ -1497,6 +1647,7 @@ GameObject:
   - component: {fileID: 873246258}
   - component: {fileID: 873246260}
   - component: {fileID: 873246261}
+  - component: {fileID: 873246262}
   m_Layer: 5
   m_Name: Monster
   m_TagString: Untagged
@@ -1544,8 +1695,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1576,6 +1727,7 @@ MonoBehaviour:
   health: 2
   attack: 4
   player: {fileID: 111905534}
+  travelTime: 2
 --- !u!225 &873246261
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1585,8 +1737,20 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &873246262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873246256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4152d3a1c1dc85b4c890511433a3f719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 873246260}
 --- !u!1 &898400650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,8 +2154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.6, y: 438.83}
-  m_SizeDelta: {x: 435.3, y: 109.75}
+  m_AnchoredPosition: {x: -798, y: 449.1}
+  m_SizeDelta: {x: 121.1, y: 109.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069853291
 MonoBehaviour:
@@ -2277,8 +2441,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00025558}
-  m_SizeDelta: {x: 435.3, y: 109.75}
+  m_AnchoredPosition: {x: -2.95, y: -0.000011439}
+  m_SizeDelta: {x: 127, y: 109.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215940729
 MonoBehaviour:
@@ -2312,7 +2476,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cash Money: <color=green>$</color>0'
+  m_Text: <color=green>$</color>0
 --- !u!222 &1215940730
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2332,6 +2496,7 @@ GameObject:
   - component: {fileID: 1292078075}
   - component: {fileID: 1292078074}
   - component: {fileID: 1292078073}
+  - component: {fileID: 1292078077}
   m_Layer: 5
   m_Name: Monster2
   m_TagString: Untagged
@@ -2369,7 +2534,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &1292078074
 MonoBehaviour:
@@ -2388,6 +2553,7 @@ MonoBehaviour:
   health: 2
   attack: 4
   player: {fileID: 111905534}
+  travelTime: 2
 --- !u!114 &1292078075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2422,6 +2588,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1292078071}
   m_CullTransparentMesh: 0
+--- !u!114 &1292078077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1292078071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4152d3a1c1dc85b4c890511433a3f719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1292078074}
 --- !u!1 &1432438489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,9 +2823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4152d3a1c1dc85b4c890511433a3f719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 873246260}
-  multiplierOn: 0
-  multiplierNum: 0
+  monster: {fileID: 0}
 --- !u!114 &1652258117
 MonoBehaviour:
   m_ObjectHideFlags: 0
