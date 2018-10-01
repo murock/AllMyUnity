@@ -31,7 +31,7 @@ public class MonsterInteraction : MonoBehaviour {
     private Vector3 startPos;
     private float t;
 
-    private bool isAlive = true;
+    private bool isAlive = false;
 
     public Text NameTxt
     {
@@ -86,11 +86,37 @@ public class MonsterInteraction : MonoBehaviour {
     }
 
 
-    private void Start()
+    public void Spawn()
     {
         this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
         this.attackTxt.text = string.Format("Attack: {0}", this.attack.ToString());
         this.startPos = transform.position;
+        this.isAlive = true;
+        CanvasGroup canvasGroup = this.GetComponent<CanvasGroup>();
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 1;
+            canvasGroup.blocksRaycasts = true;
+        }
+    }
+
+    public void Defeat()
+    {
+        this.isAlive = false;
+        this.health = 0;
+        this.nameTxt.text = "DEFEATED!!!";
+        this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
+
+        this.isAlive = false;
+        CanvasGroup canvasGroup = this.GetComponent<CanvasGroup>();
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 0;
+            canvasGroup.blocksRaycasts = false;
+        }
+        //Instead of opening shop, could open centre panel with some 'Loot' to pick up??
+        //GameManager.Instance.centrePanel.SetActive(true);
+        //ShopManager.Instance.StartShop();
     }
 
     public void TakeDamage(int damage)
@@ -98,13 +124,7 @@ public class MonsterInteraction : MonoBehaviour {
         this.health -= damage;
         if (this.health <= 0)
         {
-            this.isAlive = false;
-            this.health = 0;
-            this.nameTxt.text = "DEFEATED!!!";
-            this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
-            //Instead of opening shop, could open centre panel with some 'Loot' to pick up??
-            //GameManager.Instance.centrePanel.SetActive(true);
-            //ShopManager.Instance.StartShop();
+            this.Defeat();
         }
         else
         {
@@ -131,8 +151,12 @@ public class MonsterInteraction : MonoBehaviour {
         }
         this.transform.position = this.startPos;
         PlayerInteraction.Instance.TakeDamage(this.attack);
-        GameManager.Instance.centrePanel.SetActive(true);
-        ShopManager.Instance.StartShop();
-        // this.transform.position = startPos;
+
+        //This should be moved to the turn manager doesn't make sense  for it to be in MoveMonster()
+        if (GameManager.Instance.Money > 0)
+        {
+            GameManager.Instance.centrePanel.SetActive(true);
+            ShopManager.Instance.StartShop();
+        }
     }
 }

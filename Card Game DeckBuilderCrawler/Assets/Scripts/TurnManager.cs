@@ -20,7 +20,8 @@ public class TurnManager : Singleton<TurnManager> {
     [SerializeField]
     private int defaultSpawnCount = 2;
     private int spawnCount;
-
+    [SerializeField]
+    List<MonsterInteraction> monsters;
     public int TurnCount
     {
         get
@@ -29,21 +30,34 @@ public class TurnManager : Singleton<TurnManager> {
         }
         set
         {
-            if (value == 0)
+            if (value == -1)
             {
-                //spawn new monster
-
                 //Reset spawn count
                 this.spawnCount = this.defaultSpawnCount;
+                spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
+                //spawn new monster
+                foreach (MonsterInteraction monster in monsters)
+                {
+                    if (monster != null && !monster.IsAlive)
+                    {
+                        //if monster is not alive ie not yet spawned then spawn
+                        monster.Spawn();
+                        return;
+                    }
+                }
+
             }
-            this.spawnCount = value;
-            spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
+            else
+            {
+                this.spawnCount = value;
+                spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
+            }
+
         }
     }
 
 
-    [SerializeField]
-    List<MonsterInteraction> monsters;
+
     public TurnManager()
     {       
     }
@@ -52,6 +66,11 @@ public class TurnManager : Singleton<TurnManager> {
     {
         this.spawnCount = this.defaultSpawnCount;
         spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
+        if (monsters[0] != null)
+        {
+            //Spawn the first monster
+            monsters[0].Spawn();
+        }
     }
 
     public IEnumerator DrawHand()
