@@ -86,10 +86,13 @@ public class MonsterInteraction : MonoBehaviour {
     }
 
 
-    public void Spawn()
+    public void Spawn(int health = 2, int attack = 4, string name = "Monster")
     {
-        this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
-        this.attackTxt.text = string.Format("Attack: {0}", this.attack.ToString());
+        this.health = health;
+        this.attack = attack;
+        this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", health.ToString());
+        this.attackTxt.text = string.Format("Attack: {0}", attack.ToString());
+        this.nameTxt.text = name;
         this.startPos = transform.position;
         this.isAlive = true;
         CanvasGroup canvasGroup = this.GetComponent<CanvasGroup>();
@@ -114,9 +117,28 @@ public class MonsterInteraction : MonoBehaviour {
             canvasGroup.alpha = 0;
             canvasGroup.blocksRaycasts = false;
         }
+        if (IsLastStanding())
+        {
+            //If monster is the last one standing then spawn another
+            TurnManager.Instance.SpawnCount = -1;
+        }
         //Instead of opening shop, could open centre panel with some 'Loot' to pick up??
         //GameManager.Instance.centrePanel.SetActive(true);
         //ShopManager.Instance.StartShop();
+    }
+
+    private bool IsLastStanding()
+    {
+        bool lastAlive = true;
+        foreach (MonsterInteraction monster in TurnManager.Instance.monsters)
+        {
+            if (monster != null && monster.IsAlive)
+            {
+                //Another monster is Alive
+                lastAlive = false;
+            }           
+        }
+        return lastAlive;
     }
 
     public void TakeDamage(int damage)

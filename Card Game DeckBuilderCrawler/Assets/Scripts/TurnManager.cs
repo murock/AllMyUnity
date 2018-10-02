@@ -21,8 +21,21 @@ public class TurnManager : Singleton<TurnManager> {
     private int defaultSpawnCount = 2;
     private int spawnCount;
     [SerializeField]
-    List<MonsterInteraction> monsters;
-    public int TurnCount
+    private Text monstersLeftText;
+    [SerializeField]
+    private int defaultMonstersLeft = 5;
+    private int monstersLeft;
+    [SerializeField]
+    public List<MonsterInteraction> monsters;
+
+    public int MonstersLeft
+    {
+        get
+        {
+            return this.monstersLeft;
+        }
+    }
+    public int SpawnCount
     {
         get
         {
@@ -38,10 +51,12 @@ public class TurnManager : Singleton<TurnManager> {
                 //spawn new monster
                 foreach (MonsterInteraction monster in monsters)
                 {
-                    if (monster != null && !monster.IsAlive)
+                    if (monster != null && !monster.IsAlive && this.monstersLeft > 0)
                     {
                         //if monster is not alive ie not yet spawned then spawn
                         monster.Spawn();
+                        this.monstersLeft--;
+                        this.monstersLeftText.text = "Monsters Left: " + this.monstersLeft.ToString();
                         return;
                     }
                 }
@@ -65,7 +80,9 @@ public class TurnManager : Singleton<TurnManager> {
     private void Start()
     {
         this.spawnCount = this.defaultSpawnCount;
-        spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
+        this.spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
+        this.monstersLeft = this.defaultMonstersLeft;
+        this.monstersLeftText.text = "Monsters Left: " + this.monstersLeft.ToString();
         if (monsters[0] != null)
         {
             //Spawn the first monster
@@ -109,7 +126,7 @@ public class TurnManager : Singleton<TurnManager> {
         }
         DiscardCardsInPlay();
         StartCoroutine(DrawHand());
-        TurnCount -= 1;
+        SpawnCount -= 1;
     }
 
     private void Mulligan()
