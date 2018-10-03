@@ -36,6 +36,10 @@ public class CardAttackMech : MonoBehaviour, ICardMech {
     private void ApplyAttack()
     {
         //Apply the cards attack to the monster
-        GameManager.Instance.currentMonster.TakeDamage(this.attack);
+        if (GameManager.Instance.currentMonster != null &&
+            GameManager.Instance.currentMonster.IsAlive)
+        {
+            GameManager.Instance.currentMonster.TakeDamage(this.attack);
+        }
     }
 }

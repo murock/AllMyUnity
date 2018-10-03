@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Cards\CardAttackMech.cs" />
     <Compile Include="Assets\Scripts\Cards\CardDefenseMech.cs" />
     <Compile Include="Assets\Scripts\Cards\CardDestroyMech.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardDiscardMech.cs" />
     <Compile Include="Assets\Scripts\Cards\CardDraw.cs" />
     <Compile Include="Assets\Scripts\Cards\CardDrawMech.cs" />
     <Compile Include="Assets\Scripts\Cards\CardMoneyMech.cs" />

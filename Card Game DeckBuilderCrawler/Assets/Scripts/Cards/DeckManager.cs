@@ -107,6 +107,6 @@ public class DeckManager : Singleton<DeckManager> {
         {
             cardAction.InstantFade();
         }
-
+        CardDraw.Instance.UpdateLabel();
     }
 }

@@ -21,7 +21,6 @@ public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
         this.numCardsToDestroy= value;
     }
 
-    //TODO: Implement this so the number affects how many are destroyed
     public int NumCardsToDestroy
     {
         get
@@ -39,23 +38,12 @@ public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
         }
     }
 
-    private void Card_applyCardSelectionActionDelegate()
-    {
-        Destroy(this.gameObject);
-    }
-
     private void ApplyDestroyCards()
     {
         List<Transform> cardsInHand = new List<Transform>();
         for (int i = 0; i < this.hand.transform.childCount; i++)
         {
             Transform card = this.hand.transform.GetChild(i);
-            //CardActions cardAction = card.GetComponent<CardActions>();
-            //if (cardAction != null)
-            //{
-            //    cardAction.isDragable = false;
-            //}
-            //If the tag is card then child is a card
             if (card.tag == "card")
             {
                 cardsInHand.Add(card);
@@ -66,11 +54,9 @@ public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
         {
             //Make panel visible
             this.centrePanel.SetActive(true);
+            SelectionPanel.Instance.titleLabel.text = "Destory Cards";
             foreach (Transform card in cardsInHand)
             {
-                //make the centrePanel the parent control of the card
-                //card.SetParent(this.centrePanel.transform);
-                SelectionPanel.Instance.titleLabel.text = "Destory Cards";
                 SelectionPanel.Instance.PassToPanel(card, this, this.numCardsToDestroy);
             }
         }

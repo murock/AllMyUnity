@@ -121,7 +121,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
         //Do shop action if shopping
         if (ShopManager.Instance.isShopping)
         {
-            GameManager.Instance.AdjustMoney(this.costOfSelectedCards);
+            GameManager.Instance.AdjustMoney(-this.costOfSelectedCards);
             //Send card(s) to buy and not to buy to the shop manager
             ShopManager.Instance.BuyCards(this.cardsSelectedQueue.ToList());
         }

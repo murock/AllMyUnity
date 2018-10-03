@@ -87,6 +87,7 @@ public class TurnManager : Singleton<TurnManager> {
         {
             //Spawn the first monster
             monsters[0].Spawn();
+            GameManager.Instance.currentMonster = monsters[0];
         }
     }
 

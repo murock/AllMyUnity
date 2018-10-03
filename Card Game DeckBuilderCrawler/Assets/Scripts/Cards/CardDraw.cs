@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CardDraw : Singleton<CardDraw>{
     //Label on top of the deck
     [SerializeField]
-    private GameObject deckLabel;
+    private Text deckLabel;
 
     [SerializeField]
     private GameObject hand;
@@ -39,11 +39,11 @@ public class CardDraw : Singleton<CardDraw>{
         }
         if (deck.Count > 0)
         {
-            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
+            deckLabel.text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
         }
         else
         {
-            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine +  "Out of Cards";
+            deckLabel.text = "Deck" + System.Environment.NewLine +  "Out of Cards";
             //Put cards back into the deck
             reShuffleCards();
         }
@@ -79,7 +79,7 @@ public class CardDraw : Singleton<CardDraw>{
         }
         //remove cards form cards discarded list since they are all now back in the deck
         DeckManager.Instance.cardsDiscarded.Clear();
-        deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
+        deckLabel.text = "Deck" + System.Environment.NewLine + "Cards Left: " + deck.Count.ToString();
         //update the global list of cards in the deck
         DeckManager.Instance.cardsInDeck = this.deck;
     }
@@ -89,11 +89,11 @@ public class CardDraw : Singleton<CardDraw>{
     {
         if (DeckManager.Instance.cardsInDeck.Count > 0)
         {
-            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Cards Left: " + DeckManager.Instance.cardsInDeck.Count.ToString();
+            deckLabel.text = "Deck" + System.Environment.NewLine + "Cards Left: " + DeckManager.Instance.cardsInDeck.Count.ToString();
         }
         else
         {
-            deckLabel.GetComponent<Text>().text = "Deck" + System.Environment.NewLine + "Out of Cards";
+            deckLabel.text = "Deck" + System.Environment.NewLine + "Out of Cards";
         }
 
     }
