@@ -19,13 +19,13 @@ public class DeckManager : Singleton<DeckManager> {
         cardsDiscarded = new List<Transform>();
         cardsInDeck = new List<Transform>();
         //temp change deck size for testing
-        initialDeckSize = 12;
+        initialDeckSize = 10;
         for (int i = 0; i < initialDeckSize; i++)
         {
             Card newCard;
             //Creates a new gameobject which based off the card in the Resource folder
             GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
-            if (i < 5)
+            if (i < 4)
             {
 
                 Color cardColor = new Color(1f, 0f, 0f, 1f);
@@ -35,7 +35,7 @@ public class DeckManager : Singleton<DeckManager> {
                 cardAttackMechanic.Attack = 1;
                 CreateCard(newCard, newCardPrefab, "Attack", "+1 Attack", 0, cardAttackMechanic, cardColor);
             }
-            else if (5 <= i && 8 > i)
+            else if (i < 7)
             {
                 Color cardColor = new Color(0f, 250f, 148f, 255f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
@@ -44,21 +44,24 @@ public class DeckManager : Singleton<DeckManager> {
                 cardDefenseMechanic.Defense = 1;
                 CreateCard(newCard, newCardPrefab, "Defense", "+1 Defense", 0, cardDefenseMechanic, cardColor);
             }
-
-            //Multiplier test
-            else if (8 <= i && 10 > i)
-            {
-                Color cardColor = new Color(145f, 0f, 148f, 255f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card defense mechanic to the card prefab
-                CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
-                cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
-                CreateCard(newCard, newCardPrefab, "Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor);
-            } 
-
-
             else
             {
+                //CARD MONEY ---------------------------
+                Color cardColor = new Color(0, 1f, 0f, 1f);
+                newCard = newCardPrefab.AddComponent<Card>() as Card;
+                //attach the card draw mechanic to the card prefab
+                CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                cardMoneyMechanic.Money = 1;
+                CreateCard(newCard, newCardPrefab, "Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor);
+            }
+                //Multiplier test
+                //Color cardColor = new Color(145f, 0f, 148f, 255f);
+                //newCard = newCardPrefab.AddComponent<Card>() as Card;
+                ////attach the card defense mechanic to the card prefab
+                //CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
+                //cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
+                //CreateCard(newCard, newCardPrefab, "Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor);
+
                 //CARD DRAW --------------------
                 //Color cardColor = new Color(250f, 69f, 0f, 1f);
                 //newCard = newCardPrefab.AddComponent<Card>() as Card;
@@ -75,22 +78,16 @@ public class DeckManager : Singleton<DeckManager> {
                 //cardDestroyMechanic.NumCardsToDestroy = 2;
                 //CreateCard(newCard, newCardPrefab, "Destroy", "+2 Destroy", cardDestroyMechanic, cardColor);
 
-                //CARD MONEY ---------------------------
+
+
+                //CARD DISCARD ---------------------------
                 //Color cardColor = new Color(0, 1f, 0f, 1f);
                 //newCard = newCardPrefab.AddComponent<Card>() as Card;
                 ////attach the card draw mechanic to the card prefab
-                //CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
-                //cardMoneyMechanic.Money = 1;
-                //CreateCard(newCard, newCardPrefab, "Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor);
-
-                //CARD MONEY ---------------------------
-                Color cardColor = new Color(0, 1f, 0f, 1f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card draw mechanic to the card prefab
-                CardDiscardMech cardDiscardMechanic = newCardPrefab.AddComponent<CardDiscardMech>() as CardDiscardMech;
-                cardDiscardMechanic.NumCardsToDiscard = 4;
-                CreateCard(newCard, newCardPrefab, "Discard", "+4 Discard", 2, cardDiscardMechanic, cardColor);
-            }
+                //CardDiscardMech cardDiscardMechanic = newCardPrefab.AddComponent<CardDiscardMech>() as CardDiscardMech;
+                //cardDiscardMechanic.NumCardsToDiscard = 4;
+                //CreateCard(newCard, newCardPrefab, "Discard", "+4 Discard", 2, cardDiscardMechanic, cardColor);
+            
         }
         //give a copy of the deck to the card draw class
         CardDraw.Instance.deck = this.cardsInDeck;

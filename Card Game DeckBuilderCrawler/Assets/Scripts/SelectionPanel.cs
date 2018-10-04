@@ -138,7 +138,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
         this.gameObject.SetActive(false);
     }
 
-    public void PassToPanel(Transform card, ICardSelectableMech cardMech, int maxToSelect)
+    public void PassToPanel(Transform card, ICardSelectableMech cardMech, int maxToSelect = 99)
     {
         this.maxSelectable = maxToSelect;
         CardActions cardAction = card.GetComponent<CardActions>();

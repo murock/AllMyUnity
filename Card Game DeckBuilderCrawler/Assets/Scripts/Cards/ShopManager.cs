@@ -12,7 +12,7 @@ public class ShopManager : Singleton<ShopManager> {
     private void PopulateShop()
     {
         CardsToBuy = new List<Transform>();
-        int numUniqueCards = 2;
+        int numUniqueCards = 3;
         //IMPROVE SYSTEM TO ACCOUNT TO UP TO 5 CARDS IN SHOP?
         //TODO: Make the selection mechanic work for both buying cards and card mechanics e.g destroy.
         for (int i = 0; i < numUniqueCards; i++)
@@ -20,8 +20,9 @@ public class ShopManager : Singleton<ShopManager> {
             Card newCard;
             //Creates a new gameobject which based off the card in the Resource folder
             GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
-            if (i < 1)
+            if (i == 0)
             {
+                //DESTROY
                 Color cardColor = new Color(255f, 255f, 255f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
@@ -29,11 +30,12 @@ public class ShopManager : Singleton<ShopManager> {
                 cardDestroyMechanic.NumCardsToDestroy = 2;
                 newCard.PopulateCard("Destroy", "+2 Destroy", 2, cardDestroyMechanic, cardColor);
                 // making the centrePanel its parent
-                SelectionPanel.Instance.PassToPanel(newCard.transform, cardDestroyMechanic, cardDestroyMechanic.NumCardsToDestroy);
+                SelectionPanel.Instance.PassToPanel(newCard.transform, cardDestroyMechanic);
                 CardsToBuy.Add(newCard.transform);
             }
-            else
+            else if (i == 1)
             {
+                //DRAW
                 Color cardColor = new Color(250f, 69f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
@@ -41,7 +43,20 @@ public class ShopManager : Singleton<ShopManager> {
                 cardDrawMechanic.NumCardsToDraw = 2;
                 newCard.PopulateCard("Draw", "+2 Draw", 1, cardDrawMechanic, cardColor);
                 // making the centrePanel its parent
-                SelectionPanel.Instance.PassToPanel(newCard.transform, null, cardDrawMechanic.NumCardsToDraw);
+                SelectionPanel.Instance.PassToPanel(newCard.transform, null);
+                CardsToBuy.Add(newCard.transform);
+            }
+            else if (i == 2)
+            {
+                //MULTIPLIER
+                Color cardColor = new Color(145f, 0f, 148f, 255f);
+                newCard = newCardPrefab.AddComponent<Card>() as Card;
+                //attach the card defense mechanic to the card prefab
+                CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
+                cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
+                newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor);
+                // making the centrePanel its parent
+                SelectionPanel.Instance.PassToPanel(newCard.transform, null);
                 CardsToBuy.Add(newCard.transform);
             }
         }
