@@ -78,8 +78,6 @@ public class DeckManager : Singleton<DeckManager> {
                 //cardDestroyMechanic.NumCardsToDestroy = 2;
                 //CreateCard(newCard, newCardPrefab, "Destroy", "+2 Destroy", cardDestroyMechanic, cardColor);
 
-
-
                 //CARD DISCARD ---------------------------
                 //Color cardColor = new Color(0, 1f, 0f, 1f);
                 //newCard = newCardPrefab.AddComponent<Card>() as Card;

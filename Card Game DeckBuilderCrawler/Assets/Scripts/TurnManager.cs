@@ -27,6 +27,8 @@ public class TurnManager : Singleton<TurnManager> {
     private int monstersLeft;
     [SerializeField]
     public List<MonsterInteraction> monsters;
+    [SerializeField]
+    private Button turnButton;
 
     public int MonstersLeft
     {
@@ -110,11 +112,13 @@ public class TurnManager : Singleton<TurnManager> {
             }        
             yield return new WaitForSeconds(0.25f);
         }
+        this.turnButton.enabled = true;
     }
 
     //Called when the end turn button is hit
     public void EndTurn()
     {
+        this.turnButton.enabled = false;
         GameManager.Instance.multiplierNum = 1;
         GameManager.Instance.multiplierOn = false;
         Hand.Instance.DiscardHand();
