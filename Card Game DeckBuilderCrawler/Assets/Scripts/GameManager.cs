@@ -40,7 +40,7 @@ public class GameManager : Singleton<GameManager> {
 
     private void Start()
     {
-        TurnManager.Instance.StartCoroutine(TurnManager.Instance.DrawHand());
+        StartCoroutine(CardDraw.Instance.DrawCards());
     }
 
     public void AdjustMoney(int amount)

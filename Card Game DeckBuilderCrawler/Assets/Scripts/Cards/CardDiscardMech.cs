@@ -80,10 +80,10 @@ public class CardDiscardMech : MonoBehaviour, ICardMech, ICardSelectableMech
             }
             card.SetParent(this.hand.transform);
         }
-        for (int i = 0; i < cardsSelected.Count; i++)
-        {
-            CardDraw.Instance.drawCard();
-        }
+        //for (int i = 0; i < cardsSelected.Count; i++)
+        //{
+        CardDraw.Instance.DrawCards(cardsSelected.Count);
+        //}
     }
 
 

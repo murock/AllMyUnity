@@ -60,6 +60,28 @@ public class CardDraw : Singleton<CardDraw>{
         }
     }
 
+    public IEnumerator DrawCards(int numCardsToDraw = handSize)
+    {
+        //1) draw 5 cards
+        int i = 0;
+        //DANGER INFINITE LOOP as i not always incremented CHECK THIS LOGIC (temp)
+        while (i < numCardsToDraw)
+        {
+            //if a card was drawn increment i
+            if (CardDraw.Instance.drawCard())
+            {
+                i++;
+            }
+            //if there are no cards left to draw increment i
+            else if (DeckManager.Instance.cardsInDeck.Count == 0)
+            {
+                i++;
+            }
+            yield return new WaitForSeconds(0.25f);
+        }
+        this.turnButton.enabled = true;
+    }
+
     //Temporary function to draw cards by clicking on the deck
     public void drawCardButtonHOTFIX()
     {

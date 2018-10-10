@@ -124,6 +124,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
             GameManager.Instance.AdjustMoney(-this.costOfSelectedCards);
             //Send card(s) to buy and not to buy to the shop manager
             ShopManager.Instance.BuyCards(this.cardsSelectedQueue.ToList());
+            ShopManager.Instance.PassBackToShop(this.cardsInPanel);
         }
         //Apply Selection Action
         else if (currentMech != null)

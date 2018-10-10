@@ -17,7 +17,7 @@ public class ShopManager : Singleton<ShopManager> {
         //TODO: Make the selection mechanic work for both buying cards and card mechanics e.g destroy.
         for (int i = 0; i < numUniqueCards; i++)
         {
-            Card newCard = new Card();
+            Card newCard;
             //Creates a new gameobject which based off the card in the Resource folder
             GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
             if (i == 0)
@@ -50,7 +50,7 @@ public class ShopManager : Singleton<ShopManager> {
                 cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
                 newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor);
             }
-            else if (i == 3)
+            else
             {
                 //CARD DISCARD ---------------------------
                 Color cardColor = new Color(0, 1f, 0f, 1f);
@@ -72,7 +72,16 @@ public class ShopManager : Singleton<ShopManager> {
         SelectionPanel.Instance.titleLabel.text = "Shop";
         if (this.CardsToBuy == null)
         {
+            // Create the shop for the first time
             this.PopulateShop();
+        }
+        else
+        {
+            // Move the cards to the centre panel
+            foreach (Transform card in this.CardsToBuy)
+            {
+                SelectionPanel.Instance.PassToPanel(card, null);
+            }
         }
         foreach (Transform card in this.CardsToBuy)
         {
@@ -95,8 +104,33 @@ public class ShopManager : Singleton<ShopManager> {
                 cardAction.isDragable = true;
             }
             DeckManager.Instance.AddCardToDeck(card);
+            if (this.CardsToBuy.Contains(card))
+            {
+                // Remove card from the list of cards in the shop
+                this.CardsToBuy.Remove(card);
+            }
         }
         this.isShopping = false;
         CardDraw.Instance.UpdateLabel();
+    }
+
+    /// <summary>
+    /// Pass the card back to the shop so it doesn't linger in the centre panel
+    /// </summary>
+    public void PassBackToShop(List<Transform> cards)
+    {
+        foreach (Transform card in cards)
+        {
+            // Make the ShopManager gameObject the temp parent of the card
+            // until it needs to be displayed in the shop again
+            card.SetParent(this.transform);
+            // Ensure the card is not visible or interactable
+            CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
+            if (cardCanvasGroup != null)
+            {
+                cardCanvasGroup.alpha = 0;
+                cardCanvasGroup.blocksRaycasts = false;
+            }
+        }
     }
 }

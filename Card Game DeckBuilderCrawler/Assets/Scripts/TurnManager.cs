@@ -13,7 +13,7 @@ public class TurnManager : Singleton<TurnManager> {
     //4) Monster Attacks
     //5) Check if Monster/Player Dead if so end game
     //6) Repeat 1 to 5
-    private int handSize = 5;
+    private const int handSize = 5;
 
     [SerializeField]
     private Text spawnText;
@@ -93,28 +93,6 @@ public class TurnManager : Singleton<TurnManager> {
         }
     }
 
-    public IEnumerator DrawHand()
-    {
-        //1) draw 5 cards
-        int i = 0;
-        //DANGER INFINITE LOOP as i not always incremented CHECK THIS LOGIC (temp)
-        while (i < this.handSize)
-        {
-            //if a card was drawn increment i
-            if (CardDraw.Instance.drawCard())
-            {
-                i++;
-            }
-            //if there are no cards left to draw increment i
-            else if (DeckManager.Instance.cardsInDeck.Count == 0)
-            {
-                i++;
-            }        
-            yield return new WaitForSeconds(0.25f);
-        }
-        this.turnButton.enabled = true;
-    }
-
     //Called when the end turn button is hit
     public void EndTurn()
     {
@@ -130,7 +108,7 @@ public class TurnManager : Singleton<TurnManager> {
             }
         }
         DiscardCardsInPlay();
-        StartCoroutine(DrawHand());
+        StartCoroutine(CardDraw.Instance.DrawCards());
         SpawnCount -= 1;
     }
 
