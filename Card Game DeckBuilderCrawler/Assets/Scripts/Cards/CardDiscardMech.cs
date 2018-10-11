@@ -82,7 +82,7 @@ public class CardDiscardMech : MonoBehaviour, ICardMech, ICardSelectableMech
         }
         //for (int i = 0; i < cardsSelected.Count; i++)
         //{
-        CardDraw.Instance.DrawCards(cardsSelected.Count);
+        StartCoroutine(CardDraw.Instance.DrawCards(cardsSelected.Count));
         //}
     }
 

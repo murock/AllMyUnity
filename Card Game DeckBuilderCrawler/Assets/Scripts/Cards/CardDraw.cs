@@ -15,6 +15,11 @@ public class CardDraw : Singleton<CardDraw>{
     //Local copy of the deck
     public List<Transform> deck;
 
+    private const int handSize = 5;
+
+    [SerializeField]
+    private Button turnButton;
+
     //Returns true if a card was added to the hand
     public bool drawCard()
     {
@@ -67,6 +72,7 @@ public class CardDraw : Singleton<CardDraw>{
         //DANGER INFINITE LOOP as i not always incremented CHECK THIS LOGIC (temp)
         while (i < numCardsToDraw)
         {
+            yield return new WaitForSeconds(0.25f);
             //if a card was drawn increment i
             if (CardDraw.Instance.drawCard())
             {
@@ -77,7 +83,6 @@ public class CardDraw : Singleton<CardDraw>{
             {
                 i++;
             }
-            yield return new WaitForSeconds(0.25f);
         }
         this.turnButton.enabled = true;
     }

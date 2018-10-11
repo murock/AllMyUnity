@@ -1955,6 +1955,7 @@ MonoBehaviour:
   deckLabel: {fileID: 1432438491}
   hand: {fileID: 865154091}
   deck: []
+  turnButton: {fileID: 577872495}
 --- !u!225 &898400653
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -1,0 +1,39 @@
+2018-10-11 07:05:12.6666 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:13:22.2637 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:13:24.4674 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:13:24.4964 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:13:25.5338 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardDraw+<DrawCards>c__Iterator0.MoveNext () (at Assets/Scripts/Cards/CardDraw.cs:87)
+UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)
+
+2018-10-11 07:13:39.1926 [DEBUG] Play mode: False
+2018-10-11 07:14:01.6745 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:14:01.7214 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:23:47.7195 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:23:53.7284 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+Card.OnApplyCardAction () (at Assets/Scripts/Cards/Card.cs:33)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:74)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-10-11 07:23:59.3613 [DEBUG] Play mode: False
+2018-10-11 07:24:06.9423 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:24:07.1338 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:25:53.7307 [DEBUG] Play mode: False
+2018-10-11 07:26:33.8726 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:29:22.1148 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:29:22.2115 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:36:18.3362 [DEBUG] Play mode: False
+2018-10-11 07:36:56.6528 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:36:56.7129 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:37:03.0956 [DEBUG] Play mode: False
+2018-10-11 07:37:05.6451 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:37:05.7059 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:37:08.5756 [DEBUG] Play mode: False
+2018-10-11 07:37:20.8855 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:37:20.9534 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:38:05.4503 [DEBUG] Play mode: False
+2018-10-11 07:38:21.2792 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-11 07:38:21.3440 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-11 07:38:57.3694 [DEBUG] Play mode: False

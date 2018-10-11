@@ -13,7 +13,6 @@ public class TurnManager : Singleton<TurnManager> {
     //4) Monster Attacks
     //5) Check if Monster/Player Dead if so end game
     //6) Repeat 1 to 5
-    private const int handSize = 5;
 
     [SerializeField]
     private Text spawnText;
