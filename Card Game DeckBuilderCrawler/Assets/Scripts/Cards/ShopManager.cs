@@ -48,7 +48,18 @@ public class ShopManager : Singleton<ShopManager> {
                 //attach the card defense mechanic to the card prefab
                 CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
                 cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
-                newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor);
+                newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor, Card.CardType.Persistant);
+            }
+            else if (i == 3)
+            {
+                //+Attack and Defence
+                Color cardColor = new Color(145f, 50f, 200f, 255f);
+                newCard = newCardPrefab.AddComponent<Card>() as Card;
+                //attach the card defense mechanic to the card prefab
+                CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
+                cardAttackMechanic.Attack = 2; 
+                newCard.PopulateCard("Good Offence", "+2 Attack /n+2 Defence", 4, cardAttackMechanic, cardColor);
+                //newCard.AddAddtionalMech
             }
             else
             {

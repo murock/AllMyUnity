@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardMultiplierMech : MonoBehaviour, ICardMech
+public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
 {
 
 
@@ -20,6 +20,15 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech
         this.numTimesToMultiply = value;
     }
 
+    void IPersistantCard.SetTurnsToPersist(int turnsToPersist)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void IPersistantCard.ApplyPersistAction()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public int NumTimesToMultiply
     {
@@ -67,6 +76,8 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech
 
     public void ApplyMultiplier()
     {
+  
+        GameManager.Instance.persistantCardArea.PassToPersistantPanel(this.transform);
 
         GameManager.Instance.multiplierOn = true;
         GameManager.Instance.multiplierNum = this.numTimesToMultiply;
@@ -81,6 +92,6 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech
         //}
 
     }
-    
-    
+
+
 }

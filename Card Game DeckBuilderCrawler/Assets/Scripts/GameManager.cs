@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager> {
 
+    
     [SerializeField]
     private Text moneyText;
     public MonsterInteraction currentMonster;
     public Hand hand;
     public GameObject centrePanel;
     public GameObject player;
+    public PersistantPanel persistantCardArea;
     public bool multiplierOn;
     public int multiplierNum;
 

@@ -77,12 +77,14 @@
     <Compile Include="Assets\Scripts\Cards\DeckManager.cs" />
     <Compile Include="Assets\Scripts\Cards\ICardMech.cs" />
     <Compile Include="Assets\Scripts\Cards\ICardSelectableMech.cs" />
+    <Compile Include="Assets\Scripts\Cards\IPersistantCard.cs" />
     <Compile Include="Assets\Scripts\Cards\ShopManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\MonsterInteraction.cs" />
     <Compile Include="Assets\Scripts\NEWscript.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\PersistantPanel.cs" />
     <Compile Include="Assets\Scripts\PlayArea.cs" />
     <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\SelectionPanel.cs" />
