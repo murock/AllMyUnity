@@ -42,30 +42,7 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         CardActions cardAction = eventData.pointerDrag.GetComponent<CardActions>();
         if (cardAction != null && cardAction.isDragable)
         {
-            Card card = eventData.pointerDrag.GetComponent<Card>();      
-            if (card.cardCardType != Card.CardType.Persistant)
-            {
-                // If its a persistant card don't discard
-                cardAction.isDiscarded = true;
-                // Ensure the card goes to the playarea its been put on
-                cardAction.parentToReturnTo = this.transform;
-            }
-            else
-            {
-                PersistantPanel persistantPanel = this.GetComponent<PersistantPanel>();
-                // if this playarea is attached to a persistant panel
-                if (persistantPanel != null)
-                {
-                    // If passing to the persistant panel was successful
-                    if (persistantPanel.PassToPersistantPanel(card.transform))
-                    {
-                        // Ensure the card goes to the peristant panel;
-                        cardAction.parentToReturnTo = persistantPanel.GetComponent<Transform>();
-                    }
-                }
-                
-            }
-
+            Card card = eventData.pointerDrag.GetComponent<Card>();
             GameObject cardTransform = eventData.pointerDrag;
             if (cardTransform.tag == "card")
             {
@@ -98,6 +75,29 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         GameManager.Instance.persistantCardArea.ApplyCardPersistantAction(card);
                     }
                     card.OnApplyCardAction();
+                }
+            }
+
+
+            if (card.cardCardType != Card.CardType.Persistant)
+            {
+                // If its a persistant card don't discard
+                cardAction.isDiscarded = true;
+                // Ensure the card goes to the playarea its been put on
+                cardAction.parentToReturnTo = this.transform;
+            }
+            else
+            {
+                PersistantPanel persistantPanel = this.GetComponent<PersistantPanel>();
+                // if this playarea is attached to a persistant panel
+                if (persistantPanel != null)
+                {
+                    // If passing to the persistant panel was successful
+                    if (persistantPanel.PassToPersistantPanel(card.transform))
+                    {
+                        // Ensure the card goes to the peristant panel;
+                        cardAction.parentToReturnTo = persistantPanel.GetComponent<Transform>();
+                    }
                 }
             }
         }

@@ -12,12 +12,12 @@ public class CardMoneyMech : MonoBehaviour, ICardMech
 
     int ICardMech.GetValue()
     {
-        throw new System.NotImplementedException();
+        return this.Money;
     }
 
     void ICardMech.SetValue(int value)
     {
-        throw new System.NotImplementedException();
+        this.money = value;
     }
     public int Money
     {

@@ -20,11 +20,6 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
         this.numTimesToMultiply = value;
     }
 
-    void IPersistantCard.SetTurnsToPersist(int turnsToPersist)
-    {
-        throw new System.NotImplementedException();
-    }
-
     void IPersistantCard.ApplyPersistAction(Card card)
     {
         foreach (ICardMech iCard in card.iCards)
@@ -38,7 +33,7 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
             //Return the value to its orginal number
             iCard.SetValue(cardValue);
         }
-
+        GameManager.Instance.persistantCardArea.RemoveFromPanel(card.transform);
     }
 
     public int NumTimesToMultiply
@@ -87,8 +82,8 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
 
     public void ApplyMultiplier()
     {
-  
-        GameManager.Instance.persistantCardArea.PassToPersistantPanel(this.transform);
+        
+        //GameManager.Instance.persistantCardArea.PassToPersistantPanel(this.transform);
 
        // GameManager.Instance.multiplierOn = true;
        // GameManager.Instance.multiplierNum = this.numTimesToMultiply;
