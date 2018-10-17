@@ -59,7 +59,9 @@ public class ShopManager : Singleton<ShopManager> {
                 CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
                 cardAttackMechanic.Attack = 2; 
                 newCard.PopulateCard("Good Offence", "+2 Attack /n+2 Defence", 4, cardAttackMechanic, cardColor);
-                //newCard.AddAddtionalMech
+                CardDefenseMech cardDefenceMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
+                cardDefenceMechanic.Defense = 2;
+                newCard.AddAddtionalMech(cardDefenceMechanic);
             }
             else
             {

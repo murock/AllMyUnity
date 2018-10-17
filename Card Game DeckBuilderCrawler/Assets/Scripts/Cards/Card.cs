@@ -8,7 +8,7 @@ public class Card : MonoBehaviour {
     public delegate void OnApplyCardActionDelegate();
     public event OnApplyCardActionDelegate applyCardActionDelegate;
     public ICardMech iCard;
-    private List<ICardMech> iCards;
+    public List<ICardMech> iCards;
     private int cost;
     private CardType cardType;
 

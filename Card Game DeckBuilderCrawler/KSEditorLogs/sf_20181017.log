@@ -1,0 +1,23 @@
+2018-10-17 07:12:36.8490 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-17 07:12:42.1009 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-17 07:32:05.5741 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-17 07:32:05.6260 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-17 07:41:56.6405 [DEBUG] Play mode: False
+2018-10-17 07:42:21.3649 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-17 07:42:25.2164 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-17 07:42:25.2553 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-17 07:42:51.0432 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardMultiplierMech.IPersistantCard.ApplyPersistAction (.Card card) (at Assets/Scripts/Cards/CardMultiplierMech.cs:39)
+PersistantPanel.ApplyCardPersistantAction (.Card card) (at Assets/Scripts/PersistantPanel.cs:34)
+PlayArea.OnDrop (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/PlayArea.cs:98)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IDropHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:85)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IDropHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-10-17 07:43:02.2052 [DEBUG] Play mode: False
+2018-10-17 07:43:12.3848 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-17 07:43:12.4346 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-17 07:44:15.6255 [DEBUG] Play mode: False
+2018-10-17 07:46:27.9898 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-17 07:46:28.0317 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-17 07:46:53.5371 [DEBUG] Play mode: False

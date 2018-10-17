@@ -5,5 +5,5 @@ using UnityEngine;
 public interface IPersistantCard {
 
     void SetTurnsToPersist(int turnsToPersist);
-    void ApplyPersistAction();
+    void ApplyPersistAction(Card card);
 }

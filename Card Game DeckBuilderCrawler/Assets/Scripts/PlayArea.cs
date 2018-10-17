@@ -93,6 +93,10 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 }
                 else if (card != null)
                 {
+                    if (GameManager.Instance.persistantCardArea.IsPopulated)
+                    {
+                        GameManager.Instance.persistantCardArea.ApplyCardPersistantAction(card);
+                    }
                     card.OnApplyCardAction();
                 }
             }

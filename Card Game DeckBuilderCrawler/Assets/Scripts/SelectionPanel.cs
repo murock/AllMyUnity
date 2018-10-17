@@ -122,6 +122,8 @@ public class SelectionPanel : Singleton<SelectionPanel>
         if (ShopManager.Instance.isShopping)
         {
             GameManager.Instance.AdjustMoney(-this.costOfSelectedCards);
+            // Reset cost of cards for next buy phase
+            this.costOfSelectedCards = 0;
             //Send card(s) to buy and not to buy to the shop manager
             ShopManager.Instance.BuyCards(this.cardsSelectedQueue.ToList());
             ShopManager.Instance.PassBackToShop(this.cardsInPanel);

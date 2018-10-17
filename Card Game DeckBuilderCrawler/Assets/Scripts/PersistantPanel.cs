@@ -5,6 +5,8 @@ using UnityEngine;
 public class PersistantPanel : MonoBehaviour {
 
     private bool isPopulated;
+    IPersistantCard persistantCard;
+
     public bool IsPopulated {
         get
         {
@@ -18,9 +20,18 @@ public class PersistantPanel : MonoBehaviour {
         if (!this.isPopulated)
         {
             transform.SetParent(this.transform);
+            persistantCard = transform.GetComponent<IPersistantCard>();
             this.isPopulated = true;
             return true;
         }
         return false;
+    }
+
+    public void ApplyCardPersistantAction(Card card)
+    {
+        if (persistantCard != null)
+        {
+            persistantCard.ApplyPersistAction(card);
+        }
     }
 }
