@@ -33,7 +33,7 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
             //Return the value to its orginal number
             iCard.SetValue(cardValue);
         }
-        GameManager.Instance.persistantCardArea.RemoveFromPanel(card.transform);
+        GameManager.Instance.persistantCardArea.RemoveFromPanel(this.transform);
     }
 
     public int NumTimesToMultiply

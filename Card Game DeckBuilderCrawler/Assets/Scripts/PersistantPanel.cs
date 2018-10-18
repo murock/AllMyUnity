@@ -20,11 +20,11 @@ public class PersistantPanel : MonoBehaviour {
         if (!this.isPopulated)
         {
             //card becomes untargetable, THIS IS BEING PUT BACK TO TRYE IN ONENDDRAG IN CardActions.cs
-            CanvasGroup canvasGroup = transform.GetComponent<CanvasGroup>();
-            if (canvasGroup != null)
-            {
-                canvasGroup.blocksRaycasts = false;
-            }
+            //CanvasGroup canvasGroup = transform.GetComponent<CanvasGroup>();
+            //if (canvasGroup != null)
+            //{
+            //    canvasGroup.blocksRaycasts = false;
+            //}
             transform.SetParent(this.transform);
             persistantCard = transform.GetComponent<IPersistantCard>();
             this.isPopulated = true;

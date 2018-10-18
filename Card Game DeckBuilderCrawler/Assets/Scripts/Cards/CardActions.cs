@@ -102,8 +102,17 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 Destroy(placeholder);
             }
 
-            //become targetable
-            this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            if (this.transform.IsChildOf(GameManager.Instance.persistantCardArea.transform))
+            {
+                //become untargetable
+                this.GetComponent<CanvasGroup>().blocksRaycasts = false;
+            }
+            else
+            {
+                //become targetable
+                this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            }
+
 
             if (this.isDiscarded)
             {
