@@ -7,6 +7,7 @@ public class CardAttackMech : MonoBehaviour, ICardMech {
     private int attack;
     //the card which this attack mechanic is attached to
     private Card card;
+    private const string toolTip = "Attacks a monster";
 
     int ICardMech.GetValue()
     {
@@ -16,6 +17,11 @@ public class CardAttackMech : MonoBehaviour, ICardMech {
     void ICardMech.SetValue(int value)
     {
         this.attack = value;
+    }
+
+    string ICardMech.ToolTipText()
+    {
+        return toolTip;
     }
 
     public int Attack
@@ -42,4 +48,6 @@ public class CardAttackMech : MonoBehaviour, ICardMech {
             GameManager.Instance.currentMonster.TakeDamage(this.attack);
         }
     }
+
+
 }

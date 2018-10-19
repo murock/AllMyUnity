@@ -5,8 +5,8 @@ using UnityEngine;
 public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
 {
 
-
-    private int numTimesToMultiply;
+    private const string toolTip = "The next card you play will trigger its action more than once";
+    internal int numTimesToMultiply;
     //the card which this multiply mechanic is attached to
     private Card card;
 
@@ -18,6 +18,11 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
     void ICardMech.SetValue(int value)
     {
         this.numTimesToMultiply = value;
+    }
+
+    string ICardMech.ToolTipText()
+    {
+        return toolTip;
     }
 
     void IPersistantCard.ApplyPersistAction(Card card)
@@ -50,35 +55,16 @@ public class CardMultiplierMech : MonoBehaviour, ICardMech, IPersistantCard
             this.card.applyCardActionDelegate += ApplyMultiplier;
             
         }
-    }
+    } 
 
-    public bool MultiplyOn
+    public CardMultiplierMech()
     {
-        get
-        {
-            return this.multiplyon;
-        }
-        set
-        {
-            this.multiplyon = value;
-        }
+        //CardActions cardAction = this.GetComponent<CardActions>();
+        //if (cardAction != null)
+        //{
+        //    cardAction.AttachTooltip(toolTip);
+        //}
     }
-
-    bool multiplyon = false;
-
-
-    public bool CheckOn()
-    {
-        if (numTimesToMultiply > 0)
-        {
-            multiplyon = true;
-            return multiplyon;
-        }
-        return multiplyon;
-    }
-
-   
-
 
     public void ApplyMultiplier()
     {

@@ -7,6 +7,7 @@ public class CardDrawMech : MonoBehaviour, ICardMech {
     private int numCardsToDraw;
     //the card which this attack mechanic is attached to
     private Card card;
+    private const string toolTip = "Draws cards from the deck";
 
     int ICardMech.GetValue()
     {
@@ -16,6 +17,11 @@ public class CardDrawMech : MonoBehaviour, ICardMech {
     void ICardMech.SetValue(int value)
     {
         this.numCardsToDraw = value;
+    }
+
+    string ICardMech.ToolTipText()
+    {
+        return toolTip;
     }
 
     public int NumCardsToDraw

@@ -9,6 +9,7 @@ public class CardDiscardMech : MonoBehaviour, ICardMech, ICardSelectableMech
     private Card card;
     private Hand hand;
     private GameObject centrePanel;
+    private const string toolTip = "Discards cards and draws as many as discarded";
     int ICardMech.GetValue()
     {
         return numCardsToDiscard;
@@ -17,6 +18,11 @@ public class CardDiscardMech : MonoBehaviour, ICardMech, ICardSelectableMech
     void ICardMech.SetValue(int value)
     {
         this.numCardsToDiscard = value;
+    }
+
+    string ICardMech.ToolTipText()
+    {
+        return toolTip;
     }
 
     public int NumCardsToDiscard

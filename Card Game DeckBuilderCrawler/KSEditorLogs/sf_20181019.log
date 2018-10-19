@@ -1,0 +1,39 @@
+2018-10-19 06:28:44.7255 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 06:28:57.9063 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 06:32:14.9336 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 06:48:37.2833 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 06:48:37.3276 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 06:48:48.8916 [DEBUG] Play mode: False
+2018-10-19 06:49:23.4530 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 06:49:23.5149 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 06:49:29.8397 [DEBUG] Play mode: False
+2018-10-19 06:59:29.4136 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 06:59:36.7731 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 06:59:36.9138 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 06:59:58.4250 [DEBUG] Play mode: False
+2018-10-19 07:21:54.6263 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:23:15.5904 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:23:15.6372 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 07:23:16.9199 [ERROR] MissingComponentException: There is no 'CanvasGroup' attached to the "Text" game object, but a script is trying to access it.
+You probably need to add a CanvasGroup to the game object "Text". Or your script needs to check if the component is attached before using it.
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:255)
+CardActions.OnPointerEnter (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/Cards/CardActions.cs:129)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerEnterHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:22)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerEnterHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-10-19 07:23:24.5685 [DEBUG] Play mode: False
+2018-10-19 07:24:19.0852 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:25:12.4919 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:25:31.1311 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:25:31.1810 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 07:25:59.5759 [DEBUG] Play mode: False
+2018-10-19 07:26:33.8375 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:26:33.8814 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 07:26:40.9292 [DEBUG] Play mode: False
+2018-10-19 07:31:57.8156 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:31:57.8655 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 07:32:28.4726 [DEBUG] Play mode: False
+2018-10-19 07:32:38.7917 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-19 07:32:38.8505 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-19 07:32:50.9730 [DEBUG] Play mode: False

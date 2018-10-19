@@ -126,6 +126,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        this.ShowToolTip();
         if (!this.isDragable && !this.isSelected)
         {
             this.GetComponent<CanvasGroup>().alpha = 0.7f;
@@ -135,6 +136,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        this.HideTooltip();
         if (!this.isDragable && !this.isSelected)
         {
             this.GetComponent<CanvasGroup>().alpha = 1f;
@@ -230,4 +232,27 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         cardCanvasGroup.alpha = 0;
     }
 
+    private void AttachTooltip()
+    {
+        GameManager.Instance.toolTip.text = "";
+        Card card = this.GetComponent<Card>();
+        if (card != null)
+        {
+            foreach (ICardMech iCardMech in card.iCards)
+            {
+                GameManager.Instance.toolTip.text += iCardMech.ToolTipText() + System.Environment.NewLine;
+            }
+        }        
+    }
+
+    private void HideTooltip()
+    {
+        GameManager.Instance.toolTipCanvasGroup.alpha = 0;
+    }
+
+    private void ShowToolTip()
+    {
+        GameManager.Instance.toolTipCanvasGroup.alpha = 1;
+        this.AttachTooltip();
+    }
 }

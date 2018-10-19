@@ -15,6 +15,8 @@ public class GameManager : Singleton<GameManager> {
     public PersistantPanel persistantCardArea;
     public bool multiplierOn;
     public int multiplierNum;
+    public Text toolTip;
+    public CanvasGroup toolTipCanvasGroup;
 
     private int money;
 

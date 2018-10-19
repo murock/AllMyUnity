@@ -9,6 +9,7 @@ public class CardMoneyMech : MonoBehaviour, ICardMech
     private int money;
     //the card which this attack mechanic is attached to
     private Card card;
+    private const string toolTip = "Gain some Money";
 
     int ICardMech.GetValue()
     {
@@ -18,6 +19,11 @@ public class CardMoneyMech : MonoBehaviour, ICardMech
     void ICardMech.SetValue(int value)
     {
         this.money = value;
+    }
+
+    string ICardMech.ToolTipText()
+    {
+        return toolTip;
     }
     public int Money
     {

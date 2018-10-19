@@ -10,6 +10,7 @@ public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
     private Card card;
     private Hand hand;
     private GameObject centrePanel;
+    private const string toolTip = "Removes cards from the game";
 
     int ICardMech.GetValue()
     {
@@ -19,6 +20,11 @@ public class CardDestroyMech : MonoBehaviour, ICardMech, ICardSelectableMech {
     void ICardMech.SetValue(int value)
     {
         this.numCardsToDestroy= value;
+    }
+
+    string ICardMech.ToolTipText()
+    {
+        return toolTip;
     }
 
     public int NumCardsToDestroy

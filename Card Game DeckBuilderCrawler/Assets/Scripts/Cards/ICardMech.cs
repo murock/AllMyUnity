@@ -6,4 +6,5 @@ public interface ICardMech
 {
     int GetValue();
     void SetValue(int value);
+    string ToolTipText();
 }

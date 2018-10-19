@@ -8,6 +8,7 @@ public class CardDefenseMech : MonoBehaviour, ICardMech
     private int defense;
     //the card which this defense mechanic is attached to
     private Card card;
+    private const string toolTip = "Increases your HP";
 
     int ICardMech.GetValue()
     {
@@ -17,6 +18,11 @@ public class CardDefenseMech : MonoBehaviour, ICardMech
     void ICardMech.SetValue(int value)
     {
         this.defense = value;
+    }
+
+    string ICardMech.ToolTipText()
+    {
+        return toolTip;
     }
 
     [SerializeField]
