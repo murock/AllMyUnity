@@ -30617,3 +30617,64 @@ UnityEngine.GUIUtility:ProcessEvent(Int32, IntPtr)
 2018-10-23 19:41:51.8557 [DEBUG] Scene Fusion version 1.8.1-0
 2018-10-23 19:41:51.9065 [DEBUG] Play mode: True, sync in play mode: False
 2018-10-23 19:42:04.0838 [DEBUG] Play mode: False
+2018-10-23 20:08:08.9922 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:08:15.0388 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:08:20.1722 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:08:20.2081 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:08:40.1891 [DEBUG] Play mode: False
+2018-10-23 20:09:21.7730 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:09:21.8209 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:09:28.1642 [DEBUG] Play mode: False
+2018-10-23 20:10:07.5002 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:10:09.6937 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:10:09.7376 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:10:16.7480 [DEBUG] Play mode: False
+2018-10-23 20:17:20.7218 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:17:20.7662 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:18:16.5954 [DEBUG] Play mode: False
+2018-10-23 20:18:27.9124 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:18:27.9453 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:22:10.6503 [DEBUG] Play mode: False
+2018-10-23 20:22:14.7727 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:22:14.8186 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:22:29.1542 [DEBUG] Play mode: False
+2018-10-23 20:22:39.2766 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:22:39.3105 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:28:36.8435 [DEBUG] Play mode: False
+2018-10-23 20:30:20.8378 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:30:20.8877 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:30:32.5637 [DEBUG] Play mode: False
+2018-10-23 20:35:37.7037 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:35:43.7627 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:35:43.8105 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:35:48.1826 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+ShopManager.StartShop () (at Assets/Scripts/Cards/ShopManager.cs:86)
+MonsterInteraction+<MoveMonster>c__Iterator0.MoveNext () (at Assets/Scripts/MonsterInteraction.cs:181)
+UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)
+
+2018-10-23 20:35:50.6559 [DEBUG] Play mode: False
+2018-10-23 20:37:12.7721 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:37:12.8105 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:37:21.9837 [DEBUG] Play mode: False
+2018-10-23 20:47:03.1642 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:47:35.0808 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:47:48.0106 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:47:48.0505 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:48:09.9360 [DEBUG] Play mode: False
+2018-10-23 20:49:40.8565 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:49:40.8834 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:49:54.4244 [DEBUG] Play mode: False
+2018-10-23 20:51:05.4256 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:51:17.5849 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:51:17.6277 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 20:51:28.2862 [DEBUG] Play mode: False
+2018-10-23 20:52:21.3707 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:53:44.1162 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 20:55:54.5568 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 21:14:37.2181 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 21:14:39.4507 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 21:14:39.4712 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 21:18:59.7169 [DEBUG] Play mode: False
+2018-10-23 21:19:02.6123 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-23 21:19:02.6357 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-23 21:20:46.4381 [DEBUG] Play mode: False

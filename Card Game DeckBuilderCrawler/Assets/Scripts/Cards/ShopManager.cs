@@ -4,10 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopManager : Singleton<ShopManager> {
+public class ShopManager : Singleton<ShopManager>
+{
 
     List<Transform> CardsToBuy;
     public bool isShopping;
+    private bool isCashShopping = false;
+    [SerializeField]
+    private Button cashShopButton;
+    [SerializeField]
+    private Text cashShopButtonText;
 
     private void PopulateShop()
     {
@@ -48,7 +54,7 @@ public class ShopManager : Singleton<ShopManager> {
                 //attach the card defense mechanic to the card prefab
                 CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
                 cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
-                newCard.PopulateCard("Multiplier","x2 Multiply", 2, cardMultiplierMechanic, cardColor, Card.CardType.Persistant);
+                newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor, Card.CardType.Persistant);
             }
             else if (i == 3)
             {
@@ -57,7 +63,7 @@ public class ShopManager : Singleton<ShopManager> {
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card defense mechanic to the card prefab
                 CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
-                cardAttackMechanic.Attack = 2; 
+                cardAttackMechanic.Attack = 2;
                 newCard.PopulateCard("Good Offence", "+2 Attack" + Environment.NewLine + "+2 Defence", 4, cardAttackMechanic, cardColor);
                 CardDefenseMech cardDefenceMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
                 cardDefenceMechanic.Defense = 2;
@@ -81,6 +87,7 @@ public class ShopManager : Singleton<ShopManager> {
 
     public void StartShop()
     {
+        this.cashShopButton.gameObject.SetActive(true);
         isShopping = true;
         SelectionPanel.Instance.titleLabel.text = "Shop";
         if (this.CardsToBuy == null)
@@ -125,6 +132,7 @@ public class ShopManager : Singleton<ShopManager> {
         }
         this.isShopping = false;
         CardDraw.Instance.UpdateLabel();
+        this.cashShopButton.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -143,6 +151,74 @@ public class ShopManager : Singleton<ShopManager> {
             {
                 cardCanvasGroup.alpha = 0;
                 cardCanvasGroup.blocksRaycasts = false;
+            }
+        }
+    }
+
+    public void SwitchShops()
+    {
+        if (!isCashShopping)
+        {
+            // Switch to cash only shop
+            this.isCashShopping = true;
+            this.cashShopButtonText.text = "Back";
+            this.PassBackToShop(this.CardsToBuy);
+            this.CardsToBuy = new List<Transform>();
+            int numUniqueCards = 3;
+            for (int i = 0; i < numUniqueCards; i++)
+            {
+                Card newCard;
+                //Creates a new gameobject which based off the card in the Resource folder
+                GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
+                if (i == 0)
+                {
+                    //CARD MONEY ---------------------------
+                    Color cardColor = new Color(0, 0.5f, 0f, 1f);
+                    newCard = newCardPrefab.AddComponent<Card>() as Card;
+                    //attach the card draw mechanic to the card prefab
+                    CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                    cardMoneyMechanic.Money = 1;
+                    newCard.PopulateCard("Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor);
+                }
+                else if (i == 1)
+                {
+                    //CARD MONEY ---------------------------
+                    Color cardColor = new Color(0, 0.8f, 0f, 1f);
+                    newCard = newCardPrefab.AddComponent<Card>() as Card;
+                    //attach the card draw mechanic to the card prefab
+                    CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                    cardMoneyMechanic.Money = 2;
+                    newCard.PopulateCard("Cash", "+2 Cash", 3, cardMoneyMechanic, cardColor);
+                }
+                else
+                {
+                    //CARD MONEY ---------------------------
+                    Color cardColor = new Color(0, 1f, 0f, 1f);
+                    newCard = newCardPrefab.AddComponent<Card>() as Card;
+                    //attach the card draw mechanic to the card prefab
+                    CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                    cardMoneyMechanic.Money = 3;
+                    newCard.PopulateCard("Cash", "+3 Cash", 6, cardMoneyMechanic, cardColor);
+                }
+                // making the centrePanel its parent
+                SelectionPanel.Instance.PassToPanel(newCard.transform, null);
+                this.CardsToBuy.Add(newCard.transform);
+            }
+        }
+        else
+        {
+            // Switch to normal shop
+        }
+
+
+        // Make cards visible
+        foreach (Transform card in this.CardsToBuy)
+        {
+            CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
+            if (cardCanvasGroup != null)
+            {
+                cardCanvasGroup.alpha = 1;
+                cardCanvasGroup.blocksRaycasts = true;
             }
         }
     }

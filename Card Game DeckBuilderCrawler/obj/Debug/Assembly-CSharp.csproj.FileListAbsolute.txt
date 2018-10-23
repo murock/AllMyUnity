@@ -328,3 +328,5 @@ D:\AllMyUnity\Card Game DeckBuilderCrawler\obj\Debug\Assembly-CSharp.csproj.Core
 D:\AllMyUnity\Card Game DeckBuilderCrawler\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\AllMyUnity\Card Game DeckBuilderCrawler\obj\Debug\Assembly-CSharp.dll
 D:\AllMyUnity\Card Game DeckBuilderCrawler\obj\Debug\Assembly-CSharp.pdb
+D:\Game dev Unity\AllMyUnity\Card Game DeckBuilderCrawler\Temp\bin\Debug\Unity.TextMeshPro.dll
+D:\Game dev Unity\AllMyUnity\Card Game DeckBuilderCrawler\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll

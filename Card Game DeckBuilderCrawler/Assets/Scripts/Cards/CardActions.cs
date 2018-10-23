@@ -24,6 +24,17 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     internal bool isSelected = false;
 
     private static bool isDragging = false;
+    private bool timerRunning = false;
+    private const float toolTipWaitTime = 1.5f;
+    private static float timer;
+
+    private void Update()
+    {
+        if (timerRunning)
+        {
+            ShowToolTip();
+        }
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -130,7 +141,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        this.ShowToolTip();
+        timerRunning = true;
         if (!this.isDragable && !this.isSelected)
         {
             this.GetComponent<CanvasGroup>().alpha = 0.7f;
@@ -141,6 +152,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnPointerExit(PointerEventData eventData)
     {
         this.HideTooltip();
+        timerRunning = false;
         if (!this.isDragable && !this.isSelected)
         {
             this.GetComponent<CanvasGroup>().alpha = 1f;
@@ -256,10 +268,13 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     private void ShowToolTip()
     {
-        if (!isDragging)
+        timer += Time.deltaTime;
+        if (timer > toolTipWaitTime && !isDragging)
         {
             GameManager.Instance.toolTipCanvasGroup.alpha = 1;
             this.AttachTooltip();
+            timer = 0f;
+            timerRunning = false;
         }
     }
 }

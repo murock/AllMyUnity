@@ -47,7 +47,7 @@ public class DeckManager : Singleton<DeckManager> {
             else
             {
                 //CARD MONEY ---------------------------
-                Color cardColor = new Color(0, 1f, 0f, 1f);
+                Color cardColor = new Color(0, 0.5f, 0f, 1f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
                 CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
