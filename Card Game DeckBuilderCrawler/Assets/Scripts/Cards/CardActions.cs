@@ -23,10 +23,13 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //True if the card is selected
     internal bool isSelected = false;
 
+    private static bool isDragging = false;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (isDragable)
         {
+            isDragging = true;
             //Could do something here to work out difference from where its being clicked on to the anchor point of the card to avoid it jumping
             placeholder = new GameObject();
             placeholder.transform.SetParent(this.transform.parent);
@@ -93,6 +96,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (isDragable)
         {
+            isDragging = false;
             //sets the parent to the previous parent so the card can return
             this.transform.SetParent(parentToReturnTo);
             if (placeholder != null)
@@ -252,7 +256,10 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     private void ShowToolTip()
     {
-        GameManager.Instance.toolTipCanvasGroup.alpha = 1;
-        this.AttachTooltip();
+        if (!isDragging)
+        {
+            GameManager.Instance.toolTipCanvasGroup.alpha = 1;
+            this.AttachTooltip();
+        }
     }
 }
