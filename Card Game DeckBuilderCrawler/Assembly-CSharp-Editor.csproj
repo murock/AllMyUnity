@@ -68,8 +68,14 @@
     <Compile Include="Assets\KinematicSoup\SceneFusion\Extensions\PlayMaker\Editor\PlayMakerExtension.cs" />
     <Compile Include="Assets\KinematicSoup\SceneFusion\Extensions\ProBuilder\Editor\ProBuilderExtension.cs" />
     <Compile Include="Assets\KinematicSoup\SceneFusion\Extensions\TerrainComposer2\Editor\TerrainComposer2Extension.cs" />
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
