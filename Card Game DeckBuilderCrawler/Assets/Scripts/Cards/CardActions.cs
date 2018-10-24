@@ -40,6 +40,11 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (isDragable)
         {
+            IPersistantCard persistantCard = this.GetComponent<IPersistantCard>();
+            if (persistantCard != null)
+            {
+                GameManager.Instance.persistantAreaImage.color = new Color(145f, 0f, 148f, 255f);
+            }
             isDragging = true;
             //Could do something here to work out difference from where its being clicked on to the anchor point of the card to avoid it jumping
             placeholder = new GameObject();
@@ -105,6 +110,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //OnEndDrag and DiscardCard should be reworked as they do almost the same thing?
     public void OnEndDrag(PointerEventData eventData)
     {
+        GameManager.Instance.persistantAreaImage.color = new Color(255f, 255f, 255f, 255f);
         if (isDragable)
         {
             isDragging = false;

@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Cards\CardMoneyMech.cs" />
     <Compile Include="Assets\Scripts\Cards\CardMultiplierMech.cs" />
     <Compile Include="Assets\Scripts\Cards\DeckManager.cs" />
+    <Compile Include="Assets\Scripts\Cards\EndTurnDamageMech.cs" />
     <Compile Include="Assets\Scripts\Cards\ICardMech.cs" />
     <Compile Include="Assets\Scripts\Cards\ICardSelectableMech.cs" />
     <Compile Include="Assets\Scripts\Cards\IPersistantCard.cs" />

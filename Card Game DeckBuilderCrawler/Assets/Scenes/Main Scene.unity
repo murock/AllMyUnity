@@ -152,6 +152,7 @@ MonoBehaviour:
   multiplierNum: 0
   toolTip: {fileID: 1244069962}
   toolTipCanvasGroup: {fileID: 1321637615}
+  persistantAreaImage: {fileID: 243131121}
 --- !u!4 &39092425
 Transform:
   m_ObjectHideFlags: 0
@@ -683,8 +684,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

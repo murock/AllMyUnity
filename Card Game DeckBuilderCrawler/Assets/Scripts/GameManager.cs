@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager> {
     public int multiplierNum;
     public Text toolTip;
     public CanvasGroup toolTipCanvasGroup;
+    public Image persistantAreaImage;
 
     private int money;
 

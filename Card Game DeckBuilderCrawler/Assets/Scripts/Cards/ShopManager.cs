@@ -8,6 +8,7 @@ public class ShopManager : Singleton<ShopManager>
 {
 
     List<Transform> CardsToBuy;
+    List<Transform> CashCards;
     public bool isShopping;
     private bool isCashShopping = false;
     [SerializeField]
@@ -97,11 +98,7 @@ public class ShopManager : Singleton<ShopManager>
         }
         else
         {
-            // Move the cards to the centre panel
-            foreach (Transform card in this.CardsToBuy)
-            {
-                SelectionPanel.Instance.PassToPanel(card, null);
-            }
+            this.PassCardsToCentre(this.CardsToBuy);
         }
         foreach (Transform card in this.CardsToBuy)
         {
@@ -118,17 +115,28 @@ public class ShopManager : Singleton<ShopManager>
     {
         foreach (Transform card in boughtCards)
         {
+            if (this.CardsToBuy.Contains(card))
+            {
+                // Remove card from the list of cards in the shop
+                this.CardsToBuy.Remove(card);
+                // Create a replacement card THIS CLONING ISN'T WORKING
+                GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
+                this.CardsToBuy.Add(replacementCard.transform);
+            }
+            else if (this.CashCards.Contains(card))
+            {
+                // Remove card from the list of cards in the cash shop
+                this.CashCards.Remove(card);
+                // Create a replacement card
+                GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
+                this.CashCards.Add(replacementCard.transform);
+            }
             CardActions cardAction = card.GetComponent<CardActions>();
             if (cardAction != null)
             {
                 cardAction.isDragable = true;
             }
             DeckManager.Instance.AddCardToDeck(card);
-            if (this.CardsToBuy.Contains(card))
-            {
-                // Remove card from the list of cards in the shop
-                this.CardsToBuy.Remove(card);
-            }
         }
         this.isShopping = false;
         CardDraw.Instance.UpdateLabel();
@@ -142,16 +150,29 @@ public class ShopManager : Singleton<ShopManager>
     {
         foreach (Transform card in cards)
         {
-            // Make the ShopManager gameObject the temp parent of the card
-            // until it needs to be displayed in the shop again
+            //// Make the ShopManager gameObject the temp parent of the card
+            //// until it needs to be displayed in the shop again
+            //card.SetParent(this.transform);
+            //// Ensure the card is not visible or interactable
+            //CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
+            //if (cardCanvasGroup != null)
+            //{
+            //    cardCanvasGroup.alpha = 0;
+            //    cardCanvasGroup.blocksRaycasts = false;
+            //}
+
+            card.gameObject.SetActive(false);
             card.SetParent(this.transform);
-            // Ensure the card is not visible or interactable
-            CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-            if (cardCanvasGroup != null)
-            {
-                cardCanvasGroup.alpha = 0;
-                cardCanvasGroup.blocksRaycasts = false;
-            }
+        }
+    }
+
+    private void PassCardsToCentre(List<Transform> cards)
+    {
+        // Move the cards to the centre panel
+        foreach (Transform card in cards)
+        {
+            card.gameObject.SetActive(true);
+            SelectionPanel.Instance.PassToPanel(card, null);
         }
     }
 
@@ -163,63 +184,69 @@ public class ShopManager : Singleton<ShopManager>
             this.isCashShopping = true;
             this.cashShopButtonText.text = "Back";
             this.PassBackToShop(this.CardsToBuy);
-            this.CardsToBuy = new List<Transform>();
-            int numUniqueCards = 3;
-            for (int i = 0; i < numUniqueCards; i++)
+            if (this.CashCards == null)
             {
-                Card newCard;
-                //Creates a new gameobject which based off the card in the Resource folder
-                GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
-                if (i == 0)
+                this.CashCards = new List<Transform>();
+                int numUniqueCards = 3;
+                for (int i = 0; i < numUniqueCards; i++)
                 {
-                    //CARD MONEY ---------------------------
-                    Color cardColor = new Color(0, 0.5f, 0f, 1f);
-                    newCard = newCardPrefab.AddComponent<Card>() as Card;
-                    //attach the card draw mechanic to the card prefab
-                    CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
-                    cardMoneyMechanic.Money = 1;
-                    newCard.PopulateCard("Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor);
+                    Card newCard;
+                    //Creates a new gameobject which based off the card in the Resource folder
+                    GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
+                    if (i == 0)
+                    {
+                        //CARD MONEY ---------------------------
+                        Color cardColor = new Color(0, 0.5f, 0f, 1f);
+                        newCard = newCardPrefab.AddComponent<Card>() as Card;
+                        //attach the card draw mechanic to the card prefab
+                        CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                        cardMoneyMechanic.Money = 1;
+                        newCard.PopulateCard("Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor);
+                    }
+                    else if (i == 1)
+                    {
+                        //CARD MONEY ---------------------------
+                        Color cardColor = new Color(0, 0.8f, 0f, 1f);
+                        newCard = newCardPrefab.AddComponent<Card>() as Card;
+                        //attach the card draw mechanic to the card prefab
+                        CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                        cardMoneyMechanic.Money = 2;
+                        newCard.PopulateCard("Cash", "+2 Cash", 3, cardMoneyMechanic, cardColor);
+                    }
+                    else
+                    {
+                        //CARD MONEY ---------------------------
+                        Color cardColor = new Color(0, 1f, 0f, 1f);
+                        newCard = newCardPrefab.AddComponent<Card>() as Card;
+                        //attach the card draw mechanic to the card prefab
+                        CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
+                        cardMoneyMechanic.Money = 3;
+                        newCard.PopulateCard("Cash", "+3 Cash", 6, cardMoneyMechanic, cardColor);
+                    }
+                    CanvasGroup cardCanvasGroup = newCard.GetComponent<CanvasGroup>();
+                    if (cardCanvasGroup != null)
+                    {
+                        cardCanvasGroup.alpha = 1;
+                        cardCanvasGroup.blocksRaycasts = true;
+                    }
+                    // making the centrePanel its parent
+                    this.CashCards.Add(newCard.transform);
                 }
-                else if (i == 1)
-                {
-                    //CARD MONEY ---------------------------
-                    Color cardColor = new Color(0, 0.8f, 0f, 1f);
-                    newCard = newCardPrefab.AddComponent<Card>() as Card;
-                    //attach the card draw mechanic to the card prefab
-                    CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
-                    cardMoneyMechanic.Money = 2;
-                    newCard.PopulateCard("Cash", "+2 Cash", 3, cardMoneyMechanic, cardColor);
-                }
-                else
-                {
-                    //CARD MONEY ---------------------------
-                    Color cardColor = new Color(0, 1f, 0f, 1f);
-                    newCard = newCardPrefab.AddComponent<Card>() as Card;
-                    //attach the card draw mechanic to the card prefab
-                    CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
-                    cardMoneyMechanic.Money = 3;
-                    newCard.PopulateCard("Cash", "+3 Cash", 6, cardMoneyMechanic, cardColor);
-                }
-                // making the centrePanel its parent
-                SelectionPanel.Instance.PassToPanel(newCard.transform, null);
-                this.CardsToBuy.Add(newCard.transform);
             }
+            this.PassCardsToCentre(this.CashCards);
         }
         else
         {
             // Switch to normal shop
-        }
-
-
-        // Make cards visible
-        foreach (Transform card in this.CardsToBuy)
-        {
-            CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-            if (cardCanvasGroup != null)
-            {
-                cardCanvasGroup.alpha = 1;
-                cardCanvasGroup.blocksRaycasts = true;
-            }
+            this.cashShopButtonText.text = "Coin" + Environment.NewLine + "Shop";
+            this.isCashShopping = false;
+            // Hide the cash cards
+            //foreach (Transform card in this.CashCards)
+            //{
+            //    card.gameObject.SetActive(false);
+            //}
+            this.PassBackToShop(this.CashCards);
+            this.PassCardsToCentre(this.CardsToBuy);
         }
     }
 }

@@ -1,0 +1,71 @@
+2018-10-24 06:53:42.2225 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 06:53:48.0593 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 06:57:59.3385 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 07:03:32.2233 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 07:06:26.8583 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 07:06:26.8948 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 07:06:48.4689 [DEBUG] Play mode: False
+2018-10-24 07:07:37.4639 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 07:07:37.5208 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 07:09:16.9440 [DEBUG] Play mode: False
+2018-10-24 07:10:06.5221 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 07:10:06.5690 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 07:10:39.5104 [DEBUG] Play mode: False
+2018-10-24 07:19:40.5266 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 07:21:20.3284 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 07:21:20.3883 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 07:21:25.3338 [ERROR] MissingReferenceException: The object of type 'RectTransform' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+ShopManager.SwitchShops () (at Assets/Scripts/Cards/ShopManager.cs:215)
+UnityEngine.Events.InvokableCall.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent.cs:166)
+UnityEngine.Events.UnityEvent.Invoke () (at C:/buildslave/unity/build/Runtime/Export/UnityEvent_0.cs:58)
+UnityEngine.UI.Button.Press () (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:36)
+UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/UI/Core/Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:50)
+UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:261)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-10-24 07:21:30.8879 [DEBUG] Play mode: False
+2018-10-24 18:09:36.4383 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:09:42.8574 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:09:56.4356 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:09:56.4745 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:09:57.1080 [DEBUG] Play mode: False
+2018-10-24 18:18:57.7084 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:24:15.2700 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:24:15.3249 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:24:16.3602 [DEBUG] Play mode: False
+2018-10-24 18:24:22.5998 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:24:22.6486 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:24:34.8534 [DEBUG] Play mode: False
+2018-10-24 18:25:43.6204 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:25:43.6693 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:25:53.3923 [DEBUG] Play mode: False
+2018-10-24 18:26:11.6413 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:26:11.7829 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:27:33.5501 [DEBUG] Play mode: False
+2018-10-24 18:28:28.5427 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:28:28.6025 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:29:00.9877 [DEBUG] Play mode: False
+2018-10-24 18:39:00.0149 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:42:22.4879 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:42:22.5288 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:45:09.8027 [DEBUG] Play mode: False
+2018-10-24 18:45:13.9152 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:45:13.9531 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:45:49.1439 [DEBUG] Play mode: False
+2018-10-24 18:48:35.9991 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:48:36.0485 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:49:00.5405 [DEBUG] Play mode: False
+2018-10-24 18:49:56.9993 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:49:57.0492 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:50:17.8893 [DEBUG] Play mode: False
+2018-10-24 18:52:03.6537 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:52:03.7036 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:52:46.3699 [DEBUG] Play mode: False
+2018-10-24 18:53:27.3791 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:53:27.4199 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:53:47.6664 [DEBUG] Play mode: False
+2018-10-24 18:56:50.9435 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-24 18:56:51.0433 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-24 18:58:35.5247 [DEBUG] Play mode: False
