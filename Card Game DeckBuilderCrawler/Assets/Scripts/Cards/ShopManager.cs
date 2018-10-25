@@ -115,28 +115,44 @@ public class ShopManager : Singleton<ShopManager>
     {
         foreach (Transform card in boughtCards)
         {
+            GameObject replacementCard = Instantiate(card.gameObject);
+            replacementCard.transform.SetParent(this.transform);
+            Card test = card.GetComponent<Card>();
+            Card test2 = replacementCard.GetComponent<Card>();
             if (this.CardsToBuy.Contains(card))
             {
-                // Remove card from the list of cards in the shop
-                this.CardsToBuy.Remove(card);
-                // Create a replacement card THIS CLONING ISN'T WORKING
-                GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
-                this.CardsToBuy.Add(replacementCard.transform);
+                //// Remove card from the list of cards in the shop
+                //this.CardsToBuy.Remove(card);
+                //// Create a replacement card
+                //GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
+                //replacementCard.transform.SetParent(this.transform);
+                //replacementCard.gameObject.GetComponent<CardActions>().isSelected = false;
+                //replacementCard.GetComponent<CanvasGroup>().alpha = 1f;
+                //this.CardsToBuy.Add(replacementCard.transform);
+                //replacementCard.SetActive(false);
             }
             else if (this.CashCards.Contains(card))
             {
-                // Remove card from the list of cards in the cash shop
-                this.CashCards.Remove(card);
-                // Create a replacement card
-                GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
-                this.CashCards.Add(replacementCard.transform);
+               // // Remove card from the list of cards in the cash shop
+               // this.CashCards.Remove(card);
+               // // Create a replacement card
+               // GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
+               //// replacementCard.transform.SetParent(this.transform);
+               // replacementCard.gameObject.GetComponent<CardActions>().isSelected = false;
+               // replacementCard.GetComponent<CanvasGroup>().alpha = 1f;
+               // this.CashCards.Add(replacementCard.transform);
+               // replacementCard.SetActive(false);
             }
-            CardActions cardAction = card.GetComponent<CardActions>();
+            //if (SelectionPanel.Instance.cardsInPanel.Contains(card.transform))
+            //{
+            //    SelectionPanel.Instance.cardsInPanel.Remove(card.transform);
+            //}
+            CardActions cardAction = replacementCard.GetComponent<CardActions>();
             if (cardAction != null)
             {
                 cardAction.isDragable = true;
             }
-            DeckManager.Instance.AddCardToDeck(card);
+            DeckManager.Instance.AddCardToDeck(replacementCard.transform);
         }
         this.isShopping = false;
         CardDraw.Instance.UpdateLabel();

@@ -13,7 +13,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
 
     Queue<Transform> cardsSelectedQueue = new Queue<Transform>();
     List<Transform> cardsNotSelected = new List<Transform>();
-    List<Transform> cardsInPanel = new List<Transform>();
+    public List<Transform> cardsInPanel = new List<Transform>();
     ICardSelectableMech currentMech;
     //The maximum number of cards you can select
     int maxSelectable = 0;

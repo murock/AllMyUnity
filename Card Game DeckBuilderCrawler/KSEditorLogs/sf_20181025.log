@@ -1,0 +1,71 @@
+2018-10-25 06:28:34.2086 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:28:39.7088 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:30:21.7458 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:30:21.7894 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 06:42:56.6690 [DEBUG] Play mode: False
+2018-10-25 06:43:00.7171 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:43:00.7730 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 06:48:36.9994 [DEBUG] Play mode: False
+2018-10-25 06:48:50.4703 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:48:50.5251 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 06:50:26.0571 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardActions.AttachTooltip () (at Assets/Scripts/Cards/CardActions.cs:263)
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:281)
+CardActions.Update () (at Assets/Scripts/Cards/CardActions.cs:35)
+
+2018-10-25 06:51:12.3866 [DEBUG] Play mode: False
+2018-10-25 06:53:34.9052 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:53:34.9571 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 06:54:09.1085 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardActions.AttachTooltip () (at Assets/Scripts/Cards/CardActions.cs:263)
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:281)
+CardActions.Update () (at Assets/Scripts/Cards/CardActions.cs:35)
+
+2018-10-25 06:55:43.6836 [DEBUG] Play mode: False
+2018-10-25 06:55:46.1526 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:55:46.1875 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 06:55:58.0740 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardActions.AttachTooltip () (at Assets/Scripts/Cards/CardActions.cs:263)
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:281)
+CardActions.Update () (at Assets/Scripts/Cards/CardActions.cs:35)
+
+2018-10-25 06:56:01.3031 [DEBUG] Play mode: False
+2018-10-25 06:56:28.0039 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 06:56:28.0398 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 07:00:14.4911 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardActions.AttachTooltip () (at Assets/Scripts/Cards/CardActions.cs:263)
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:281)
+CardActions.Update () (at Assets/Scripts/Cards/CardActions.cs:35)
+
+2018-10-25 07:00:19.2178 [DEBUG] Play mode: False
+2018-10-25 07:00:40.1494 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 07:00:40.2900 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 07:18:10.1785 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardActions.AttachTooltip () (at Assets/Scripts/Cards/CardActions.cs:263)
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:281)
+CardActions.Update () (at Assets/Scripts/Cards/CardActions.cs:35)
+
+2018-10-25 07:18:11.3463 [DEBUG] Play mode: False
+2018-10-25 07:18:52.7067 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 07:18:52.7556 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 07:29:19.5687 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 07:29:19.9257 [DEBUG] Play mode: False
+2018-10-25 07:29:34.1925 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 07:29:34.3132 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 07:33:02.5778 [DEBUG] Play mode: False
+2018-10-25 07:33:06.7450 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 07:33:06.7909 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 07:34:16.2173 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardActions.AttachTooltip () (at Assets/Scripts/Cards/CardActions.cs:263)
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:281)
+CardActions.Update () (at Assets/Scripts/Cards/CardActions.cs:35)
+
+2018-10-25 07:37:01.8976 [DEBUG] Play mode: False
+2018-10-25 07:37:10.4765 [DEBUG] Scene Fusion version 1.8.1-0
+2018-10-25 07:37:10.6461 [DEBUG] Play mode: True, sync in play mode: False
+2018-10-25 07:38:59.4972 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+CardActions.AttachTooltip () (at Assets/Scripts/Cards/CardActions.cs:263)
+CardActions.ShowToolTip () (at Assets/Scripts/Cards/CardActions.cs:281)
+CardActions.Update () (at Assets/Scripts/Cards/CardActions.cs:35)
+
+2018-10-25 07:39:00.8157 [DEBUG] Play mode: False
