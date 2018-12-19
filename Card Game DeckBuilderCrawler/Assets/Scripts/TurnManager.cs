@@ -25,9 +25,11 @@ public class TurnManager : Singleton<TurnManager> {
     private int defaultMonstersLeft = 5;
     private int monstersLeft;
     [SerializeField]
-    public List<MonsterInteraction> monsters;
+    public List<MonsterInteraction> monsterSpawners;
     [SerializeField]
     private Button turnButton;
+
+    private Queue<Monster> monstersQueue = new Queue<Monster>();
 
     public int MonstersLeft
     {
@@ -50,12 +52,12 @@ public class TurnManager : Singleton<TurnManager> {
                 this.spawnCount = this.defaultSpawnCount;
                 spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
                 //spawn new monster
-                foreach (MonsterInteraction monster in monsters)
+                foreach (MonsterInteraction monster in monsterSpawners)
                 {
                     if (monster != null && !monster.IsAlive && this.monstersLeft > 0)
                     {
                         //if monster is not alive ie not yet spawned then spawn
-                        monster.Spawn();
+                        monster.Spawn(monstersQueue.Dequeue());
                         this.monstersLeft--;
                         this.monstersLeftText.text = "Monsters Left: " + this.monstersLeft.ToString();
                         return;
@@ -75,7 +77,8 @@ public class TurnManager : Singleton<TurnManager> {
 
 
     public TurnManager()
-    {       
+    {
+
     }
 
     private void Start()
@@ -84,11 +87,29 @@ public class TurnManager : Singleton<TurnManager> {
         this.spawnText.text = "Next Spawn: " + this.spawnCount.ToString();
         this.monstersLeft = this.defaultMonstersLeft;
         this.monstersLeftText.text = "Monsters Left: " + this.monstersLeft.ToString();
-        if (monsters[0] != null)
+        this.createIntialMonsters();
+        if (monsterSpawners.Count > 0)
         {
             //Spawn the first monster
-            monsters[0].Spawn();
-            GameManager.Instance.currentMonster = monsters[0];
+            monsterSpawners[0].Spawn(monstersQueue.Dequeue());
+            GameManager.Instance.currentMonster = monsterSpawners[0];
+        }
+    }
+
+    private void createIntialMonsters()
+    {
+        for (int i = 0; i < this.defaultMonstersLeft; i++)
+        {
+            Monster monster;
+            if (i > 2)
+            {
+                monster = new Monster(2, 4, "Ice Golem", "Enemies/IceGolem");
+            }
+            else
+            {
+                monster = new Monster(4, 2, "Troll", "Enemies/Troll1");
+            }
+            monstersQueue.Enqueue(monster);
         }
     }
 
@@ -99,7 +120,7 @@ public class TurnManager : Singleton<TurnManager> {
         GameManager.Instance.multiplierNum = 1;
         GameManager.Instance.multiplierOn = false;
         Hand.Instance.DiscardHand();
-        foreach (MonsterInteraction monster in this.monsters)
+        foreach (MonsterInteraction monster in this.monsterSpawners)
         {
             if (monster.IsAlive)
             {

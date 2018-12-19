@@ -90,13 +90,14 @@ public class MonsterInteraction : MonoBehaviour {
     }
 
 
-    public void Spawn(int health = 2, int attack = 4, string name = "Monster")
+    public void Spawn(Monster monster)
     {
-        this.health = health;
-        this.attack = attack;
-        this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", health.ToString());
-        this.attackTxt.text = string.Format("Attack: {0}", attack.ToString());
-        this.nameTxt.text = name;
+        this.transform.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(monster.ArtLocation);
+        this.health = monster.Health;
+        this.attack = monster.Attack;
+        this.healthTxt.text = string.Format(health.ToString());
+        this.attackTxt.text = string.Format(attack.ToString());
+        this.nameTxt.text = monster.Title;
         this.startPos = transform.position;
         this.isAlive = true;
         CanvasGroup canvasGroup = this.GetComponent<CanvasGroup>();
@@ -112,7 +113,7 @@ public class MonsterInteraction : MonoBehaviour {
         this.isAlive = false;
         this.health = 0;
         this.nameTxt.text = "DEFEATED!!!";
-        this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
+        this.healthTxt.text = string.Format(this.health.ToString());
 
         this.isAlive = false;
         CanvasGroup canvasGroup = this.GetComponent<CanvasGroup>();
@@ -134,7 +135,7 @@ public class MonsterInteraction : MonoBehaviour {
     private bool IsLastStanding()
     {
         bool lastAlive = true;
-        foreach (MonsterInteraction monster in TurnManager.Instance.monsters)
+        foreach (MonsterInteraction monster in TurnManager.Instance.monsterSpawners)
         {
             if (monster != null && monster.IsAlive)
             {
@@ -154,7 +155,7 @@ public class MonsterInteraction : MonoBehaviour {
         }
         else
         {
-            this.healthTxt.text = string.Format("HP: <color=red>{0}</color>", this.health.ToString());
+            this.healthTxt.text = string.Format(this.health.ToString());
         }
     }
 
