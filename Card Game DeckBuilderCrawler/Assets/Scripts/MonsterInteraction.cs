@@ -9,6 +9,10 @@ public class MonsterInteraction : MonoBehaviour {
     [SerializeField]
     private Text nameTxt;
 
+    //Description of monster
+    [SerializeField]
+    private Text descriptionTxt;
+
     //Health of monster
     [SerializeField]
     private Text healthTxt;

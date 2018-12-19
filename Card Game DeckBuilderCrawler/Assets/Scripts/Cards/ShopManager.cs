@@ -35,7 +35,7 @@ public class ShopManager : Singleton<ShopManager>
                 //attach the card draw mechanic to the card prefab
                 CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
                 cardDestroyMechanic.NumCardsToDestroy = 2;
-                newCard.PopulateCard("Destroy", "+2 Destroy", 2, cardDestroyMechanic, cardColor);
+                newCard.PopulateCard("Destroy", "+2 Destroy", 2, cardDestroyMechanic, cardColor, "CardArt/Defense");
             }
             else if (i == 1)
             {
@@ -45,7 +45,7 @@ public class ShopManager : Singleton<ShopManager>
                 //attach the card draw mechanic to the card prefab
                 CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
                 cardDrawMechanic.NumCardsToDraw = 2;
-                newCard.PopulateCard("Draw", "+2 Draw", 1, cardDrawMechanic, cardColor);
+                newCard.PopulateCard("Draw", "+2 Draw", 1, cardDrawMechanic, cardColor, "CardArt/Defense");
             }
             else if (i == 2)
             {
@@ -55,7 +55,7 @@ public class ShopManager : Singleton<ShopManager>
                 //attach the card defense mechanic to the card prefab
                 CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
                 cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
-                newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor, Card.CardType.Persistant);
+                newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor, "CardArt/Defense", Card.CardType.Persistant);
             }
             else if (i == 3)
             {
@@ -65,7 +65,7 @@ public class ShopManager : Singleton<ShopManager>
                 //attach the card defense mechanic to the card prefab
                 CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
                 cardAttackMechanic.Attack = 2;
-                newCard.PopulateCard("Good Offence", "+2 Attack" + Environment.NewLine + "+2 Defence", 4, cardAttackMechanic, cardColor);
+                newCard.PopulateCard("Good Offence", "+2 Attack" + Environment.NewLine + "+2 Defence", 4, cardAttackMechanic, cardColor, "CardArt/Defense");
                 CardDefenseMech cardDefenceMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
                 cardDefenceMechanic.Defense = 2;
                 newCard.AddAddtionalMech(cardDefenceMechanic);
@@ -78,7 +78,7 @@ public class ShopManager : Singleton<ShopManager>
                 //attach the card draw mechanic to the card prefab
                 CardDiscardMech cardDiscardMechanic = newCardPrefab.AddComponent<CardDiscardMech>() as CardDiscardMech;
                 cardDiscardMechanic.NumCardsToDiscard = 4;
-                newCard.PopulateCard("Discard", "+4 Discard", 2, cardDiscardMechanic, cardColor);
+                newCard.PopulateCard("Discard", "+4 Discard", 2, cardDiscardMechanic, cardColor, "CardArt/Defense");
             }
             // making the centrePanel its parent
             SelectionPanel.Instance.PassToPanel(newCard.transform, null);
@@ -217,7 +217,7 @@ public class ShopManager : Singleton<ShopManager>
                         //attach the card draw mechanic to the card prefab
                         CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
                         cardMoneyMechanic.Money = 1;
-                        newCard.PopulateCard("Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor);
+                        newCard.PopulateCard("Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor, "CardArt/Copper");
                     }
                     else if (i == 1)
                     {
@@ -227,7 +227,7 @@ public class ShopManager : Singleton<ShopManager>
                         //attach the card draw mechanic to the card prefab
                         CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
                         cardMoneyMechanic.Money = 2;
-                        newCard.PopulateCard("Cash", "+2 Cash", 3, cardMoneyMechanic, cardColor);
+                        newCard.PopulateCard("Cash", "+2 Cash", 3, cardMoneyMechanic, cardColor, "CardArt/Silver");
                     }
                     else
                     {
@@ -237,7 +237,7 @@ public class ShopManager : Singleton<ShopManager>
                         //attach the card draw mechanic to the card prefab
                         CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
                         cardMoneyMechanic.Money = 3;
-                        newCard.PopulateCard("Cash", "+3 Cash", 6, cardMoneyMechanic, cardColor);
+                        newCard.PopulateCard("Cash", "+3 Cash", 6, cardMoneyMechanic, cardColor, "CardArt/Gold");
                     }
                     CanvasGroup cardCanvasGroup = newCard.GetComponent<CanvasGroup>();
                     if (cardCanvasGroup != null)

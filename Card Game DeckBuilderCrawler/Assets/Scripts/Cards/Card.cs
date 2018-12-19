@@ -34,10 +34,10 @@ public class Card : MonoBehaviour {
         }
     }
 
-    public void PopulateCard(string cardTitle, string cardDescription, int cardCost, ICardMech iCard, Color cardColor, CardType cardType = CardType.Normal)
+    public void PopulateCard(string cardTitle, string cardDescription, int cardCost, ICardMech iCard, Color cardColor, string artLocation, CardType cardType = CardType.Normal)
     {
         this.cardType = cardType;
-        this.transform.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>("CardArt/Defense");
+        this.transform.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(artLocation);
         this.transform.Find("Card Title").GetComponent<Text>().text = cardTitle;
         this.transform.Find("Card Description").GetComponent<Text>().text = cardDescription;
         this.transform.Find("Card Cost").GetComponent<Text>().text = "<color=green>$</color>" + cardCost.ToString();

@@ -33,7 +33,7 @@ public class DeckManager : Singleton<DeckManager> {
                 //attach the card attack mechanic to the card prefab
                 CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
                 cardAttackMechanic.Attack = 1;
-                CreateCard(newCard, newCardPrefab, "Attack", "+1 Attack", 0, cardAttackMechanic, cardColor);
+                CreateCard(newCard, newCardPrefab, "Attack", "+1 Attack", 0, cardAttackMechanic, cardColor, "CardArt/Attack");
             }
             else if (i < 7)
             {
@@ -42,7 +42,7 @@ public class DeckManager : Singleton<DeckManager> {
                 //attach the card defense mechanic to the card prefab
                 CardDefenseMech cardDefenseMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
                 cardDefenseMechanic.Defense = 1;
-                CreateCard(newCard, newCardPrefab, "Defense", "+1 Defense", 0, cardDefenseMechanic, cardColor);
+                CreateCard(newCard, newCardPrefab, "Defense", "+1 Defense", 0, cardDefenseMechanic, cardColor, "CardArt/Defense");
             }
             else
             {
@@ -52,7 +52,7 @@ public class DeckManager : Singleton<DeckManager> {
                 //attach the card draw mechanic to the card prefab
                 CardMoneyMech cardMoneyMechanic = newCardPrefab.AddComponent<CardMoneyMech>() as CardMoneyMech;
                 cardMoneyMechanic.Money = 1;
-                CreateCard(newCard, newCardPrefab, "Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor);
+                CreateCard(newCard, newCardPrefab, "Cash", "+1 Cash", 0, cardMoneyMechanic, cardColor, "CardArt/Copper");
             }
                 //Multiplier test
                 //Color cardColor = new Color(145f, 0f, 148f, 255f);
@@ -92,9 +92,9 @@ public class DeckManager : Singleton<DeckManager> {
     }
 
    
-    private void CreateCard(Card cardType, GameObject cardPrefab,string cardTitle, string cardDescription, int cardCost, ICardMech iCard, Color cardColor)
+    private void CreateCard(Card cardType, GameObject cardPrefab,string cardTitle, string cardDescription, int cardCost, ICardMech iCard, Color cardColor, string artLocation)
     {
-        cardType.PopulateCard(cardTitle, cardDescription, cardCost, iCard, cardColor);
+        cardType.PopulateCard(cardTitle, cardDescription, cardCost, iCard, cardColor, artLocation);
         // making the deck its parent
         cardType.transform.SetParent(this.transform);
         //add the card to the global list
