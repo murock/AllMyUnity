@@ -50,7 +50,7 @@ public class ShopManager : Singleton<ShopManager>
             else if (i == 2)
             {
                 //MULTIPLIER
-                Color cardColor = new Color(145f, 0f, 148f, 255f);
+                Color cardColor = new Color(145f, 0f, 211f, 255f);
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card defense mechanic to the card prefab
                 CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
@@ -115,48 +115,68 @@ public class ShopManager : Singleton<ShopManager>
     {
         foreach (Transform card in boughtCards)
         {
-            GameObject replacementCard = Instantiate(card.gameObject);
-            replacementCard.transform.SetParent(this.transform);
-            Card test = card.GetComponent<Card>();
-            Card test2 = replacementCard.GetComponent<Card>();
-            if (this.CardsToBuy.Contains(card))
-            {
-                //// Remove card from the list of cards in the shop
-                //this.CardsToBuy.Remove(card);
-                //// Create a replacement card
-                //GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
-                //replacementCard.transform.SetParent(this.transform);
-                //replacementCard.gameObject.GetComponent<CardActions>().isSelected = false;
-                //replacementCard.GetComponent<CanvasGroup>().alpha = 1f;
-                //this.CardsToBuy.Add(replacementCard.transform);
-                //replacementCard.SetActive(false);
-            }
-            else if (this.CashCards.Contains(card))
-            {
-               // // Remove card from the list of cards in the cash shop
-               // this.CashCards.Remove(card);
-               // // Create a replacement card
-               // GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
-               //// replacementCard.transform.SetParent(this.transform);
-               // replacementCard.gameObject.GetComponent<CardActions>().isSelected = false;
-               // replacementCard.GetComponent<CanvasGroup>().alpha = 1f;
-               // this.CashCards.Add(replacementCard.transform);
-               // replacementCard.SetActive(false);
-            }
-            //if (SelectionPanel.Instance.cardsInPanel.Contains(card.transform))
-            //{
-            //    SelectionPanel.Instance.cardsInPanel.Remove(card.transform);
-            //}
-            CardActions cardAction = replacementCard.GetComponent<CardActions>();
+            CardActions cardAction = card.GetComponent<CardActions>();
             if (cardAction != null)
             {
                 cardAction.isDragable = true;
             }
-            DeckManager.Instance.AddCardToDeck(replacementCard.transform);
+            DeckManager.Instance.AddCardToDeck(card);
+            if (this.CardsToBuy.Contains(card))
+            {
+                // Remove card from the list of cards in the shop
+                this.CardsToBuy.Remove(card);              
+            }
         }
         this.isShopping = false;
         CardDraw.Instance.UpdateLabel();
         this.cashShopButton.gameObject.SetActive(false);
+
+
+        // FAILED ATTEMPT AT CARD REPLACEMENT
+        //foreach (Transform card in boughtCards)
+        //{
+        //    GameObject replacementCard = Instantiate(card.gameObject);
+        //    replacementCard.transform.SetParent(this.transform);
+        //    Card test = card.GetComponent<Card>();
+        //    Card test2 = replacementCard.GetComponent<Card>();
+        //    if (this.CardsToBuy.Contains(card))
+        //    {
+        //        //// Remove card from the list of cards in the shop
+        //        //this.CardsToBuy.Remove(card);
+        //        //// Create a replacement card
+        //        //GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
+        //        //replacementCard.transform.SetParent(this.transform);
+        //        //replacementCard.gameObject.GetComponent<CardActions>().isSelected = false;
+        //        //replacementCard.GetComponent<CanvasGroup>().alpha = 1f;
+        //        //this.CardsToBuy.Add(replacementCard.transform);
+        //        //replacementCard.SetActive(false);
+        //    }
+        //    else if (this.CashCards.Contains(card))
+        //    {
+        //       // // Remove card from the list of cards in the cash shop
+        //       // this.CashCards.Remove(card);
+        //       // // Create a replacement card
+        //       // GameObject replacementCard = (GameObject)Instantiate(card.gameObject);
+        //       //// replacementCard.transform.SetParent(this.transform);
+        //       // replacementCard.gameObject.GetComponent<CardActions>().isSelected = false;
+        //       // replacementCard.GetComponent<CanvasGroup>().alpha = 1f;
+        //       // this.CashCards.Add(replacementCard.transform);
+        //       // replacementCard.SetActive(false);
+        //    }
+        //    //if (SelectionPanel.Instance.cardsInPanel.Contains(card.transform))
+        //    //{
+        //    //    SelectionPanel.Instance.cardsInPanel.Remove(card.transform);
+        //    //}
+        //    CardActions cardAction = replacementCard.GetComponent<CardActions>();
+        //    if (cardAction != null)
+        //    {
+        //        cardAction.isDragable = true;
+        //    }
+        //    DeckManager.Instance.AddCardToDeck(replacementCard.transform);
+        //}
+        //this.isShopping = false;
+        //CardDraw.Instance.UpdateLabel();
+        //this.cashShopButton.gameObject.SetActive(false);
     }
 
     /// <summary>

@@ -63,6 +63,8 @@ public class SelectionPanel : Singleton<SelectionPanel>
         if (this.CurrentAmtSelected >= maxSelectable)
         {
             Transform removedCard = cardsSelectedQueue.Dequeue();
+            // Add to cards in panel as we now want to return it to the panel rather than hand
+            this.cardsInPanel.Add(card.transform);
             CardActions removedCardAction = removedCard.gameObject.GetComponent<CardActions>();
             removedCardAction.isSelected = false;
             cardsNotSelected.Add(removedCard);
@@ -77,6 +79,8 @@ public class SelectionPanel : Singleton<SelectionPanel>
             {
                 cardAction.isSelected = true;
                 cardsSelectedQueue.Enqueue(card.transform);
+                // Remove from cards in panel as we now want to return it to the hand
+                this.cardsInPanel.Remove(card.transform);
                 cardAction.HighlightSelectedCard();
             }
             if (cardsNotSelected.Contains(card.transform))

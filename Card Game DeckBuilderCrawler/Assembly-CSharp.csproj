@@ -119,13 +119,13 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/GameDev/Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/GameDev/Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/GameDev/Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -326,10 +326,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="KSCommon.Unity2018_2">
-      <HintPath>C:/GameDev/Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/KSCommon.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="KSSceneFusion.Unity2018_2">
-      <HintPath>C:/GameDev/Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
+      <HintPath>D:/Game dev Unity/AllMyUnity/Card Game DeckBuilderCrawler/Assets/KinematicSoup/SceneFusion/KSSceneFusion.Unity2018_2.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
