@@ -103,11 +103,12 @@ public class TurnManager : Singleton<TurnManager> {
             Monster monster;
             if (i > 2)
             {
-                monster = new Monster(2, 4, "Ice Golem", "Enemies/IceGolem");
+                monster = new Monster(4, 2, "Troll", "Enemies/Troll1", null);
             }
             else
             {
-                monster = new Monster(4, 2, "Troll", "Enemies/Troll1");
+                BlockDrawMech blockDrawMech = new BlockDrawMech();
+                monster = new Monster(2, 4, "Ice Golem", "Enemies/IceGolem", blockDrawMech);
             }
             monstersQueue.Enqueue(monster);
         }

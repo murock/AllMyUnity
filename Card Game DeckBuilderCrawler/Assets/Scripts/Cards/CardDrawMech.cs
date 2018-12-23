@@ -8,6 +8,7 @@ public class CardDrawMech : MonoBehaviour, ICardMech {
     //the card which this attack mechanic is attached to
     private Card card;
     private const string toolTip = "Draws cards from the deck";
+    public static bool IsDrawAllowed = true;
 
     int ICardMech.GetValue()
     {
@@ -41,10 +42,13 @@ public class CardDrawMech : MonoBehaviour, ICardMech {
 
     private void ApplyCardDraw()
     {
-        // Draw cards
-        for (int i = 0; i < this.numCardsToDraw; i++)
+        if (IsDrawAllowed)
         {
-            CardDraw.Instance.drawCard();
+            // Draw cards
+            for (int i = 0; i < this.numCardsToDraw; i++)
+            {
+                CardDraw.Instance.drawCard();
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //True if the card is selected
     internal bool isSelected = false;
 
-    private static bool isDragging = false;
+    public static bool isDragging = false;
     private bool timerRunning = false;
     private const float toolTipWaitTime = 1.5f;
     private static float timer;
@@ -165,6 +165,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
         Debug.Log("Pointer exit");
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         //Only enter if loop when selectionPanel is active
