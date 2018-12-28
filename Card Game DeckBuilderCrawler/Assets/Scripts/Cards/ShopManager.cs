@@ -115,6 +115,7 @@ public class ShopManager : Singleton<ShopManager>
     {
         foreach (Transform card in boughtCards)
         {
+            card.gameObject.SetActive(true);
             CardActions cardAction = card.GetComponent<CardActions>();
             if (cardAction != null)
             {
