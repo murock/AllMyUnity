@@ -129,6 +129,8 @@ public class ShopManager : Singleton<ShopManager>
             }
         }
         this.isShopping = false;
+        this.isCashShopping = false;
+        this.cashShopButtonText.text = "Coin" + Environment.NewLine + "Shop";
         CardDraw.Instance.UpdateLabel();
         this.cashShopButton.gameObject.SetActive(false);
 
