@@ -126,11 +126,11 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/UnityRepos/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/UnityRepos/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/UnityRepos/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/UnityRepos/AllMyUnity/Card Game DeckBuilderCrawler/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

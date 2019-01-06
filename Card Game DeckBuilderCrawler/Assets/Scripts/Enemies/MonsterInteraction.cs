@@ -33,11 +33,15 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField]
     private float travelTime = 2f;
 
+    [SerializeField]
+    private Transform monsterSpawnLoc;
+
     private Vector3 startPos;
     private float t;
     private Monster currentMonster;
 
     private bool isAlive = false;
+    private bool takingDamage = false;
 
     // Tooltip stuff
     private bool timerRunning = false;
@@ -63,14 +67,12 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void OnPointerEnter(PointerEventData eventData)
     {
         timerRunning = true;
-        Debug.Log("Pointer enter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         this.HideTooltip();
         timerRunning = false;
-        Debug.Log("Pointer exit");
     }
 
     public void Spawn(Monster monster)
@@ -78,13 +80,8 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
         currentMonster = monster;
         if (currentMonster.MonsterMech != null)
         {
+            // Trigger any monster mechanics that need to happen as soon as they spawn e.g blocking card draw
             currentMonster.MonsterMech.OnSpawn();
-
-            Debug.Log("Monster Mech is: " + currentMonster.MonsterMech.GetType());
-            if (currentMonster.MonsterMech.GetType() == typeof(BlockDrawMech))
-            {
-                Debug.Log("Mech is a match for block draw");
-            }
         }
 
         this.transform.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(monster.ArtLocation);
@@ -101,6 +98,10 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
             canvasGroup.alpha = 1;
             canvasGroup.blocksRaycasts = true;
         }
+
+        this.transform.position = this.monsterSpawnLoc.position;
+        t = 0;
+        StartCoroutine(MoveMonster(this.startPos));
     }
 
     public void Defeat()
@@ -161,29 +162,33 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void DoDamage()
     {
         t = 0;
-        StartCoroutine(MoveMonster());
+        this.takingDamage = true;
+        StartCoroutine(MoveMonster(GameManager.Instance.player.transform.position));
     }
 
-    private IEnumerator MoveMonster()
+    private IEnumerator MoveMonster(Vector3 endPos)
     {
-
-        var endPos = GameManager.Instance.player.transform.position;
-
+        Vector3 fromPoint = this.transform.position;
         while (this.transform.position != endPos)
         {
             this.t += Time.deltaTime / this.travelTime;
-            this.transform.position = Vector3.Lerp(this.startPos, endPos, this.t);
+            this.transform.position = Vector3.Lerp(fromPoint, endPos, this.t);
             yield return new WaitForEndOfFrame();
         }
         this.transform.position = this.startPos;
-        PlayerInteraction.Instance.TakeDamage(this.attack);
-
-        //This should be moved to the turn manager doesn't make sense  for it to be in MoveMonster()
-        if (GameManager.Instance.Money > 0)
+        if (this.takingDamage)
         {
-            GameManager.Instance.centrePanel.SetActive(true);
-            ShopManager.Instance.StartShop();
+            this.takingDamage = false;
+            PlayerInteraction.Instance.TakeDamage(this.attack);
+
+            //This should be moved to the turn manager doesn't make sense  for it to be in MoveMonster()
+            if (GameManager.Instance.Money > 0)
+            {
+                GameManager.Instance.centrePanel.SetActive(true);
+                ShopManager.Instance.StartShop();
+            }
         }
+
     }
 
     private void AttachTooltip()

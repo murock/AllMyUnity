@@ -57,7 +57,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction> {
     {
         if (this.playerHealth > 0)
         {
-            this.playerHealthTxt.text = string.Format("HP: <color=green>{0}</color>", this.playerHealth.ToString());
+            this.playerHealthTxt.text = string.Format(this.playerHealth.ToString());
         }
         else
         {

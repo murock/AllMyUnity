@@ -152,7 +152,6 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             this.GetComponent<CanvasGroup>().alpha = 0.7f;
         }
-        Debug.Log("Pointer enter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -163,7 +162,6 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             this.GetComponent<CanvasGroup>().alpha = 1f;
         }
-        Debug.Log("Pointer exit");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -199,7 +197,6 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         //moves the card to where you've set the parentToReturnTo
         this.transform.SetParent(parentToReturnTo);
-        this.transform.position = DeckManager.Instance.transform.position;
         //if placeholder exists destroy it
         if (placeholder != null)
         {
@@ -250,6 +247,8 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //Put this in as bug with Fade() race condition of wanting alpha to be 1 but fade setting it to 0 when ending turn and wanting cards there were just in the hand
     public void InstantFade()
     {
+        // Move the card position back to the deck
+        this.transform.position = DeckManager.Instance.transform.position;
         CanvasGroup cardCanvasGroup = this.GetComponent<CanvasGroup>();
         //become untagetable
         cardCanvasGroup.blocksRaycasts = false;

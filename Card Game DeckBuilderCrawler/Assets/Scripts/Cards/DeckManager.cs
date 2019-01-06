@@ -105,8 +105,6 @@ public class DeckManager : Singleton<DeckManager> {
 
     internal void AddCardToDeck(Transform card)
     {
-        // Move the card location back to the deck
-        card.position = this.transform.position;
         cardsInDeck.Add(card);
         card.transform.SetParent(this.transform);
         CardActions cardAction = card.GetComponent<CardActions>();
