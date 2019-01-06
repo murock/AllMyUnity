@@ -25,6 +25,8 @@ public class DeckManager : Singleton<DeckManager> {
             Card newCard;
             //Creates a new gameobject which based off the card in the Resource folder
             GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
+            // Move card to be located in the deck
+            newCardPrefab.transform.position = this.transform.position;
             if (i < 4)
             {
 
@@ -103,6 +105,8 @@ public class DeckManager : Singleton<DeckManager> {
 
     internal void AddCardToDeck(Transform card)
     {
+        // Move the card location back to the deck
+        card.position = this.transform.position;
         cardsInDeck.Add(card);
         card.transform.SetParent(this.transform);
         CardActions cardAction = card.GetComponent<CardActions>();

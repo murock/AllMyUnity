@@ -12,6 +12,9 @@ public class CardDraw : Singleton<CardDraw>{
     [SerializeField]
     private GameObject hand;
 
+    [SerializeField]
+    private Transform handLocation;
+
     //Local copy of the deck
     public List<Transform> deck;
 
@@ -24,21 +27,25 @@ public class CardDraw : Singleton<CardDraw>{
     public bool drawCard()
     {
         bool cardAdded = false;
-        //cards still left to draw
+        // cards still left to draw
         if (deck.Count > 0)
         {
-            //random number between 0 and the max deck size
+            // random number between 0 and the max deck size
             int randomNumber = Random.Range(0, deck.Count - 1);
-            //Make the hand the parent of the card
-            deck[randomNumber].transform.SetParent(hand.transform);
-            //Make visible and clickable
+            // Make the hand the parent of the card
+            // deck[randomNumber].transform.SetParent(hand.transform);       TEST UNCOMMENT 06/01/19
+            StartCoroutine(MoveFromTo(deck[randomNumber],deck[randomNumber].position, handLocation.position, 750));
+
+
+
+            // Make visible and clickable
             CanvasGroup cardCanvasGroup = deck[randomNumber].GetComponent<CanvasGroup>();
             cardCanvasGroup.alpha = 1;
             cardCanvasGroup.blocksRaycasts = true;
 
-            //Add the card to the list of cards in play
+            // Add the card to the list of cards in play
             DeckManager.Instance.cardsInPlay.Add(deck[randomNumber]);
-            //remove card from deck list
+            // remove card from deck list
             deck.RemoveAt(randomNumber);
             cardAdded = true;
         }
@@ -49,10 +56,10 @@ public class CardDraw : Singleton<CardDraw>{
         else
         {
             deckLabel.text = "Deck" + System.Environment.NewLine +  "Out of Cards";
-            //Put cards back into the deck
+            // Put cards back into the deck
             reShuffleCards();
         }
-        //Update global deck list
+        // Update global deck list
         DeckManager.Instance.cardsInDeck = this.deck;
 
         if (cardAdded)
@@ -122,6 +129,19 @@ public class CardDraw : Singleton<CardDraw>{
         {
             deckLabel.text = "Deck" + System.Environment.NewLine + "Out of Cards";
         }
+    }
 
+    IEnumerator MoveFromTo(Transform objectToMove, Vector3 a, Vector3 b, float speed)
+    {
+        float step = (speed / (a - b).magnitude) * Time.fixedDeltaTime;
+        float t = 0;
+        while (t <= 1.0f)
+        {
+            t += step; // Goes from 0 to 1, incrementing by step each time
+            objectToMove.position = Vector3.Lerp(a, b, t); // Move objectToMove closer to b
+            yield return new WaitForFixedUpdate();         // Leave the routine and return here in the next frame
+        }
+        objectToMove.position = b;
+        objectToMove.SetParent(hand.transform);
     }
 }

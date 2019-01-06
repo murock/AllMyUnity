@@ -199,6 +199,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         //moves the card to where you've set the parentToReturnTo
         this.transform.SetParent(parentToReturnTo);
+        this.transform.position = DeckManager.Instance.transform.position;
         //if placeholder exists destroy it
         if (placeholder != null)
         {
