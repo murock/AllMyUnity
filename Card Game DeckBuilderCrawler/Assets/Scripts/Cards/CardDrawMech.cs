@@ -48,7 +48,7 @@ public class CardDrawMech : MonoBehaviour, ICardMech {
             for (int i = 0; i < this.numCardsToDraw; i++)
             {
                 CardDraw.Instance.drawCard();
-            }
+            }         
         }
     }
 }

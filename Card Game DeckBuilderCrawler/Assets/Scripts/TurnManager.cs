@@ -26,10 +26,9 @@ public class TurnManager : Singleton<TurnManager> {
     private int monstersLeft;
     [SerializeField]
     public List<MonsterInteraction> monsterSpawners;
-    [SerializeField]
-    private Button turnButton;
 
     private Queue<Monster> monstersQueue = new Queue<Monster>();
+    private bool turnButtoEnabled = true;
 
     public int MonstersLeft
     {
@@ -98,7 +97,7 @@ public class TurnManager : Singleton<TurnManager> {
 
     private void createIntialMonsters()
     {
-        for (int i = 0; i < this.defaultMonstersLeft; i++)
+        for (int i = 0; i < this.defaultMonstersLeft + 1; i++)
         {
             Monster monster;
             if (i > 2)
@@ -117,20 +116,32 @@ public class TurnManager : Singleton<TurnManager> {
     //Called when the end turn button is hit
     public void EndTurn()
     {
-        this.turnButton.enabled = false;
-        GameManager.Instance.multiplierNum = 1;
-        GameManager.Instance.multiplierOn = false;
-        Hand.Instance.DiscardHand();
-        foreach (MonsterInteraction monster in this.monsterSpawners)
+        //Cannot end turn while cards are being drawn 
+        if ((Hand.Instance.CurrentHandSize == 5 || Hand.Instance.cardMoved) && turnButtoEnabled)
         {
-            if (monster.IsAlive)
+            turnButtoEnabled = false;
+            StartCoroutine(EnabledTurnButton(1f));
+            GameManager.Instance.multiplierNum = 1;
+            GameManager.Instance.multiplierOn = false;
+            Hand.Instance.DiscardHand();
+            foreach (MonsterInteraction monster in this.monsterSpawners)
             {
-                monster.DoDamage();
+                if (monster.IsAlive)
+                {
+                    monster.DoDamage();
+                }
             }
+            DiscardCardsInPlay();
+            StartCoroutine(CardDraw.Instance.DrawCards());
+            SpawnCount -= 1;
         }
-        DiscardCardsInPlay();
-        StartCoroutine(CardDraw.Instance.DrawCards());
-        SpawnCount -= 1;
+    }
+
+    IEnumerator EnabledTurnButton(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        turnButtoEnabled = true;
+        // Code to execute after the delay
     }
 
     private void Mulligan()

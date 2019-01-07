@@ -5,6 +5,35 @@ using UnityEngine.EventSystems;
 
 public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
 
+    private int handSize = 5;
+    // check if hand size has changed since last count
+    private bool handSizeChanged = true;
+    // check to see if a card has been moved this turn 
+    public bool cardMoved = false;
+
+    public int CurrentHandSize
+    {
+        get
+        {
+            if (handSizeChanged)
+            {
+                int currentHandSize = 0;
+                for (int i = 0; i < this.transform.childCount; i++)
+                {
+                    Transform card = this.transform.GetChild(i);
+                    //If the tag is card then child is a card
+                    if (card.tag == "card")
+                    {
+                        currentHandSize++;
+                    }
+                }
+                handSize = currentHandSize;
+                handSizeChanged = false;
+            }
+            return handSize;
+        }
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         //if nothing is being dragged do nothing
@@ -24,6 +53,7 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
         {
             return;
         }
+        this.cardMoved = true;
         //Make the cards placeholder parent the previous location it was in
         CardActions d = eventData.pointerDrag.GetComponent<CardActions>();
         if (d.placeholderParent == this.transform)
@@ -34,6 +64,7 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
 
     public void OnDrop(PointerEventData eventData)
     {
+        handSizeChanged = true;
         //make the parent of the card the hand when dropped into the hand
         GameObject card = eventData.pointerDrag;
         CardActions cardAction = card.GetComponent<CardActions>();
@@ -64,5 +95,12 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
             card.isDiscarded = true;
             card.DiscardCard();
         }
+        this.cardMoved = false;
+    }
+
+    public void dealCardToHand(Transform card)
+    {
+        handSizeChanged = true;
+        card.SetParent(this.transform);
     }
 }

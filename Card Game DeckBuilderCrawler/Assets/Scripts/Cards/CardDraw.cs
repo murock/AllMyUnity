@@ -33,10 +33,7 @@ public class CardDraw : Singleton<CardDraw>{
             // random number between 0 and the max deck size
             int randomNumber = Random.Range(0, deck.Count - 1);
             // Make the hand the parent of the card
-            // deck[randomNumber].transform.SetParent(hand.transform);       TEST UNCOMMENT 06/01/19
             StartCoroutine(MoveFromTo(deck[randomNumber],deck[randomNumber].position, handLocation.position, 750));
-
-
 
             // Make visible and clickable
             CanvasGroup cardCanvasGroup = deck[randomNumber].GetComponent<CanvasGroup>();
@@ -142,6 +139,6 @@ public class CardDraw : Singleton<CardDraw>{
             yield return new WaitForFixedUpdate();         // Leave the routine and return here in the next frame
         }
         objectToMove.position = b;
-        objectToMove.SetParent(hand.transform);
+        Hand.Instance.dealCardToHand(objectToMove);
     }
 }
