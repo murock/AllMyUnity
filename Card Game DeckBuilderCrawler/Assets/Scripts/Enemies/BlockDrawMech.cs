@@ -12,15 +12,24 @@ public class BlockDrawMech :  IMonsterMech {
     void IMonsterMech.OnDeath()
     {
         // Needs to be a check here to see if there are any other monsters than block draw alive
+        bool blockMonsterStillAlive = false;
         foreach (MonsterInteraction monsterSpawner in TurnManager.Instance.monsterSpawners)
         {
-            if (monsterSpawner)
+            if (monsterSpawner.IsAlive && monsterSpawner.CurrentMonster != null && monsterSpawner.CurrentMonster.MonsterMech != null)
             {
-
+                if (monsterSpawner.CurrentMonster.MonsterMech.GetToolTip() == "Cannot Draw Cards")
+                {
+                    blockMonsterStillAlive = true;
+                }
+                
             }
         }
-        
-        CardDrawMech.IsDrawAllowed = true;
+        Debug.Log("block still alive: " + blockMonsterStillAlive);
+        if (!blockMonsterStillAlive)
+        {
+            CardDrawMech.IsDrawAllowed = true;
+        }
+
     }
 
     void IMonsterMech.OnSpawn()

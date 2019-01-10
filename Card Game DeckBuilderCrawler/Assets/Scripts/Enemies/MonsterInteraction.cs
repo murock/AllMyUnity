@@ -48,6 +48,12 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
     private const float toolTipWaitTime = 1.5f;
     private static float timer;
 
+    public Monster CurrentMonster {
+        get {
+            return currentMonster;
+        }
+    }
+
     public bool IsAlive
     {
         get
@@ -106,11 +112,11 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void Defeat()
     {
+        this.isAlive = false;
         if (currentMonster.MonsterMech != null)
         {
             currentMonster.MonsterMech.OnDeath();
         }
-        this.isAlive = false;
         this.health = 0;
         this.nameTxt.text = "DEFEATED!!!";
         this.healthTxt.text = string.Format(this.health.ToString());

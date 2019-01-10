@@ -120,7 +120,7 @@ public class TurnManager : Singleton<TurnManager> {
         if ((Hand.Instance.CurrentHandSize == 5 || Hand.Instance.cardMoved) && turnButtoEnabled)
         {
             turnButtoEnabled = false;
-            StartCoroutine(EnabledTurnButton(1f));
+            StartCoroutine(EnabledTurnButton(2f));
             GameManager.Instance.multiplierNum = 1;
             GameManager.Instance.multiplierOn = false;
             Hand.Instance.DiscardHand();
