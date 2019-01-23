@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
 
-    private int handSize = 5;
+    public static int handSize = 5;
     // check if hand size has changed since last count
     private bool handSizeChanged = true;
     // check to see if a card has been moved this turn 
     public bool cardMoved = false;
+
+    public HorizontalLayoutGroup layoutGroup;
 
     public int CurrentHandSize
     {

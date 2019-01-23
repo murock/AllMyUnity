@@ -102,12 +102,12 @@ public class TurnManager : Singleton<TurnManager> {
             Monster monster;
             if (i > 2)
             {
-                monster = new Monster(4, 2, "Troll", "Enemies/Troll1", null);
+                BlockDrawMech blockDrawMech = new BlockDrawMech();
+                monster = new Monster(2, 4, "Ice Golem", "Enemies/IceGolem", blockDrawMech);
             }
             else
             {
-                BlockDrawMech blockDrawMech = new BlockDrawMech();
-                monster = new Monster(2, 4, "Ice Golem", "Enemies/IceGolem", blockDrawMech);
+                monster = new Monster(4, 2, "Troll", "Enemies/Troll1", null);
             }
             monstersQueue.Enqueue(monster);
         }
@@ -133,6 +133,8 @@ public class TurnManager : Singleton<TurnManager> {
             }
             DiscardCardsInPlay();
             StartCoroutine(CardDraw.Instance.DrawCards());
+            //reset spacing on hand layout group
+            Hand.Instance.layoutGroup.spacing = 4f;
             SpawnCount -= 1;
         }
     }

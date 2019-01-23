@@ -44,7 +44,7 @@ public class ShopManager : Singleton<ShopManager>
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
                 CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
-                cardDrawMechanic.NumCardsToDraw = 2;
+                cardDrawMechanic.NumCardsToDraw = 6;
                 newCard.PopulateCard("Draw", "+2 Draw", 1, cardDrawMechanic, cardColor, "CardArt/Defense");
             }
             else if (i == 2)
