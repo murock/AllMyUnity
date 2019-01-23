@@ -248,6 +248,7 @@ public class CardActions : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void InstantFade()
     {
         // Move the card position back to the deck
+        this.transform.SetParent(DeckManager.Instance.transform);
         this.transform.position = DeckManager.Instance.transform.position;
         CanvasGroup cardCanvasGroup = this.GetComponent<CanvasGroup>();
         //become untagetable
