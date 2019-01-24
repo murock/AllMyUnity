@@ -45,10 +45,11 @@ public class CardDrawMech : MonoBehaviour, ICardMech {
         if (IsDrawAllowed)
         {
             // Draw cards
-            for (int i = 0; i < this.numCardsToDraw; i++)
-            {
-                CardDraw.Instance.drawCard();
-            }         
+            //for (int i = 0; i < this.numCardsToDraw; i++)
+            //{
+            //    CardDraw.Instance.drawCard();
+            //}         
+            StartCoroutine(CardDraw.Instance.DrawCards(this.numCardsToDraw));
         }
     }
 }

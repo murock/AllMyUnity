@@ -19,7 +19,7 @@ public class ShopManager : Singleton<ShopManager>
     private void PopulateShop()
     {
         CardsToBuy = new List<Transform>();
-        int numUniqueCards = 4;
+        int numUniqueCards = 5;
         //IMPROVE SYSTEM TO ACCOUNT TO UP TO 5 CARDS IN SHOP?
         //TODO: Make the selection mechanic work for both buying cards and card mechanics e.g destroy.
         for (int i = 0; i < numUniqueCards; i++)
@@ -44,7 +44,7 @@ public class ShopManager : Singleton<ShopManager>
                 newCard = newCardPrefab.AddComponent<Card>() as Card;
                 //attach the card draw mechanic to the card prefab
                 CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
-                cardDrawMechanic.NumCardsToDraw = 6;
+                cardDrawMechanic.NumCardsToDraw = 2;
                 newCard.PopulateCard("Draw", "+2 Draw", 1, cardDrawMechanic, cardColor, "CardArt/Defense");
             }
             else if (i == 2)
@@ -69,6 +69,16 @@ public class ShopManager : Singleton<ShopManager>
                 CardDefenseMech cardDefenceMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
                 cardDefenceMechanic.Defense = 2;
                 newCard.AddAddtionalMech(cardDefenceMechanic);
+            }
+            else if (i == 4)
+            {
+                //+ 3 Attack
+                Color cardColor = new Color(1f, 0f, 0f, 1f);
+                newCard = newCardPrefab.AddComponent<Card>() as Card;
+                //attach the card attack mechanic to the card prefab
+                CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
+                cardAttackMechanic.Attack = 3;
+                newCard.PopulateCard("Attack", "+3 Attack", 3, cardAttackMechanic, cardColor, "CardArt/Attack");
             }
             else
             {

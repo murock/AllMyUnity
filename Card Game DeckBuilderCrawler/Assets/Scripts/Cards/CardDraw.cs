@@ -44,14 +44,14 @@ public class CardDraw : Singleton<CardDraw>{
             DeckManager.Instance.cardsInPlay.Add(deck[randomNumber]);
             // remove card from deck list
             deck.RemoveAt(randomNumber);
-            Debug.Log("current handsize is " + Hand.Instance.CurrentHandSize);
+          //  Hand.Instance.handSizeChanged = true;
+            Debug.Log("current handsize is " + (DeckManager.Instance.cardsInPlay.Count));
             Debug.Log("handsize is " + Hand.handSize);
             Debug.Log("hand  spacing is " + Hand.Instance.layoutGroup.spacing);
-            if (Hand.Instance.CurrentHandSize > Hand.handSize)
+            if (DeckManager.Instance.cardsInPlay.Count > Hand.handSize)
             {
-                Hand.Instance.layoutGroup.spacing += 10f;
+                Hand.Instance.layoutGroup.spacing -= 10f;
             }
-
             cardAdded = true;
         }
         if (deck.Count > 0)

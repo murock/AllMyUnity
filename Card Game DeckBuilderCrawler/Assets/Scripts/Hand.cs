@@ -8,7 +8,7 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
 
     public static int handSize = 5;
     // check if hand size has changed since last count
-    private bool handSizeChanged = true;
+    public bool handSizeChanged = true;
     // check to see if a card has been moved this turn 
     public bool cardMoved = false;
 
