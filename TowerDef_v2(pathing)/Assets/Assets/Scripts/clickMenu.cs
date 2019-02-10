@@ -40,6 +40,7 @@ public class ClickMenu : Singleton<ClickMenu>
 
     public void CycleButtons()
     {
+        Debug.Log("click buttons called");
         //Vector3 pos = Twr1Btn.transform.position;       
         //Vector3 pos2 = Twr2Btn.transform.position;
         //Twr1Btn.transform.position = pos2;
