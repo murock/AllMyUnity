@@ -1,0 +1,5 @@
+Add artwork to everything,
+Give appropiate death anim,
+Add sounds, (make options menu sliders work)
+Fix double click on spinner bug on click menu,
+fix leftover projectile bug
