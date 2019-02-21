@@ -36,6 +36,7 @@ public class ClickMenu : Singleton<ClickMenu>
     public void HideMenu()
     {
         this.menu.SetActive(false);
+        GameManager.Instance.HideStats();
     }
 
     public void CycleButtons()

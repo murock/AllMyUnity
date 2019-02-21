@@ -327,7 +327,7 @@ public class GameManager : Singleton<GameManager> {
 
     public void ShowSelectedTowerStats()
     {
-        if (statsPanel.activeSelf == false) //if not active then set as active
+        if (statsPanel.activeSelf == false && selectedTower.Upgrades != null) //if not active then set as active and upgrades exist
         {
             statsPanel.SetActive(true);
         }
@@ -365,7 +365,7 @@ public class GameManager : Singleton<GameManager> {
 
     public void UpgradeTower()
     {
-        if (selectedTower != null)
+        if (selectedTower != null && selectedTower.Upgrades != null)
         {
             if (selectedTower.Level <= selectedTower.Upgrades.Length && Currency >= selectedTower.NextUpgrade.Price)
             {

@@ -120,6 +120,15 @@ public class TowerButton : MonoBehaviour {
                                         "Has a chance to stun the target",
                                         earth.Damage, earth.Proc, earth.DebuffDuration, earth.Range);
                 break;
+            case "Maze":
+                tooltip = string.Format("<color=#999b98ff><size=20><b>Maze</b></size></color>\n" +
+                                        "Damage: {0} \n" +
+                                        "Range: {3} \n" +
+                                        "Proc: {1}%\n" +
+                                        "Debuff duration: {2}sec\n" +
+                                        "Can't attack, use to maze",
+                                        0, 0, 0, 0);
+                break;
 
         }
         

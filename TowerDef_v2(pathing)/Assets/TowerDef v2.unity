@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907d507c15489f34ca355a8260a24677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 1849189546559358, guid: d5efa8e66f3c1774290d54f0ed825d55,
+  towerPrefab: {fileID: 1849189546559358, guid: 5819d0e1e63cb014b9bbc9f1080b5560,
     type: 3}
   sprite: {fileID: 21300000, guid: 9b7f3b8acf222844d8106641d29c4af6, type: 3}
   price: 3
@@ -803,7 +803,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 74779501a71c21d449439150a868e5f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b7f3b8acf222844d8106641d29c4af6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3357,7 +3357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &492602000
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4715,13 +4715,35 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 784018386}
+          m_MethodName: ShowInfo
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Maze
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1988140945}
+          m_MethodName: HideStats
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -10109,7 +10131,7 @@ MonoBehaviour:
   gameOver: 0
   numWavesHpIncrease: 3
   sellDivisor: 2
-  currency: 99
+  currency: 10
   lives: 10
   livesTxt: {fileID: 1052601974}
   waveTxt: {fileID: 1674046057}

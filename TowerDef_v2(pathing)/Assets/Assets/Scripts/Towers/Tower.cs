@@ -109,7 +109,7 @@ public abstract class Tower : MonoBehaviour {   //abstract means it cannot be st
     {
         get
         {
-            if (Upgrades.Length > Level -1)
+            if (Upgrades != null && Upgrades.Length > Level -1)
             {
                 return Upgrades[Level - 1];
             }
