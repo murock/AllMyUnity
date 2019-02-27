@@ -225,7 +225,7 @@ public class GameManager : Singleton<GameManager> {
 
         for (int i = 0; i < wave; i++)  //spawn as many monsters as wave number 
         {
-            int monsterIndex = Random.Range(0, 5); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS //4
+            int monsterIndex = Random.Range(0, 4); // ADD MORE MONSTERS WHEN HAVE ANIMATIONS //4
 
             string type = string.Empty;
 
@@ -241,9 +241,6 @@ public class GameManager : Singleton<GameManager> {
                     type = "Snail";
                     break;
                 case 3:
-                    type = "Tree";
-                    break;
-                case 4:
                     type = "Girl";
                     break;
                 default:
