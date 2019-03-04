@@ -42,6 +42,8 @@ public class PlayArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         CardActions cardAction = eventData.pointerDrag.GetComponent<CardActions>();
         if (cardAction != null && cardAction.isDragable)
         {
+            Hand.Instance.cardMoved = true;
+            Debug.Log("setting cardmove to true from play area");
             Card card = eventData.pointerDrag.GetComponent<Card>();
             GameObject cardTransform = eventData.pointerDrag;
             if (cardTransform.tag == "card")
