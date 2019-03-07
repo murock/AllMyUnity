@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager> {
     public Text toolTip;
     public CanvasGroup toolTipCanvasGroup;
     public Image persistantAreaImage;
+    public int numCardsInShop = 15;
 
     private int money;
 
@@ -46,6 +47,7 @@ public class GameManager : Singleton<GameManager> {
     private void Start()
     {
         StartCoroutine(CardDraw.Instance.DrawCards());
+        ShopManager.Instance.MakeStartingShopDeck(numCardsInShop);
     }
 
     public void AdjustMoney(int amount)
