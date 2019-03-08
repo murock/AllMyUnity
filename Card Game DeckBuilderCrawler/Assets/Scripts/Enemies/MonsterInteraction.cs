@@ -188,11 +188,11 @@ public class MonsterInteraction : MonoBehaviour, IPointerEnterHandler, IPointerE
             PlayerInteraction.Instance.TakeDamage(this.attack);
 
             //This should be moved to the turn manager doesn't make sense  for it to be in MoveMonster()
-            if (GameManager.Instance.Money > 0)
-            {
-                GameManager.Instance.centrePanel.SetActive(true);
-                ShopManager.Instance.StartShop();
-            }
+            //if (GameManager.Instance.Money > 0)
+            //{
+            //    GameManager.Instance.centrePanel.SetActive(true);
+            //    ShopManager.Instance.StartShop();
+            //}
         }
 
     }

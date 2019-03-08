@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 
 public class ShopManager : Singleton<ShopManager>
 {
-
-    List<Transform> CardsToBuy;
     List<Transform> CashCards;
     public bool isShopping;
     private bool isCashShopping = false;
@@ -18,107 +16,17 @@ public class ShopManager : Singleton<ShopManager>
     private Text cashShopButtonText;
     private int numUniqueCards = 5;
     private Queue<Transform> CardsInShopDeck;
- //   private List<Transform> CardsInShopDeck;
-    private List<Transform> CardsOnDisplay;
-    private int numCardsToDisplay;
+    private List<Transform> CardsOnDisplay = new List<Transform>();
+    private int numCardsToDisplay = 4;
 
-    private void PopulateShop1()
-    {
-        CardsToBuy = new List<Transform>();
-        //IMPROVE SYSTEM TO ACCOUNT TO UP TO 5 CARDS IN SHOP?
-        //TODO: Make the selection mechanic work for both buying cards and card mechanics e.g destroy.
-        for (int i = 0; i < numUniqueCards; i++)
-        {
-            Card newCard;
-            //Creates a new gameobject which based off the card in the Resource folder
-            GameObject newCardPrefab = (GameObject)Instantiate(Resources.Load("Card"));   //safe way to check cast?
-            if (i == 0)
-            {
-                //DESTROY
-                Color cardColor = new Color(255f, 255f, 255f, 1f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card draw mechanic to the card prefab
-                CardDestroyMech cardDestroyMechanic = newCardPrefab.AddComponent<CardDestroyMech>() as CardDestroyMech;
-                cardDestroyMechanic.NumCardsToDestroy = 2;
-                newCard.PopulateCard("Destroy", "+2 Destroy", 2, cardDestroyMechanic, cardColor, "CardArt/Defense");
-            }
-            else if (i == 1)
-            {
-                //DRAW
-                Color cardColor = new Color(250f, 69f, 0f, 1f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card draw mechanic to the card prefab
-                CardDrawMech cardDrawMechanic = newCardPrefab.AddComponent<CardDrawMech>() as CardDrawMech;
-                cardDrawMechanic.NumCardsToDraw = 2;
-                newCard.PopulateCard("Draw", "+2 Draw", 1, cardDrawMechanic, cardColor, "CardArt/Defense");
-            }
-            else if (i == 2)
-            {
-                //MULTIPLIER
-                Color cardColor = new Color(145f, 0f, 211f, 255f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card defense mechanic to the card prefab
-                CardMultiplierMech cardMultiplierMechanic = newCardPrefab.AddComponent<CardMultiplierMech>() as CardMultiplierMech;
-                cardMultiplierMechanic.NumTimesToMultiply = 2; ////NUm cards = mUltiply x n
-                newCard.PopulateCard("Multiplier", "x2 Multiply", 2, cardMultiplierMechanic, cardColor, "CardArt/Defense", Card.CardType.Persistant);
-            }
-            else if (i == 3)
-            {
-                //+Attack and Defence
-                Color cardColor = new Color(145f, 50f, 200f, 255f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card defense mechanic to the card prefab
-                CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
-                cardAttackMechanic.Attack = 2;
-                newCard.PopulateCard("Good Offence", "+2 Attack" + Environment.NewLine + "+2 Defence", 4, cardAttackMechanic, cardColor, "CardArt/Defense");
-                CardDefenseMech cardDefenceMechanic = newCardPrefab.AddComponent<CardDefenseMech>() as CardDefenseMech;
-                cardDefenceMechanic.Defense = 2;
-                newCard.AddAddtionalMech(cardDefenceMechanic);
-            }
-            else if (i == 4)
-            {
-                //+ 3 Attack
-                Color cardColor = new Color(1f, 0f, 0f, 1f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card attack mechanic to the card prefab
-                CardAttackMech cardAttackMechanic = newCardPrefab.AddComponent<CardAttackMech>() as CardAttackMech;
-                cardAttackMechanic.Attack = 3;
-                newCard.PopulateCard("Attack", "+3 Attack", 3, cardAttackMechanic, cardColor, "CardArt/Attack");
-            }
-            else
-            {
-                //CARD DISCARD ---------------------------
-                Color cardColor = new Color(0, 1f, 0f, 1f);
-                newCard = newCardPrefab.AddComponent<Card>() as Card;
-                //attach the card draw mechanic to the card prefab
-                CardDiscardMech cardDiscardMechanic = newCardPrefab.AddComponent<CardDiscardMech>() as CardDiscardMech;
-                cardDiscardMechanic.NumCardsToDiscard = 4;
-                newCard.PopulateCard("Discard", "+4 Discard", 2, cardDiscardMechanic, cardColor, "CardArt/Defense");
-            }
-            // making the centrePanel its parent
-            SelectionPanel.Instance.PassToPanel(newCard.transform, null);
-            CardsToBuy.Add(newCard.transform);
-        }
-    }
 
-    private void PopulateShop()
+    public void PopulateShop()
     {
         // If cardsTodisplay.count == numCardsToDisplay then show panel with cards
         // else if cardsTodisplay.count < numcardstodisplay then add cards from cardsinshopdeck untill == to count or no cards left in cardsinshopdeck then display
-        while (CardsOnDisplay.Count < numCardsToDisplay || CardsInShopDeck.Count != 0 )
+        while (CardsOnDisplay.Count < numCardsToDisplay && CardsInShopDeck.Count != 0 )
         {
             CardsOnDisplay.Add(CardsInShopDeck.Dequeue());
-        }
-        DisplayShopCards();
-    }
-
-    private void DisplayShopCards()
-    {
-        foreach (Transform card in CardsOnDisplay)
-        {
-            // making the centrePanel its parent
-            SelectionPanel.Instance.PassToPanel(card.transform, null);
-            CardsToBuy.Add(card.transform);
         }
     }
 
@@ -208,24 +116,8 @@ public class ShopManager : Singleton<ShopManager>
         this.cashShopButton.gameObject.SetActive(true);
         isShopping = true;
         SelectionPanel.Instance.titleLabel.text = "Shop";
-        if (this.CardsToBuy == null)
-        {
-            // Create the shop for the first time
-            this.PopulateShop();
-        }
-        else
-        {
-            this.PassCardsToCentre(this.CardsToBuy);
-        }
-        foreach (Transform card in this.CardsToBuy)
-        {
-            CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-            if (cardCanvasGroup != null)
-            {
-                cardCanvasGroup.alpha = 1;
-                cardCanvasGroup.blocksRaycasts = true;
-            }
-        }
+        this.PopulateShop();
+        this.PassCardsToCentre(this.CardsOnDisplay);
     }
 
     public void BuyCards(List<Transform> boughtCards)
@@ -239,10 +131,10 @@ public class ShopManager : Singleton<ShopManager>
                 cardAction.isDragable = true;
             }
             DeckManager.Instance.AddCardToDeck(card);
-            if (this.CardsToBuy.Contains(card))
+            if (this.CardsOnDisplay.Contains(card))
             {
                 // Remove card from the list of cards in the shop
-                this.CardsToBuy.Remove(card);
+                this.CardsOnDisplay.Remove(card);
             }
             else if (this.CashCards.Contains(card))
             {
@@ -270,17 +162,6 @@ public class ShopManager : Singleton<ShopManager>
     {
         foreach (Transform card in cards)
         {
-            //// Make the ShopManager gameObject the temp parent of the card
-            //// until it needs to be displayed in the shop again
-            //card.SetParent(this.transform);
-            //// Ensure the card is not visible or interactable
-            //CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-            //if (cardCanvasGroup != null)
-            //{
-            //    cardCanvasGroup.alpha = 0;
-            //    cardCanvasGroup.blocksRaycasts = false;
-            //}
-
             card.gameObject.SetActive(false);
             card.SetParent(this.transform);
         }
@@ -292,6 +173,12 @@ public class ShopManager : Singleton<ShopManager>
         foreach (Transform card in cards)
         {
             card.gameObject.SetActive(true);
+            CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
+            if (cardCanvasGroup != null)
+            {
+                cardCanvasGroup.alpha = 1;
+                cardCanvasGroup.blocksRaycasts = true;
+            }
             SelectionPanel.Instance.PassToPanel(card, null);
         }
     }
@@ -303,7 +190,7 @@ public class ShopManager : Singleton<ShopManager>
             // Switch to cash only shop
             this.isCashShopping = true;
             this.cashShopButtonText.text = "Back";
-            this.PassBackToShop(this.CardsToBuy);
+            this.PassBackToShop(this.CardsOnDisplay);
             if (this.CashCards == null)
             {
                 this.CashCards = new List<Transform>();
@@ -331,7 +218,7 @@ public class ShopManager : Singleton<ShopManager>
             //    card.gameObject.SetActive(false);
             //}
             this.PassBackToShop(this.CashCards);
-            this.PassCardsToCentre(this.CardsToBuy);
+            this.PassCardsToCentre(this.CardsOnDisplay);
         }
     }
 

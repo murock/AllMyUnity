@@ -67,7 +67,6 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
     public void OnDrop(PointerEventData eventData)
     {
         this.cardMoved = true;
-        Debug.Log("setting cardmove to true");
         handSizeChanged = true;
         //make the parent of the card the hand when dropped into the hand
         GameObject card = eventData.pointerDrag;
@@ -82,7 +81,6 @@ public class Hand : Singleton<Hand>, IDropHandler, IPointerEnterHandler, IPointe
     public void DiscardHand()
     {
         this.cardMoved = false;
-        Debug.Log("setting cardmove to false");
         List<CardActions> cardsToDiscard = new List<CardActions>();
         //loop through all children in the hand
         for (int i = 0; i < this.transform.childCount; i++)

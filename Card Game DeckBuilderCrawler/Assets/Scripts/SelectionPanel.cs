@@ -25,7 +25,6 @@ public class SelectionPanel : Singleton<SelectionPanel>
         {
             int currentSelected = 0;
             foreach (Transform card in this.cardsInPanel)
-            //foreach (Transform card in this.cardsInPanelQueue)
             {
                 CardActions cardAction = card.GetComponent<CardActions>();
                 if (cardAction != null && cardAction.isSelected)
@@ -65,6 +64,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
             Transform removedCard = cardsSelectedQueue.Dequeue();
             // Add to cards in panel as we now want to return it to the panel rather than hand
             this.cardsInPanel.Add(card.transform);
+            Debug.Log(card.transform.Find("Card Description").GetComponent<Text>().text + " added to cards in panel");
             CardActions removedCardAction = removedCard.gameObject.GetComponent<CardActions>();
             removedCardAction.isSelected = false;
             cardsNotSelected.Add(removedCard);
@@ -80,6 +80,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
                 cardAction.isSelected = true;
                 cardsSelectedQueue.Enqueue(card.transform);
                 // Remove from cards in panel as we now want to return it to the hand
+                Debug.Log(card.transform.Find("Card Description").GetComponent<Text>().text + " REMOVED FROM cards in panel");
                 this.cardsInPanel.Remove(card.transform);
                 cardAction.HighlightSelectedCard();
             }
@@ -155,6 +156,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
         }
 
         card.SetParent(this.transform);
+        Debug.Log(card.transform.Find("Card Description").GetComponent<Text>().text + " added to cards in panel");
         cardsInPanel.Add(card);
         cardsNotSelected.Add(card);
         currentMech = cardMech;

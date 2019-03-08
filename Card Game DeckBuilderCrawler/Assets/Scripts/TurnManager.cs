@@ -136,6 +136,11 @@ public class TurnManager : Singleton<TurnManager> {
             //reset spacing on hand layout group
             Hand.Instance.layoutGroup.spacing = 4f;
             SpawnCount -= 1;
+            if (GameManager.Instance.Money > 0)
+            {
+                GameManager.Instance.centrePanel.SetActive(true);
+                ShopManager.Instance.StartShop();
+            }
         }
     }
 
