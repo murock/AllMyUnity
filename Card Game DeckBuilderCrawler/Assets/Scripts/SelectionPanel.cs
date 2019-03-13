@@ -18,21 +18,23 @@ public class SelectionPanel : Singleton<SelectionPanel>
     //The maximum number of cards you can select
     int maxSelectable = 0;
     private int costOfSelectedCards;
+    private int currentAmtSelected = 0;
 
     public int CurrentAmtSelected
     {
         get
         {
-            int currentSelected = 0;
-            foreach (Transform card in this.cardsInPanel)
-            {
-                CardActions cardAction = card.GetComponent<CardActions>();
-                if (cardAction != null && cardAction.isSelected)
-                {
-                    currentSelected++;
-                }
-            }
-            return currentSelected;
+            return currentAmtSelected;
+            //int currentSelected = 0;
+            //foreach (Transform card in this.cardsInPanel)
+            //{
+            //    CardActions cardAction = card.GetComponent<CardActions>();
+            //    if (cardAction != null && cardAction.isSelected)
+            //    {
+            //        currentSelected++;
+            //    }
+            //}
+            //return currentSelected;
         }
     }
 
@@ -58,9 +60,12 @@ public class SelectionPanel : Singleton<SelectionPanel>
             CheckMoney();
             return;
         }
+        Debug.Log("current amt selected: " + this.CurrentAmtSelected);
+        Debug.Log("MAX selected: " + this.maxSelectable);
         //If maxed out on selections already unSelected the first one that was selected??
-        if (this.CurrentAmtSelected >= maxSelectable)
+        if (this.CurrentAmtSelected >= maxSelectable && cardsSelectedQueue.Peek() != null)
         {
+            currentAmtSelected--;
             Transform removedCard = cardsSelectedQueue.Dequeue();
             // Add to cards in panel as we now want to return it to the panel rather than hand
             this.cardsInPanel.Add(card.transform);
@@ -77,6 +82,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
         {
             if (!cardsSelectedQueue.Contains(card.transform))
             {
+                currentAmtSelected++;
                 cardAction.isSelected = true;
                 cardsSelectedQueue.Enqueue(card.transform);
                 // Remove from cards in panel as we now want to return it to the hand
