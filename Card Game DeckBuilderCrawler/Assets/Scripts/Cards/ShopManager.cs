@@ -129,6 +129,7 @@ public class ShopManager : Singleton<ShopManager>
             if (cardAction != null)
             {
                 cardAction.isDragable = true;
+                cardAction.isSelected = false;
             }
             DeckManager.Instance.AddCardToDeck(card);
             if (this.CardsOnDisplay.Contains(card))

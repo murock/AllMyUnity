@@ -50,12 +50,13 @@ public class SelectionPanel : Singleton<SelectionPanel>
     {
         CardActions cardAction = card.gameObject.GetComponent<CardActions>();
         //If already selected just unselect
-        if (cardAction.isSelected)
+        if (cardAction.isSelected && cardsSelectedQueue.Contains(card.transform))
         {
             //Remove specific item from Q
             cardsSelectedQueue = new Queue<Transform>(cardsSelectedQueue.Where(t => t != card.transform));
             cardAction.isSelected = false;
             cardsNotSelected.Add(card.transform);
+            currentAmtSelected--;
             cardAction.HighlightCard();
             CheckMoney();
             return;
@@ -63,7 +64,8 @@ public class SelectionPanel : Singleton<SelectionPanel>
         Debug.Log("current amt selected: " + this.CurrentAmtSelected);
         Debug.Log("MAX selected: " + this.maxSelectable);
         //If maxed out on selections already unSelected the first one that was selected??
-        if (this.CurrentAmtSelected >= maxSelectable && cardsSelectedQueue.Peek() != null)
+        if (this.CurrentAmtSelected >= maxSelectable && cardsSelectedQueue.Count > 0 &&
+            cardsSelectedQueue.Peek() != null)
         {
             currentAmtSelected--;
             Transform removedCard = cardsSelectedQueue.Dequeue();
@@ -150,6 +152,7 @@ public class SelectionPanel : Singleton<SelectionPanel>
         this.cardsNotSelected.Clear();
         this.cardsSelectedQueue.Clear();
         this.gameObject.SetActive(false);
+        this.currentAmtSelected = 0;
     }
 
     public void PassToPanel(Transform card, ICardSelectableMech cardMech, int maxToSelect = 99)
