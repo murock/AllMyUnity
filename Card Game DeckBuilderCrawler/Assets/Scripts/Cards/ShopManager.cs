@@ -175,9 +175,11 @@ public class ShopManager : Singleton<ShopManager>
         {
             card.gameObject.SetActive(true);
             CanvasGroup cardCanvasGroup = card.GetComponent<CanvasGroup>();
-            if (cardCanvasGroup != null)
+            CardActions cardAction = card.GetComponent<CardActions>();
+            if (cardCanvasGroup != null && !cardAction.isSelected)
             {
-                cardCanvasGroup.alpha = 1;
+                // This is where card is being unselected in switch shops
+                cardCanvasGroup.alpha = 1f;
                 cardCanvasGroup.blocksRaycasts = true;
             }
             SelectionPanel.Instance.PassToPanel(card, null);
