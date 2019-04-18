@@ -139,6 +139,15 @@ public class SelectionPanel : Singleton<SelectionPanel>
             this.costOfSelectedCards = 0;
             //Send card(s) to buy and not to buy to the shop manager
             ShopManager.Instance.BuyCards(this.cardsSelectedQueue.ToList());
+
+            // TODO: delete this late inefficent!!
+            foreach (Transform card in this.cardsInPanel)
+            {
+                if (this.cardsSelectedQueue.Contains(card))
+                {
+                    this.cardsInPanel.Remove(card);
+                }
+            }
             ShopManager.Instance.PassBackToShop(this.cardsInPanel);
         }
         //Apply Selection Action
